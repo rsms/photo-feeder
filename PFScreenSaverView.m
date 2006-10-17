@@ -102,7 +102,7 @@ NSConditionLock* imageCreatorLock;
 	
 	if(!currentImage) {
 		// TODO: text: loading...
-		NSLog(@"[PhotoFeederView animateOneFrame] DRAW TEXT: Loading... (waiting for an image to become available)");
+		NSLog(@"[PhotoFeederView animateOneFrame] Loading... (waiting for an image to become available)");
 		return;
 	}
 	NSLog(@"[PhotoFeederView animateOneFrame] Rendering frame...");
