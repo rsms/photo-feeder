@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'PhotoFeeder' target in the 'PhotoFeeder' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <AppKit/AppKit.h>
+#endif
+#import <Cocoa/Cocoa.h>
+
+#define CL_RUN  1
+#define CL_WAIT 0
+
+#define HAS_DATA 1
+#define WAITING_FOR_DATA 0
+
