@@ -84,8 +84,21 @@
 			[oldImage release];
 		NSLog(@"[PhotoFeederView nextImage] done");
 		
-		if(currentImage)
+		if(currentImage) {
+			// Calculate stuff
+			currImSize = [currentImage size];
+			currImCropWidth = currImSize.width;
+			currImCropHeight = currImSize.height;
+			currImRatio = currImCropWidth / currImCropHeight;
+			currImIsWider = (currImRatio > frameRatio);
+			if(currImIsWider) // image height is less than screen height (in percentile)
+				currImCropWidth = currImCropHeight * frameRatio;
+			else // image width is less than screen width (in percentile)
+				currImCropHeight = currImCropWidth / frameRatio;
+			currImResizeFactor = currImCropWidth / myFrame.size.width;
+			
 			[imageCreatorLock unlockWithCondition:CL_WAIT];
+		}
 		else
 			[imageCreatorLock unlock];
 	}
@@ -108,8 +121,9 @@
 	
 	
 	// TODO: isolate in PFImage class
-	float imCropWidth = [currentImage size].width;
-	float imCropHeight = [currentImage size].height;
+	/*NSSize imSize = [currentImage size];
+	float imCropWidth = imSize.width;
+	float imCropHeight = imSize.height;
 	float imRatio = imCropWidth/imCropHeight;
 	BOOL  isWider = (imRatio > frameRatio);
 	
@@ -118,27 +132,26 @@
 	else // image width is less than screen width (in percentile)
 		imCropHeight = imCropWidth / frameRatio;
 	
-	float screenPixelFactor = myFrame.size.width / imCropWidth;
-	float imResizeFactor = imCropWidth / myFrame.size.width;
-	float imTranslatedWidth = [currentImage size].width / imResizeFactor;
-	float imTranslatedHeight = [currentImage size].height / imResizeFactor;
+	float imResizeFactor = imCropWidth / myFrame.size.width;*/
 	
-	NSLog(@"");
+	// NOTE! Caching the above DID NOT DECREASE THE LOAD!
+	// We need to resample the image before displaying it. Now we are
+	// resampling the image each time we draw it. That's what's taking so long.
 	
 	
 	// Do this every render/draw
 	[currentImage drawInRect:myFrame 
-					fromRect:NSMakeRect(cropPosition.x, cropPosition.y, imCropWidth, imCropHeight)
+					fromRect:NSMakeRect(cropPosition.x, cropPosition.y, currImCropWidth, currImCropHeight)
 				   operation:NSCompositeSourceAtop
 					fraction:1.0];
 	
-	if(isWider && imTranslatedWidth-(cropPosition.x+=screenPixelFactor) <= myFrame.size.width) {
+	if(currImIsWider && currImSize.width-(cropPosition.x+=currImResizeFactor) <= myFrame.size.width*currImResizeFactor) {
 		[imageCreatorLock lockWhenCondition:CL_WAIT];
 		[imageCreatorLock unlockWithCondition:CL_RUN];
 		cropPosition.x = 0;
 		cropPosition.y = 0;
 	}
-	else if((!isWider) && imTranslatedHeight-(cropPosition.y+=screenPixelFactor) <= myFrame.size.height) {
+	else if((!currImIsWider) && currImSize.height-(cropPosition.y+=currImResizeFactor) <= myFrame.size.height*currImResizeFactor) {
 		[imageCreatorLock lockWhenCondition:CL_WAIT];
 		[imageCreatorLock unlockWithCondition:CL_RUN];
 		cropPosition.x = 0;
