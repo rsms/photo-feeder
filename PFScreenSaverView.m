@@ -1,32 +1,24 @@
-//
-//  PhotoFeederView.m
-//  PhotoFeeder
-//
-//  Created by Rasmus Andersson on 2006-10-16.
-//  Copyright (c) 2006, __MyCompanyName__. All rights reserved.
-//
 
-#import "PhotoFeederView.h"
+#import "PFScreenSaverView.h"
 #import "PFProvider.h"
 #import "PFQueue.h"
 
-@interface PhotoFeederView (Private)
-int y;
-PFQueue* queue;
-NSImage* currentImage;
-NSImage* nextImage;
-NSMutableArray* providers;
-NSConditionLock* imageCreatorLock;
-@end
-
-@implementation PhotoFeederView
+@implementation PFScreenSaverView
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
 		NSLog(@"[PhotoFeederView initWithFrame...]");
+		
+		// Cache frame for speed
+		myFrame = frame;
+		
+		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:20];
+		
+		// Inti current crop position (used by animateOneFrame)
+		cropPosition = NSMakePoint(0,0);
 		
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
@@ -40,6 +32,12 @@ NSConditionLock* imageCreatorLock;
 		imageCreatorLock = [[NSConditionLock alloc] initWithCondition:CL_RUN];
 		[NSThread detachNewThreadSelector:@selector(imageCreatorThread:) toTarget:self withObject:nil];
 		
+		// Create message text
+		statusText = [[PFText alloc] initWithText:@"Loading..."];
+		
+		// Calculate frame w/h ratio
+		frameRatio = frame.size.width / frame.size.height;
+		
         [self setAnimationTimeInterval:1/30.0];
     }
     return self;
@@ -49,6 +47,7 @@ NSConditionLock* imageCreatorLock;
 {
 	[providers release];
 	[imageCreatorLock release];
+	[statusText release];
 	[super dealloc];
 }
 
@@ -58,12 +57,13 @@ NSConditionLock* imageCreatorLock;
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	PFProvider* provider;
 	while(1) {
-		//provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
-		//[queue put:[provider getURL]];
-		provider = (PFProvider*)[providers objectAtIndex:0];
+		/* TODO remove this --> */ //sleep(2);
+		provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
+		[queue put:[provider getURL]];
+		/*provider = (PFProvider*)[providers objectAtIndex:0];
 		[queue put:[provider getURL]];
 		provider = (PFProvider*)[providers objectAtIndex:1];
-		[queue put:[provider getURL]];
+		[queue put:[provider getURL]];*/
 	}
 	[pool release];
 }
@@ -95,25 +95,55 @@ NSConditionLock* imageCreatorLock;
 
 - (void)animateOneFrame
 {
-	[[NSColor blackColor] set];
-	[NSBezierPath fillRect:[self frame]];
-	
-	//NSLog(@"animateOneFrame: [currentImage drawAtPoint:NSMakePoint(0,0)];");
-	
 	if(!currentImage) {
 		// TODO: text: loading...
 		NSLog(@"[PhotoFeederView animateOneFrame] Loading... (waiting for an image to become available)");
+		NSSize statusTextSize = [[statusText attrString] size];
+		[[NSColor blackColor] set];
+		[NSBezierPath fillRect:[self frame]];
+		[statusText drawAt:NSMakePoint((myFrame.size.width/2)-(statusTextSize.width/2), (myFrame.size.height/2)-(statusTextSize.height/2))];
 		return;
 	}
-	NSLog(@"[PhotoFeederView animateOneFrame] Rendering frame...");
+	//NSLog(@"[PhotoFeederView animateOneFrame] Rendering frame...");
 	
-	[currentImage drawInRect:[self frame] 
-					fromRect:NSMakeRect(0,0, [currentImage size].width, [currentImage size].height) 
+	
+	// TODO: isolate in PFImage class
+	float imCropWidth = [currentImage size].width;
+	float imCropHeight = [currentImage size].height;
+	float imRatio = imCropWidth/imCropHeight;
+	BOOL  isWider = (imRatio > frameRatio);
+	
+	if(isWider) // image height is less than screen height (in percentile)
+		imCropWidth = imCropHeight * frameRatio;
+	else // image width is less than screen width (in percentile)
+		imCropHeight = imCropWidth / frameRatio;
+	
+	float screenPixelFactor = myFrame.size.width / imCropWidth;
+	float imResizeFactor = imCropWidth / myFrame.size.width;
+	float imTranslatedWidth = [currentImage size].width / imResizeFactor;
+	float imTranslatedHeight = [currentImage size].height / imResizeFactor;
+	
+	NSLog(@"");
+	
+	
+	// Do this every render/draw
+	[currentImage drawInRect:myFrame 
+					fromRect:NSMakeRect(cropPosition.x, cropPosition.y, imCropWidth, imCropHeight)
 				   operation:NSCompositeSourceAtop
 					fraction:1.0];
-
-	//[[NSColor redColor] set];
-	//[NSBezierPath fillRect:NSMakeRect(0,y++,10,10)];
+	
+	if(isWider && imTranslatedWidth-(cropPosition.x+=screenPixelFactor) <= myFrame.size.width) {
+		[imageCreatorLock lockWhenCondition:CL_WAIT];
+		[imageCreatorLock unlockWithCondition:CL_RUN];
+		cropPosition.x = 0;
+		cropPosition.y = 0;
+	}
+	else if((!isWider) && imTranslatedHeight-(cropPosition.y+=screenPixelFactor) <= myFrame.size.height) {
+		[imageCreatorLock lockWhenCondition:CL_WAIT];
+		[imageCreatorLock unlockWithCondition:CL_RUN];
+		cropPosition.x = 0;
+		cropPosition.y = 0;
+	}
 }
 
 - (void)startAnimation

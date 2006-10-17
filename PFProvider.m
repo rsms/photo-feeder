@@ -43,7 +43,7 @@
 		/*url = [NSURL URLWithString:@"http://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=9b4439ce94de7e2ec2c2e6ffadc22bcf&user_id=12281432@N00&per_page=20"];
 		NSXMLDocument* doc = [[NSXMLDocument alloc] initWithContentsOfURL:url options:0 error:nil];*/
 		
-		[buffer put:[NSURL URLWithString:@"http://static.flickr.com/96/207296186_07c83ed2fa_b.jpg"]];
+		[buffer put:[NSURL URLWithString:@"http://static.flickr.com/79/270773771_43fea70d2b_b.jpg"]];
 		[buffer put:[NSURL URLWithString:@"http://static.flickr.com/90/245707482_620b878566_b.jpg"]];
 		[buffer put:[NSURL URLWithString:@"http://static.flickr.com/96/207296186_07c83ed2fa_b.jpg"]];
 		[buffer put:[NSURL URLWithString:@"http://static.flickr.com/90/245707482_620b878566_b.jpg"]];

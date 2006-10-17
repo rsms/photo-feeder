@@ -9,20 +9,24 @@
 /* Begin PBXBuildFile section */
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
-		3A2C3F180AE4368100970E7C /* PFThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3F160AE4368100970E7C /* PFThread.h */; };
-		3A2C3F190AE4368100970E7C /* PFThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3F170AE4368100970E7C /* PFThread.m */; };
-		3A2C3FBD0AE4418A00970E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3FA80AE4409600970E7C /* main.m */; };
-		3A2C3FBE0AE441A700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
-		3A2C3FC00AE441A700970E7C /* PhotoFeederView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PhotoFeederView.m */; };
-		3A2C3FE80AE4421200970E7C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		3A2C400E0AE442A400970E7C /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C403F0AE4432D00970E7C /* PFQueue.h */; };
-		3A2C40420AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
+		3A8F91670AE571960027DC3B /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
+		3A8F91680AE571960027DC3B /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
+		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
+		3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
+		3A8F91760AE571B30027DC3B /* TestApp.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F91750AE571B30027DC3B /* TestApp.nib */; };
+		3A8F91790AE571C40027DC3B /* TestAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F91780AE571C40027DC3B /* TestAppController.m */; };
+		3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F918E0AE5721B0027DC3B /* TestApp_main.m */; };
+		3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */; };
+		3A8F92390AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
+		3A8F923A0AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
+		3A8F92400AE578E70027DC3B /* PFText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8F923F0AE578E70027DC3B /* PFText.h */; };
 		8D255AC70486D3F9007BF209 /* prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* prefix.pch */; };
-		8D255AC80486D3F9007BF209 /* PhotoFeederView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* PhotoFeederView.h */; };
+		8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
-		8D255ACC0486D3F9007BF209 /* PhotoFeederView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PhotoFeederView.m */; };
+		8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 /* End PBXBuildFile section */
@@ -36,25 +40,30 @@
 		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProvider.h; sourceTree = "<group>"; };
 		3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProvider.m; sourceTree = "<group>"; };
-		3A2C3F160AE4368100970E7C /* PFThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThread.h; sourceTree = "<group>"; };
-		3A2C3F170AE4368100970E7C /* PFThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThread.m; sourceTree = "<group>"; };
-		3A2C3FA80AE4409600970E7C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3A2C3FB40AE4415200970E7C /* clitest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clitest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
 		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFQueue.h; sourceTree = "<group>"; };
+		3A8F91600AE571820027DC3B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8F91620AE571820027DC3B /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
+		3A8F91750AE571B30027DC3B /* TestApp.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestApp.nib; sourceTree = "<group>"; };
+		3A8F91770AE571C40027DC3B /* TestAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppController.h; sourceTree = "<group>"; };
+		3A8F91780AE571C40027DC3B /* TestAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppController.m; sourceTree = "<group>"; };
+		3A8F918E0AE5721B0027DC3B /* TestApp_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApp_main.m; sourceTree = "<group>"; };
+		3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
+		3A8F92380AE578A50027DC3B /* PFText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFText.m; sourceTree = "<group>"; };
+		3A8F923F0AE578E70027DC3B /* PFText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFText.h; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		F50079790118B23001CA0E54 /* PhotoFeederView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFeederView.h; sourceTree = "<group>"; };
-		F500797A0118B23001CA0E54 /* PhotoFeederView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFeederView.m; sourceTree = "<group>"; };
+		F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenSaverView.h; sourceTree = "<group>"; };
+		F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFScreenSaverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3A2C3FB20AE4415200970E7C /* Frameworks */ = {
+		3A8F915E0AE571820027DC3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2C400E0AE442A400970E7C /* ScreenSaver.framework in Frameworks */,
-				3A2C3FE80AE4421200970E7C /* Cocoa.framework in Frameworks */,
+				3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */,
+				3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
+				3A8F917E0AE571E30027DC3B /* TestApp */,
 				32DBCFA70370C4F300C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
+				3A8F91620AE571820027DC3B /* TestApp-Info.plist */,
+				3A8F91750AE571B30027DC3B /* TestApp.nib */,
 			);
 			name = PhotoFeeder;
 			sourceTree = "<group>";
@@ -103,15 +115,14 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3A2C3FA80AE4409600970E7C /* main.m */,
 				3A2C3EF50AE4342700970E7C /* PFProvider.h */,
 				3A2C3EF60AE4342700970E7C /* PFProvider.m */,
-				3A2C3F160AE4368100970E7C /* PFThread.h */,
-				3A2C3F170AE4368100970E7C /* PFThread.m */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
-				F50079790118B23001CA0E54 /* PhotoFeederView.h */,
-				F500797A0118B23001CA0E54 /* PhotoFeederView.m */,
+				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
+				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
+				3A8F923F0AE578E70027DC3B /* PFText.h */,
+				3A8F92380AE578A50027DC3B /* PFText.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -138,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */,
-				3A2C3FB40AE4415200970E7C /* clitest */,
+				3A8F91600AE571820027DC3B /* TestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +162,17 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		3A8F917E0AE571E30027DC3B /* TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */,
+				3A8F918E0AE5721B0027DC3B /* TestApp_main.m */,
+				3A8F91770AE571C40027DC3B /* TestAppController.h */,
+				3A8F91780AE571C40027DC3B /* TestAppController.m */,
+			);
+			name = TestApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -159,31 +181,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255AC70486D3F9007BF209 /* prefix.pch in Headers */,
-				8D255AC80486D3F9007BF209 /* PhotoFeederView.h in Headers */,
+				8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */,
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
-				3A2C3F180AE4368100970E7C /* PFThread.h in Headers */,
 				3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */,
+				3A8F92400AE578E70027DC3B /* PFText.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A2C3FB30AE4415200970E7C /* clitest */ = {
+		3A8F915F0AE571820027DC3B /* TestApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2C3FB60AE4417200970E7C /* Build configuration list for PBXNativeTarget "clitest" */;
+			buildConfigurationList = 3A8F91630AE571820027DC3B /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
-				3A2C3FB10AE4415200970E7C /* Sources */,
-				3A2C3FB20AE4415200970E7C /* Frameworks */,
+				3A8F915C0AE571820027DC3B /* Resources */,
+				3A8F915D0AE571820027DC3B /* Sources */,
+				3A8F915E0AE571820027DC3B /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = clitest;
-			productName = clitest;
-			productReference = 3A2C3FB40AE4415200970E7C /* clitest */;
-			productType = "com.apple.product-type.tool";
+			name = TestApp;
+			productName = TestApp;
+			productReference = 3A8F91600AE571820027DC3B /* TestApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 		8D255AC50486D3F9007BF209 /* PhotoFeeder */ = {
 			isa = PBXNativeTarget;
@@ -216,12 +239,21 @@
 			projectDirPath = "";
 			targets = (
 				8D255AC50486D3F9007BF209 /* PhotoFeeder */,
-				3A2C3FB30AE4415200970E7C /* clitest */,
+				3A8F915F0AE571820027DC3B /* TestApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A8F915C0AE571820027DC3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A8F91760AE571B30027DC3B /* TestApp.nib in Resources */,
+				3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D255AC90486D3F9007BF209 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,14 +275,16 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3A2C3FB10AE4415200970E7C /* Sources */ = {
+		3A8F915D0AE571820027DC3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2C3FBE0AE441A700970E7C /* PFProvider.m in Sources */,
-				3A2C3FC00AE441A700970E7C /* PhotoFeederView.m in Sources */,
-				3A2C3FBD0AE4418A00970E7C /* main.m in Sources */,
-				3A2C40420AE4432D00970E7C /* PFQueue.m in Sources */,
+				3A8F91670AE571960027DC3B /* PFProvider.m in Sources */,
+				3A8F91680AE571960027DC3B /* PFQueue.m in Sources */,
+				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
+				3A8F91790AE571C40027DC3B /* TestAppController.m in Sources */,
+				3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */,
+				3A8F92390AE578A50027DC3B /* PFText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D255ACC0486D3F9007BF209 /* PhotoFeederView.m in Sources */,
+				8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */,
 				3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */,
-				3A2C3F190AE4368100970E7C /* PFThread.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
+				3A8F923A0AE578A50027DC3B /* PFText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +313,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3A2C3FB70AE4417200970E7C /* Debug */ = {
+		3A8F91640AE571820027DC3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -290,7 +324,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
-				INSTALL_PATH = "$(HOME)/bin";
+				INFOPLIST_FILE = "TestApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -298,12 +333,13 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = clitest;
+				PRODUCT_NAME = TestApp;
+				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
-		3A2C3FB80AE4417200970E7C /* Release */ = {
+		3A8F91650AE571820027DC3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -312,7 +348,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
-				INSTALL_PATH = "$(HOME)/bin";
+				INFOPLIST_FILE = "TestApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -320,7 +357,8 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = clitest;
+				PRODUCT_NAME = TestApp;
+				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -384,11 +422,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A2C3FB60AE4417200970E7C /* Build configuration list for PBXNativeTarget "clitest" */ = {
+		3A8F91630AE571820027DC3B /* Build configuration list for PBXNativeTarget "TestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A2C3FB70AE4417200970E7C /* Debug */,
-				3A2C3FB80AE4417200970E7C /* Release */,
+				3A8F91640AE571820027DC3B /* Debug */,
+				3A8F91650AE571820027DC3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
