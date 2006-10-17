@@ -1,5 +1,8 @@
+#import "PFQueue.h"
 
 @interface PFProvider : NSObject {
+	NSConditionLock* dataLock;
+	PFQueue* buffer;
 }
 
 -(NSURL*)getURL;

@@ -56,10 +56,14 @@ NSConditionLock* imageCreatorLock;
 - (void)queueFillerThread:(id)obj
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	PFProvider* provider;
 	while(1) {
-		PFProvider* provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
+		//provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
+		//[queue put:[provider getURL]];
+		provider = (PFProvider*)[providers objectAtIndex:0];
 		[queue put:[provider getURL]];
-		//[queue put:[NSURL URLWithString:@"http://static.flickr.com/96/207296186_07c83ed2fa_b.jpg"]];
+		provider = (PFProvider*)[providers objectAtIndex:1];
+		[queue put:[provider getURL]];
 	}
 	[pool release];
 }
@@ -98,9 +102,10 @@ NSConditionLock* imageCreatorLock;
 	
 	if(!currentImage) {
 		// TODO: text: loading...
-		NSLog(@"DRAW TEXT: Loading...");
+		NSLog(@"[PhotoFeederView animateOneFrame] DRAW TEXT: Loading... (waiting for an image to become available)");
 		return;
 	}
+	NSLog(@"[PhotoFeederView animateOneFrame] Rendering frame...");
 	
 	[currentImage drawInRect:[self frame] 
 					fromRect:NSMakeRect(0,0, [currentImage size].width, [currentImage size].height) 
