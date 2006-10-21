@@ -1,6 +1,6 @@
 
 #import "PFScreenSaverView.h"
-#import "PFProvider.h"
+#import "PFFlickrProvider.h"
 #import "PFQueue.h"
 
 @implementation PFScreenSaverView
@@ -22,8 +22,8 @@
 		
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
-		[providers addObject:[[PFProvider alloc] init]];
-		[providers addObject:[[PFProvider alloc] init]];
+		[providers addObject:[[PFFlickrProvider alloc] init]];
+		[providers addObject:[[PFFlickrProvider alloc] init]];
 		
 		// Start filling the queue with images from providers
 		[NSThread detachNewThreadSelector:@selector(queueFillerThread:) toTarget:self withObject:nil];

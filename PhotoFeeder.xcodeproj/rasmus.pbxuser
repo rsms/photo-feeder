@@ -323,7 +323,7 @@
 	3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {946, 734}}";
-			sepNavSelRange = "{902, 0}";
+			sepNavSelRange = "{46, 16}";
 			sepNavVisRect = "{{0, 0}, {946, 734}}";
 		};
 	};
@@ -332,7 +332,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 162";
 		rLen = 0;
-		rLoc = 5158;
+		rLoc = 5170;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 4116;
@@ -399,7 +399,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 162";
 		rLen = 0;
-		rLoc = 5158;
+		rLoc = 5170;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 4116;
@@ -516,7 +516,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 28";
 		rLen = 0;
-		rLoc = 259;
+		rLoc = 166;
 		rType = 0;
 		vrLen = 1610;
 		vrLoc = 189;
@@ -545,7 +545,7 @@
 	3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {946, 734}}";
-			sepNavSelRange = "{274, 0}";
+			sepNavSelRange = "{179, 0}";
 			sepNavVisRect = "{{0, 0}, {946, 734}}";
 			sepNavWindowFrame = "{{15, 110}, {732, 887}}";
 		};
@@ -934,9 +934,9 @@
 	};
 	3A8F91780AE571C40027DC3B /* TestAppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {647, 462}}";
-			sepNavSelRange = "{88, 0}";
-			sepNavVisRect = "{{0, 5}, {647, 172}}";
+			sepNavIntBoundsRect = "{{0, 0}, {946, 734}}";
+			sepNavSelRange = "{211, 0}";
+			sepNavVisRect = "{{0, 0}, {946, 734}}";
 		};
 	};
 	3A8F918E0AE5721B0027DC3B /* TestApp_main.m */ = {
@@ -1171,7 +1171,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3AEF42D00AEA7A200062B848 /* PFProvider.m */;
 		rLen = 0;
-		rLoc = 9;
+		rLoc = 8;
 		rType = 1;
 	};
 	3AEF42D80AEA7A270062B848 /* PBXTextBookmark */ = {
@@ -1179,7 +1179,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = NO_DATA;
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 181;
 		rType = 0;
 		vrLen = 1672;
 		vrLoc = 115;
@@ -1229,7 +1229,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 39";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 181;
 		rType = 0;
 		vrLen = 1718;
 		vrLoc = 51;
@@ -1254,8 +1254,8 @@
 	3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {946, 840}}";
-			sepNavSelRange = "{1121, 0}";
-			sepNavVisRect = "{{0, 106}, {946, 734}}";
+			sepNavSelRange = "{1168, 0}";
+			sepNavVisRect = "{{0, 92}, {946, 734}}";
 		};
 	};
 	3AEF43460AEA81B80062B848 /* PBXTextBookmark */ = {
@@ -1273,7 +1273,7 @@
 		fRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */;
 		name = "PFThreadedProvider.m: 56";
 		rLen = 0;
-		rLoc = 1121;
+		rLoc = 1209;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 95;
@@ -1313,7 +1313,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = nil;
 		rLen = 3;
-		rLoc = 268;
+		rLoc = 175;
 		rType = 0;
 		vrLen = 91;
 		vrLoc = 0;
@@ -1332,7 +1332,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 1";
-		rLen = 281;
+		rLen = 188;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 1372;
@@ -1362,7 +1362,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 1";
-		rLen = 281;
+		rLen = 188;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 1372;
@@ -1723,7 +1723,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 12";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 188;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -1763,7 +1763,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 12";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 188;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -1793,7 +1793,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 12";
 		rLen = 0;
-		rLoc = 281;
+		rLoc = 188;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -1883,7 +1883,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 7";
 		rLen = 0;
-		rLoc = 259;
+		rLoc = 166;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -1953,7 +1953,7 @@
 		fRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */;
 		name = "PFThreadedProvider.m: 66";
 		rLen = 0;
-		rLoc = 1121;
+		rLoc = 1209;
 		rType = 0;
 		vrLen = 1493;
 		vrLoc = 418;
@@ -1963,7 +1963,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 7";
 		rLen = 13;
-		rLoc = 259;
+		rLoc = 166;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -1982,7 +1982,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */;
 		name = "PFThreadedProvider.m: addURLThread:";
-		rLen = 36;
+		rLen = 124;
 		rLoc = 1087;
 		rType = 0;
 		vrLen = 1616;
@@ -2113,7 +2113,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 7";
 		rLen = 13;
-		rLoc = 259;
+		rLoc = 166;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -2193,7 +2193,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 7";
 		rLen = 13;
-		rLoc = 259;
+		rLoc = 166;
 		rType = 0;
 		vrLen = 197;
 		vrLoc = 0;
@@ -2243,7 +2243,7 @@
 		fRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */;
 		name = "PFThreadedProvider.m: 56";
 		rLen = 0;
-		rLoc = 1121;
+		rLoc = 1209;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 95;
@@ -2273,7 +2273,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = nil;
 		rLen = 3;
-		rLoc = 268;
+		rLoc = 175;
 		rType = 0;
 		vrLen = 91;
 		vrLoc = 0;
@@ -2292,7 +2292,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "NSLog(@\"[%@ getURL] Not implemented - you called a object of class PFProvider which is abstract\", self);";
-		rLen = 106;
+		rLen = 0;
 		rLoc = 69;
 		rType = 0;
 		vrLen = 197;
@@ -2303,7 +2303,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 11";
 		rLen = 0;
-		rLoc = 272;
+		rLoc = 179;
 		rType = 0;
 		vrLen = 351;
 		vrLoc = 0;
@@ -2313,7 +2313,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 10";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 181;
 		rType = 0;
 		vrLen = 281;
 		vrLoc = 0;
@@ -2333,7 +2333,7 @@
 		fRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */;
 		name = "PFProvider.m: 10";
 		rLen = 0;
-		rLoc = 274;
+		rLoc = 181;
 		rType = 0;
 		vrLen = 281;
 		vrLoc = 0;
