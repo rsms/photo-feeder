@@ -12,5 +12,10 @@
 #define CL_WAIT 0
 
 #define HAS_DATA 1
-#define WAITING_FOR_DATA 0
+#define NO_DATA 0
 
+// Exception throwing shorthand:
+//   void throw_ex(NSString* type, NSString* message)
+//
+// http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/chapter_4_section_9.html
+#define throw_ex(type, msg) @throw [NSException exceptionWithName: type reason: msg userInfo:nil]

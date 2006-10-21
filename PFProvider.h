@@ -1,12 +1,8 @@
-#import "PFQueue.h"
 
 @interface PFProvider : NSObject {
-	NSConditionLock* dataLock;
-	PFQueue* buffer;
-	NSMutableArray* urlQueue;
 }
 
+/** Returns a URL to be used for loading and image. */
 -(NSURL*)getURL;
--(void)fillBufferThread:(id)obj;
 
 @end

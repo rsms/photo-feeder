@@ -1,7 +1,5 @@
+#import "PFThreadedProvider.h"
 
-#import "PFProvider.h"
-
-@interface PFFlickrProvider : PFProvider {
+@interface PFFlickrProvider : PFThreadedProvider {
 }
-
 @end
