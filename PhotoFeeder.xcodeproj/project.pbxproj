@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A127B550AEA7341007E60ED /* PFFlickrProvider.h */; };
+		3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
+		3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
@@ -38,6 +41,8 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		3A127B550AEA7341007E60ED /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
+		3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFlickrProvider.m; sourceTree = "<group>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProvider.h; sourceTree = "<group>"; };
 		3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProvider.m; sourceTree = "<group>"; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
@@ -115,6 +120,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3A127B550AEA7341007E60ED /* PFFlickrProvider.h */,
+				3A127B560AEA7341007E60ED /* PFFlickrProvider.m */,
 				3A2C3EF50AE4342700970E7C /* PFProvider.h */,
 				3A2C3EF60AE4342700970E7C /* PFProvider.m */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
@@ -185,6 +192,7 @@
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
 				3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */,
 				3A8F92400AE578E70027DC3B /* PFText.h in Headers */,
+				3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +293,7 @@
 				3A8F91790AE571C40027DC3B /* TestAppController.m in Sources */,
 				3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */,
 				3A8F92390AE578A50027DC3B /* PFText.m in Sources */,
+				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +305,7 @@
 				3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
 				3A8F923A0AE578A50027DC3B /* PFText.m in Sources */,
+				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

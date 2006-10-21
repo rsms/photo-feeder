@@ -159,6 +159,12 @@
 	}
 }
 
+// Speed things up
+- (BOOL) isOpaque
+{
+    return YES;
+}
+
 - (void)startAnimation
 {
 	[super startAnimation];
