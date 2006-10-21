@@ -4,8 +4,8 @@
 
 -(void)awakeFromNib
 {
-	ssv = [[PFScreenSaverView alloc] initWithFrame:[view bounds] isPreview:NO];
-	[view addSubview:ssv];
+	ssv = [[PFScreenSaverView alloc] initWithFrame:[win frame] isPreview:NO];
+	[win setContentView:ssv];
 	[ssv startAnimation];
 }
 

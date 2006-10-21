@@ -35,6 +35,14 @@
 		8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
+		CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */; };
+		CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */; };
+		CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */; };
+		CDE1F8260AEAC68000D865FD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8150AEAC68000D865FD /* OpenGL.framework */; };
+		CDE1F8270AEAC68000D865FD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8150AEAC68000D865FD /* OpenGL.framework */; };
+		CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE1F85B0AEAC93B00D865FD /* PFImage.h */; };
+		CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
+		CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +71,11 @@
 		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGLRenderer.h; sourceTree = "<group>"; };
+		CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGLRenderer.m; sourceTree = "<group>"; };
+		CDE1F8150AEAC68000D865FD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		CDE1F85B0AEAC93B00D865FD /* PFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFImage.h; sourceTree = "<group>"; };
+		CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenSaverView.h; sourceTree = "<group>"; };
 		F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFScreenSaverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +87,8 @@
 			files = (
 				3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */,
 				3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */,
+				CDE1F8260AEAC68000D865FD /* OpenGL.framework in Frameworks */,
+				CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 			files = (
 				8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */,
 				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
+				CDE1F8270AEAC68000D865FD /* OpenGL.framework in Frameworks */,
+				CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +143,15 @@
 			isa = PBXGroup;
 			children = (
 				3AEF430B0AEA7C350062B848 /* Providers */,
+				CDE1F85B0AEAC93B00D865FD /* PFImage.h */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
-				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
-				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A8F923F0AE578E70027DC3B /* PFText.h */,
 				3A8F92380AE578A50027DC3B /* PFText.m */,
+				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
+				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
+				CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */,
+				CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -139,6 +159,8 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */,
+				CDE1F8150AEAC68000D865FD /* OpenGL.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 				06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */,
 			);
@@ -209,6 +231,8 @@
 				3A8F92400AE578E70027DC3B /* PFText.h in Headers */,
 				3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */,
 				3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */,
+				CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */,
+				CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +335,7 @@
 				3A8F92390AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3AEF42FB0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
+				CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +349,7 @@
 				3A8F923A0AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3AEF42FA0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
+				CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -377,10 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -407,10 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -434,10 +451,7 @@
 					ppc,
 					i386,
 				);
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

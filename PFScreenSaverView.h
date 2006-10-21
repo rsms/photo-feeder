@@ -1,41 +1,27 @@
 
 #import <ScreenSaver/ScreenSaver.h>
+#import <QuartzCore/QuartzCore.h>
 #import "PFText.h"
 #import "PFQueue.h"
-
-/*typedef struct {
-	NSImage *image;
-	NSSize size;
-	float cropWidth;
-	float cropHeight;
-	float ratio;
-	BOOL  isWider;
-	float resizeFactor;
-} PFImageContainer;
-
-static PFImageContainer PFMakeImageContainer(NSImage* im, NSSize screenSize);
-static void PFFreeImageContainer(PFImageContainer ic);*/
+#import "PFGLRenderer.h"
+#import "PFImage.h"
 
 @interface PFScreenSaverView : ScreenSaverView {
 	PFQueue*			queue;
 	NSMutableArray*		providers;
 	NSConditionLock*	imageCreatorLock;
 	PFText*				statusText;
-	float				frameRatio;
-	NSPoint				cropPosition;
-	NSRect              myFrame;			// Cached [self frame]
+	PFGLRenderer*		renderer;
 	
-	NSImage*	nextImage;
-	NSImage*	currentImage;
-	NSSize		currImSize;
-	float		currImCropWidth;
-	float		currImCropHeight;
-	float		currImRatio;
-	BOOL		currImIsWider;
-	float		currImResizeFactor;
+	NSSize				screenSize;
+	CIContext *			context;
+	
+	PFImage				frontImage;
+	PFImage				backImage;
 }
 
 - (void)queueFillerThread:(id)obj;
 - (void)imageCreatorThread:(id)obj;
+- (PFImage)createResizedImageFromCIImage:(CIImage *)im;
 
 @end

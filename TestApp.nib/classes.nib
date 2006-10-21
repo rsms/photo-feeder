@@ -5,9 +5,10 @@
             ACTIONS = {toggleAnimation = id; }; 
             CLASS = TestAppController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {view = NSView; }; 
+            OUTLETS = {win = NSWindow; }; 
             SUPERCLASS = NSObject; 
-        }
+        }, 
+        {CLASS = TestAppSuperview; LANGUAGE = ObjC; SUPERCLASS = NSView; }
     ); 
     IBVersion = 1; 
 }

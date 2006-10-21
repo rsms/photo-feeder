@@ -5,8 +5,8 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <AppKit/AppKit.h>
+	#import <Cocoa/Cocoa.h>
 #endif
-#import <Cocoa/Cocoa.h>
 
 #define CL_RUN  1
 #define CL_WAIT 0

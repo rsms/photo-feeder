@@ -2,7 +2,7 @@
 
 @interface TestAppController : NSObject
 {
-    IBOutlet NSView *view;
+    IBOutlet NSWindow *win;
 	PFScreenSaverView* ssv;
 }
 
