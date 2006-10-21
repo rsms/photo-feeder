@@ -9,8 +9,8 @@
 			3A8F915F0AE571820027DC3B /* TestApp */,
 		);
 		breakpoints = (
-			CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:76 */,
-			CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:76 */,
+			CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:75 */,
+			CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:75 */,
 		);
 		breakpointsGroup = CD3A0B120AE9592C0024A99C /* XCBreakpointsBucket */;
 		codeSenseManager = CDD47CDE0AE68B3700471485 /* Code sense */;
@@ -380,6 +380,13 @@
 			CDBF0B120AEAE61D003C94B1 /* PBXTextBookmark */ = CDBF0B120AEAE61D003C94B1 /* PBXTextBookmark */;
 			CDBF0B130AEAE61D003C94B1 /* PBXTextBookmark */ = CDBF0B130AEAE61D003C94B1 /* PBXTextBookmark */;
 			CDBF0B140AEAE61D003C94B1 /* PBXTextBookmark */ = CDBF0B140AEAE61D003C94B1 /* PBXTextBookmark */;
+			CDBF0B1D0AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B1D0AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B1E0AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B1E0AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B1F0AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B1F0AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B200AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B200AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B210AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B210AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B220AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B220AEAE6E9003C94B1 /* PBXTextBookmark */;
+			CDBF0B230AEAE6E9003C94B1 /* PBXTextBookmark */ = CDBF0B230AEAE6E9003C94B1 /* PBXTextBookmark */;
 			CDE1F7B50AEAC17F00D865FD = CDE1F7B50AEAC17F00D865FD /* PBXTextBookmark */;
 			CDE1F7B60AEAC17F00D865FD = CDE1F7B60AEAC17F00D865FD /* PBXTextBookmark */;
 			CDE1F7B90AEAC17F00D865FD = CDE1F7B90AEAC17F00D865FD /* PBXTextBookmark */;
@@ -560,8 +567,8 @@
 		isa = XCBreakpointsBucket;
 		name = "Project Breakpoints";
 		objects = (
-			CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:76 */,
-			CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:76 */,
+			CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:75 */,
+			CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:75 */,
 		);
 	};
 	CDBF08B90AEAD81F003C94B1 /* PBXTextBookmark */ = {
@@ -576,7 +583,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 165";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 793;
 		vrLoc = 3982;
@@ -601,7 +608,7 @@
 		vrLen = 793;
 		vrLoc = 3982;
 	};
-	CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:76 */ = {
+	CDBF09070AEAD892003C94B1 /* PFScreenSaverView.m:75 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -611,7 +618,7 @@
 		fileReference = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		functionName = "-drawRect:";
 		hitCount = 1;
-		lineNumber = 76;
+		lineNumber = 75;
 		location = PFScreenSaverView.ob;
 		modificationTime = 183166129.988412;
 		state = 2;
@@ -626,7 +633,7 @@
 		vrLen = 985;
 		vrLoc = 4104;
 	};
-	CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:76 */ = {
+	CDBF090B0AEAD8BF003C94B1 /* PFScreenSaverView.m:75 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -636,7 +643,7 @@
 		fileReference = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		functionName = "-drawRect:";
 		hitCount = 1;
-		lineNumber = 76;
+		lineNumber = 75;
 		location = PFScreenSaverView.ob;
 		modificationTime = 183166129.98907;
 		state = 2;
@@ -656,7 +663,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 171";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 4259;
@@ -726,7 +733,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 186";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 4292;
@@ -736,7 +743,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 190";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 4324;
@@ -746,7 +753,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 191";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 4324;
@@ -766,7 +773,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 191";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 4324;
@@ -806,7 +813,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 191";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 4324;
@@ -863,8 +870,8 @@
 		isa = PBXTextBookmark;
 		comments = "error: 'rotation' undeclared (first use in this function)";
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
-		rLen = 1;
-		rLoc = 86;
+		rLen = 0;
+		rLoc = 74;
 		rType = 1;
 	};
 	CDBF09590AEADBD1003C94B1 /* PBXTextBookmark */ = {
@@ -872,7 +879,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 209";
 		rLen = 0;
-		rLoc = 2082;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 5427;
@@ -912,7 +919,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 52";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 421;
@@ -932,7 +939,7 @@
 		comments = "warning: incomplete implementation of class 'PFGLRenderer'";
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		rLen = 1;
-		rLoc = 71;
+		rLoc = 85;
 		rType = 1;
 	};
 	CDBF09630AEADBF9003C94B1 /* PBXTextBookmark */ = {
@@ -950,7 +957,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 1761;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 335;
 		vrLoc = 1124;
@@ -960,7 +967,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 52";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 421;
@@ -980,7 +987,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 52";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 421;
@@ -1080,7 +1087,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 204";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 5230;
@@ -1090,7 +1097,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 204";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 5230;
@@ -1168,7 +1175,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 204";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 706;
 		vrLoc = 5230;
@@ -1306,7 +1313,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 1761;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 335;
 		vrLoc = 1124;
@@ -1324,7 +1331,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 1761;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 335;
 		vrLoc = 1124;
@@ -1412,7 +1419,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: backImage";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 573;
 		vrLoc = 0;
@@ -1442,7 +1449,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: backImage";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 573;
 		vrLoc = 0;
@@ -1810,7 +1817,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 202";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 5109;
@@ -1858,7 +1865,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 202";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 5109;
@@ -1888,7 +1895,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 202";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 5109;
@@ -1948,7 +1955,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 202";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 735;
 		vrLoc = 1578;
@@ -1968,7 +1975,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 202";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 735;
 		vrLoc = 1578;
@@ -1978,7 +1985,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 52";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 1099;
 		vrLoc = 2;
@@ -2028,7 +2035,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 52";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 1099;
 		vrLoc = 2;
@@ -2178,7 +2185,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 115";
 		rLen = 0;
-		rLoc = 1875;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 2123;
@@ -2347,8 +2354,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "NSLog(@\"-- drawRect\");";
-		rLen = 24;
-		rLoc = 1851;
+		rLen = 0;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 790;
 		vrLoc = 2412;
@@ -2387,8 +2394,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "NSLog(@\"-- drawRect\");";
-		rLen = 24;
-		rLoc = 1851;
+		rLen = 0;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 790;
 		vrLoc = 2412;
@@ -2437,8 +2444,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "NSLog(@\"-- drawRect\");";
-		rLen = 24;
-		rLoc = 1851;
+		rLen = 0;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 790;
 		vrLoc = 2412;
@@ -2818,7 +2825,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 63";
 		rLen = 0;
-		rLoc = 1722;
+		rLoc = 2108;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 820;
@@ -2828,7 +2835,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 63";
 		rLen = 0;
-		rLoc = 1722;
+		rLoc = 2108;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 820;
@@ -2848,7 +2855,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 63";
 		rLen = 0;
-		rLoc = 1722;
+		rLoc = 2108;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 820;
@@ -2877,8 +2884,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 143";
-		rLen = 393;
-		rLoc = 3586;
+		rLen = 0;
+		rLoc = 2121;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 3305;
@@ -2888,7 +2895,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 63";
 		rLen = 0;
-		rLoc = 1722;
+		rLoc = 2108;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 820;
@@ -2897,8 +2904,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 143";
-		rLen = 393;
-		rLoc = 3586;
+		rLen = 0;
+		rLoc = 2121;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 3305;
@@ -2908,7 +2915,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 58";
 		rLen = 0;
-		rLoc = 1448;
+		rLoc = 1830;
 		rType = 0;
 		vrLen = 1090;
 		vrLoc = 663;
@@ -2918,7 +2925,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 70";
 		rLen = 0;
-		rLoc = 1722;
+		rLoc = 2108;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 1113;
@@ -2928,7 +2935,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1444;
+		rLoc = 1826;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 1029;
@@ -2937,8 +2944,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 143";
-		rLen = 393;
-		rLoc = 3586;
+		rLen = 0;
+		rLoc = 2121;
 		rType = 0;
 		vrLen = 1310;
 		vrLoc = 3305;
@@ -2948,7 +2955,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1444;
+		rLoc = 1826;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 1029;
@@ -2958,7 +2965,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 98";
 		rLen = 0;
-		rLoc = 2982;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 2028;
@@ -2978,7 +2985,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 88";
 		rLen = 0;
-		rLoc = 2104;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 1633;
@@ -2988,7 +2995,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1444;
+		rLoc = 1826;
 		rType = 0;
 		vrLen = 1059;
 		vrLoc = 1029;
@@ -2998,7 +3005,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 88";
 		rLen = 0;
-		rLoc = 2104;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 1633;
@@ -3008,10 +3015,80 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1444;
+		rLoc = 1826;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 912;
+	};
+	CDBF0B1D0AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
+		name = "/*";
+		rLen = 2;
+		rLoc = 1845;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 1298;
+	};
+	CDBF0B1E0AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: ciContext";
+		rLen = 0;
+		rLoc = 388;
+		rType = 0;
+		vrLen = 575;
+		vrLoc = 0;
+	};
+	CDBF0B1F0AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = ciContext;
+		rLen = 9;
+		rLoc = 1942;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 1821;
+	};
+	CDBF0B200AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
+		name = "/*";
+		rLen = 2;
+		rLoc = 1845;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 1298;
+	};
+	CDBF0B210AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = ciContext;
+		rLen = 9;
+		rLoc = 1942;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 1821;
+	};
+	CDBF0B220AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: ciContext";
+		rLen = 0;
+		rLoc = 388;
+		rType = 0;
+		vrLen = 575;
+		vrLoc = 0;
+	};
+	CDBF0B230AEAE6E9003C94B1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 103";
+		rLen = 0;
+		rLoc = 2864;
+		rType = 0;
+		vrLen = 1157;
+		vrLoc = 1821;
 	};
 	CDD47CC90AE68B2200471485 /* TestApp */ = {
 		isa = PBXExecutable;
@@ -3117,9 +3194,9 @@
 	};
 	CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {728, 1022}}";
-			sepNavSelRange = "{1444, 0}";
-			sepNavVisRect = "{{0, 493}, {728, 529}}";
+			sepNavIntBoundsRect = "{{0, 0}, {728, 1218}}";
+			sepNavSelRange = "{1845, 2}";
+			sepNavVisRect = "{{0, 689}, {728, 529}}";
 		};
 	};
 	CDE1F8370AEAC6B400D865FD /* PBXTextBookmark */ = {
@@ -3334,7 +3411,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: prepareOpenGL";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 515;
@@ -3354,7 +3431,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: prepareOpenGL";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 515;
@@ -3384,7 +3461,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 515;
@@ -3404,7 +3481,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 56";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 515;
@@ -3434,7 +3511,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: prepareOpenGL";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 592;
@@ -3484,7 +3561,7 @@
 		fRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */;
 		name = "PFGLRenderer.m: 65";
 		rLen = 0;
-		rLoc = 1726;
+		rLoc = 2112;
 		rType = 0;
 		vrLen = 554;
 		vrLoc = 824;
@@ -3544,7 +3621,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: backImage";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 573;
 		vrLoc = 0;
@@ -3574,7 +3651,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 167";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 4105;
@@ -3604,7 +3681,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 167";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 4105;
@@ -3624,7 +3701,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 165";
 		rLen = 0;
-		rLoc = 1820;
+		rLoc = 1819;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 3949;
@@ -3632,15 +3709,15 @@
 	F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {728, 529}}";
-			sepNavSelRange = "{436, 0}";
+			sepNavSelRange = "{388, 0}";
 			sepNavVisRect = "{{0, 0}, {728, 529}}";
 		};
 	};
 	F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {884, 4312}}";
-			sepNavSelRange = "{2104, 0}";
-			sepNavVisRect = "{{0, 919}, {728, 529}}";
+			sepNavIntBoundsRect = "{{0, 0}, {884, 3290}}";
+			sepNavSelRange = "{2864, 0}";
+			sepNavVisRect = "{{0, 1064}, {728, 529}}";
 		};
 	};
 }

@@ -73,89 +73,16 @@
 }
 
 
-- (void)drawRect:(NSRect)rect
-{
-	NSLog(@"-- drawRect");
-	[super drawRect:rect];
-	
-	[[renderer openGLContext] makeCurrentContext];
-	
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ); 
-	glLoadIdentity(); 
-	
-	glTranslatef( -1.5f, 0.0f, -6.0f );
-	glRotatef( 1.0, 0.0f, 1.0f, 0.0f );
-	
-	glBegin( GL_TRIANGLES );
-	{
-		glColor3f( 1.0f, 0.0f, 0.0f );
-		glVertex2f( 0.0f,  1.0f );
-		glColor3f( 0.0f, 1.0f, 0.0f ); 
-		glVertex2f( -1.0f, -1.0f );
-		glColor3f( 0.0f, 0.0f, 1.0f ); 
-		glVertex2f( 1.0f, -1.0f ); 
-		
-		glColor3f( 1.0f, 0.0f, 0.0f ); 
-		glVertex3f( 0.0f, 1.0f, 0.0f );  
-		glColor3f( 0.0f, 0.0f, 1.0f ); 
-		glVertex3f( 1.0f, -1.0f, 1.0f ); 
-		glColor3f( 0.0f, 1.0f, 0.0f );
-		glVertex3f( 1.0f, -1.0f, -1.0f );
-		
-		glColor3f( 1.0f, 0.0f, 0.0f );
-		glVertex3f( 0.0f, 1.0f, 0.0f );  
-		glColor3f( 0.0f, 1.0f, 0.0f );     
-		glVertex3f( 1.0f, -1.0f, -1.0f );        
-		glColor3f( 0.0f, 0.0f, 1.0f );        
-		glVertex3f( -1.0f, -1.0f, -1.0f );  
-		
-		glColor3f( 1.0f, 0.0f, 0.0f );
-		glVertex3f( 0.0f, 1.0f, 0.0f );
-		glColor3f( 0.0f, 0.0f, 1.0f );
-		glVertex3f( -1.0f, -1.0f, -1.0f );
-		glColor3f( 0.0f, 1.0f, 0.0f );
-		glVertex3f( -1.0f, -1.0f, 1.0f );  
-	}
-	glEnd();
-	
-	glFlush();
-}
 
-/*- (void)drawRect:(NSRect)rectangle
+- (void)drawRect:(NSRect)rectangle
 {
     [[renderer openGLContext] makeCurrentContext];
-	context = [renderer openGLContext];
 	
-	if (context == nil)
+	if (ciContext == nil)
     {
-		NSOpenGLPixelFormat *pf = [renderer pixelFormat];
-		if (pf == nil)
-			pf = [[renderer class] defaultPixelFormat];
-		
-		context = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
-										pixelFormat: [pf CGLPixelFormatObj] 
+		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
+										pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
 											options: nil] retain];
-    }
-	
-    if([renderer viewHasBeenReshaped])
-    {
-		// Reset the views coordinate system when the view has been resized (at init in our case)
-		NSRect  visibleRect = [self visibleRect];
-		
-		glViewport(0, 0, visibleRect.size.width, visibleRect.size.height);
-		
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		glOrtho(visibleRect.origin.x,
-				visibleRect.origin.x + visibleRect.size.width,
-				visibleRect.origin.y,
-				visibleRect.origin.y + visibleRect.size.height,
-				-1, 1);
-		
-		glMatrixMode(GL_MODELVIEW);
-		glLoadIdentity();
-		
-		[renderer setViewHasBeenReshaped:NO];
     }
 	
     // Fill the view black between each rendered frame (overwriting the old image)
@@ -173,12 +100,12 @@
 	
     CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y, rectangle.size.width, rectangle.size.height);
 	
-	[context drawImage: frontImage.im
-			   atPoint: CGPointZero
-			  fromRect: thumbFrame];
+	[ciContext drawImage: frontImage.im
+				 atPoint: CGPointZero
+				fromRect: thumbFrame];
     
     glFlush();
-}*/
+}
 
 
 

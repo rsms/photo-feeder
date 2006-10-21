@@ -54,14 +54,28 @@
 	
 	[[self openGLContext] makeCurrentContext];
 	
+	NSRect  visibleRect = [self visibleRect];
+	glViewport(0, 0, visibleRect.size.width, visibleRect.size.height);
+	
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(visibleRect.origin.x,
+			visibleRect.origin.x + visibleRect.size.width,
+			visibleRect.origin.y,
+			visibleRect.origin.y + visibleRect.size.height,
+			-1, 1);
+	
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	
 	
 	// Reshape 3D
-	glViewport( 0, 0, (GLsizei)newSize.width, (GLsizei)newSize.height );
+	/*glViewport( 0, 0, (GLsizei)newSize.width, (GLsizei)newSize.height );
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 	gluPerspective( 45.0f, (GLfloat)newSize.width / (GLfloat)newSize.height, 0.1f, 100.0f );
 	glMatrixMode( GL_MODELVIEW );
-	glLoadIdentity();
+	glLoadIdentity();*/
 }
 
 

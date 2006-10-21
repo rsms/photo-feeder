@@ -14,7 +14,7 @@
 	PFGLRenderer*		renderer;
 	
 	NSSize				screenSize;
-	CIContext *			context;
+	CIContext *			ciContext;
 	
 	PFImage				frontImage;
 	PFImage				backImage;
