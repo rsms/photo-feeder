@@ -18,6 +18,8 @@
 	
 	PFImage				frontImage;
 	PFImage				backImage;
+	
+	PFConfigureSheetController* configureSheetController;
 }
 
 - (void)queueFillerThread:(id)obj;
