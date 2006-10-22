@@ -48,8 +48,23 @@
 		
 		// Set frame rate
         [self setAnimationTimeInterval: 1/30.0];
+		
+		
+		/*[NSThread detachNewThreadSelector: @selector(animationTriggerThread:)
+								 toTarget: self
+							   withObject: nil];*/
     }
     return self;
+}
+
+- (void)animationTriggerThread:(id)o
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	while(1) {
+		[self animateOneFrame];
+		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0/30.0]];
+	}
+	[pool release];
 }
 
 - (void)dealloc
@@ -68,10 +83,6 @@
 
 - (void)animateOneFrame
 {
-	// WHEN I WANT NEW SHIT
-	// [imageCreatorLock lockWhenCondition:CL_WAIT];
-	// [imageCreatorLock unlockWithCondition:CL_RUN];
-	
 	[self setNeedsDisplay:YES];
 }
 
@@ -79,10 +90,20 @@
 
 - (void)drawRect:(NSRect)rectangle
 {
+	// Draw Not Loading while we are waiting for an image
+	if(!PFImageIsValid(frontImage)) {
+		NSSize statusTextSize = [[statusText attrString] size];
+		[[NSColor blackColor] set];
+		[NSBezierPath fillRect:[self frame]];
+		[statusText drawAt:NSMakePoint((screenSize.width/2)-(statusTextSize.width/2), 
+									   (screenSize.height/2)-(statusTextSize.height/2))];
+		return;
+	}
+	
+	// Draw the motherfucker
     [[renderer openGLContext] makeCurrentContext];
 	
-	if (ciContext == nil)
-    {
+	if (ciContext == nil) {
 		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
 										pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
 											options: nil] retain];
@@ -96,22 +117,25 @@
 	glVertex2f (rectangle.origin.x + rectangle.size.width, rectangle.origin.y + rectangle.size.height);
 	glVertex2f (rectangle.origin.x, rectangle.origin.y + rectangle.size.height);
     glEnd();
-	
+
 	// Update the image being shown
-	// TODO: Increment position
-	if(frontImage.movingHorizontally)
-		frontImage.position.x += 0.5;
-	
-	else
-		frontImage.position.y += 0.5;
-	
-    CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y + frontImage.position.y, rectangle.size.width, rectangle.size.height);
+	CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y + frontImage.position.y, rectangle.size.width, rectangle.size.height);
 	
 	[ciContext drawImage: frontImage.im
 				 atPoint: CGPointZero
 				fromRect: thumbFrame];
-    
-    glFlush();
+	
+	if(frontImage.movingType == PFMovingTypeHorizontally)
+		frontImage.position.x += frontImage.stepSize;
+	else if(frontImage.movingType == PFMovingTypeVertically)
+		frontImage.position.y += frontImage.stepSize;
+
+	if(!frontImage.stepsLeft--) {
+		[imageCreatorLock lock];
+		[imageCreatorLock unlockWithCondition: CL_RUN];
+	}
+
+	glFlush();
 }
 
 
@@ -124,7 +148,6 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	PFProvider* provider;
 	while(1) {
-		/* TODO remove this --> */ //sleep(2);
 		provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
 		[queue put:[provider getURL]];
 		/*provider = (PFProvider*)[providers objectAtIndex:0];
@@ -142,15 +165,18 @@
 	CGSize imageSize = [im extent].size;
 	float imageAspectRatio = imageSize.width / imageSize.height;
 	float resizeRate = 0;
-	BOOL movingHorizontally = NO;
+
+	PFMovingType movingType = PFMovingTypeNone;
+	float pixelsScreenCantShow = 0;
 	
 	// Rescale image so that it fits for sliding horizontally or vertically
 	if(imageAspectRatio > screenAspectRatio)
 	{
 		NSLog(@"Image is in landscape format");
 		resizeRate = screenSize.height / imageSize.height;
-		
-		movingHorizontally = YES;
+
+		pixelsScreenCantShow = (imageSize.width * resizeRate) - screenSize.width;
+		movingType = (pixelsScreenCantShow != 0) ? PFMovingTypeHorizontally : PFMovingTypeNone;
 	}
 	
 	else if(imageAspectRatio <= screenAspectRatio)
@@ -158,20 +184,18 @@
 		NSLog(@"Image is in portrait format");
 		
 		resizeRate = screenSize.width / imageSize.width;
-		if( (imageSize.width > screenSize.width) && (resizeRate < 1.0) )
-		{
-			NSLog(@"Screen narrower than image, and we need to scale down image");
-		}
-		
-		else if( (imageSize.width < screenSize.width) && (resizeRate > 1.0) )
-		{
-			NSLog(@"Screen wider than image, and we need to scale up image");
-		}
+
+		pixelsScreenCantShow = (imageSize.height * resizeRate) - screenSize.height;
+		movingType = (pixelsScreenCantShow != 0) ? PFMovingTypeVertically : PFMovingTypeNone;
 	}
 	
 	NSLog(@"Doing resize a la: %f", resizeRate);
-	PFImage i = PFImageCreate([im imageByApplyingTransform: CGAffineTransformMakeScale(resizeRate, resizeRate)]);
-	i.movingHorizontally = movingHorizontally;
+	PFImage i = PFImageCreate([im imageByApplyingTransform: CGAffineTransformMakeScale(resizeRate, resizeRate)],
+							  movingType,
+							  pixelsScreenCantShow,
+							  5.0,
+							  1.0 / [self animationTimeInterval]
+							  );
 	NSLog(@"Resized to: %f x %f", i.size.width, i.size.height);
 	return i;
 }
@@ -229,7 +253,7 @@
     return YES;
 }
 
-- (void)setFrameSize:(NSSize)newSize { 
+- (void)setFrameSize:(NSSize)newSize {
 	[renderer setFrameSize: newSize];
 }
 

@@ -1,16 +1,34 @@
 #import <QuartzCore/QuartzCore.h>
 
+enum {
+	PFMovingTypeHorizontally,
+	PFMovingTypeVertically,
+	PFMovingTypeNone
+};
+
+typedef int PFMovingType;
+
 typedef struct {
-	CIImage *	im;
-	CGSize		size;
-	CGPoint		position;
-	BOOL		movingHorizontally;
+	CIImage *		im;
+	CGSize			size;
+	CGPoint			position;
+	PFMovingType	movingType;
+	float			stepSize;
+	int				stepsLeft;
 } PFImage;
 
-static PFImage PFImageCreate(CIImage *im) {
+static PFImage PFImageCreate(CIImage *im,
+							 PFMovingType type,
+							 float pixelsScreenCantShow,
+							 float timeVisible,
+							 float basedOnFPS) {
 	PFImage i;
 	i.im = [im retain];
 	i.size = [i.im extent].size;
+	i.movingType = type;
+	i.stepSize = 1.0 / ((timeVisible * basedOnFPS) / (int)pixelsScreenCantShow);
+	i.stepsLeft = timeVisible * basedOnFPS;
+	
 	return i;
 }
 
