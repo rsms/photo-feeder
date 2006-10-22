@@ -7,14 +7,10 @@
 
 @implementation PFScreenSaverView
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
-{
-    self = [super initWithFrame:frame isPreview:isPreview];
-    if (self) {
+- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
+    if(self = ([super initWithFrame:frame isPreview:isPreview])) {
 		NSLog(@"[PhotoFeederView initWithFrame...]");
-		
-		screenSize = [self bounds].size;
-		
+
 		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:20];
 				
@@ -24,14 +20,18 @@
 		//[providers addObject:[[PFFlickrProvider alloc] init]];
 		
 		// Start filling the queue with images from providers
-		[NSThread detachNewThreadSelector:@selector(queueFillerThread:) toTarget:self withObject:nil];
+		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
+								 toTarget: self
+							   withObject: nil];
 		
 		// Start creating next and current image from queue URLs
 		imageCreatorLock = [[NSConditionLock alloc] initWithCondition:CL_RUN];
-		[NSThread detachNewThreadSelector:@selector(imageCreatorThread:) toTarget:self withObject:nil];
+		[NSThread detachNewThreadSelector: @selector(imageCreatorThread:)
+								 toTarget: self
+							   withObject: nil];
 		
 		// Create message text
-		statusText = [[PFText alloc] initWithText:@"Loading..."];
+		statusText = [[PFText alloc] initWithText: @"Loading..."];
 		
 		// Setup renderer
 		renderer = [PFGLRenderer newRenderer];
@@ -40,11 +40,14 @@
 			[self autorelease];
 			return nil;
 		}
-		[self addSubview:renderer]; 
+		[self addSubview: renderer]; 
 		[renderer prepare];
 		
+		// Get the screen size to be able to scale images properly
+		screenSize = [self bounds].size;
+		
 		// Set frame rate
-        [self setAnimationTimeInterval:1/30.0];
+        [self setAnimationTimeInterval: 1/30.0];
     }
     return self;
 }
@@ -96,9 +99,13 @@
 	
 	// Update the image being shown
 	// TODO: Increment position
-	frontImage.position.x += 0.5;
+	if(frontImage.movingHorizontally)
+		frontImage.position.x += 0.5;
 	
-    CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y, rectangle.size.width, rectangle.size.height);
+	else
+		frontImage.position.y += 0.5;
+	
+    CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y + frontImage.position.y, rectangle.size.width, rectangle.size.height);
 	
 	[ciContext drawImage: frontImage.im
 				 atPoint: CGPointZero
@@ -135,12 +142,15 @@
 	CGSize imageSize = [im extent].size;
 	float imageAspectRatio = imageSize.width / imageSize.height;
 	float resizeRate = 0;
+	BOOL movingHorizontally = NO;
 	
 	// Rescale image so that it fits for sliding horizontally or vertically
 	if(imageAspectRatio > screenAspectRatio)
 	{
 		NSLog(@"Image is in landscape format");
 		resizeRate = screenSize.height / imageSize.height;
+		
+		movingHorizontally = YES;
 	}
 	
 	else if(imageAspectRatio <= screenAspectRatio)
@@ -151,7 +161,6 @@
 		if( (imageSize.width > screenSize.width) && (resizeRate < 1.0) )
 		{
 			NSLog(@"Screen narrower than image, and we need to scale down image");
-			//resizeRate = 1 / resizeRate;
 		}
 		
 		else if( (imageSize.width < screenSize.width) && (resizeRate > 1.0) )
@@ -162,6 +171,7 @@
 	
 	NSLog(@"Doing resize a la: %f", resizeRate);
 	PFImage i = PFImageCreate([im imageByApplyingTransform: CGAffineTransformMakeScale(resizeRate, resizeRate)]);
+	i.movingHorizontally = movingHorizontally;
 	NSLog(@"Resized to: %f x %f", i.size.width, i.size.height);
 	return i;
 }
@@ -192,43 +202,34 @@
 		else
 			[imageCreatorLock unlock];
 	}
-	
-	
+		
 	[pool release];
-	
-	
 }
 
+#pragma mark -- Etc...
 
+- (NSWindow*)configureSheet {
+    return nil;
+}
 
-#pragma mark -- Etc
-
-- (void)setFrameSize:(NSSize)newSize { 
-	[renderer setFrameSize:newSize];
+- (BOOL)hasConfigureSheet {
+    return NO;
 }
 
 - (BOOL) isOpaque {
     return YES;
 }
 
-- (void)startAnimation
-{
+- (void)setFrameSize:(NSSize)newSize { 
+	[renderer setFrameSize: newSize];
+}
+
+- (void)startAnimation {
 	[super startAnimation];
 }
 
-- (void)stopAnimation
-{
+- (void)stopAnimation {
 	[super stopAnimation];
-}
-
-- (BOOL)hasConfigureSheet
-{
-    return NO;
-}
-
-- (NSWindow*)configureSheet
-{
-    return nil;
 }
 
 @end
