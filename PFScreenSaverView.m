@@ -2,7 +2,7 @@
 #import "PFScreenSaverView.h"
 #import "PFFlickrProvider.h"
 #import "PFQueue.h"
-
+#import "PFConfigureSheetController.h"
 
 
 @implementation PFScreenSaverView
@@ -208,12 +208,21 @@
 
 #pragma mark -- Etc...
 
-- (NSWindow*)configureSheet {
-    return nil;
+- (BOOL)hasConfigureSheet {
+    return YES;
 }
 
-- (BOOL)hasConfigureSheet {
-    return NO;
+- (NSWindow*)configureSheet
+{
+	NSLog(@"[%@ configureSheet]", self);
+    if(configureSheetController == nil)
+		configureSheetController = [[PFConfigureSheetController alloc] initWithWindowNibName: @"ConfigureSheet" 
+																		  withReferenceToSSV: self];
+	
+	NSWindow* win = [configureSheetController window];
+	if(win == nil)
+		NSLog(@"[%@ configureSheet]: win == nil", self);
+	return win;
 }
 
 - (BOOL) isOpaque {

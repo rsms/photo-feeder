@@ -14,6 +14,11 @@
 		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C403F0AE4432D00970E7C /* PFQueue.h */; };
+		3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
+		3A674FC00AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
+		3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */; };
+		3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
+		3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
 		3A8F91670AE571960027DC3B /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A8F91680AE571960027DC3B /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
@@ -58,8 +63,10 @@
 		3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProvider.m; sourceTree = "<group>"; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
 		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFQueue.h; sourceTree = "<group>"; };
+		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
+		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
+		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
 		3A8F91600AE571820027DC3B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A8F91620AE571820027DC3B /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		3A8F91750AE571B30027DC3B /* TestApp.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestApp.nib; sourceTree = "<group>"; };
 		3A8F91770AE571C40027DC3B /* TestAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppController.h; sourceTree = "<group>"; };
 		3A8F91780AE571C40027DC3B /* TestAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppController.m; sourceTree = "<group>"; };
@@ -115,8 +122,6 @@
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				3A8F91620AE571820027DC3B /* TestApp-Info.plist */,
-				3A8F91750AE571B30027DC3B /* TestApp.nib */,
 			);
 			name = PhotoFeeder;
 			sourceTree = "<group>";
@@ -152,6 +157,8 @@
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */,
 				CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */,
+				3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */,
+				3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -196,10 +203,12 @@
 		3A8F917E0AE571E30027DC3B /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */,
 				3A8F918E0AE5721B0027DC3B /* TestApp_main.m */,
 				3A8F91770AE571C40027DC3B /* TestAppController.h */,
 				3A8F91780AE571C40027DC3B /* TestAppController.m */,
+				3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */,
+				3A8F91750AE571B30027DC3B /* TestApp.nib */,
+				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 			);
 			name = TestApp;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 				3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */,
 				CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */,
 				CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */,
+				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +309,7 @@
 			files = (
 				3A8F91760AE571B30027DC3B /* TestApp.nib in Resources */,
 				3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */,
+				3A674FC00AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
+				3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +348,7 @@
 				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3AEF42FB0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
 				CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
+				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +363,7 @@
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3AEF42FA0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
 				CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
+				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
