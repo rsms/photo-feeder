@@ -4,6 +4,7 @@ typedef struct {
 	CIImage *	im;
 	CGSize		size;
 	CGPoint		position;
+	BOOL		movingHorizontally;
 } PFImage;
 
 static PFImage PFImageCreate(CIImage *im) {
