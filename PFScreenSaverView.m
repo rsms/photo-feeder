@@ -47,25 +47,14 @@
 		screenSize = [self bounds].size;
 		
 		// Set frame rate
-        [self setAnimationTimeInterval: 1/30.0];
-		
-		
-		/*[NSThread detachNewThreadSelector: @selector(animationTriggerThread:)
-								 toTarget: self
-							   withObject: nil];*/
+		float fps = [[NSUserDefaults standardUserDefaults] floatForKey:@"rendererFPS"];
+		if(fps == 0)
+			fps = 60.0;
+        [self setAnimationTimeInterval: 1/fps];
     }
     return self;
 }
 
-- (void)animationTriggerThread:(id)o
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	while(1) {
-		[self animateOneFrame];
-		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0/30.0]];
-	}
-	[pool release];
-}
 
 - (void)dealloc
 {
@@ -216,7 +205,7 @@
 		// Create new back image
 		NSURL* url = (NSURL*)[queue take];
 		NSLog(@"[PhotoFeederView imageCreatorThread] got URL: %@", url);
-		backImage = [self createResizedImageFromCIImage: [CIImage imageWithContentsOfURL: url]];
+		backImage = [self createResizedImageFromCIImage: [CIImage imageWithContentsOfURL:url]];
 		
 		// Throw away old front image
 		PFImageRelease(oldFrontImage);

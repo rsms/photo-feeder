@@ -1,8 +1,14 @@
-#import "PFThreadedProvider.h"
-//#import <ObjectiveFlickr/ObjectiveFlickr.h>
+#import "PFProvider.h"
+#import "PFQueue.h"
 
-@interface PFFlickrProvider : PFThreadedProvider {
-	//OFFlickrContext*    flickrContext;
-	//OFFlickrInvocation* flickrInvoc;
+@interface PFFlickrProvider : PFProvider {
+	PFQueue*  urls;
 }
+
+- (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;
+- (NSXMLElement*)callMethod:(NSString*)method params:(NSString*)params;
+
+- (void)addURLsThread:(id)o;
+- (void)addURLs;
+
 @end
