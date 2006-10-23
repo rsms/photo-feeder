@@ -66,7 +66,7 @@
 		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
 		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
 		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
-		3A8F91600AE571820027DC3B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8F91600AE571820027DC3B /* TestApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F91750AE571B30027DC3B /* TestApp.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestApp.nib; sourceTree = "<group>"; };
 		3A8F91770AE571C40027DC3B /* TestAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppController.h; sourceTree = "<group>"; };
 		3A8F91780AE571C40027DC3B /* TestAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppController.m; sourceTree = "<group>"; };
