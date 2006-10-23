@@ -125,6 +125,8 @@
 	}
 
 	glFlush();
+	
+	// TODO: Additional "I'm loading image from service" if image isn't in cache
 }
 
 
