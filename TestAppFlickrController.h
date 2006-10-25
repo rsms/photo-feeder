@@ -1,0 +1,5 @@
+
+@interface TestAppFlickrController : NSObject
+{
+}
+@end
