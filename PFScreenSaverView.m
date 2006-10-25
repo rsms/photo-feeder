@@ -107,13 +107,10 @@
 	glVertex2f (rectangle.origin.x, rectangle.origin.y + rectangle.size.height);
     glEnd();
 
-	// Update the image being shown
-	CGRect thumbFrame = CGRectMake(rectangle.origin.x + frontImage.position.x, rectangle.origin.y + frontImage.position.y, rectangle.size.width, rectangle.size.height);
-	
-	[ciContext drawImage: frontImage.im
+	[ciContext drawImage: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
 				 atPoint: CGPointZero
-				fromRect: thumbFrame];
-	
+				fromRect: CGRectMake([self bounds].origin.x, [self bounds].origin.y, [self bounds].size.width, [self bounds].size.height)];
+		
 	if(frontImage.movingType == PFMovingTypeHorizontally)
 		frontImage.position.x += frontImage.stepSize;
 	else if(frontImage.movingType == PFMovingTypeVertically)
@@ -187,6 +184,7 @@
 							  5.0,
 							  1.0 / [self animationTimeInterval]
 							  );
+	
 	NSLog(@"Resized to: %f x %f", i.size.width, i.size.height);
 	return i;
 }
