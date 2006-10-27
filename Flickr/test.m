@@ -1,6 +1,5 @@
 #import <Flickr/Flickr.h>
 
-static int test_status = 0;
 static int test() {
 	
 	FlickrUser* u;
@@ -33,12 +32,13 @@ static int test() {
 int main(int argc, char *argv[]) {
 	NSAutoreleasePool* ap = [NSAutoreleasePool new];
 	@try {
-		test_status = test();
+		int s = test();
+		[ap release];
 	}
 	@catch(NSException* e) {
-		test_status = 2;
 		NSLog(@"Failed with exception: %@", e);
+		[ap release];
+		return 2;
 	}
-	[ap release];
-	return test_status;
+	return 0;
 }
