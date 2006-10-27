@@ -31,14 +31,14 @@ static int test() {
 
 int main(int argc, char *argv[]) {
 	NSAutoreleasePool* ap = [NSAutoreleasePool new];
+	int status = 0;
 	@try {
-		int s = test();
-		[ap release];
+		status = test();
 	}
 	@catch(NSException* e) {
 		NSLog(@"Failed with exception: %@", e);
-		[ap release];
-		return 2;
+		status = 2;
 	}
-	return 0;
+	[ap release];
+	return status;
 }
