@@ -1,0 +1,14 @@
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <AppKit/AppKit.h>
+	#import <Cocoa/Cocoa.h>
+#endif
+
+// Debug
+#ifdef _DEBUG
+	#define IFDEBUG(x) x
+	#define DLog(f, ... ) NSLog(f, __VA_ARGS__)
+#else
+	#define IFDEBUG(x)
+	#define DLog(f, ... )
+#endif

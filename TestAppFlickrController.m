@@ -1,7 +1,5 @@
 #import "TestAppFlickrController.h"
-
-#import "FlickrContext.h"
-#import "FlickrUser.h"
+#import <Flickr/Flickr.h>
 
 @implementation TestAppFlickrController
 

@@ -32,7 +32,7 @@ static FlickrContext* _default = nil;
 
 - (FlickrResponse*) callMethod:(NSString*)method arguments:(NSString*)args
 {
-	DLog(@"[%@ callMethod] %@ < %@", self, method, args);
+	DLog(@"[%@ callMethod] %@ ( %@ )", self, method, args);
 	
 	NSURL* url;
 	NSXMLElement* d;

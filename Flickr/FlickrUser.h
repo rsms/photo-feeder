@@ -34,9 +34,11 @@
 - (NSDate*)   firstDateTaken;
 - (int)       numberOfPhotos;
 
+/*
 - (NSArray*) favoritePhotos; // flickr.favorites.getList
 - (NSArray*) publicPhotos;   // flickr.people.getPublicPhotos
 - (NSArray*) publicGroups;   // flickr.people.getPublicGroups
 - (NSArray*) contactsPhotos; // flickr.photos.getContactsPhotos (auth r)
+*/
 
 @end
