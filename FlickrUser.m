@@ -11,14 +11,13 @@
 
 + (FlickrUser*) userWithId:(NSString*)uid context:(FlickrContext*)ctx
 {
-	return [[FlickrUser alloc] initWithId: uid
-									 name: nil
-								  context: ctx];
+	return [[FlickrUser alloc] initWithContext: ctx
+										   uid: uid
+										  name: nil];
 }
 
-
-+ (FlickrUser*) userWithName:(NSString*)name {
-	return [FlickrUser userWithName:name context:[FlickrContext defaultContext]];
++ (FlickrUser*) userWithId:(NSString*)uid {
+	return [FlickrUser userWithId:uid context:[FlickrContext defaultContext]];
 }
 
 
@@ -28,30 +27,34 @@
 								arguments: [NSString stringWithFormat:@"username=%@", name]];
 	// Errors?
 	if([rsp errorCode]) {
-		if([rsp errorCode] != 1) {
-			// 1 = user not found, which we don't need to log
+		if([rsp errorCode] != 1) // 1 = user not found, which we don't need to log
 			NSLog(@"[FlickrUser userWithName] failed with response error %d: %@", [rsp errorCode], [rsp errorMessage]);
-		}
 		return nil;
 	}
 	
 	NSXMLElement* u = (NSXMLElement*)[[rsp dom] childAtIndex:0];
 	NSString* nam = [(NSXMLElement*)[(NSXMLElement*)[u childAtIndex:0] childAtIndex:0] stringValue];
 	
-	return [[FlickrUser alloc] initWithId: [[u attributeForName:@"id"] stringValue] 
-									 name: nam
-								  context: ctx];
+	return [[FlickrUser alloc] initWithContext: ctx
+										   uid: [[u attributeForName:@"id"] stringValue] 
+										  name: nam];
+}
+
++ (FlickrUser*) userWithName:(NSString*)name {
+	return [FlickrUser userWithName:name context:[FlickrContext defaultContext]];
 }
 
 
 
 #pragma mark -- Public instance methods
 
-- (id) initWithId:(NSString*)i name:(NSString*)n context:(FlickrContext*)context
+- (id) initWithContext:(FlickrContext*)context uid:(NSString*)i name:(NSString*)n
 {
 	ctx = [context retain];
 	uid = [i retain];
-	name = [n retain];
+	numberOfPhotos = -1;
+	if(n)
+		name = [n retain];
 	return self;
 }
 
@@ -59,16 +62,26 @@
 	return uid;
 }
 
-- (NSString*)name {
-	if(!name)
-		[self _fetchInfo];
-	return name;
+// Convenience macro generating a get method for 
+// fetchInfo depended properties
+#define FETCHINFO_PROP_GET(_ret,_prop) \
+- (_ret)_prop { \
+	if(!_prop) [self _fetchInfo]; \
+	return _prop; \
 }
 
-- (NSString*)realName {
-	if(!info)
-		[self _fetchInfo];
-	return (NSString*)[info objectForKey:@"realname"];
+FETCHINFO_PROP_GET(NSString*, name);
+FETCHINFO_PROP_GET(NSString*, realName);
+FETCHINFO_PROP_GET(NSString*, location);
+FETCHINFO_PROP_GET(NSURL*, photosURL);
+FETCHINFO_PROP_GET(NSURL*, profileURL);
+FETCHINFO_PROP_GET(NSURL*, mobileURL);
+FETCHINFO_PROP_GET(NSDate*, firstDateUploaded);
+FETCHINFO_PROP_GET(NSDate*, firstDateTaken);
+
+- (int) numberOfPhotos {
+	if(numberOfPhotos == -1) [self _fetchInfo];
+	return numberOfPhotos;
 }
 
 
@@ -77,7 +90,14 @@
 
 - (void) _fetchInfo
 {
+	if(_hasFetchedInfo)
+		return;
+	
 	DLog(@"[%@ _fetchInfo]", self);
+	
+	// Mark as done
+	_hasFetchedInfo = YES;
+	
 	FlickrResponse* rsp;
 	rsp = [ctx callMethod: @"flickr.people.getInfo"
 				arguments: [NSString stringWithFormat:@"user_id=%@", uid]];
@@ -91,17 +111,36 @@
 		return;
 	}
 	
+	// Get outer element
 	NSXMLElement* u;
-	
-	info = [NSMutableDictionary dictionaryWithCapacity:11];
 	u = (NSXMLElement*)[[rsp dom] childAtIndex:0];
 	
-	name = [[[[u elementsForName:@"username"] objectAtIndex:0] childAtIndex:0] stringValue];
+	// Convenience macro for getting the child node value of the first found element with name
+#define FETCHINFO_ELEMENTVAL(_n,name) \
+	[[[[_n elementsForName:name] objectAtIndex:0] childAtIndex:0] stringValue]
 	
-	NSLog(@"name = %@", name);
-	//NSString* nam = [(NSXMLElement*)[(NSXMLElement*)[u childAtIndex:0] childAtIndex:0] stringValue];
-	
-	
+	@try {
+		// Extract info
+		name = [FETCHINFO_ELEMENTVAL(u,@"username") retain];
+		realName = [FETCHINFO_ELEMENTVAL(u,@"realname") retain];
+		location = [FETCHINFO_ELEMENTVAL(u,@"location") retain];
+		photosURL = [[NSURL URLWithString:FETCHINFO_ELEMENTVAL(u,@"photosurl")] retain];
+		profileURL = [[NSURL URLWithString:FETCHINFO_ELEMENTVAL(u,@"profileurl")] retain];
+		mobileURL = [[NSURL URLWithString:FETCHINFO_ELEMENTVAL(u,@"mobileurl")] retain];
+		
+		// Photos node
+		NSXMLElement* photos = (NSXMLElement*)[[u elementsForName:@"photos"] objectAtIndex:0];
+		
+		// Dates
+		firstDateUploaded = [[NSDate dateWithTimeIntervalSince1970:[FETCHINFO_ELEMENTVAL(photos,@"firstdate") intValue]] retain];
+		firstDateTaken = [[NSDate dateWithString:[FETCHINFO_ELEMENTVAL(photos,@"firstdatetaken") stringByAppendingString:@" +0000"]] retain];
+		
+		// Numbers
+		numberOfPhotos = [FETCHINFO_ELEMENTVAL(photos,@"count") intValue];
+	}
+	@catch(NSException* e) {
+		NSLog(@"[FlickrUser _fetchInfo] failed from exception: %@", e);
+	}
 }
 
 @end

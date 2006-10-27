@@ -22,6 +22,14 @@
 	u = [FlickrUser userWithId:[u uid] context:ctx];
 	if(u)
 		NSLog(@"Got FlickrUser:  id: '%@'  name: '%@'", [u uid], [u name]);
+	NSLog(@"  realName:          %@", [u realName]);
+	NSLog(@"  location:          %@", [u location]);
+	NSLog(@"  photosURL:         %@", [u photosURL]);
+	NSLog(@"  profileURL:        %@", [u profileURL]);
+	NSLog(@"  mobileURL:         %@", [u mobileURL]);
+	NSLog(@"  firstDateUploaded: %@", [u firstDateUploaded]);
+	NSLog(@"  firstDateTaken:    %@", [u firstDateTaken]);
+	NSLog(@"  numberOfPhotos:    %d", [u numberOfPhotos]);
 }
 
 @end
