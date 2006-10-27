@@ -1,16 +1,22 @@
+#import "FlickrContext.h"
 
 @interface FlickrUser : NSObject {
-	NSString* uid;
-	NSString* name;
+	FlickrContext* ctx;
+	NSString*      uid;
+	NSString*      name;
+	
+	NSDictionary*  info; // contains realName, location, etc loaded from _fetchInfo
 }
 
-+ (FlickrUser*) userWithId:(NSString*)uid;
-+ (FlickrUser*) userWithName:(NSString*)name;
++ (FlickrUser*) userWithId:(NSString*)uid context:(FlickrContext*)ctx;
 
-- (id) initWithId:(NSString*)uid;
-- (id) initWithId:(NSString*)uid name:(NSString*)name;
++ (FlickrUser*) userWithName:(NSString*)name context:(FlickrContext*)ctx;
++ (FlickrUser*) userWithName:(NSString*)name; // uses [FlickrContext defaultContext]
+
+- (id) initWithId:(NSString*)uid name:(NSString*)name context:(FlickrContext*)ctx;
 
 - (NSString*)uid;
 - (NSString*)name;
+- (NSString*)realName;
 
 @end

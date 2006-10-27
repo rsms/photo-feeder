@@ -172,7 +172,6 @@
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
-				3A216B900AEED4CF0070394E /* TestAppFlickr.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -226,6 +225,7 @@
 				3A216B930AEED4D60070394E /* TestAppFlickrController.h */,
 				3A216B920AEED4D60070394E /* TestAppFlickrController.m */,
 				3A216B380AEED3520070394E /* TestAppFlickr-Info.plist */,
+				3A216B900AEED4CF0070394E /* TestAppFlickr.nib */,
 			);
 			name = TestAppFlickr;
 			sourceTree = "<group>";
@@ -504,6 +504,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
 				INFOPLIST_FILE = "TestAppFlickr-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -560,6 +561,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -615,6 +617,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				PRODUCT_NAME = PhotoFeeder;
