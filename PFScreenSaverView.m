@@ -90,27 +90,30 @@
 	}
 	
 	// Draw the motherfucker
-    [[renderer openGLContext] makeCurrentContext];
+	[[renderer openGLContext] makeCurrentContext];
 	
 	if (ciContext == nil) {
 		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
-										pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
-											options: nil] retain];
-    }
+													 pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
+														  options: nil] retain];
+	}
 	
-    // Fill the view black between each rendered frame (overwriting the old image)
-    glColor4f (0.0f, 0.0f, 0.0f, 0.0f);
-    glBegin(GL_POLYGON);
-	glVertex2f (rectangle.origin.x, rectangle.origin.y);
-	glVertex2f (rectangle.origin.x + rectangle.size.width, rectangle.origin.y);
-	glVertex2f (rectangle.origin.x + rectangle.size.width, rectangle.origin.y + rectangle.size.height);
-	glVertex2f (rectangle.origin.x, rectangle.origin.y + rectangle.size.height);
-    glEnd();
-
+	// Fill the view black between each rendered frame (overwriting the old image)
+	glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
+	glBegin( GL_POLYGON );
+	glVertex2f( rectangle.origin.x, rectangle.origin.y );
+	glVertex2f( rectangle.origin.x + rectangle.size.width, rectangle.origin.y );
+	glVertex2f( rectangle.origin.x + rectangle.size.width, rectangle.origin.y + rectangle.size.height );
+	glVertex2f( rectangle.origin.x, rectangle.origin.y + rectangle.size.height );
+	glEnd();
+	
+	NSRect r = [self bounds];
+	CGRect* myFrame = (CGRect*)&r;
+	
 	[ciContext drawImage: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
-				 atPoint: CGPointZero
-				fromRect: CGRectMake([self bounds].origin.x, [self bounds].origin.y, [self bounds].size.width, [self bounds].size.height)];
-		
+					 atPoint: CGPointZero
+					fromRect: *myFrame];
+	
 	if(frontImage.movingType == PFMovingTypeHorizontally)
 		frontImage.position.x += frontImage.stepSize;
 	else if(frontImage.movingType == PFMovingTypeVertically)

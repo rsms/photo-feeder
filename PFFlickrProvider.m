@@ -31,6 +31,9 @@ NSLog(@"%@", [res URL]);
 	NSXMLElement* root = [self callMethod:@"flickr.photos.getSizes" 
 								   params:[NSString stringWithFormat:@"photo_id=%@", photoId]];
 	
+	if(!root)
+		return nil;
+	
 	// Find childs
 	NSError* err;
 	NSArray* children = [root nodesForXPath:@"/rsp/sizes/size" error:&err];
@@ -58,8 +61,9 @@ NSLog(@"%@", [res URL]);
 	// Flickr service error?
 	if([[[[doc rootElement] attributeForName:@"stat"] stringValue] compare:@"fail" options:0] == 0)
 	{
-		throw_ex(@"PFFlickrProviderException", 
-				 [[(NSXMLElement*)[[doc rootElement] childAtIndex:0] attributeForName:@"msg"] stringValue]);
+		NSLog(@"Couldn't connect to flickr. Retrying in 5 seconds...");
+		sleep(5);
+		return nil;
 	}
 	
 	return (NSXMLElement*)[doc rootElement];
@@ -88,6 +92,9 @@ NSLog(@"%@", [res URL]);
 {
 	NSXMLElement* root = [self callMethod:@"flickr.favorites.getPublicList" 
 								   params:@"user_id=12281432@N00&per_page=999&extras=date_taken"];
+	
+	if(!root)
+		return;
 	
 	// Find photos
 	NSError* err = nil;
