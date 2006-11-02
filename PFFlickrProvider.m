@@ -11,14 +11,14 @@ NSError* err;
 NSData* imData = [NSURLConnection sendSynchronousRequest: req 
 									   returningResponse: &res
 												   error: &err];
-NSLog(@"%@", [res URL]);
+DLog(@"%@", [res URL]);
 */
 
 -(id)init
 {
 	[super init];
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
-	NSLog(@"[%@ init] urls: %@", self, urls);
+	DLog(@"[%@ init] urls: %@", self, urls);
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 							 toTarget:self 
 						   withObject:nil];
@@ -70,10 +70,10 @@ NSLog(@"%@", [res URL]);
 }
 
 
--(NSURL*)getURL
+-(CIImage*)nextImage
 {
-	//NSLog(@"[%@ getURL]", self);
-	return (NSURL *)[urls take];
+	//DLog(@"[%@ getURL]", self);
+	return [CIImage imageWithContentsOfURL:(NSURL *)[urls take]];
 }
 
 
@@ -81,7 +81,7 @@ NSLog(@"%@", [res URL]);
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while(1) {
-		NSLog(@"[%@ addURLsThread] calling [%@ addURLs]...", self, self);
+		DLog(@"[%@ addURLsThread] calling [%@ addURLs]...", self, self);
 		[self addURLs];
 	}
 	[pool release];
@@ -113,7 +113,7 @@ NSLog(@"%@", [res URL]);
 		if(urlString)
 			[urls put:[NSURL URLWithString:urlString]];
 		else
-			NSLog(@"[%@ addURLs] Image was too small", self);
+			DLog(@"[%@ addURLs] Image was too small", self);
 	}
 	
 	// Sure shots:

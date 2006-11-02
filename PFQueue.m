@@ -57,7 +57,7 @@
 	
 	[_modLock lock];
 	
-	//NSLog(@"PUT item on putIndex %d. putIndex is now %d", _putIndex, _putIndex+1);
+	//DLog(@"PUT item on putIndex %d. putIndex is now %d", _putIndex, _putIndex+1);
 	_buckets[_putIndex++] = [item retain];
 	_count++;
 	
@@ -109,7 +109,7 @@
 	
 	[_modLock lock];
 	
-	//NSLog(@"PUT item on putIndex %d. putIndex is now %d", _putIndex, _putIndex+1);
+	//DLog(@"PUT item on putIndex %d. putIndex is now %d", _putIndex, _putIndex+1);
 	_buckets[_putIndex++] = [item retain];
 	_count++;
 	
@@ -154,7 +154,7 @@
 	
 	[_modLock lock];
 	
-	//NSLog(@"TAKE item from pullIndex %d. pullIndex is now %d", _pullIndex, _pullIndex+1);
+	//DLog(@"TAKE item from pullIndex %d. pullIndex is now %d", _pullIndex, _pullIndex+1);
 	id item = _buckets[_pullIndex];
 	_buckets[_pullIndex++] = NULL;
 	_count--;
@@ -205,7 +205,7 @@
 	
 	[_modLock lock];
 	
-	//NSLog(@"TAKE item from pullIndex %d. pullIndex is now %d", _pullIndex, _pullIndex+1);
+	//DLog(@"TAKE item from pullIndex %d. pullIndex is now %d", _pullIndex, _pullIndex+1);
 	id item = _buckets[_pullIndex];
 	_buckets[_pullIndex++] = NULL;
 	_count--;

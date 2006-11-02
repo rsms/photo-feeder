@@ -14,20 +14,20 @@
 	// find user by alias
 	FlickrUser* u = [FlickrUser userWithName:@"rsms" context:ctx];
 	if(u)
-		NSLog(@"Got FlickrUser:  id: '%@'  name: '%@'", [u uid], [u name]);
+		DLog(@"Got FlickrUser:  id: '%@'  name: '%@'", [u uid], [u name]);
 	
 	// find by id
 	u = [FlickrUser userWithId:[u uid] context:ctx];
 	if(u)
-		NSLog(@"Got FlickrUser:  id: '%@'  name: '%@'", [u uid], [u name]);
-	NSLog(@"  realName:          %@", [u realName]);
-	NSLog(@"  location:          %@", [u location]);
-	NSLog(@"  photosURL:         %@", [u photosURL]);
-	NSLog(@"  profileURL:        %@", [u profileURL]);
-	NSLog(@"  mobileURL:         %@", [u mobileURL]);
-	NSLog(@"  firstDateUploaded: %@", [u firstDateUploaded]);
-	NSLog(@"  firstDateTaken:    %@", [u firstDateTaken]);
-	NSLog(@"  numberOfPhotos:    %d", [u numberOfPhotos]);
+		DLog(@"Got FlickrUser:  id: '%@'  name: '%@'", [u uid], [u name]);
+	DLog(@"  realName:          %@", [u realName]);
+	DLog(@"  location:          %@", [u location]);
+	DLog(@"  photosURL:         %@", [u photosURL]);
+	DLog(@"  profileURL:        %@", [u profileURL]);
+	DLog(@"  mobileURL:         %@", [u mobileURL]);
+	DLog(@"  firstDateUploaded: %@", [u firstDateUploaded]);
+	DLog(@"  firstDateTaken:    %@", [u firstDateTaken]);
+	DLog(@"  numberOfPhotos:    %d", [u numberOfPhotos]);
 }
 
 @end

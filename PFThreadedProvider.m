@@ -7,7 +7,7 @@
 	[super init];
 	urls = [[[NSMutableArray alloc] init] retain];
 	urlsLock = [[[NSConditionLock alloc] initWithCondition:NO_DATA] retain];
-	NSLog(@"[%@ init] urls: %@", self, urls);
+	DLog(@"[%@ init] urls: %@", self, urls);
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 							 toTarget:self 
 						   withObject:nil];
@@ -24,13 +24,13 @@
 -(NSURL*)getURL
 {
 	[urlsLock lockWhenCondition:HAS_DATA];
-	NSLog(@"[%@ getURL]", self);
+	DLog(@"[%@ getURL]", self);
 	
 	NSURL* url = (NSURL *)[urls lastObject];
 	[urls removeLastObject];
 	
 	if([urls count] == 0) {
-		NSLog(@"[%@ getURL] Buffer was emptied", self);
+		DLog(@"[%@ getURL] Buffer was emptied", self);
 		[urlsLock unlockWithCondition:NO_DATA];
 	}
 	else
@@ -44,7 +44,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while(1) {
 		[urlsLock lockWhenCondition:NO_DATA];
-		NSLog(@"[%@ addURLsThread] calling [%@ addURLs]...", self, self);
+		DLog(@"[%@ addURLsThread] calling [%@ addURLs]...", self, self);
 		[self addURLs];
 		[urlsLock unlockWithCondition:HAS_DATA];
 	}

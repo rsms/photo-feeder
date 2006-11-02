@@ -37,8 +37,6 @@
 		3A8F923A0AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
 		3A8F92400AE578E70027DC3B /* PFText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8F923F0AE578E70027DC3B /* PFText.h */; };
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
-		3AEF42FA0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */; };
-		3AEF42FB0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */; };
 		3AFBD4430AF2669C00B626A0 /* Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
 		3AFBD4520AF2671C00B626A0 /* Flickr.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
 		8D255AC70486D3F9007BF209 /* prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* prefix.pch */; };
@@ -472,7 +470,6 @@
 				3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */,
 				3A8F92390AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
-				3AEF42FB0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
 				CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 			);
@@ -487,7 +484,6 @@
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
 				3A8F923A0AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
-				3AEF42FA0AEA7BB80062B848 /* PFThreadedProvider.m in Sources */,
 				CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 			);

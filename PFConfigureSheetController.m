@@ -13,7 +13,7 @@
 
 - (IBAction)done:(id)sender
 {
-	NSLog(@"[%@ done]", self);
+	DLog(@"[%@ done]", self);
 	
 	// tag 0 = OK, tag 1 = cancel
 	/*if([(NSButton*)sender tag] == 0)
@@ -32,14 +32,14 @@
 
 - (IBAction)about:(id)sender
 {
-	NSLog(@"[%@ about]", self);
+	DLog(@"[%@ about]", self);
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/PhotoFeeder"]];
 }
 
 
 - (void)awakeFromNib
 {
-	NSLog(@"[%@ awakeFromNib]", self);
+	DLog(@"[%@ awakeFromNib]", self);
 	//[self loadSavedStates];
 }
 

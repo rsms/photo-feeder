@@ -9,7 +9,7 @@
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     if(self = ([super initWithFrame:frame isPreview:isPreview])) {
-		NSLog(@"[PhotoFeederView initWithFrame...]");
+		DLog(@"[PhotoFeederView initWithFrame...]");
 
 		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:20];
@@ -90,7 +90,7 @@
 	}
 	
 	// Draw the motherfucker
-	[[renderer openGLContext] makeCurrentContext];
+	[[renderer openGLContext] makeCurrentContext]; // Note: This seem to be redundant, but we keep it here for now.
 	
 	if (ciContext == nil) {
 		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
@@ -140,11 +140,11 @@
 	PFProvider* provider;
 	while(1) {
 		provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
-		[queue put:[provider getURL]];
+		[queue put:[provider nextImage]];
 		/*provider = (PFProvider*)[providers objectAtIndex:0];
-		[queue put:[provider getURL]];
+		[queue put:[provider nextImage]];
 		provider = (PFProvider*)[providers objectAtIndex:1];
-		[queue put:[provider getURL]];*/
+		[queue put:[provider nextImage]];*/
 	}
 	[pool release];
 }
@@ -163,7 +163,7 @@
 	// Rescale image so that it fits for sliding horizontally or vertically
 	if(imageAspectRatio > screenAspectRatio)
 	{
-		NSLog(@"Image is in landscape format");
+		DLog(@"Image is in landscape format");
 		resizeRate = screenSize.height / imageSize.height;
 
 		pixelsScreenCantShow = (imageSize.width * resizeRate) - screenSize.width;
@@ -172,7 +172,7 @@
 	
 	else if(imageAspectRatio <= screenAspectRatio)
 	{
-		NSLog(@"Image is in portrait format");
+		DLog(@"Image is in portrait format");
 		
 		resizeRate = screenSize.width / imageSize.width;
 
@@ -180,15 +180,17 @@
 		movingType = (pixelsScreenCantShow != 0) ? PFMovingTypeVertically : PFMovingTypeNone;
 	}
 	
-	NSLog(@"Doing resize a la: %f", resizeRate);
+	DLog(@"Doing resize a la: %f", resizeRate);
 	PFImage i = PFImageCreate([im imageByApplyingTransform: CGAffineTransformMakeScale(resizeRate, resizeRate)],
 							  movingType,
 							  pixelsScreenCantShow,
 							  5.0,
 							  1.0 / [self animationTimeInterval]
 							  );
+	// We don't need the original image anymore (we have a resized copy)
+	[im release];
 	
-	NSLog(@"Resized to: %f x %f", i.size.width, i.size.height);
+	DLog(@"Resized to: %f x %f", i.size.width, i.size.height);
 	return i;
 }
 
@@ -199,16 +201,14 @@
 	while(1)
 	{
 		[imageCreatorLock lockWhenCondition:CL_RUN];
-		NSLog(@"[PhotoFeederView imageCreatorThread] Taking url from queue and fetching image data...");
+		DLog(@"[PhotoFeederView imageCreatorThread] Taking CIImage from queue and converting to PFImage...");
 		
 		// Swap images - bring back to front
 		PFImage oldFrontImage = frontImage;
 		frontImage = backImage;
 		
 		// Create new back image
-		NSURL* url = (NSURL*)[queue take];
-		NSLog(@"[PhotoFeederView imageCreatorThread] got URL: %@", url);
-		backImage = [self createResizedImageFromCIImage: [CIImage imageWithContentsOfURL:url]];
+		backImage = [self createResizedImageFromCIImage: (CIImage*)[queue take]];
 		
 		// Throw away old front image
 		PFImageRelease(oldFrontImage);
@@ -230,14 +230,14 @@
 
 - (NSWindow*)configureSheet
 {
-	NSLog(@"[%@ configureSheet]", self);
+	DLog(@"[%@ configureSheet]", self);
     if(configureSheetController == nil)
 		configureSheetController = [[PFConfigureSheetController alloc] initWithWindowNibName: @"ConfigureSheet" 
 																		  withReferenceToSSV: self];
 	
 	NSWindow* win = [configureSheetController window];
 	if(win == nil)
-		NSLog(@"[%@ configureSheet]: win == nil", self);
+		DLog(@"[%@ configureSheet]: win == nil", self);
 	return win;
 }
 
