@@ -39,16 +39,21 @@ DLog(@"%@", [res URL]);
 	NSArray* children = [root nodesForXPath:@"/rsp/sizes/size" error:&err];
 	if(err) {
 		NSLog(@"Error: %@", err);
+		[root release];
 		return nil;
 	}
 	
 	// Find URL
 	NSEnumerator* it = [children objectEnumerator];
 	NSXMLElement* n;
-	while (n = (NSXMLElement*)[it nextObject])
-		if([[[n attributeForName:@"label"] stringValue] caseInsensitiveCompare:size] == 0)
+	while (n = (NSXMLElement*)[it nextObject]) {
+		if([[[n attributeForName:@"label"] stringValue] caseInsensitiveCompare:size] == 0) {
+			[root release];
 			return [[n attributeForName:@"source"] stringValue];
+		}
+	}
 	
+	[root release];
 	return nil;
 }
 
@@ -56,23 +61,24 @@ DLog(@"%@", [res URL]);
 - (NSXMLElement*)callMethod:(NSString*)method params:(NSString*)params
 {
 	NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=%@&api_key=9b4439ce94de7e2ec2c2e6ffadc22bcf&%@", method, params]];
-	NSXMLDocument* doc = [[[NSXMLDocument alloc] initWithContentsOfURL:url options:0 error:nil] autorelease];
+	NSXMLDocument* doc = [[NSXMLDocument alloc] initWithContentsOfURL:url options:0 error:nil];
+	NSXMLElement* root = [(NSXMLElement*)[doc rootElement] retain];
 	
 	// Flickr service error?
-	if([[[[doc rootElement] attributeForName:@"stat"] stringValue] compare:@"fail" options:0] == 0)
+	if([[[root attributeForName:@"stat"] stringValue] compare:@"fail" options:0] == 0)
 	{
 		NSLog(@"Couldn't connect to flickr. Retrying in 5 seconds...");
 		sleep(5);
 		return nil;
 	}
 	
-	return (NSXMLElement*)[doc rootElement];
+	return root;
 }
 
 
 -(CIImage*)nextImage
 {
-	//DLog(@"[%@ getURL]", self);
+	// Would be nice to handle "to small images" right here
 	return [CIImage imageWithContentsOfURL:(NSURL *)[urls take]];
 }
 

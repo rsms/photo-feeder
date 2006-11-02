@@ -108,11 +108,12 @@
 	glEnd();
 	
 	NSRect r = [self bounds];
-	CGRect* myFrame = (CGRect*)&r;
+	CGRect myFrame = *(CGRect*)&r; // <- We love this typecast-kinda thing!
+	//DLog(@"%f, %f, %f, %f", myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height );
 	
 	[ciContext drawImage: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
 					 atPoint: CGPointZero
-					fromRect: *myFrame];
+					fromRect: myFrame];
 	
 	if(frontImage.movingType == PFMovingTypeHorizontally)
 		frontImage.position.x += frontImage.stepSize;

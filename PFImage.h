@@ -23,7 +23,7 @@ static PFImage PFImageCreate(CIImage *im,
 							 float timeVisible,
 							 float basedOnFPS) {
 	
-	DLog(@"PFImageCreate: creating i.im retainCount: %u", [im retainCount]);
+	//DLog(@"PFImageCreate: creating i.im retainCount: %u", [im retainCount]);
 	
 	PFImage i;
 	i.im = im;
@@ -37,7 +37,7 @@ static PFImage PFImageCreate(CIImage *im,
 
 static void PFImageRelease(PFImage i) {
 	if(i.im) {
-		DLog(@"PFImageRelease: releasing i.im: %@, retainCount: %u", i.im, [i.im retainCount]);
+		//DLog(@"PFImageRelease: releasing i.im: %@, retainCount: %u", i.im, [i.im retainCount]);
 		[i.im release];
 	}
 }
