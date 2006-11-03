@@ -13,13 +13,14 @@ typedef struct {
 	CGSize			size;
 	CGPoint			position;
 	PFMovingType	movingType;
-	float				stepSize;
+	float			stepSize;
 	int				stepsLeft;
+	int				stepCount;
 } PFImage;
 
 static PFImage PFImageCreate(CIImage *im,
 							 PFMovingType type,
-							 float pixelsScreenCantShow,
+							 float sizeOutsideScreen,
 							 float timeVisible,
 							 float basedOnFPS) {
 	
@@ -29,10 +30,19 @@ static PFImage PFImageCreate(CIImage *im,
 	i.im = im;
 	i.size = [i.im extent].size;
 	i.movingType = type;
-	i.stepSize = 1.0 / ((timeVisible * basedOnFPS) / (int)pixelsScreenCantShow);
+	i.stepSize = 1.0 / ((timeVisible * basedOnFPS) / (int)sizeOutsideScreen);
 	i.stepsLeft = timeVisible * basedOnFPS;
+	i.stepCount = i.stepsLeft;
 	
 	return i;
+}
+
+static void PFImageMoveOneStep(PFImage* i) {
+	if(i->movingType == PFMovingTypeHorizontally)
+		i->position.x += i->stepSize;
+	else if(i->movingType == PFMovingTypeVertically)
+		i->position.y += i->stepSize;
+	i->stepsLeft--;
 }
 
 static void PFImageRelease(PFImage i) {

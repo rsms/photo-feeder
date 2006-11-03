@@ -10,10 +10,10 @@
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     if(self = ([super initWithFrame:frame isPreview:isPreview])) {
 		DLog(@"[PhotoFeederView initWithFrame...]");
-
+		
 		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:20];
-				
+		
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
 		[providers addObject:[[PFFlickrProvider alloc] init]];
@@ -45,6 +45,10 @@
 		
 		// Get the screen size to be able to scale images properly
 		screenSize = [self bounds].size;
+		
+		// Create a transition filter
+		transition = [[CIFilter filterWithName: @"CIDissolveTransition"] retain];
+		[transition setDefaults];
 		
 		// Set frame rate
 		float fps = [[NSUserDefaults standardUserDefaults] floatForKey:@"rendererFPS"];
@@ -89,7 +93,13 @@
 		return;
 	}
 	
-	// Draw the motherfucker
+	// TODO: It's unnecessary to call this each frame, call only when switching images...
+	[transition setValue: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
+				  forKey: @"inputImage"];
+	[transition setValue: [backImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-backImage.position.x, -backImage.position.y)]
+				  forKey: @"inputTargetImage"];
+	
+	// Activate OpenGL context
 	[[renderer openGLContext] makeCurrentContext]; // Note: This seem to be redundant, but we keep it here for now.
 	
 	if (ciContext == nil) {
@@ -98,7 +108,7 @@
 														  options: nil] retain];
 	}
 	
-	// Fill the view black between each rendered frame (overwriting the old image)
+		// Fill the view black between each rendered frame (overwriting the old image)
 	glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
 	glBegin( GL_POLYGON );
 	glVertex2f( rectangle.origin.x, rectangle.origin.y );
@@ -107,30 +117,39 @@
 	glVertex2f( rectangle.origin.x, rectangle.origin.y + rectangle.size.height );
 	glEnd();
 	
+	// Update transition if needed
+	float fadeThreshold = .65; // TODO: Bind to user defaults
+	float percentPosition = 1-((float)frontImage.stepsLeft/(float)frontImage.stepCount);
+	
+	if( percentPosition > fadeThreshold ) {
+		[transition setValue: [NSNumber numberWithFloat: SMOOTHSTEP((percentPosition-fadeThreshold)/(1-fadeThreshold))]
+					  forKey: @"inputTime"];
+		// Update back image position
+		PFImageMoveOneStep(&backImage);
+	}
+	
+	// Update front image position
+	PFImageMoveOneStep(&frontImage);
+	
+	// Perform drawing
 	NSRect r = [self bounds];
 	CGRect myFrame = *(CGRect*)&r; // <- We love this typecast-kinda thing!
-	//DLog(@"%f, %f, %f, %f", myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height );
-	
-	[ciContext drawImage: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
+	[ciContext drawImage: [transition valueForKey: @"outputImage"]
 					 atPoint: CGPointZero
 					fromRect: myFrame];
 	
-	if(frontImage.movingType == PFMovingTypeHorizontally)
-		frontImage.position.x += frontImage.stepSize;
-	else if(frontImage.movingType == PFMovingTypeVertically)
-		frontImage.position.y += frontImage.stepSize;
-
-	if(!frontImage.stepsLeft--) {
+	// We are done with front image and need a new back image
+	if(!frontImage.stepsLeft) {
+		[transition setValue: [NSNumber numberWithFloat: .0 ]
+					  forKey: @"inputTime"];
 		[imageCreatorLock lock];
 		[imageCreatorLock unlockWithCondition: CL_RUN];
 	}
-
+	
 	glFlush();
 	
 	// TODO: Additional "I'm loading image from service" if image isn't in cache
 }
-
-
 
 
 #pragma mark -- Threads
@@ -185,7 +204,7 @@
 	PFImage i = PFImageCreate([im imageByApplyingTransform: CGAffineTransformMakeScale(resizeRate, resizeRate)],
 							  movingType,
 							  pixelsScreenCantShow,
-							  5.0,
+							  10.0, // Seconds to show image
 							  1.0 / [self animationTimeInterval]
 							  );
 	// We don't need the original image anymore (we have a resized copy)

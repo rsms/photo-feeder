@@ -19,6 +19,8 @@
 	PFImage				frontImage;
 	PFImage				backImage;
 	
+	CIFilter *			transition;
+	
 	id configureSheetController;
 }
 
