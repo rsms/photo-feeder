@@ -72,16 +72,34 @@
 
 
 
-#pragma mark -- Rendering & Animation
+#pragma mark -- Animation & Rendering
 
 - (void)animateOneFrame
 {
+	if( PFImageIsValid(frontImage) )
+	{
+		// Update transition if needed
+		float fadeThreshold = .65; // TODO: Bind to user defaults
+		float percentPosition = 1-((float)frontImage.stepsLeft/(float)frontImage.stepCount);
+		
+		if( percentPosition > fadeThreshold )
+		{
+			[transition setValue: [NSNumber numberWithFloat: SMOOTHSTEP((percentPosition-fadeThreshold)/(1-fadeThreshold))]
+						  forKey: @"inputTime"];
+			// Update back image position
+			PFImageMoveOneStep(&backImage);
+		}
+		
+		// Update front image position
+		PFImageMoveOneStep(&frontImage);
+	}
+	
 	[self setNeedsDisplay:YES];
 }
 
 
 
-- (void)drawRect:(NSRect)rectangle
+- (void)drawRect:(NSRect)rect
 {
 	// Draw Not Loading while we are waiting for an image
 	if(!PFImageIsValid(frontImage)) {
@@ -100,40 +118,27 @@
 				  forKey: @"inputTargetImage"];
 	
 	// Activate OpenGL context
-	[[renderer openGLContext] makeCurrentContext]; // Note: This seem to be redundant, but we keep it here for now.
-	
+	[[renderer openGLContext] makeCurrentContext]; // <- This seems to be redundant, but we keep it here for now.
 	if (ciContext == nil) {
 		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
 													 pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
 														  options: nil] retain];
 	}
 	
-		// Fill the view black between each rendered frame (overwriting the old image)
-	glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
-	glBegin( GL_POLYGON );
-	glVertex2f( rectangle.origin.x, rectangle.origin.y );
-	glVertex2f( rectangle.origin.x + rectangle.size.width, rectangle.origin.y );
-	glVertex2f( rectangle.origin.x + rectangle.size.width, rectangle.origin.y + rectangle.size.height );
-	glVertex2f( rectangle.origin.x, rectangle.origin.y + rectangle.size.height );
-	glEnd();
-	
-	// Update transition if needed
-	float fadeThreshold = .65; // TODO: Bind to user defaults
-	float percentPosition = 1-((float)frontImage.stepsLeft/(float)frontImage.stepCount);
-	
-	if( percentPosition > fadeThreshold ) {
-		[transition setValue: [NSNumber numberWithFloat: SMOOTHSTEP((percentPosition-fadeThreshold)/(1-fadeThreshold))]
-					  forKey: @"inputTime"];
-		// Update back image position
-		PFImageMoveOneStep(&backImage);
-	}
-	
-	// Update front image position
-	PFImageMoveOneStep(&frontImage);
+	// Fill the view black between each rendered frame (overwriting the old image)
+	IFDEBUG(
+		glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
+		glBegin( GL_POLYGON );
+		glVertex2f( rect.origin.x, rect.origin.y );
+		glVertex2f( rect.origin.x + rect.size.width, rect.origin.y );
+		glVertex2f( rect.origin.x + rect.size.width, rect.origin.y + rect.size.height );
+		glVertex2f( rect.origin.x, rect.origin.y + rect.size.height );
+		glEnd();
+	);
 	
 	// Perform drawing
-	NSRect r = [self bounds];
-	CGRect myFrame = *(CGRect*)&r; // <- We love this typecast-kinda thing!
+	CGRect myFrame = *(CGRect*)&rect; // <- We love this typecast-kinda thing!
+	//NSLog(@"myFrame: %f, %f, %f, %f", myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height);
 	[ciContext drawImage: [transition valueForKey: @"outputImage"]
 					 atPoint: CGPointZero
 					fromRect: myFrame];
@@ -147,8 +152,6 @@
 	}
 	
 	glFlush();
-	
-	// TODO: Additional "I'm loading image from service" if image isn't in cache
 }
 
 
