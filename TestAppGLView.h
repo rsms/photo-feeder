@@ -3,7 +3,8 @@
 
 @interface TestAppGLView : NSOpenGLView
 {
-	PFGLImage* image;
+	PFGLImage *image;
+	NSString  *lastFilePathOpened;
 }
 
 - (void) setImage:(PFGLImage*)im;

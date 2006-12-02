@@ -45,6 +45,12 @@
 }
 
 
+- (void) awakeFromNib
+{
+	[self openFile:self];
+}
+
+
 // Select and open an image
 - (IBAction) openFile:(id)sender
 {
@@ -52,16 +58,22 @@
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
     [oPanel setAllowsMultipleSelection:NO];
 	
-    if( [oPanel runModalForDirectory:NSHomeDirectory() file:nil types:fileTypes] == NSOKButton )
+	NSString* startDir = NSHomeDirectory();
+	if(lastFilePathOpened)
+		startDir = [lastFilePathOpened stringByDeletingLastPathComponent];
+	
+    if( [oPanel runModalForDirectory:startDir file:[lastFilePathOpened lastPathComponent] types:fileTypes] == NSOKButton )
 	{
         NSArray *filesToOpen = [oPanel filenames];
         int i, count = [filesToOpen count];
 		
         for (i=0; i<count; i++)
 		{
-            NSString *path = [filesToOpen objectAtIndex:i];
-			DLog(@"Loading image %@", path);
-			[self setImage:[[PFGLImage alloc] initWithContentsOfFile:path]];
+			if(lastFilePathOpened)
+				[lastFilePathOpened release];
+            lastFilePathOpened = [[filesToOpen objectAtIndex:i] retain];
+			DLog(@"Loading image %@", lastFilePathOpened);
+			[self setImage:[[PFGLImage alloc] initWithContentsOfFile:lastFilePathOpened]];
         }
     }
 }
@@ -87,21 +99,22 @@
 {
 	// Make this context current
 	[[self openGLContext] makeCurrentContext];
+	[[self openGLContext] update];
 	
 	glClear(GL_COLOR_BUFFER_BIT);
 	
 	if(image)
 	{
 		[image draw];
-		[image drawInRect:NSMakeRect(100,100, 400,200) sourceRect:NSMakeRect(0,0, 300,100)];
-		[image drawInRect:NSMakeRect(100,210, 400,310)];
+		[image drawInRect:NSMakeRect(100,100, 300,100) sourceRect:NSMakeRect(0,0, 300,100)];
+		[image drawInRect:NSMakeRect(100,210, 300,100)];
 	}
 	
 	// Flush gl buffer
 	glFlush();
 	
 	// Swap buffer to screen
-	[[self openGLContext] flushBuffer];
+	//[[self openGLContext] flushBuffer];
 }
 
 
