@@ -646,6 +646,59 @@
 			3A4B22E80B221DE40017671F /* PBXTextBookmark */ = 3A4B22E80B221DE40017671F /* PBXTextBookmark */;
 			3A4B22E90B221DE40017671F /* PBXTextBookmark */ = 3A4B22E90B221DE40017671F /* PBXTextBookmark */;
 			3A4B22EA0B221DE40017671F /* PBXTextBookmark */ = 3A4B22EA0B221DE40017671F /* PBXTextBookmark */;
+			3A4B22EE0B221E3A0017671F /* PBXTextBookmark */ = 3A4B22EE0B221E3A0017671F /* PBXTextBookmark */;
+			3A4B22F40B221F290017671F /* PBXTextBookmark */ = 3A4B22F40B221F290017671F /* PBXTextBookmark */;
+			3A4B22F50B221F290017671F /* PBXTextBookmark */ = 3A4B22F50B221F290017671F /* PBXTextBookmark */;
+			3A4B22F60B221F290017671F /* PBXTextBookmark */ = 3A4B22F60B221F290017671F /* PBXTextBookmark */;
+			3A4B22F70B221F290017671F /* PBXTextBookmark */ = 3A4B22F70B221F290017671F /* PBXTextBookmark */;
+			3A4B22FB0B221F450017671F /* PBXTextBookmark */ = 3A4B22FB0B221F450017671F /* PBXTextBookmark */;
+			3A4B22FF0B221F690017671F /* PBXTextBookmark */ = 3A4B22FF0B221F690017671F /* PBXTextBookmark */;
+			3A4B23000B221F690017671F /* PBXTextBookmark */ = 3A4B23000B221F690017671F /* PBXTextBookmark */;
+			3A4B23040B221FC60017671F /* PBXTextBookmark */ = 3A4B23040B221FC60017671F /* PBXTextBookmark */;
+			3A4B23050B221FC60017671F /* PBXTextBookmark */ = 3A4B23050B221FC60017671F /* PBXTextBookmark */;
+			3A4B23060B221FC60017671F /* PBXTextBookmark */ = 3A4B23060B221FC60017671F /* PBXTextBookmark */;
+			3A4B23070B221FC60017671F /* PBXTextBookmark */ = 3A4B23070B221FC60017671F /* PBXTextBookmark */;
+			3A4B230B0B221FE30017671F /* PBXTextBookmark */ = 3A4B230B0B221FE30017671F /* PBXTextBookmark */;
+			3A4B23110B2220900017671F /* PBXTextBookmark */ = 3A4B23110B2220900017671F /* PBXTextBookmark */;
+			3A4B23150B2220AC0017671F /* PBXTextBookmark */ = 3A4B23150B2220AC0017671F /* PBXTextBookmark */;
+			3A4B23190B2220EC0017671F /* PBXTextBookmark */ = 3A4B23190B2220EC0017671F /* PBXTextBookmark */;
+			3A4B231D0B22210E0017671F /* PBXTextBookmark */ = 3A4B231D0B22210E0017671F /* PBXTextBookmark */;
+			3A4B23210B2221280017671F /* PBXTextBookmark */ = 3A4B23210B2221280017671F /* PBXTextBookmark */;
+			3A4B23250B22217E0017671F /* PBXTextBookmark */ = 3A4B23250B22217E0017671F /* PBXTextBookmark */;
+			3A4B23290B22219D0017671F /* PBXTextBookmark */ = 3A4B23290B22219D0017671F /* PBXTextBookmark */;
+			3A4B23330B22228B0017671F /* PBXTextBookmark */ = 3A4B23330B22228B0017671F /* PBXTextBookmark */;
+			3A4B23340B22228B0017671F /* PBXTextBookmark */ = 3A4B23340B22228B0017671F /* PBXTextBookmark */;
+			3A4B233E0B22232B0017671F /* PBXTextBookmark */ = 3A4B233E0B22232B0017671F /* PBXTextBookmark */;
+			3A4B233F0B22232B0017671F /* PBXTextBookmark */ = 3A4B233F0B22232B0017671F /* PBXTextBookmark */;
+			3A4B23400B22232B0017671F /* PBXTextBookmark */ = 3A4B23400B22232B0017671F /* PBXTextBookmark */;
+			3A4B23410B22232B0017671F /* PBXTextBookmark */ = 3A4B23410B22232B0017671F /* PBXTextBookmark */;
+			3A4B23420B22232B0017671F /* PBXTextBookmark */ = 3A4B23420B22232B0017671F /* PBXTextBookmark */;
+			3A4B23430B22232B0017671F /* PBXTextBookmark */ = 3A4B23430B22232B0017671F /* PBXTextBookmark */;
+			3A4B23440B22232B0017671F /* PBXTextBookmark */ = 3A4B23440B22232B0017671F /* PBXTextBookmark */;
+			3A4B234B0B22236D0017671F /* PBXTextBookmark */ = 3A4B234B0B22236D0017671F /* PBXTextBookmark */;
+			3A4B23520B2223940017671F /* PBXTextBookmark */ = 3A4B23520B2223940017671F /* PBXTextBookmark */;
+			3A4B23560B22247D0017671F /* PBXTextBookmark */ = 3A4B23560B22247D0017671F /* PBXTextBookmark */;
+			3A4B235A0B2224AB0017671F /* PBXTextBookmark */ = 3A4B235A0B2224AB0017671F /* PBXTextBookmark */;
+			3A4B235F0B2225120017671F /* PBXTextBookmark */ = 3A4B235F0B2225120017671F /* PBXTextBookmark */;
+			3A4B23630B2225350017671F /* PBXTextBookmark */ = 3A4B23630B2225350017671F /* PBXTextBookmark */;
+			3A4B23640B2225350017671F /* PBXTextBookmark */ = 3A4B23640B2225350017671F /* PBXTextBookmark */;
+			3A4B23650B2225350017671F /* PBXTextBookmark */ = 3A4B23650B2225350017671F /* PBXTextBookmark */;
+			3A4B23660B2225350017671F /* PBXTextBookmark */ = 3A4B23660B2225350017671F /* PBXTextBookmark */;
+			3A4B23690B22255C0017671F /* PBXTextBookmark */ = 3A4B23690B22255C0017671F /* PBXTextBookmark */;
+			3A4B236D0B2225A10017671F /* PBXTextBookmark */ = 3A4B236D0B2225A10017671F /* PBXTextBookmark */;
+			3A4B23710B2225AE0017671F /* PBXTextBookmark */ = 3A4B23710B2225AE0017671F /* PBXTextBookmark */;
+			3A4B23750B22261C0017671F /* PBXTextBookmark */ = 3A4B23750B22261C0017671F /* PBXTextBookmark */;
+			3A4B23780B2227720017671F /* PBXTextBookmark */ = 3A4B23780B2227720017671F /* PBXTextBookmark */;
+			3A4B23790B2227720017671F /* PBXTextBookmark */ = 3A4B23790B2227720017671F /* PBXTextBookmark */;
+			3A4B237A0B2227720017671F /* PBXTextBookmark */ = 3A4B237A0B2227720017671F /* PBXTextBookmark */;
+			3A4B237B0B2227720017671F /* PBXTextBookmark */ = 3A4B237B0B2227720017671F /* PBXTextBookmark */;
+			3A4B237D0B22277C0017671F /* PBXTextBookmark */ = 3A4B237D0B22277C0017671F /* PBXTextBookmark */;
+			3A4B237E0B22277C0017671F /* PBXTextBookmark */ = 3A4B237E0B22277C0017671F /* PBXTextBookmark */;
+			3A4B23840B2228220017671F /* PBXTextBookmark */ = 3A4B23840B2228220017671F /* PBXTextBookmark */;
+			3A4B23850B2228220017671F /* PBXTextBookmark */ = 3A4B23850B2228220017671F /* PBXTextBookmark */;
+			3A4B23860B2228220017671F /* PBXTextBookmark */ = 3A4B23860B2228220017671F /* PBXTextBookmark */;
+			3A4B23870B2228220017671F /* PBXTextBookmark */ = 3A4B23870B2228220017671F /* PBXTextBookmark */;
+			3A4B238A0B2228400017671F /* PBXTextBookmark */ = 3A4B238A0B2228400017671F /* PBXTextBookmark */;
 			3A5316620B138E4E00252E6C = 3A5316620B138E4E00252E6C /* PBXTextBookmark */;
 			3A5316630B138E4E00252E6C = 3A5316630B138E4E00252E6C /* PBXTextBookmark */;
 			3A5316690B138E4E00252E6C = 3A5316690B138E4E00252E6C /* PBXTextBookmark */;
@@ -686,8 +739,8 @@
 	3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {925, 1960}}";
-			sepNavSelRange = "{2148, 0}";
-			sepNavVisRect = "{{0, 959}, {925, 651}}";
+			sepNavSelRange = "{3042, 0}";
+			sepNavVisRect = "{{0, 1299}, {925, 651}}";
 		};
 	};
 	3A1378270AFAA6BE00A63DF4 /* PBXTextBookmark */ = {
@@ -1187,9 +1240,9 @@
 	};
 	3A4B1E460B21DD420017671F /* PFGLImage.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {925, 3486}}";
-			sepNavSelRange = "{5284, 0}";
-			sepNavVisRect = "{{0, 2210}, {925, 651}}";
+			sepNavIntBoundsRect = "{{0, 0}, {925, 3570}}";
+			sepNavSelRange = "{1829, 0}";
+			sepNavVisRect = "{{0, 1057}, {925, 651}}";
 		};
 	};
 	3A4B1E470B21DD420017671F /* PFGLImage.h */ = {
@@ -1422,15 +1475,15 @@
 	};
 	3A4B1E700B21DF100017671F /* TestAppGLView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {925, 1974}}";
-			sepNavSelRange = "{362, 402}";
-			sepNavVisRect = "{{0, 0}, {925, 651}}";
+			sepNavIntBoundsRect = "{{0, 0}, {925, 2156}}";
+			sepNavSelRange = "{2468, 0}";
+			sepNavVisRect = "{{0, 894}, {925, 651}}";
 		};
 	};
 	3A4B1E710B21DF100017671F /* TestAppGLView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {925, 651}}";
-			sepNavSelRange = "{121, 0}";
+			sepNavSelRange = "{96, 0}";
 			sepNavVisRect = "{{0, 0}, {925, 651}}";
 		};
 	};
@@ -1667,7 +1720,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: dealloc";
 		rLen = 0;
-		rLoc = 1550;
+		rLoc = 1864;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 300;
@@ -1677,7 +1730,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = openFile;
 		rLen = 8;
-		rLoc = 869;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 757;
@@ -1687,7 +1740,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 78";
 		rLen = 0;
-		rLoc = 1392;
+		rLoc = 1678;
 		rType = 0;
 		vrLen = 787;
 		vrLoc = 852;
@@ -1697,7 +1750,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: dealloc";
 		rLen = 0;
-		rLoc = 877;
+		rLoc = 928;
 		rType = 0;
 		vrLen = 783;
 		vrLoc = 852;
@@ -1707,7 +1760,7 @@
 		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
 		name = "TestAppGLView.h: toggleFullscreen:";
 		rLen = 0;
-		rLoc = 155;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 170;
 		vrLoc = 0;
@@ -1717,7 +1770,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "- (IBAction) openFile:(id)sender";
 		rLen = 32;
-		rLoc = 856;
+		rLoc = 907;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 852;
@@ -1727,7 +1780,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "- (IBAction) openFile:(id)sender";
 		rLen = 32;
-		rLoc = 856;
+		rLoc = 907;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 852;
@@ -1737,7 +1790,7 @@
 		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
 		name = "TestAppGLView.h: toggleFullscreen:";
 		rLen = 0;
-		rLoc = 155;
+		rLoc = 187;
 		rType = 0;
 		vrLen = 170;
 		vrLoc = 0;
@@ -1747,7 +1800,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 78";
 		rLen = 0;
-		rLoc = 1654;
+		rLoc = 1968;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 909;
@@ -1757,7 +1810,7 @@
 		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
 		name = "TestAppGLView.h: setImage:";
 		rLen = 0;
-		rLoc = 121;
+		rLoc = 153;
 		rType = 0;
 		vrLen = 204;
 		vrLoc = 0;
@@ -1767,7 +1820,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: openFile:";
 		rLen = 0;
-		rLoc = 1535;
+		rLoc = 1849;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 832;
@@ -1777,7 +1830,7 @@
 		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
 		name = "TestAppGLView.h: setImage:";
 		rLen = 0;
-		rLoc = 121;
+		rLoc = 153;
 		rType = 0;
 		vrLen = 204;
 		vrLoc = 0;
@@ -1787,7 +1840,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 66";
 		rLen = 0;
-		rLoc = 1443;
+		rLoc = 1743;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 832;
@@ -1797,7 +1850,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 66";
 		rLen = 0;
-		rLoc = 1433;
+		rLoc = 1733;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 832;
@@ -1807,7 +1860,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 65";
 		rLen = 0;
-		rLoc = 1423;
+		rLoc = 1709;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 832;
@@ -1817,7 +1870,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 59";
 		rLen = 0;
-		rLoc = 1230;
+		rLoc = 1443;
 		rType = 0;
 		vrLen = 1048;
 		vrLoc = 832;
@@ -1827,7 +1880,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 66";
 		rLen = 0;
-		rLoc = 1433;
+		rLoc = 1733;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 832;
@@ -1837,7 +1890,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 66";
 		rLen = 0;
-		rLoc = 1433;
+		rLoc = 1733;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 832;
@@ -1857,7 +1910,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 66";
 		rLen = 0;
-		rLoc = 1433;
+		rLoc = 1733;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 832;
@@ -1917,7 +1970,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 77";
 		rLen = 0;
-		rLoc = 1625;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 910;
@@ -1937,7 +1990,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 77";
 		rLen = 0;
-		rLoc = 1625;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 910;
@@ -1947,7 +2000,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 77";
 		rLen = 0;
-		rLoc = 1625;
+		rLoc = 1939;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 910;
@@ -1967,7 +2020,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 139";
 		rLen = 0;
-		rLoc = 2784;
+		rLoc = 3132;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 1986;
@@ -2007,7 +2060,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 51";
 		rLen = 0;
-		rLoc = 994;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 658;
@@ -2027,7 +2080,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 51";
 		rLen = 0;
-		rLoc = 994;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 658;
@@ -2037,7 +2090,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 51";
 		rLen = 0;
-		rLoc = 994;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 658;
@@ -2057,7 +2110,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1404;
+		rLoc = 1690;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 463;
@@ -2067,7 +2120,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 58";
 		rLen = 0;
-		rLoc = 1293;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2077,7 +2130,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 58";
 		rLen = 0;
-		rLoc = 1293;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2097,7 +2150,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 58";
 		rLen = 0;
-		rLoc = 1293;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2127,7 +2180,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 58";
 		rLen = 0;
-		rLoc = 1293;
+		rLoc = 1506;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2147,7 +2200,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 62";
 		rLen = 0;
-		rLoc = 1391;
+		rLoc = 1677;
 		rType = 0;
 		vrLen = 1048;
 		vrLoc = 794;
@@ -2157,7 +2210,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1429;
+		rLoc = 1729;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2177,7 +2230,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1429;
+		rLoc = 1729;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2287,7 +2340,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 111";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3943;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 1594;
@@ -2297,7 +2350,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 111";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3943;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 1259;
@@ -2307,7 +2360,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1429;
+		rLoc = 1729;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 794;
@@ -2317,7 +2370,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 111";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3943;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 1259;
@@ -2327,7 +2380,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 52";
 		rLen = 0;
-		rLoc = 892;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 794;
@@ -2337,7 +2390,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 51";
 		rLen = 0;
-		rLoc = 892;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 794;
@@ -2367,7 +2420,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = __func__;
 		rLen = 0;
-		rLoc = 892;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 794;
@@ -2377,7 +2430,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = __func__;
 		rLen = 0;
-		rLoc = 892;
+		rLoc = 943;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 794;
@@ -2407,7 +2460,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1687;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 755;
@@ -2417,7 +2470,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1687;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 755;
@@ -2437,7 +2490,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1687;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 755;
@@ -2477,7 +2530,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 63";
 		rLen = 0;
-		rLoc = 1401;
+		rLoc = 1687;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 794;
@@ -2957,7 +3010,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 69";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1831;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1900;
@@ -2967,7 +3020,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 69";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1831;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1900;
@@ -2987,7 +3040,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 69";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1831;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1900;
@@ -3017,7 +3070,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 120";
 		rLen = 0;
-		rLoc = 3709;
+		rLoc = 3873;
 		rType = 0;
 		vrLen = 1639;
 		vrLoc = 2030;
@@ -3027,7 +3080,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 126";
 		rLen = 0;
-		rLoc = 3415;
+		rLoc = 3579;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 2030;
@@ -3037,7 +3090,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 124";
 		rLen = 0;
-		rLoc = 3436;
+		rLoc = 3600;
 		rType = 0;
 		vrLen = 1965;
 		vrLoc = 2030;
@@ -3047,7 +3100,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 121";
 		rLen = 0;
-		rLoc = 3143;
+		rLoc = 3304;
 		rType = 0;
 		vrLen = 1956;
 		vrLoc = 2030;
@@ -3087,7 +3140,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 631;
 		vrLoc = 4738;
@@ -3097,7 +3150,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 113";
 		rLen = 0;
-		rLoc = 2275;
+		rLoc = 2623;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 1897;
@@ -3107,7 +3160,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 112";
 		rLen = 0;
-		rLoc = 2800;
+		rLoc = 2804;
 		rType = 0;
 		vrLen = 1956;
 		vrLoc = 2030;
@@ -3127,7 +3180,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 69";
 		rLen = 0;
-		rLoc = 1517;
+		rLoc = 1831;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 1897;
@@ -3137,7 +3190,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 151";
 		rLen = 0;
-		rLoc = 4304;
+		rLoc = 4468;
 		rType = 0;
 		vrLen = 1261;
 		vrLoc = 3477;
@@ -3157,7 +3210,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 113";
 		rLen = 0;
-		rLoc = 2275;
+		rLoc = 2623;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 1897;
@@ -3187,7 +3240,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 631;
 		vrLoc = 4738;
@@ -3197,7 +3250,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 98";
 		rLen = 0;
-		rLoc = 2053;
+		rLoc = 2399;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 1700;
@@ -3207,7 +3260,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 97";
 		rLen = 0;
-		rLoc = 2053;
+		rLoc = 2399;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 1700;
@@ -3257,7 +3310,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: 97";
 		rLen = 0;
-		rLoc = 2053;
+		rLoc = 2399;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 1700;
@@ -3417,7 +3470,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: drawRect:";
 		rLen = 516;
-		rLoc = 2161;
+		rLoc = 2509;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1900;
@@ -3457,7 +3510,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: drawRect:";
 		rLen = 516;
-		rLoc = 2161;
+		rLoc = 2509;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1900;
@@ -3483,7 +3536,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 4686;
@@ -3580,7 +3633,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 4686;
@@ -3610,7 +3663,7 @@
 		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
 		name = "TestAppGLView.m: drawRect:";
 		rLen = 516;
-		rLoc = 2161;
+		rLoc = 2509;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 1897;
@@ -3816,7 +3869,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 4686;
@@ -4013,7 +4066,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = textureType;
 		rLen = 11;
-		rLoc = 6159;
+		rLoc = 6323;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 4686;
@@ -4173,7 +4226,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 173";
 		rLen = 0;
-		rLoc = 4804;
+		rLoc = 4968;
 		rType = 0;
 		vrLen = 984;
 		vrLoc = 4213;
@@ -4213,7 +4266,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 174";
 		rLen = 0;
-		rLoc = 4804;
+		rLoc = 4968;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 4201;
@@ -4223,7 +4276,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 174";
 		rLen = 0;
-		rLoc = 4804;
+		rLoc = 4968;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 4201;
@@ -4313,7 +4366,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 174";
 		rLen = 0;
-		rLoc = 4804;
+		rLoc = 4968;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 4201;
@@ -4463,7 +4516,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3058;
+		rLoc = 3056;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -4473,7 +4526,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3058;
+		rLoc = 3056;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -4493,7 +4546,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3058;
+		rLoc = 3056;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -4613,7 +4666,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3058;
+		rLoc = 3056;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -4703,7 +4756,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3058;
+		rLoc = 3056;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -4819,7 +4872,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 6195;
+		rLoc = 6359;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 5211;
@@ -4846,7 +4899,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 214";
 		rLen = 0;
-		rLoc = 5584;
+		rLoc = 5748;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 4817;
@@ -4866,7 +4919,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 214";
 		rLen = 0;
-		rLoc = 5584;
+		rLoc = 5748;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 4817;
@@ -4886,7 +4939,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 125";
 		rLen = 0;
-		rLoc = 3362;
+		rLoc = 3526;
 		rType = 0;
 		vrLen = 1931;
 		vrLoc = 2209;
@@ -4906,7 +4959,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 210";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 4862;
@@ -4926,7 +4979,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 210";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 4805;
@@ -4946,7 +4999,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "@end";
 		rLen = 5;
-		rLoc = 6195;
+		rLoc = 6359;
 		rType = 0;
 		vrLen = 635;
 		vrLoc = 5211;
@@ -5026,7 +5079,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "- (void) drawAtPoint:(NSPoint)point";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 642;
 		vrLoc = 5204;
@@ -5056,7 +5109,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "- (void) drawAtPoint:(NSPoint)point";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 642;
 		vrLoc = 5204;
@@ -5076,7 +5129,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "- (void) drawAtPoint:(NSPoint)point";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 642;
 		vrLoc = 5204;
@@ -5266,7 +5319,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3044;
+		rLoc = 3042;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5276,7 +5329,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3044;
+		rLoc = 3042;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5286,7 +5339,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "- (void) drawAtPoint:(NSPoint)point";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 642;
 		vrLoc = 5204;
@@ -5296,7 +5349,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3044;
+		rLoc = 3042;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5306,7 +5359,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 210";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5713;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 5204;
@@ -5352,7 +5405,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 192";
 		rLen = 0;
-		rLoc = 5284;
+		rLoc = 5448;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 4470;
@@ -5369,7 +5422,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "- (void) drawAtPoint:(NSPoint)point sourceRect:(NSRect)srcRect";
 		rLen = 62;
-		rLoc = 5828;
+		rLoc = 5992;
 		rType = 0;
 		vrLen = 727;
 		vrLoc = 5332;
@@ -5389,7 +5442,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 223";
 		rLen = 0;
-		rLoc = 5932;
+		rLoc = 6096;
 		rType = 0;
 		vrLen = 726;
 		vrLoc = 5332;
@@ -5479,7 +5532,7 @@
 		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
 		name = "PFGLImage.m: 192";
 		rLen = 0;
-		rLoc = 5284;
+		rLoc = 5448;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 4470;
@@ -5629,7 +5682,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3044;
+		rLoc = 3042;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5659,7 +5712,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 3059;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5679,7 +5732,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 3059;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5879,7 +5932,7 @@
 		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
 		name = "PFFlickrProvider.m: 118";
 		rLen = 0;
-		rLoc = 3061;
+		rLoc = 3059;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 2251;
@@ -5993,6 +6046,536 @@
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 1829;
+	};
+	3A4B22EE0B221E3A0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 2147;
+	};
+	3A4B22F40B221F290017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 2147;
+	};
+	3A4B22F50B221F290017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 23";
+		rLen = 402;
+		rLoc = 362;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 0;
+	};
+	3A4B22F60B221F290017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 2147;
+	};
+	3A4B22F70B221F290017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 97";
+		rLen = 0;
+		rLoc = 2379;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 1553;
+	};
+	3A4B22FB0B221F450017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 50";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 1029;
+		vrLoc = 351;
+	};
+	3A4B22FF0B221F690017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 51";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 1140;
+		vrLoc = 907;
+	};
+	3A4B23000B221F690017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 51";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 730;
+		vrLoc = 1549;
+	};
+	3A4B23040B221FC60017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 51";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 1604;
+	};
+	3A4B23050B221FC60017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 192";
+		rLen = 0;
+		rLoc = 5448;
+		rType = 0;
+		vrLen = 1078;
+		vrLoc = 4472;
+	};
+	3A4B23060B221FC60017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 51";
+		rLen = 0;
+		rLoc = 876;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 1604;
+	};
+	3A4B23070B221FC60017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 111";
+		rLen = 0;
+		rLoc = 2797;
+		rType = 0;
+		vrLen = 2054;
+		vrLoc = 1723;
+	};
+	3A4B230B0B221FE30017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 108";
+		rLen = 0;
+		rLoc = 2745;
+		rType = 0;
+		vrLen = 2054;
+		vrLoc = 1723;
+	};
+	3A4B23110B2220900017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 120";
+		rLen = 0;
+		rLoc = 3025;
+		rType = 0;
+		vrLen = 1915;
+		vrLoc = 2102;
+	};
+	3A4B23150B2220AC0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 111";
+		rLen = 0;
+		rLoc = 2797;
+		rType = 0;
+		vrLen = 1926;
+		vrLoc = 2102;
+	};
+	3A4B23190B2220EC0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 89";
+		rLen = 0;
+		rLoc = 2003;
+		rType = 0;
+		vrLen = 1439;
+		vrLoc = 1352;
+	};
+	3A4B231D0B22210E0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 83";
+		rLen = 0;
+		rLoc = 1707;
+		rType = 0;
+		vrLen = 1439;
+		vrLoc = 1352;
+	};
+	3A4B23210B2221280017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 92";
+		rLen = 0;
+		rLoc = 2094;
+		rType = 0;
+		vrLen = 1435;
+		vrLoc = 1352;
+	};
+	3A4B23250B22217E0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 92";
+		rLen = 0;
+		rLoc = 2092;
+		rType = 0;
+		vrLen = 1461;
+		vrLoc = 1352;
+	};
+	3A4B23290B22219D0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 93";
+		rLen = 0;
+		rLoc = 2153;
+		rType = 0;
+		vrLen = 1433;
+		vrLoc = 1352;
+	};
+	3A4B23330B22228B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 93";
+		rLen = 0;
+		rLoc = 2153;
+		rType = 0;
+		vrLen = 1433;
+		vrLoc = 1352;
+	};
+	3A4B23340B22228B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 93";
+		rLen = 0;
+		rLoc = 2153;
+		rType = 0;
+		vrLen = 1362;
+		vrLoc = 1447;
+	};
+	3A4B233E0B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 112";
+		rLen = 0;
+		rLoc = 2802;
+		rType = 0;
+		vrLen = 1014;
+		vrLoc = 54;
+	};
+	3A4B233F0B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
+		name = "TestAppGLView.h: lastFilePathOpened";
+		rLen = 0;
+		rLoc = 96;
+		rType = 0;
+		vrLen = 236;
+		vrLoc = 0;
+	};
+	3A4B23400B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "NSString *lastFilePathOpened";
+		rLen = 18;
+		rLoc = 1618;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 806;
+	};
+	3A4B23410B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 112";
+		rLen = 0;
+		rLoc = 2802;
+		rType = 0;
+		vrLen = 1014;
+		vrLoc = 54;
+	};
+	3A4B23420B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "NSString *lastFilePathOpened";
+		rLen = 18;
+		rLoc = 1618;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 806;
+	};
+	3A4B23430B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E710B21DF100017671F /* TestAppGLView.h */;
+		name = "TestAppGLView.h: lastFilePathOpened";
+		rLen = 0;
+		rLoc = 96;
+		rType = 0;
+		vrLen = 236;
+		vrLoc = 0;
+	};
+	3A4B23440B22232B0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 70";
+		rLen = 0;
+		rLoc = 1808;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 806;
+	};
+	3A4B234B0B22236D0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 68";
+		rLen = 0;
+		rLoc = 1677;
+		rType = 0;
+		vrLen = 1050;
+		vrLoc = 806;
+	};
+	3A4B23520B2223940017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 69";
+		rLen = 0;
+		rLoc = 1605;
+		rType = 0;
+		vrLen = 1102;
+		vrLoc = 806;
+	};
+	3A4B23560B22247D0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 65";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1146;
+		vrLoc = 806;
+	};
+	3A4B235A0B2224AB0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 65";
+		rLen = 0;
+		rLoc = 1375;
+		rType = 0;
+		vrLen = 1166;
+		vrLoc = 806;
+	};
+	3A4B235F0B2225120017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 117";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 876;
+		vrLoc = 1680;
+	};
+	3A4B23630B2225350017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 117";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1119;
+		vrLoc = 1284;
+	};
+	3A4B23640B2225350017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 112";
+		rLen = 0;
+		rLoc = 2802;
+		rType = 0;
+		vrLen = 1010;
+		vrLoc = 58;
+	};
+	3A4B23650B2225350017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */;
+		name = "TestAppGLView.m: 117";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1119;
+		vrLoc = 1284;
+	};
+	3A4B23660B2225350017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 85";
+		rLen = 0;
+		rLoc = 1855;
+		rType = 0;
+		vrLen = 1466;
+		vrLoc = 1530;
+	};
+	3A4B23690B22255C0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 83";
+		rLen = 0;
+		rLoc = 1704;
+		rType = 0;
+		vrLen = 1509;
+		vrLoc = 1530;
+	};
+	3A4B236D0B2225A10017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 85";
+		rLen = 0;
+		rLoc = 1855;
+		rType = 0;
+		vrLen = 1507;
+		vrLoc = 1530;
+	};
+	3A4B23710B2225AE0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 84";
+		rLen = 0;
+		rLoc = 1709;
+		rType = 0;
+		vrLen = 1507;
+		vrLoc = 1530;
+	};
+	3A4B23750B22261C0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 85";
+		rLen = 0;
+		rLoc = 1829;
+		rType = 0;
+		vrLen = 1500;
+		vrLoc = 1530;
+	};
+	3A4B23780B2227720017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 85";
+		rLen = 0;
+		rLoc = 1829;
+		rType = 0;
+		vrLen = 1500;
+		vrLoc = 1530;
+	};
+	3A4B23790B2227720017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 2147;
+	};
+	3A4B237A0B2227720017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */;
+		name = "PFGLImage.m: 85";
+		rLen = 0;
+		rLoc = 1829;
+		rType = 0;
+		vrLen = 1500;
+		vrLoc = 1530;
+	};
+	3A4B237B0B2227720017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 2404;
+	};
+	3A4B237D0B22277C0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 2404;
+	};
+	3A4B237E0B22277C0017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 2362;
+	};
+	3A4B23840B2228220017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 2362;
+	};
+	3A4B23850B2228220017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A8F91780AE571C40027DC3B /* TestAppController.m */;
+		name = "TestAppController.m: windowWillClose:";
+		rLen = 104;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
+	};
+	3A4B23860B2228220017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 120";
+		rLen = 0;
+		rLoc = 3042;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 2362;
+	};
+	3A4B23870B2228220017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A8F91780AE571C40027DC3B /* TestAppController.m */;
+		name = "TestAppController.m: 23";
+		rLen = 0;
+		rLoc = 438;
+		rType = 0;
+		vrLen = 579;
+		vrLoc = 0;
+	};
+	3A4B238A0B2228400017671F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A8F91780AE571C40027DC3B /* TestAppController.m */;
+		name = "TestAppController.m: 7";
+		rLen = 0;
+		rLoc = 162;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
 	};
 	3A5316620B138E4E00252E6C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -6142,7 +6725,7 @@
 	3A8F91780AE571C40027DC3B /* TestAppController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {925, 651}}";
-			sepNavSelRange = "{458, 104}";
+			sepNavSelRange = "{162, 0}";
 			sepNavVisRect = "{{0, 0}, {925, 651}}";
 		};
 	};
