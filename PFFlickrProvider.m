@@ -117,8 +117,8 @@ DLog(@"%@", [res URL]);
 	while (n = (NSXMLElement*)[it nextObject])
 	{
 		urlString = [self urlForSize: [[n attributeForName:@"id"] stringValue] 
-								//size: @"Medium"];
-								size: @"Large"];
+								size: @"Medium"];
+								//size: @"Large"];
 		if(urlString) {
 			[urls put:[NSURL URLWithString:urlString]];
 			//DLog(@"Queued %@", urlString);
