@@ -14,7 +14,6 @@
 @interface PFGLImage : NSObject
 {
 	GLuint texId;
-	GLenum texType;
 	NSSize size;
 }
 

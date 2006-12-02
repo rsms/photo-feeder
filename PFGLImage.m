@@ -7,6 +7,9 @@
 
 @implementation PFGLImage
 
+// Extension which allows for non-power-by-2 iamges to be 
+// natively loaded by the GPU.
+static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 
 
 #pragma mark -- Creating the image
@@ -64,8 +67,6 @@
 
 - (void) _loadTexture:(NSBitmapImageRep *)bmp
 {
-	texType = GL_TEXTURE_RECTANGLE_EXT;
-	
 	glDisable(GL_TEXTURE_2D);
 	glEnable(texType);
 	
