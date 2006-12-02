@@ -80,17 +80,18 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 	glDisable(GL_TEXTURE_2D);
 	glEnable(texType);
 	
+	// Apple says these two speed things up...
+	glTexParameteri(texType, GL_TEXTURE_STORAGE_HINT_APPLE , GL_STORAGE_CACHED_APPLE);
+	// ...but this does strange, random things: (Don't enable)
+	//glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
+	
 	// allocate & bind the texture
 	glGenTextures(1, &texId);
 	glBindTexture(texType, texId);
 	
-	// Apple says these two speed things up:
-	//glTexParameteri(texType, GL_TEXTURE_STORAGE_HINT_APPLE , GL_STORAGE_CACHED_APPLE);
-	//glPixelStorei(GL_UNPACK_CLIENT_STORAGE_APPLE, GL_TRUE);
-	
-	// Activate = alias pixels
-	//glTexParameteri(texType, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	//glTexParameteri(texType, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	// GL_NEAREST or GL_LINEAR
+	glTexParameteri(texType, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(texType, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
 	
 	// Bytes in one row + "pad bytes" (for example when using word-boundary steps; GL_UNPACK_ALIGNMENT=8)
@@ -110,11 +111,15 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 	else {
 		glPixelStorei(GL_UNPACK_ALIGNMENT, 8);
 	}
-	//glPixelStorei(GL_UNPACK_IMAGE_HEIGHT, height);
 	
 	// Dump image info if debug mode
 	IFDEBUG(
 		DLog(@"Image info:");
+	
+		GLint unpackAlignment = 0;
+		glGetIntegerv(GL_UNPACK_ALIGNMENT, &unpackAlignment);
+		fprintf(stderr,"  GL_UNPACK_ALIGNMENT: %d\n", unpackAlignment);
+			
 		NSString* bmpFmt = @"";
 		if([bmp bitmapFormat] & NSAlphaFirstBitmapFormat)
 			bmpFmt = @"NSAlphaFirstBitmapFormat ";
@@ -122,6 +127,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 			bmpFmt = [bmpFmt stringByAppendingString:@"NSAlphaNonpremultipliedBitmapFormat "];
 		if([bmp bitmapFormat] & NSFloatingPointSamplesBitmapFormat)
 			bmpFmt = [bmpFmt stringByAppendingString:@"NSFloatingPointSamplesBitmapFormat"];
+		
 		fprintf(stderr,"  size:            %.0f, %.0f\n", bounds.size.width, bounds.size.height);
 		fprintf(stderr,"  bitmapFormat:    %s\n", [bmpFmt cString]);
 		fprintf(stderr,"  bitsPerPixel:    %d\n", [bmp bitsPerPixel]);
