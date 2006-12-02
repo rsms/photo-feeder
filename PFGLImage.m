@@ -56,18 +56,20 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 		return nil;
 	}
 	
-	NSBitmapImageRep* bmp = [NSBitmapImageRep imageRepWithData:data];
-	if(!bmp) {
+	_bmp = [NSBitmapImageRep imageRepWithData:data];
+	if(!_bmp) {
 		NSTrace(@"Failed to load image data");
 		return nil;
 	}
+	[_bmp retain];
 	
 	self = [super init];
-	size = [bmp size];
-	if( ![self _loadTexture:bmp]) {
+	NSSize size = [_bmp size];
+	bounds = NSMakeRect(0.0f, 0.0f, size.width, size.height);
+	/*if( ![self _loadTexture:_bmp]) {
 		NSTrace(@"Failed to create OpenGL texture");
 		return nil;
-	}
+	}*/
 	return self;
 }
 
@@ -102,7 +104,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 		4 (word-alignment), and 
 		8 (rows start on double-word boundaries).
 	*/
-	if( ([bmp bytesPerRow] / ([bmp bitsPerPixel] >> 3)) == size.width ) {
+	if( ([bmp bytesPerRow] / ([bmp bitsPerPixel] >> 3)) == bounds.size.width ) {
 		glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	}
 	else {
@@ -120,7 +122,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 			bmpFmt = [bmpFmt stringByAppendingString:@"NSAlphaNonpremultipliedBitmapFormat "];
 		if([bmp bitmapFormat] & NSFloatingPointSamplesBitmapFormat)
 			bmpFmt = [bmpFmt stringByAppendingString:@"NSFloatingPointSamplesBitmapFormat"];
-		fprintf(stderr,"  size:            %.0f, %.0f\n", size.width, size.height);
+		fprintf(stderr,"  size:            %.0f, %.0f\n", bounds.size.width, bounds.size.height);
 		fprintf(stderr,"  bitmapFormat:    %s\n", [bmpFmt cString]);
 		fprintf(stderr,"  bitsPerPixel:    %d\n", [bmp bitsPerPixel]);
 		fprintf(stderr,"  bytesPerPlane:   %d\n", [bmp bytesPerPlane]);
@@ -150,7 +152,8 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 			return NO;
 	}
 	
-	glTexImage2D( texType, 0, GL_RGBA, size.width, size.height, 0, inputDataFormat, GL_UNSIGNED_BYTE, (GLubyte*)[bmp bitmapData] );
+	glTexImage2D( texType, 0, GL_RGBA, bounds.size.width, bounds.size.height, 0, inputDataFormat, 
+				  GL_UNSIGNED_BYTE, (GLubyte*)[bmp bitmapData] );
 	return YES;
 }
 
@@ -161,24 +164,36 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 
 - (void) drawInRect:(NSRect)dstRect sourceRect:(NSRect)srcRect
 {
+	// Load texture if bitmap main memory buffer exists
+	if(_bmp) {
+		if( ![self _loadTexture:_bmp]) {
+			NSTrace(@"Failed to create OpenGL texture");
+			[_bmp release];
+			_bmp = nil;
+			return;
+		}
+		[_bmp release];
+		_bmp = nil;
+	}
+	
 	glBindTexture(texType, texId);
 	glBegin(GL_QUADS);
 	
 	// BL
-	glTexCoord2f(srcRect.origin.x, srcRect.size.height);
+	glTexCoord2f(srcRect.origin.x, srcRect.size.height+srcRect.origin.y);
 	glVertex2f(dstRect.origin.x, dstRect.origin.y);
 	
 	// TL
 	glTexCoord2f(srcRect.origin.x, srcRect.origin.y);
-	glVertex2f(dstRect.origin.x, dstRect.size.height);
+	glVertex2f(dstRect.origin.x, dstRect.size.height+dstRect.origin.y);
 	
 	// TR
-	glTexCoord2f(srcRect.size.width, srcRect.origin.y);
-	glVertex2f(dstRect.size.width, dstRect.size.height);
+	glTexCoord2f(srcRect.size.width+srcRect.origin.x, srcRect.origin.y);
+	glVertex2f(dstRect.size.width+dstRect.origin.x, dstRect.size.height+dstRect.origin.y);
 	
 	// BR
-	glTexCoord2f(srcRect.size.width, srcRect.size.height);
-	glVertex2f(dstRect.size.width, dstRect.origin.y);
+	glTexCoord2f(srcRect.size.width+srcRect.origin.x, srcRect.size.height+srcRect.origin.y);
+	glVertex2f(dstRect.size.width+dstRect.origin.x, dstRect.origin.y);
 	
 	glEnd();
 }
@@ -186,22 +201,36 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 
 - (void) drawInRect:(NSRect)rect
 {
-	[self drawInRect:rect sourceRect:NSMakeRect(0.0f, 0.0f, size.width, size.height)];
+	[self drawInRect:rect sourceRect:bounds];
 }
 
 
 - (void) draw
 {
-	[self drawInRect:[[[NSOpenGLContext currentContext] view] bounds]];
+	[self drawInRect:[[[NSOpenGLContext currentContext] view] bounds] sourceRect:bounds];
+}
+
+
+- (void) drawAtPoint:(NSPoint)point
+{
+	[self drawInRect:NSMakeRect(point.x, point.y, bounds.size.width+point.x, bounds.size.height+point.y) 
+		  sourceRect:bounds];
+}
+
+
+- (void) drawAtPoint:(NSPoint)point sourceRect:(NSRect)srcRect
+{
+	[self drawInRect:NSMakeRect(point.x, point.y, bounds.size.width+point.x, bounds.size.height+point.y) 
+		  sourceRect:srcRect];
 }
 
 
 
 #pragma mark -- Getting image properties
 
-- (NSSize) size
+- (NSRect) bounds
 {
-	return size;
+	return bounds;
 }
 
 - (GLuint) textureId

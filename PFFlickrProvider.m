@@ -18,7 +18,7 @@ DLog(@"%@", [res URL]);
 {
 	[super init];
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
-	DLog(@"[%@ init] urls: %@", self, urls);
+	DLog(@"urls: %@", urls);
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 							 toTarget:self 
 						   withObject:nil];
@@ -76,10 +76,12 @@ DLog(@"%@", [res URL]);
 }
 
 
--(CIImage*)nextImage
+-(PFImage*)nextImage
 {
 	// Would be nice to handle "to small images" right here
-	return [CIImage imageWithContentsOfURL:(NSURL *)[urls take]];
+	NSURL* url = (NSURL *)[urls take];
+	DLog(@"%@", url);
+	return [[PFImage alloc] initWithGLImage:[[PFGLImage alloc] initWithContentsOfURL:url]];
 }
 
 
@@ -87,7 +89,7 @@ DLog(@"%@", [res URL]);
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while(1) {
-		DLog(@"[%@ addURLsThread] calling [%@ addURLs]...", self, self);
+		DLog(@"calling [%@ addURLs]...", self);
 		[self addURLs];
 	}
 	[pool release];
@@ -115,11 +117,14 @@ DLog(@"%@", [res URL]);
 	while (n = (NSXMLElement*)[it nextObject])
 	{
 		urlString = [self urlForSize: [[n attributeForName:@"id"] stringValue] 
+								//size: @"Medium"];
 								size: @"Large"];
-		if(urlString)
+		if(urlString) {
 			[urls put:[NSURL URLWithString:urlString]];
+			//DLog(@"Queued %@", urlString);
+		}
 		else
-			DLog(@"[%@ addURLs] Image was too small", self);
+			DLog(@"Image was too small");
 	}
 	
 	// Sure shots:

@@ -6,95 +6,65 @@
 
 @implementation PFGLRenderer
 
-+ (PFGLRenderer*) newRenderer {
+- (PFGLRenderer*) initWithDefaultPixelFormat
+{
+	DLog(@"");
+	NSOpenGLPixelFormat *pixFmt;
+	
 	// Setup the default renderer attributes. We don't want any fancy stuff,
 	// just the basics things for displaying images in 2D
-	NSOpenGLPixelFormatAttribute attributes[] = { 
+	NSOpenGLPixelFormatAttribute attrs[] = {
 		NSOpenGLPFAAccelerated,
 		NSOpenGLPFANoRecovery,
-		NSOpenGLPFADoubleBuffer,
-		//NSOpenGLPFAColorSize, 24,
-		0};
+		NSOpenGLPFAColorSize, 32,
+		0
+	};
 	
-	// Setup the pixel format with the above specified attributes 
-	NSOpenGLPixelFormat *format = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attributes] autorelease];
+	if( !(pixFmt = [[NSOpenGLPixelFormat alloc] initWithAttributes:attrs]) )
+	{
+		NSTrace(@"Failed to aquire pixel format!");
+		return nil;
+	}
 	
-	return [[[self class] alloc] initWithFrame: NSZeroRect
-								   pixelFormat: format];
+	self = [super initWithFrame:NSZeroRect pixelFormat:pixFmt];
+	[[self openGLContext] makeCurrentContext];
+	
+	// Setup some basic OpenGL stuff
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	
+	return self;
 }
 
 
-- (void)reshape	// scrolled, moved or resized
+- (void) reshape	// scrolled, moved or resized
 {
-	NSRect rect;
-	
 	[super reshape];
+	DLog(@"");
 	
-	[[self openGLContext] makeCurrentContext];
-	[[self openGLContext] update];
+	NSRect rect = [self bounds];
+	glViewport(0, 0, (int) rect.size.width, (int) rect.size.height);
 	
-	rect = [self bounds];
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	
-	glViewport(0, 0, (int)rect.size.width, (int)rect.size.height);
-	
-	/*glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
+	glOrtho(rect.origin.x,
+			rect.origin.x + rect.size.width,
+			rect.origin.y,
+			rect.origin.y + rect.size.height,
+			-1, 1);
 	
 	glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();*/
+	glLoadIdentity();
 	
-	[self setNeedsDisplay:true];
+	[self setNeedsDisplay:YES];
 }
 
 
-- (void)prepare {
-	[[self openGLContext] makeCurrentContext];
-	
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-	
-	
-	
-    // Enable beam-synced updates
-	/*long parm = 1;
-    [[self openGLContext] setValues: &parm
-					   forParameter: NSOpenGLCPSwapInterval];
-	
-    // Make sure that things we don't need are disabled. Some of
-	// these are enabled by default and can slow down rendering
-    glDisable(GL_ALPHA_TEST);
-    glDisable(GL_DEPTH_TEST);
-    glDisable(GL_SCISSOR_TEST);
-    glDisable(GL_BLEND);
-    glDisable(GL_DITHER);
-	glDisable(GL_CULL_FACE);
-    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-    glDepthMask(GL_FALSE);
-    glStencilMask(0);
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-    glHint(GL_TRANSFORM_HINT_APPLE, GL_FASTEST);
-	
-	glEnable(GL_TEXTURE_RECTANGLE_EXT);*/
-	
-	
-	/*
-	NeHe:
-	
-	glEnable(GL_TEXTURE_2D);						// Enable Texture Mapping ( NEW )
-	glShadeModel(GL_SMOOTH);						// Enable Smooth Shading
-	glClearColor(0.0f, 0.0f, 0.0f, 0.5f);					// Black Background
-	glClearDepth(1.0f);							// Depth Buffer Setup
-	glEnable(GL_DEPTH_TEST);						// Enables Depth Testing
-	glDepthFunc(GL_LEQUAL);							// The Type Of Depth Testing To Do
-	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);			// Really Nice Perspective Calculations
-	return TRUE;								// Initialization Went OK
-	*/
-	
-}
-
-- (void)setFrameSize:(NSSize)newSize {  
+- (void)setFrameSize:(NSSize)newSize
+{  
 	[super setFrameSize: newSize];
+	DLog(@"");
 	
 	[[self openGLContext] makeCurrentContext];
 	

@@ -7,8 +7,10 @@
 
 @implementation PFScreenSaverView
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
-    if(self = ([super initWithFrame:frame isPreview:isPreview])) {
+- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
+{
+    if(self = ([super initWithFrame:frame isPreview:isPreview]))
+	{
 		DLog(@"[PhotoFeederView initWithFrame...]");
 		
 		// Create the mother-queue
@@ -33,28 +35,25 @@
 		// Create message text
 		statusText = [[PFText alloc] initWithText: @"Loading..."];
 		
+		
 		// Setup renderer
-		renderer = [PFGLRenderer newRenderer];
+		renderer = [[[PFGLRenderer alloc] initWithDefaultPixelFormat] retain];
 		if (!renderer) {
-			NSLog( @"Couldn't initialize OpenGL view." );
+			NSLog(@"Failed to initialize renderer" );
 			[self autorelease];
 			return nil;
 		}
-		[self addSubview: renderer]; 
-		[renderer prepare];
+		[self addSubview: renderer];
+		
 		
 		// Get the screen size to be able to scale images properly
 		screenSize = [self bounds].size;
 		
-		// Create a transition filter
-		transition = [[CIFilter filterWithName: @"CIDissolveTransition"] retain];
-		[transition setDefaults];
-		
 		// Set frame rate
 		float fps = [[NSUserDefaults standardUserDefaults] floatForKey:@"rendererFPS"];
-		if(fps == 0)
-			fps = 60.0;
-        [self setAnimationTimeInterval: 1/fps];
+		if(fps == 0.0f)
+			fps = 60.0f;
+        [self setAnimationTimeInterval: 1.0f/fps];
     }
     return self;
 }
@@ -71,95 +70,51 @@
 }
 
 
-
 #pragma mark -- Animation & Rendering
 
 - (void)animateOneFrame
 {
 	if( frontImage )
 	{
-		/*// Update transition if needed
-		float fadeThreshold = .65; // TODO: Bind to user defaults
-		float percentPosition = 1-((float)frontImage.stepsLeft/(float)frontImage.stepCount);
+		// Update transition if needed
+		float fadeThreshold = 0.65f; // TODO: Bind to user defaults
+		float percentPosition = 1-((float)[frontImage stepsLeft]/(float)[frontImage stepCount]);
 		
 		if( percentPosition > fadeThreshold )
 		{
-			[transition setValue: [NSNumber numberWithFloat: SMOOTHSTEP((percentPosition-fadeThreshold)/(1-fadeThreshold))]
-						  forKey: @"inputTime"];
+			//[transition setValue: [NSNumber numberWithFloat: SMOOTHSTEP((percentPosition-fadeThreshold)/(1-fadeThreshold))]
+			//			  forKey: @"inputTime"];
+			
 			// Update back image position
-			PFImageMoveOneStep(&backImage);
+			if(backImage)
+				[backImage moveOneStep];
 		}
 		
 		// Update front image position
-		PFImageMoveOneStep(&frontImage);*/
+		[frontImage moveOneStep];
+		
+		[self setNeedsDisplay:YES];
 	}
-	
-	[self setNeedsDisplay:YES];
-}
-
-
-- (void)drawRect:(NSRect)rect
-{
-	// Activate OpenGL context
-	[[renderer openGLContext] makeCurrentContext];
-	
-	if( !frontImage ) {
-		frontImage = [PFImage imageWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/rasmus/Desktop/bild_1000.jpg"]];
-		DLog(@"frontImage: w: %d", [frontImage bounds].width );
-	}
-	
-	
-	
-	glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [frontImage texture]);
-	
-	glTexSubImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 0, 0, 1000, 1000, GL_BGRA, GL_BGRA, [frontImage data]);
-	glBegin(GL_QUADS);
-	glTexCoord2f(0.0f, 0.0f);
-	glVertex2f(-1.0f, 1.0f);
-	
-	glTexCoord2f(0.0f, 1000.0f);
-	glVertex2f(-1.0f, -1.0f);
-	
-	glTexCoord2f(1000.0f, 1000.0f);
-	glVertex2f(1.0f, -1.0f);
-	
-	glTexCoord2f(1000.0f, 0.0f);
-	glVertex2f(1.0f, 1.0f);
-	glEnd();
-	
-	glFlush();
-	
-	
-	/*glClear(GL_COLOR_BUFFER_BIT);
-	
-	if( !frontImage ) {
-		frontImage = [PFImage imageWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/rasmus/Desktop/bild_1000.jpg"]];
-		DLog(@"frontImage: w: %d", [frontImage bounds].width );
-	}
-	
-	glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [frontImage texture]);
-	//glLoadIdentity();
-	
-	glBegin( GL_QUADS );
-	glTexCoord2d(0.0,1.0); glVertex2d(0.0,0.0);
-	glTexCoord2d(1.0,1.0); glVertex2d(1000.0,0.0);
-	glTexCoord2d(1.0,0.0); glVertex2d(1000.0,1000.0);
-	glTexCoord2d(0.0,0.0); glVertex2d(0.0,1000.0);
-	glEnd();*/
-	
-	
-	/*
-	glColor3f(1.0,0,0);
-	glBegin( GL_QUADS );
-	glVertex2d(0.0,0.0);
-	glVertex2d(100.0,0.0);
-	glVertex2d(100.0,100.0);
-	glVertex2d(0.0,100.0);
-	glEnd();*/
 }
 
 
 /*- (void)drawRect:(NSRect)rect
+{
+	[[renderer openGLContext] makeCurrentContext];
+	
+	if( !frontImage ) {
+		DLog(@"Loading frontImage...");
+		PFGLImage* glImage = [[PFGLImage alloc] initWithContentsOfFile:@"/Users/rasmus/Desktop/bild_1000.jpg"];
+		frontImage = [[[PFImage alloc] initWithGLImage:glImage] retain];
+	}
+	
+	[[frontImage glImage] drawInRect:rect];
+	
+	glFlush();
+}*/
+
+
+- (void)drawRect:(NSRect)rect
 {
 	// Draw Not Loading while we are waiting for an image
 	if( !frontImage )
@@ -172,48 +127,20 @@
 		return;
 	}
 	
-	// TODO: It's unnecessary to call this each frame, call only when switching images...
-	[transition setValue: [frontImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-frontImage.position.x, -frontImage.position.y)]
-				  forKey: @"inputImage"];
-	[transition setValue: [backImage.im imageByApplyingTransform: CGAffineTransformMakeTranslation(-backImage.position.x, -backImage.position.y)]
-				  forKey: @"inputTargetImage"];
-	
-	// Activate OpenGL context
-	[[renderer openGLContext] makeCurrentContext]; // <- This seems to be redundant, but we keep it here for now.
-	if (ciContext == nil) {
-		ciContext = [[CIContext contextWithCGLContext: CGLGetCurrentContext() 
-													 pixelFormat: [[renderer pixelFormat] CGLPixelFormatObj] 
-														  options: nil] retain];
-	}
-	
-	// Fill the view black between each rendered frame (overwriting the old image)
-	IFDEBUG(
-		glColor4f( 0.0f, 0.0f, 0.0f, 0.0f );
-		glBegin( GL_POLYGON );
-		glVertex2f( rect.origin.x, rect.origin.y );
-		glVertex2f( rect.origin.x + rect.size.width, rect.origin.y );
-		glVertex2f( rect.origin.x + rect.size.width, rect.origin.y + rect.size.height );
-		glVertex2f( rect.origin.x, rect.origin.y + rect.size.height );
-		glEnd();
-	);
-	
-	// Perform drawing
-	CGRect myFrame = *(CGRect*)&rect; // <- We love this typecast-kinda thing!
-	//NSLog(@"myFrame: %f, %f, %f, %f", myFrame.origin.x, myFrame.origin.y, myFrame.size.width, myFrame.size.height);
-	[ciContext drawImage: [transition valueForKey: @"outputImage"]
-					 atPoint: CGPointZero
-					fromRect: myFrame];
+	[[renderer openGLContext] makeCurrentContext];
+	//[[frontImage glImage] drawInRect:rect sourceRect:[frontImage bounds]];
+	//[[frontImage glImage] drawAtPoint:[frontImage bounds].origin];
+	[[frontImage glImage] drawInRect:rect sourceRect:[frontImage sourceRect]];
 	
 	// We are done with front image and need a new back image
-	if(!frontImage.stepsLeft) {
-		[transition setValue: [NSNumber numberWithFloat: .0 ]
-					  forKey: @"inputTime"];
+	if(![frontImage stepsLeft]) {
+		//[transition setValue: [NSNumber numberWithFloat:0.0f] forKey: @"inputTime"];
 		[imageCreatorLock lock];
 		[imageCreatorLock unlockWithCondition: CL_RUN];
 	}
 	
 	glFlush();
-}*/
+}
 
 
 #pragma mark -- Threads
@@ -234,6 +161,8 @@
 }
 
 
+// This is redundant, now that we use gl-textures directly. It adds more overhead to 
+// pre-resample images than to let it happen in real-time by the GPU.
 /*- (PFImage*)createResizedImageFromCIImage:(CIImage *)im
 {	
 	float screenAspectRatio = screenSize.width / screenSize.height;
@@ -285,26 +214,86 @@
 	while(1)
 	{
 		[imageCreatorLock lockWhenCondition:CL_RUN];
-		/*DLog(@"[PhotoFeederView imageCreatorThread] Taking CIImage from queue and converting to PFImage...");
+		
+		DLog(@"Taking image from queue");
 		
 		// Swap images - bring back to front
-		PFImage oldFrontImage = frontImage;
+		PFImage* oldFrontImage = frontImage;
 		frontImage = backImage;
 		
-		// Create new back image
-		backImage = [self createResizedImageFromCIImage: (CIImage*)[queue take]];
+		// Aquire new back image
+		backImage = (PFImage*)[queue take];
+		[self setupAnimationForImage:backImage];
 		
 		// Throw away old front image
-		PFImageRelease(oldFrontImage);
+		if(oldFrontImage)
+			[oldFrontImage release];
 		
-		if(PFImageIsValid(frontImage))
+		if(frontImage)
 			[imageCreatorLock unlockWithCondition:CL_WAIT];
 		else
-			[imageCreatorLock unlock];*/
+			[imageCreatorLock unlock];
 	}
 		
 	[pool release];
 }
+
+
+- (void) setupAnimationForImage:(PFImage*)im
+{	
+	//if([im stepCount])
+	//	return; // already setup
+	
+	NSRect sourceRect = [[im glImage] bounds];
+	NSSize imageSize = sourceRect.size;
+	
+	float screenAspectRatio = screenSize.width / screenSize.height;
+	float imageAspectRatio = imageSize.width / imageSize.height;
+	float pixelsOutsideScreen = 0.0f;
+	
+	PFMovingType movingType = PFMovingTypeNone;
+	
+	// Rescale image so that it fits for sliding horizontally or vertically
+	if(imageAspectRatio > screenAspectRatio)
+	{
+		DLog(@"Image is in landscape format (-)");
+		
+		//resizeRate = screenSize.height / imageSize.height;
+		sourceRect.size.width = imageSize.height * screenAspectRatio;
+		pixelsOutsideScreen = imageSize.width - sourceRect.size.width;
+		
+		//pixelsOutsideScreen = (imageSize.width * resizeRate) - screenSize.width;
+		movingType = pixelsOutsideScreen ? PFMovingTypeHorizontally : PFMovingTypeNone;
+	}
+	
+	else if(imageAspectRatio <= screenAspectRatio)
+	{
+		DLog(@"Image is in portrait format (|)");
+		
+		sourceRect.size.height = imageSize.width / screenAspectRatio;
+		pixelsOutsideScreen = imageSize.height - sourceRect.size.height;
+		
+		//pixelsOutsideScreen = (imageSize.height * resizeRate) - screenSize.height;
+		movingType = pixelsOutsideScreen ? PFMovingTypeVertically : PFMovingTypeNone;
+	}
+	
+	DLog(@"screenAspectRatio: %f", screenAspectRatio);
+	DLog(@"imageAspectRatio: %f", imageAspectRatio);
+	DLog(@"imageSize: %f, %f", imageSize.width, imageSize.height);
+	DLog(@"sourceRect.size: %f, %f", sourceRect.size.width, sourceRect.size.height);
+	DLog(@"pixelsOutsideScreen: %f", pixelsOutsideScreen);
+	
+	
+	float basedOnFPS = 1.0f / [self animationTimeInterval];
+	float timeVisible = 10.0f; // Seconds to show image. TODO: bind to userdefaults
+	int stepCount = timeVisible * basedOnFPS;
+	
+	[im setupAnimation: movingType 
+			  stepSize: 1.0f / (stepCount / pixelsOutsideScreen)
+			 stepCount: stepCount
+			sourceRect: sourceRect];
+}
+
 
 #pragma mark -- Etc...
 

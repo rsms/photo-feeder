@@ -2,7 +2,6 @@
 	BOOL viewHasBeenReshaped;
 }
 
-+ (PFGLRenderer*)newRenderer;
-- (void)prepare;
+- (PFGLRenderer*) initWithDefaultPixelFormat;
 
 @end

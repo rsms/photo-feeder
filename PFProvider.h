@@ -1,8 +1,10 @@
 
+#import "PFImage.h"
+
 @interface PFProvider : NSObject {
 }
 
 /** Return a Image. */
--(CIImage*)nextImage;
+-(PFImage*)nextImage;
 
 @end

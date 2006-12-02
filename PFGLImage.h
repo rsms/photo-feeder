@@ -14,7 +14,9 @@
 @interface PFGLImage : NSObject
 {
 	GLuint texId;
-	NSSize size;
+	NSRect bounds;
+	
+	NSBitmapImageRep* _bmp;
 }
 
 
@@ -42,11 +44,13 @@
 - (void) draw;
 - (void) drawInRect:(NSRect)rect;
 - (void) drawInRect:(NSRect)dstRect sourceRect:(NSRect)srcRect;
+- (void) drawAtPoint:(NSPoint)point;
+- (void) drawAtPoint:(NSPoint)point sourceRect:(NSRect)srcRect;
 
 
 #pragma mark Getting image properties
 
-- (NSSize) size;
+- (NSRect) bounds;
 - (GLuint) textureId;
 + (GLenum) textureType;
 

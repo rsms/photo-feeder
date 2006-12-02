@@ -26,6 +26,8 @@
 
 - (void)queueFillerThread:(id)obj;
 - (void)imageCreatorThread:(id)obj;
+
 //- (PFImage*)createResizedImageFromCIImage:(CIImage *)im;
+- (void) setupAnimationForImage:(PFImage*)im;
 
 @end

@@ -1,29 +1,31 @@
 
-#import <OpenGL/gl.h>
-#import <OpenGL/glext.h>
-#import <OpenGL/glu.h>
+#import "PFGLImage.h"
 
 @interface PFImage : NSObject {
 	
-	GLubyte         *data;
-	GLuint          texture;
+	PFGLImage       *glImage;
 	
-	PFRect			bounds;
+	NSRect			bounds;
+	NSRect			sourceRect;
 	PFMovingType	movingType;
-	
 	float			stepSize;
 	int				stepsLeft;
 	int				stepCount;
 }
 
 
-+ (PFImage*) imageWithContentsOfURL:(NSURL*)url;
-- (id) initWithData:(unsigned char *)data w:(int)w h:(int)h components:(int)components hasAlpha:(BOOL)hasA;
+- (PFImage*) initWithGLImage:(PFGLImage*)im;
 
-- (GLubyte*) data;
-- (GLuint) texture;
-- (PFRect) bounds;
+- (void) moveOneStep;
+- (void) setupAnimation:(PFMovingType)moveType stepSize:(float)ss stepCount:(int)sc sourceRect:(NSRect)sr;
+
+- (void) setGLImage:(PFGLImage *)im;
+- (PFGLImage *) glImage;
+
+- (NSRect) bounds;
+- (NSRect) sourceRect;
 - (PFMovingType) movingType;
+
 - (float) stepSize;
 - (int) stepsLeft;
 - (int) stepCount;
