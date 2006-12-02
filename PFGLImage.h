@@ -48,6 +48,6 @@
 
 - (NSSize) size;
 - (GLuint) textureId;
-- (GLenum) textureType;
++ (GLenum) textureType;
 
 @end

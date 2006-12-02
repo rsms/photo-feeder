@@ -209,7 +209,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 	return texId;
 }
 
-- (GLenum) textureType
++ (GLenum) textureType
 {
 	return texType;
 }
