@@ -48,12 +48,6 @@
 		
 		// Get the screen size to be able to scale images properly
 		screenSize = [self bounds].size;
-		
-		// Set frame rate
-		float fps = [[NSUserDefaults standardUserDefaults] floatForKey:@"rendererFPS"];
-		if(fps == 0.0f)
-			fps = 60.0f;
-        [self setAnimationTimeInterval: 1.0f/fps];
     }
     return self;
 }
@@ -323,6 +317,11 @@
 }
 
 - (void)startAnimation {
+	// Set frame rate
+	float fps = [[NSUserDefaults standardUserDefaults] floatForKey:@"rendererFPS"];
+	if(fps == 0.0f)
+		fps = 60.0f;
+	[self setAnimationTimeInterval: 1.0f/fps];
 	[super startAnimation];
 }
 
