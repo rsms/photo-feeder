@@ -26,18 +26,19 @@
 // Debug
 #ifdef _DEBUG
 	#define IFDEBUG(x) x
-	#define DLog( ... ) NSLog( __VA_ARGS__)
-	#define DTrace( ... ) __DTrace(__func__, __VA_ARGS__)
-	static void __DTrace( const char *fnc, NSString *format, ... ) {
-		va_list args;
-		va_start(args, format);
-		NSLogv( [[[NSString stringWithCString:fnc] stringByAppendingString:@" "] stringByAppendingString:format], args);
-		va_end(args);
-	}
+	#define DLog( ... ) __NSTrace(__func__, __VA_ARGS__)
 #else
 	#define IFDEBUG(x)
 	#define DLog( ... )
-	#define DTrace( ... )
 #endif
+
+#define NSTrace( ... ) __NSTrace(__func__, __VA_ARGS__)
+
+static void __NSTrace( const char *fnc, NSString *format, ... ) {
+	va_list args;
+	va_start(args, format);
+	NSLogv( [[[NSString stringWithCString:fnc] stringByAppendingString:@" "] stringByAppendingString:format], args);
+	va_end(args);
+}
 
 #import "types.h"

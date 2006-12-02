@@ -1,7 +1,11 @@
 #import "PFGLImage.h"
 
 @interface PFGLImage (Private)
-- (void) _loadTexture:(NSBitmapImageRep *)bmp;
+/**
+ * Load data onto a texture.
+ * @return Success
+ */
+- (BOOL) _loadTexture:(NSBitmapImageRep *)bmp;
 @end
 
 
@@ -21,7 +25,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 {
 	NSData* d = [NSData dataWithContentsOfFile:path];
 	if(!d) {
-		NSLog(@"[%@ initWithContentsOfFile:] Failed to read file '%@'", self, path);
+		NSTrace(@"Failed to read file '%@'", path);
 		return nil;
 	}
 	return [self initWithData:d];
@@ -35,7 +39,7 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 {
 	NSData* d = [NSData dataWithContentsOfURL:url];
 	if(!d) {
-		NSLog(@"[%@ initWithContentsOfURL:] Failed to read URL '%@'", self, url);
+		NSTrace(@"Failed to read URL '%@'", url);
 		return nil;
 	}
 	return [self initWithData:d];
@@ -48,24 +52,28 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 - (id) initWithData:(NSData*)data
 {
 	if(!data) {
-		NSLog(@"[%@ initWithContentsOfData:] data is nil", self);
+		NSTrace(@"data is nil");
 		return nil;
 	}
 	
 	NSBitmapImageRep* bmp = [NSBitmapImageRep imageRepWithData:data];
 	if(!bmp) {
-		NSLog(@"[%@ initWithContentsOfData:] Failed to load image data", self);
+		NSTrace(@"Failed to load image data");
 		return nil;
 	}
 	
 	self = [super init];
 	size = [bmp size];
-	[self _loadTexture:bmp];
+	if( ![self _loadTexture:bmp]) {
+		NSTrace(@"Failed to create OpenGL texture");
+		return nil;
+	}
 	return self;
 }
 
 
-- (void) _loadTexture:(NSBitmapImageRep *)bmp
+// TODO: Add tighter error-handling
+- (BOOL) _loadTexture:(NSBitmapImageRep *)bmp
 {
 	glDisable(GL_TEXTURE_2D);
 	glEnable(texType);
@@ -102,14 +110,25 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 	}
 	//glPixelStorei(GL_UNPACK_IMAGE_HEIGHT, height);
 	
-	DLog(@"size: %d x %d", size.width, size.height);
-	DLog(@"bitmapFormat: %d", [bmp bitmapFormat]);
-	DLog(@"bitsPerPixel: %d", [bmp bitsPerPixel]);
-	DLog(@"bytesPerPlane: %d", [bmp bytesPerPlane]);
-	DLog(@"bytesPerRow: %d", [bmp bytesPerRow]);
-	DLog(@"isPlanar: %d", [bmp isPlanar]);
-	DLog(@"numberOfPlanes: %d", [bmp numberOfPlanes]);
-	DLog(@"samplesPerPixel: %d", [bmp samplesPerPixel]);
+	// Dump image info if debug mode
+	IFDEBUG(
+		DLog(@"Image info:");
+		NSString* bmpFmt = @"";
+		if([bmp bitmapFormat] & NSAlphaFirstBitmapFormat)
+			bmpFmt = @"NSAlphaFirstBitmapFormat ";
+		if([bmp bitmapFormat] & NSAlphaNonpremultipliedBitmapFormat)
+			bmpFmt = [bmpFmt stringByAppendingString:@"NSAlphaNonpremultipliedBitmapFormat "];
+		if([bmp bitmapFormat] & NSFloatingPointSamplesBitmapFormat)
+			bmpFmt = [bmpFmt stringByAppendingString:@"NSFloatingPointSamplesBitmapFormat"];
+		fprintf(stderr,"  size:            %.0f, %.0f\n", size.width, size.height);
+		fprintf(stderr,"  bitmapFormat:    %s\n", [bmpFmt cString]);
+		fprintf(stderr,"  bitsPerPixel:    %d\n", [bmp bitsPerPixel]);
+		fprintf(stderr,"  bytesPerPlane:   %d\n", [bmp bytesPerPlane]);
+		fprintf(stderr,"  bytesPerRow:     %d\n", [bmp bytesPerRow]);
+		fprintf(stderr,"  isPlanar:        %s\n", [bmp isPlanar] ? "YES" : "NO");
+		fprintf(stderr,"  numberOfPlanes:  %d\n", [bmp numberOfPlanes]);
+		fprintf(stderr,"  samplesPerPixel: %d\n", [bmp samplesPerPixel]);
+	);
 	
 	// TODO: Solve CMYK input problem - color order is not RGB or BGR
 	GLenum inputDataFormat = 0;
@@ -127,11 +146,12 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 			inputDataFormat = GL_LUMINANCE;
 			break;
 		default:
-			NSLog(@"Unknown input data format!");
-			return;
+			NSTrace(@"Unknown input data format!");
+			return NO;
 	}
 	
 	glTexImage2D( texType, 0, GL_RGBA, size.width, size.height, 0, inputDataFormat, GL_UNSIGNED_BYTE, (GLubyte*)[bmp bitmapData] );
+	return YES;
 }
 
 
