@@ -16,8 +16,8 @@
 	NSSize				screenSize;
 	CIContext *			ciContext;
 	
-	PFImage				frontImage;
-	PFImage				backImage;
+	PFImage*			frontImage;
+	PFImage*			backImage;
 	
 	CIFilter *			transition;
 	
@@ -26,6 +26,6 @@
 
 - (void)queueFillerThread:(id)obj;
 - (void)imageCreatorThread:(id)obj;
-- (PFImage)createResizedImageFromCIImage:(CIImage *)im;
+//- (PFImage*)createResizedImageFromCIImage:(CIImage *)im;
 
 @end

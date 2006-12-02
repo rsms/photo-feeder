@@ -15,10 +15,32 @@
 		3A216B790AEED4430070394E /* TestApp_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F918E0AE5721B0027DC3B /* TestApp_main.m */; };
 		3A216B910AEED4CF0070394E /* TestAppFlickr.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A216B900AEED4CF0070394E /* TestAppFlickr.nib */; };
 		3A216B940AEED4D60070394E /* TestAppFlickrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A216B920AEED4D60070394E /* TestAppFlickrController.m */; };
+		3A2547AC0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
+		3A2547AD0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
+		3A2547AE0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
+		3A2547C90B1493D90081E689 /* PFImage_old.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547C80B1493D90081E689 /* PFImage_old.h */; };
+		3A2547CA0B1493D90081E689 /* PFImage_old.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2547C80B1493D90081E689 /* PFImage_old.h */; };
+		3A2547DF0B1495530081E689 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547DE0B1495530081E689 /* types.h */; };
+		3A2547E00B1495530081E689 /* types.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2547DE0B1495530081E689 /* types.h */; };
+		3A254DF30B14D1020081E689 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A254DD00B14D1020081E689 /* QuickTime.framework */; };
+		3A254DF40B14D1020081E689 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A254DD00B14D1020081E689 /* QuickTime.framework */; };
+		3A254DF50B14D1020081E689 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A254DD00B14D1020081E689 /* QuickTime.framework */; };
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C403F0AE4432D00970E7C /* PFQueue.h */; };
+		3A4B1E480B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
+		3A4B1E490B21DD420017671F /* PFGLImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */; };
+		3A4B1E4A0B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
+		3A4B1E4B0B21DD420017671F /* PFGLImage.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */; };
+		3A4B1E4C0B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
+		3A4B1E720B21DF100017671F /* TestAppGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */; };
+		3A4B1E820B21DF4E0017671F /* TestAppGL.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B1E7D0B21DF4E0017671F /* TestAppGL.nib */; };
+		3A4B1E920B21DFB10017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
+		3A4B1E930B21DFBC0017671F /* TestAppGL-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B1E6C0B21DEEE0017671F /* TestAppGL-Info.plist */; };
+		3A4B1EA60B21DFD00017671F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8150AEAC68000D865FD /* OpenGL.framework */; };
+		3A4B1EA70B21DFD00017671F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		3A4B1EC10B21E05B0017671F /* TestApp_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F918E0AE5721B0027DC3B /* TestApp_main.m */; };
 		3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
 		3A674FC00AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
 		3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */; };
@@ -63,6 +85,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3AFBD4520AF2671C00B626A0 /* Flickr.framework in Copy Frameworks */,
+				3A2547CA0B1493D90081E689 /* PFImage_old.h in Copy Frameworks */,
+				3A2547E00B1495530081E689 /* types.h in Copy Frameworks */,
+				3A4B1E4B0B21DD420017671F /* PFGLImage.h in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,10 +108,21 @@
 		3A216B900AEED4CF0070394E /* TestAppFlickr.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestAppFlickr.nib; sourceTree = "<group>"; };
 		3A216B920AEED4D60070394E /* TestAppFlickrController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppFlickrController.m; sourceTree = "<group>"; };
 		3A216B930AEED4D60070394E /* TestAppFlickrController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppFlickrController.h; sourceTree = "<group>"; };
+		3A2547AB0B14938B0081E689 /* PFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFImage.m; sourceTree = "<group>"; };
+		3A2547C80B1493D90081E689 /* PFImage_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFImage_old.h; sourceTree = "<group>"; };
+		3A2547DE0B1495530081E689 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		3A254DD00B14D1020081E689 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProvider.h; sourceTree = "<group>"; };
 		3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProvider.m; sourceTree = "<group>"; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
 		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFQueue.h; sourceTree = "<group>"; };
+		3A4B1E460B21DD420017671F /* PFGLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGLImage.m; sourceTree = "<group>"; };
+		3A4B1E470B21DD420017671F /* PFGLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGLImage.h; sourceTree = "<group>"; };
+		3A4B1E6A0B21DEEE0017671F /* TestAppGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAppGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4B1E6C0B21DEEE0017671F /* TestAppGL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TestAppGL-Info.plist"; sourceTree = "<group>"; };
+		3A4B1E700B21DF100017671F /* TestAppGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppGLView.m; sourceTree = "<group>"; };
+		3A4B1E710B21DF100017671F /* TestAppGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppGLView.h; sourceTree = "<group>"; };
+		3A4B1E7D0B21DF4E0017671F /* TestAppGL.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestAppGL.nib; sourceTree = "<group>"; };
 		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
 		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
 		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
@@ -119,6 +155,16 @@
 			files = (
 				3A216B1C0AEED2E00070394E /* Cocoa.framework in Frameworks */,
 				3AFBD4430AF2669C00B626A0 /* Flickr.framework in Frameworks */,
+				3A254DF40B14D1020081E689 /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4B1E680B21DEEE0017671F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4B1EA60B21DFD00017671F /* OpenGL.framework in Frameworks */,
+				3A4B1EA70B21DFD00017671F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +176,7 @@
 				3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */,
 				CDE1F8260AEAC68000D865FD /* OpenGL.framework in Frameworks */,
 				CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */,
+				3A254DF50B14D1020081E689 /* QuickTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +188,7 @@
 				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
 				CDE1F8270AEAC68000D865FD /* OpenGL.framework in Frameworks */,
 				CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */,
+				3A254DF30B14D1020081E689 /* QuickTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				32DBCFA80370C50100C91783 /* prefix.pch */,
+				3A2547DE0B1495530081E689 /* types.h */,
 				3AEF430B0AEA7C350062B848 /* Providers */,
 				3A216B6D0AEED38F0070394E /* Glue */,
 				3A216B6F0AEED3B90070394E /* Renderer */,
@@ -185,6 +234,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A254DD00B14D1020081E689 /* QuickTime.framework */,
 				3AFBD43B0AF2669C00B626A0 /* Flickr.framework */,
 				CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */,
 				CDE1F8150AEAC68000D865FD /* OpenGL.framework */,
@@ -209,6 +259,7 @@
 				8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */,
 				3A8F91600AE571820027DC3B /* TestApp.app */,
 				3A216B220AEED2E00070394E /* TestAppFlickr.app */,
+				3A4B1E6A0B21DEEE0017671F /* TestAppGL.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,7 +278,9 @@
 		3A216B6D0AEED38F0070394E /* Glue */ = {
 			isa = PBXGroup;
 			children = (
+				3A2547C80B1493D90081E689 /* PFImage_old.h */,
 				CDE1F85B0AEAC93B00D865FD /* PFImage.h */,
+				3A2547AB0B14938B0081E689 /* PFImage.m */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
 				3A8F923F0AE578E70027DC3B /* PFText.h */,
@@ -250,6 +303,8 @@
 			children = (
 				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
+				3A4B1E470B21DD420017671F /* PFGLImage.h */,
+				3A4B1E460B21DD420017671F /* PFGLImage.m */,
 				CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */,
 				CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */,
 			);
@@ -259,16 +314,28 @@
 		3A216B700AEED3E10070394E /* Test apps */ = {
 			isa = PBXGroup;
 			children = (
+				3A8F918E0AE5721B0027DC3B /* TestApp_main.m */,
+				3A4B1E440B21DD210017671F /* TestAppGL */,
 				3A8F917E0AE571E30027DC3B /* TestApp */,
 				3A216B040AEED2B60070394E /* TestAppFlickr */,
 			);
 			name = "Test apps";
 			sourceTree = "<group>";
 		};
+		3A4B1E440B21DD210017671F /* TestAppGL */ = {
+			isa = PBXGroup;
+			children = (
+				3A4B1E710B21DF100017671F /* TestAppGLView.h */,
+				3A4B1E700B21DF100017671F /* TestAppGLView.m */,
+				3A4B1E6C0B21DEEE0017671F /* TestAppGL-Info.plist */,
+				3A4B1E7D0B21DF4E0017671F /* TestAppGL.nib */,
+			);
+			name = TestAppGL;
+			sourceTree = "<group>";
+		};
 		3A8F917E0AE571E30027DC3B /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				3A8F918E0AE5721B0027DC3B /* TestApp_main.m */,
 				3A8F91770AE571C40027DC3B /* TestAppController.h */,
 				3A8F91780AE571C40027DC3B /* TestAppController.m */,
 				3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */,
@@ -307,6 +374,9 @@
 				CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */,
 				CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */,
 				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
+				3A2547C90B1493D90081E689 /* PFImage_old.h in Headers */,
+				3A2547DF0B1495530081E689 /* types.h in Headers */,
+				3A4B1E490B21DD420017671F /* PFGLImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +399,23 @@
 			name = TestAppFlickr;
 			productName = TestApp;
 			productReference = 3A216B220AEED2E00070394E /* TestAppFlickr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A4B1E690B21DEEE0017671F /* TestAppGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A4B1E6D0B21DEEF0017671F /* Build configuration list for PBXNativeTarget "TestAppGL" */;
+			buildPhases = (
+				3A4B1E660B21DEEE0017671F /* Resources */,
+				3A4B1E670B21DEEE0017671F /* Sources */,
+				3A4B1E680B21DEEE0017671F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestAppGL;
+			productName = TestAppGL;
+			productReference = 3A4B1E6A0B21DEEE0017671F /* TestAppGL.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3A8F915F0AE571820027DC3B /* TestApp */ = {
@@ -381,6 +468,7 @@
 				8D255AC50486D3F9007BF209 /* PhotoFeeder */,
 				3A8F915F0AE571820027DC3B /* TestApp */,
 				3A216B080AEED2E00070394E /* TestAppFlickr */,
+				3A4B1E690B21DEEE0017671F /* TestAppGL */,
 			);
 		};
 /* End PBXProject section */
@@ -392,6 +480,15 @@
 			files = (
 				3A216B390AEED3520070394E /* TestAppFlickr-Info.plist in Resources */,
 				3A216B910AEED4CF0070394E /* TestAppFlickr.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4B1E660B21DEEE0017671F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4B1E930B21DFBC0017671F /* TestAppGL-Info.plist in Resources */,
+				3A4B1E820B21DF4E0017671F /* TestAppGL.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +530,18 @@
 			files = (
 				3A216B790AEED4430070394E /* TestApp_main.m in Sources */,
 				3A216B940AEED4D60070394E /* TestAppFlickrController.m in Sources */,
+				3A2547AD0B14938B0081E689 /* PFImage.m in Sources */,
+				3A4B1E4A0B21DD420017671F /* PFGLImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4B1E670B21DEEE0017671F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4B1EC10B21E05B0017671F /* TestApp_main.m in Sources */,
+				3A4B1E920B21DFB10017671F /* PFGLImage.m in Sources */,
+				3A4B1E720B21DF100017671F /* TestAppGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +558,8 @@
 				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
+				3A2547AE0B14938B0081E689 /* PFImage.m in Sources */,
+				3A4B1E4C0B21DD420017671F /* PFGLImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +574,8 @@
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
+				3A2547AC0B14938B0081E689 /* PFImage.m in Sources */,
+				3A4B1E480B21DD420017671F /* PFGLImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +658,61 @@
 			};
 			name = Release;
 		};
+		3A4B1E6E0B21DEEF0017671F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
+				INFOPLIST_FILE = "TestAppGL-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestAppGL;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		3A4B1E6F0B21DEEF0017671F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = prefix.pch;
+				INFOPLIST_FILE = "TestAppGL-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestAppGL;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		3A8F91640AE571820027DC3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -687,6 +852,15 @@
 			buildConfigurations = (
 				3A216B200AEED2E00070394E /* Debug */,
 				3A216B210AEED2E00070394E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A4B1E6D0B21DEEF0017671F /* Build configuration list for PBXNativeTarget "TestAppGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4B1E6E0B21DEEF0017671F /* Debug */,
+				3A4B1E6F0B21DEEF0017671F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -76,9 +76,9 @@
 
 - (void)animateOneFrame
 {
-	if( PFImageIsValid(frontImage) )
+	if( frontImage )
 	{
-		// Update transition if needed
+		/*// Update transition if needed
 		float fadeThreshold = .65; // TODO: Bind to user defaults
 		float percentPosition = 1-((float)frontImage.stepsLeft/(float)frontImage.stepCount);
 		
@@ -91,18 +91,79 @@
 		}
 		
 		// Update front image position
-		PFImageMoveOneStep(&frontImage);
+		PFImageMoveOneStep(&frontImage);*/
 	}
 	
 	[self setNeedsDisplay:YES];
 }
 
 
-
 - (void)drawRect:(NSRect)rect
 {
+	// Activate OpenGL context
+	[[renderer openGLContext] makeCurrentContext];
+	
+	if( !frontImage ) {
+		frontImage = [PFImage imageWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/rasmus/Desktop/bild_1000.jpg"]];
+		DLog(@"frontImage: w: %d", [frontImage bounds].width );
+	}
+	
+	
+	
+	glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [frontImage texture]);
+	
+	glTexSubImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 0, 0, 1000, 1000, GL_BGRA, GL_BGRA, [frontImage data]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0f, 0.0f);
+	glVertex2f(-1.0f, 1.0f);
+	
+	glTexCoord2f(0.0f, 1000.0f);
+	glVertex2f(-1.0f, -1.0f);
+	
+	glTexCoord2f(1000.0f, 1000.0f);
+	glVertex2f(1.0f, -1.0f);
+	
+	glTexCoord2f(1000.0f, 0.0f);
+	glVertex2f(1.0f, 1.0f);
+	glEnd();
+	
+	glFlush();
+	
+	
+	/*glClear(GL_COLOR_BUFFER_BIT);
+	
+	if( !frontImage ) {
+		frontImage = [PFImage imageWithContentsOfURL:[NSURL URLWithString:@"file://localhost/Users/rasmus/Desktop/bild_1000.jpg"]];
+		DLog(@"frontImage: w: %d", [frontImage bounds].width );
+	}
+	
+	glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [frontImage texture]);
+	//glLoadIdentity();
+	
+	glBegin( GL_QUADS );
+	glTexCoord2d(0.0,1.0); glVertex2d(0.0,0.0);
+	glTexCoord2d(1.0,1.0); glVertex2d(1000.0,0.0);
+	glTexCoord2d(1.0,0.0); glVertex2d(1000.0,1000.0);
+	glTexCoord2d(0.0,0.0); glVertex2d(0.0,1000.0);
+	glEnd();*/
+	
+	
+	/*
+	glColor3f(1.0,0,0);
+	glBegin( GL_QUADS );
+	glVertex2d(0.0,0.0);
+	glVertex2d(100.0,0.0);
+	glVertex2d(100.0,100.0);
+	glVertex2d(0.0,100.0);
+	glEnd();*/
+}
+
+
+/*- (void)drawRect:(NSRect)rect
+{
 	// Draw Not Loading while we are waiting for an image
-	if(!PFImageIsValid(frontImage)) {
+	if( !frontImage )
+	{
 		NSSize statusTextSize = [[statusText attrString] size];
 		[[NSColor blackColor] set];
 		[NSBezierPath fillRect:[self frame]];
@@ -152,7 +213,7 @@
 	}
 	
 	glFlush();
-}
+}*/
 
 
 #pragma mark -- Threads
@@ -173,7 +234,7 @@
 }
 
 
-- (PFImage)createResizedImageFromCIImage:(CIImage *)im
+/*- (PFImage*)createResizedImageFromCIImage:(CIImage *)im
 {	
 	float screenAspectRatio = screenSize.width / screenSize.height;
 	CGSize imageSize = [im extent].size;
@@ -215,7 +276,7 @@
 	
 	DLog(@"Resized to: %f x %f", i.size.width, i.size.height);
 	return i;
-}
+}*/
 
 
 - (void)imageCreatorThread:(id)obj
@@ -224,7 +285,7 @@
 	while(1)
 	{
 		[imageCreatorLock lockWhenCondition:CL_RUN];
-		DLog(@"[PhotoFeederView imageCreatorThread] Taking CIImage from queue and converting to PFImage...");
+		/*DLog(@"[PhotoFeederView imageCreatorThread] Taking CIImage from queue and converting to PFImage...");
 		
 		// Swap images - bring back to front
 		PFImage oldFrontImage = frontImage;
@@ -239,7 +300,7 @@
 		if(PFImageIsValid(frontImage))
 			[imageCreatorLock unlockWithCondition:CL_WAIT];
 		else
-			[imageCreatorLock unlock];
+			[imageCreatorLock unlock];*/
 	}
 		
 	[pool release];
