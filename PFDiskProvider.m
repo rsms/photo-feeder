@@ -14,10 +14,13 @@
 -(PFImage*)nextImage
 {
 	NSString* file;
+	NSArray* acceptExts = [PFGLImage acceptableFileExtensions];
+	
 	while( file = [dirEnum nextObject] )
 	{
-		if ([[file pathExtension] isEqualToString:@"jpg"])
+		if( [acceptExts containsObject:[file pathExtension]] )
 		{
+			DLog(@"%@", file);
 			PFGLImage* gli = [[PFGLImage alloc] initWithContentsOfFile:[dir stringByAppendingPathComponent:file]];
 			return [[PFImage alloc] initWithGLImage:gli];
 		}
