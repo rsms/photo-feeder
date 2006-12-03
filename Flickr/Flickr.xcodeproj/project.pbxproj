@@ -19,24 +19,8 @@
 		3A8B40B80AF25C980083B767 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		3A8B41350AF25C9B0083B767 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		3A8B421A0AF25D8C0083B767 /* Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8B40960AF25BF50083B767 /* Flickr.framework */; };
+		3AD2643F0B2334CA005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD2643E0B2334CA005CE2C6 /* LICENSE */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		3A00B3840AF369D100209E90 /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Development;
-		};
-		3A00B3850AF369D100209E90 /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
 		3A8B42160AF25D870083B767 /* PBXContainerItemProxy */ = {
@@ -60,10 +44,11 @@
 		3A8B3F850AF250030083B767 /* FlickrUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrUser.h; sourceTree = "<group>"; };
 		3A8B3F860AF250030083B767 /* FlickrUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrUser.m; sourceTree = "<group>"; };
 		3A8B3F9A0AF251040083B767 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
-		3A8B3F9E0AF251270083B767 /* Test */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8B3F9E0AF251270083B767 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8B3FAB0AF251940083B767 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
 		3A8B40960AF25BF50083B767 /* Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8B40970AF25BF50083B767 /* Flickr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Flickr-Info.plist"; sourceTree = "<group>"; };
+		3AD2643E0B2334CA005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -101,10 +86,10 @@
 		0867D691FE84028FC02AAC07 /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				3AD2643E0B2334CA005CE2C6 /* LICENSE */,
 				3A8B3F800AF250030083B767 /* prefix.pch */,
 				08FB77AEFE84172EC02AAC07 /* Framework */,
 				32C88DFF0371C24200C91783 /* Tests */,
-				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -118,13 +103,6 @@
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
 			);
 			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		089C1665FE841158C02AAC07 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		08FB77AEFE84172EC02AAC07 /* Framework */ = {
@@ -226,12 +204,6 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Flickr" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				3A00B3840AF369D100209E90 /* Development */,
-				3A00B3850AF369D100209E90 /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* Flickr */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -248,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD2643F0B2334CA005CE2C6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

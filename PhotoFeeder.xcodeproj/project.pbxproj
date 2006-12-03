@@ -58,6 +58,10 @@
 		3A8F92390AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
 		3A8F923A0AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
 		3A8F92400AE578E70027DC3B /* PFText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8F923F0AE578E70027DC3B /* PFText.h */; };
+		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
+		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
+		3AD264350B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
+		3AD264360B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
 		3AFBD4430AF2669C00B626A0 /* Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
 		3AFBD4520AF2671C00B626A0 /* Flickr.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
@@ -79,23 +83,6 @@
 		CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 		CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		3A49ED8D0B2303F800C6E6B0 /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Development;
-		};
-		3A49ED8E0B2303F800C6E6B0 /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3AFBD44E0AF2671000B626A0 /* Copy Frameworks */ = {
@@ -154,6 +141,7 @@
 		3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		3A8F92380AE578A50027DC3B /* PFText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFText.m; sourceTree = "<group>"; };
 		3A8F923F0AE578E70027DC3B /* PFText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFText.h; sourceTree = "<group>"; };
+		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
 		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
@@ -246,6 +234,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3AD264320B2334AB005CE2C6 /* LICENSE */,
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
@@ -486,12 +475,6 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "PhotoFeeder" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				3A49ED8D0B2303F800C6E6B0 /* Development */,
-				3A49ED8E0B2303F800C6E6B0 /* Deployment */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* PhotoFeeder */;
 			projectDirPath = "";
@@ -511,6 +494,7 @@
 			files = (
 				3A216B390AEED3520070394E /* TestAppFlickr-Info.plist in Resources */,
 				3A216B910AEED4CF0070394E /* TestAppFlickr.nib in Resources */,
+				3AD264350B2334AB005CE2C6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +504,7 @@
 			files = (
 				3A4B1E930B21DFBC0017671F /* TestAppGL-Info.plist in Resources */,
 				3A4B1E820B21DF4E0017671F /* TestAppGL.nib in Resources */,
+				3AD264360B2334AB005CE2C6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +515,7 @@
 				3A8F91760AE571B30027DC3B /* TestApp.nib in Resources */,
 				3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */,
 				3A674FC00AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
+				3AD264330B2334AB005CE2C6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +525,7 @@
 			files = (
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
+				3AD264340B2334AB005CE2C6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
