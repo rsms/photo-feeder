@@ -53,5 +53,6 @@
 - (NSRect) bounds;
 - (GLuint) textureId;
 + (GLenum) textureType;
++ (NSArray*) acceptableFileExtensions;
 
 @end

@@ -16,6 +16,10 @@
 static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 
 
+// An array of file extensions this implementation can read and parse
+static NSArray *acceptableFileExtensions = nil;
+
+
 #pragma mark -- Creating the image
 
 /**
@@ -247,6 +251,17 @@ static GLenum texType = GL_TEXTURE_RECTANGLE_EXT;
 + (GLenum) textureType
 {
 	return texType;
+}
+
++ (NSArray*) acceptableFileExtensions
+{
+	if(!acceptableFileExtensions)
+	{
+		// init on demand
+		acceptableFileExtensions = [[NSArray arrayWithObjects:
+			@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
+	}
+	return acceptableFileExtensions;
 }
 
 
