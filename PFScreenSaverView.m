@@ -159,8 +159,9 @@
 			}
 			else {
 				// TODO: implement suspension of specific providers instead of blocking the whole thread
-				DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for 1 second...", provider);
-				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0f]];
+				static float suspendSecs = 3.0f;
+				DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for %.0f second...", provider, suspendSecs);
+				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:suspendSecs]];
 			}
 		}
 	}
