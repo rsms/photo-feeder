@@ -61,6 +61,9 @@
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
 		3AFBD4430AF2669C00B626A0 /* Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
 		3AFBD4520AF2671C00B626A0 /* Flickr.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
+		3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */; };
+		3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */; };
+		3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */; };
 		8D255AC70486D3F9007BF209 /* prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -76,6 +79,23 @@
 		CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 		CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		3A49ED8D0B2303F800C6E6B0 /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Development;
+		};
+		3A49ED8E0B2303F800C6E6B0 /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3AFBD44E0AF2671000B626A0 /* Copy Frameworks */ = {
@@ -137,6 +157,8 @@
 		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
 		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
+		3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDiskProvider.h; sourceTree = "<group>"; };
+		3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGLRenderer.h; sourceTree = "<group>"; };
@@ -351,6 +373,8 @@
 				3A2C3EF60AE4342700970E7C /* PFProvider.m */,
 				3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */,
 				3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */,
+				3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */,
+				3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */,
 				3A127B550AEA7341007E60ED /* PFFlickrProvider.h */,
 				3A127B560AEA7341007E60ED /* PFFlickrProvider.m */,
 			);
@@ -377,6 +401,7 @@
 				3A2547C90B1493D90081E689 /* PFImage_old.h in Headers */,
 				3A2547DF0B1495530081E689 /* types.h in Headers */,
 				3A4B1E490B21DD420017671F /* PFGLImage.h in Headers */,
+				3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +486,12 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "PhotoFeeder" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				3A49ED8D0B2303F800C6E6B0 /* Development */,
+				3A49ED8E0B2303F800C6E6B0 /* Deployment */,
+			);
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* PhotoFeeder */;
 			projectDirPath = "";
@@ -560,6 +591,7 @@
 				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3A2547AE0B14938B0081E689 /* PFImage.m in Sources */,
 				3A4B1E4C0B21DD420017671F /* PFGLImage.m in Sources */,
+				3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +608,7 @@
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3A2547AC0B14938B0081E689 /* PFImage.m in Sources */,
 				3A4B1E480B21DD420017671F /* PFGLImage.m in Sources */,
+				3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 
 #import "PFScreenSaverView.h"
 #import "PFFlickrProvider.h"
+#import "PFDiskProvider.h"
 #import "PFQueue.h"
 #import "PFConfigureSheetController.h"
 
@@ -18,8 +19,8 @@
 		
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
-		[providers addObject:[[PFFlickrProvider alloc] init]];
 		//[providers addObject:[[PFFlickrProvider alloc] init]];
+		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"]]];
 		
 		// Start filling the queue with images from providers
 		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
@@ -260,7 +261,7 @@
 		movingType = pixelsOutsideScreen ? PFMovingTypeHorizontally : PFMovingTypeNone;
 	}
 	
-	else if(imageAspectRatio <= screenAspectRatio)
+	else if(imageAspectRatio < screenAspectRatio)
 	{
 		DLog(@"Image is in portrait format (|)");
 		
