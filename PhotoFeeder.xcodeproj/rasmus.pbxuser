@@ -330,6 +330,10 @@
 			3AD263E80B2333F1005CE2C6 /* PBXTextBookmark */ = 3AD263E80B2333F1005CE2C6 /* PBXTextBookmark */;
 			3AD263E90B2333F1005CE2C6 /* PBXTextBookmark */ = 3AD263E90B2333F1005CE2C6 /* PBXTextBookmark */;
 			3AD263EA0B2333F1005CE2C6 /* PBXTextBookmark */ = 3AD263EA0B2333F1005CE2C6 /* PBXTextBookmark */;
+			3AD264490B2336E1005CE2C6 /* PBXTextBookmark */ = 3AD264490B2336E1005CE2C6 /* PBXTextBookmark */;
+			3AD2644A0B2336E1005CE2C6 /* PBXTextBookmark */ = 3AD2644A0B2336E1005CE2C6 /* PBXTextBookmark */;
+			3AD2644B0B2336E1005CE2C6 /* PBXTextBookmark */ = 3AD2644B0B2336E1005CE2C6 /* PBXTextBookmark */;
+			3AD2644C0B2336E1005CE2C6 /* PBXTextBookmark */ = 3AD2644C0B2336E1005CE2C6 /* PBXTextBookmark */;
 			3AEF43510AEA81B80062B848 = 3AEF43510AEA81B80062B848 /* PBXTextBookmark */;
 			3AFA86780AFA918900E130CE = 3AFA86780AFA918900E130CE /* PBXTextBookmark */;
 			3AFEB6CC0B230A0400F3979C = 3AFEB6CC0B230A0400F3979C /* PBXTextBookmark */;
@@ -2562,6 +2566,46 @@
 		vrLen = 1531;
 		vrLoc = 0;
 	};
+	3AD264490B2336E1005CE2C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */;
+		name = "PFGLImage.h: 12";
+		rLen = 0;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 1535;
+		vrLoc = 0;
+	};
+	3AD2644A0B2336E1005CE2C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "PFDiskProvider.m: 12";
+		rLen = 0;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 1159;
+		vrLoc = 0;
+	};
+	3AD2644B0B2336E1005CE2C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */;
+		name = "PFGLImage.h: 12";
+		rLen = 0;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 1535;
+		vrLoc = 0;
+	};
+	3AD2644C0B2336E1005CE2C6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "PFDiskProvider.m: 13";
+		rLen = 0;
+		rLoc = 555;
+		rType = 0;
+		vrLen = 1159;
+		vrLoc = 0;
+	};
 	3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {928, 733}}";
@@ -2606,7 +2650,7 @@
 	3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {928, 733}}";
-			sepNavSelRange = "{528, 0}";
+			sepNavSelRange = "{555, 0}";
 			sepNavVisRect = "{{0, 0}, {928, 733}}";
 		};
 	};
