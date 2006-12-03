@@ -54,7 +54,7 @@
 // Select and open an image
 - (IBAction) openFile:(id)sender
 {
-	NSArray *fileTypes = [NSArray arrayWithObjects:@"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pdf", nil];
+	NSArray *fileTypes = [PFGLImage acceptableFileExtensions];
     NSOpenPanel *oPanel = [NSOpenPanel openPanel];
     [oPanel setAllowsMultipleSelection:NO];
 	
@@ -76,6 +76,10 @@
 			[self setImage:[[PFGLImage alloc] initWithContentsOfFile:lastFilePathOpened]];
         }
     }
+	else if(!lastFilePathOpened) {
+		// First call to open-file and user pressed close or cancel
+		[[NSApplication sharedApplication] terminate:self];
+	}
 }
 
 
