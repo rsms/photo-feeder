@@ -144,15 +144,29 @@
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	PFProvider* provider;
-	while(1) {
-		provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
-		[queue put:[provider nextImage]];
-		/*provider = (PFProvider*)[providers objectAtIndex:0];
-		[queue put:[provider nextImage]];
-		provider = (PFProvider*)[providers objectAtIndex:1];
-		[queue put:[provider nextImage]];*/
+	PFImage* im;
+	
+	@try
+	{
+		while(1)
+		{
+			provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
+			//provider = (PFProvider*)[providers objectAtIndex:0];
+			
+			if(im = [provider nextImage])
+			{
+				[queue put:im];
+			}
+			else {
+				// TODO: implement suspension of specific providers instead of blocking the whole thread
+				DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for 1 second...", provider);
+				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0f]];
+			}
+		}
 	}
-	[pool release];
+	@finally {
+		[pool release];
+	}
 }
 
 
