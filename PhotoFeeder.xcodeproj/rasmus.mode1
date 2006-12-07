@@ -320,7 +320,7 @@
 							<real>217</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>344 144 1214 858 0 0 1600 1002 </string>
+						<string>343 144 1214 858 0 0 1600 1002 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -350,7 +350,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3AD2644C0B2336E1005CE2C6</string>
+										<string>3AD2644D0B23AE70005CE2C6</string>
 										<key>history</key>
 										<array>
 											<string>3AD263BA0B2333F1005CE2C6</string>
@@ -382,7 +382,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {975, 750}}</string>
 								<key>RubberWindowFrame</key>
-								<string>344 144 1214 858 0 0 1600 1002 </string>
+								<string>343 144 1214 858 0 0 1600 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -402,7 +402,7 @@
 								<key>Frame</key>
 								<string>{{0, 755}, {975, 62}}</string>
 								<key>RubberWindowFrame</key>
-								<string>344 144 1214 858 0 0 1600 1002 </string>
+								<string>343 144 1214 858 0 0 1600 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -547,7 +547,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>186857185.57206401</real>
+	<real>186887792.15130699</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -566,13 +566,13 @@
 		<string>3AD2632B0B232A87005CE2C6</string>
 		<string>3A2C40090AE4429B00970E7C</string>
 		<string>3A2C3EBE0AE4301E00970E7C</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>3AD262C20B23249F005CE2C6</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/rasmus/src/PhotoFeeder/trunk/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>344 144 1214 858 0 0 1600 1002 </string>
+	<string>343 144 1214 858 0 0 1600 1002 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -773,7 +773,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
