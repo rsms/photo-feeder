@@ -10,10 +10,14 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-@interface PFGLRenderer : NSOpenGLView {
-	BOOL viewHasBeenReshaped;
+#import <Quartz/Quartz.h>
+
+@interface PFGLRenderer : QCView {
+	NSOpenGLPixelFormat* pixelFormat;
+	QCRenderer*          qcRenderer;
 }
 
 - (PFGLRenderer*) initWithDefaultPixelFormat;
+- (QCRenderer*) qcRenderer;
 
 @end
