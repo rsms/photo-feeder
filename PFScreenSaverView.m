@@ -77,26 +77,13 @@
 	
 	animationInterval = 1.0/userFps;
 	
-	[qcView setMaxRenderingFrameRate: userFps];
-	[qcView startRendering];
-	
-	// We only need to call animateOneFrame
-	//[self setAnimationTimeInterval: INT_MAX];
-	[self initAnimation];
-	//[super startAnimation];
-}
-
-
-- (void) initAnimation
-{
-	DLog(@"");
-	
 	// Beräkna total tid (pungsvett från räkan)
 	transitionAndDisplayInterval = (userDisplayInterval + userFadeInterval) * 2;
 	
 	// Berätta för Q-kompositionen hur länge bilder skall visas & fadeas
 	[qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
 	[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
+	[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
 	
 	// Starta bild 0 switch
 	[self performSelector: @selector(switchImage:) 
@@ -107,11 +94,15 @@
 	[self performSelector: @selector(switchImage:) 
 				  withObject: @"destinationImage" 
 				  afterDelay: userFadeInterval + userDisplayInterval];
+	
+	[qcView setMaxRenderingFrameRate: userFps];
+	[qcView startRendering];
 }
 
 
 - (void) drawRect:(NSRect)r
 {
+	DLog(@"");
 	[qcView setFrame:r];
 }
 
@@ -165,11 +156,18 @@
 	DLog(@"%@", imagePortName);
 	
 	// Take the next image from the image queue
-	NSImage* image = (NSImage*)[queue take];
+	NSImage* image = (NSImage*)[queue poll];
 	if(!image)
 	{
 		NSLog(@"Image queue is depleted");
+		if(![[qcView valueForInputKey:@"statusMessageEnabled"] boolValue])
+			[qcView setValue: [NSNumber numberWithBool:YES]  forInputKey: @"statusMessageEnabled"];
+		[qcView setValue: @"Image queue is depleted"  forInputKey: @"statusMessageText"];
 		return;
+	}
+	else if([[qcView valueForInputKey:@"statusMessageEnabled"] boolValue])
+	{
+			[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
 	}
 	
 	// Set image in QC

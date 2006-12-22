@@ -33,6 +33,5 @@
 
 - (void) queueFillerThread:(id)obj;
 - (void) switchImage:(NSString*)imagePortName;
-- (void) initAnimation;
 
 @end
