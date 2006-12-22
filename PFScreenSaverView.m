@@ -30,7 +30,7 @@
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
 		//[providers addObject:[[PFFlickrProvider alloc] init]];
-		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures/_qc_test"]]];
+		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures/_temp"]]];
 		
 		// Start filling the queue with images from providers
 		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
@@ -73,7 +73,7 @@
 	if(userFadeInterval == 0.0) userFadeInterval = 1.0;
 	
 	userDisplayInterval = [ud floatForKey:@"displayInterval"];
-	if(userDisplayInterval == 0.0) userDisplayInterval = 6.0;
+	if(userDisplayInterval == 0.0) userDisplayInterval = 3.0;
 	
 	animationInterval = 1.0/userFps;
 	
@@ -81,9 +81,13 @@
 	transitionAndDisplayInterval = (userDisplayInterval + userFadeInterval) * 2;
 	
 	// Berätta för Q-kompositionen hur länge bilder skall visas & fadeas
+	// Regarding the "enabled" key... it has the following three states:
+	// 0 means fading down and keeping it at 0% alpha
+	// 1 means fading up and keeping it at 100% alpha
+	// 2 means not fading at all, keeping it at 0% alpha
 	[qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
 	[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
-	[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
+	[qcView setValue: [NSNumber numberWithDouble:2.0]                  forInputKey: @"statusMessageEnabled"];
 	
 	// Starta bild 0 switch
 	[self performSelector: @selector(switchImage:) 
@@ -157,17 +161,21 @@
 	
 	// Take the next image from the image queue
 	NSImage* image = (NSImage*)[queue poll];
+	
+	
 	if(!image)
 	{
 		NSLog(@"Image queue is depleted");
-		if(![[qcView valueForInputKey:@"statusMessageEnabled"] boolValue])
-			[qcView setValue: [NSNumber numberWithBool:YES]  forInputKey: @"statusMessageEnabled"];
-		[qcView setValue: @"Image queue is depleted"  forInputKey: @"statusMessageText"];
+		if(!([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0))
+			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
+
+		[qcView setValue: @"Image queue is depleted.\nI will not show any new images until\nI've fetched/downloaded some..."  forInputKey: @"statusMessageText"];
 		return;
 	}
-	else if([[qcView valueForInputKey:@"statusMessageEnabled"] boolValue])
+	
+	else if([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0)
 	{
-			[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
+		[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
 	}
 	
 	// Set image in QC
