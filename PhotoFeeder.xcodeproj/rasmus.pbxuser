@@ -633,18 +633,17 @@
 		};
 	};
 	3A2547AB0B14938B0081E689 /* PFImage.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFImage.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFImage.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 966}}";
 			sepNavSelRange = "{528, 0}";
 			sepNavVisRect = "{{0, 0}, {935, 906}}";
 			sepNavWindowFrame = "{{38, 89}, {732, 887}}";
-		};
-	};
-	3A2547C80B1493D90081E689 /* PFImage_old.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {928, 966}}";
-			sepNavSelRange = "{528, 0}";
-			sepNavVisRect = "{{0, 0}, {928, 733}}";
 		};
 	};
 	3A2547DE0B1495530081E689 /* types.h */ = {
@@ -704,6 +703,12 @@
 		};
 	};
 	3A4B1E460B21DD420017671F /* PFGLImage.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFGLImage.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFGLImage.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 3934}}";
 			sepNavSelRange = "{861, 117}";
@@ -711,6 +716,12 @@
 		};
 	};
 	3A4B1E470B21DD420017671F /* PFGLImage.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PFGLImage.h;
+		path = /Users/rasmus/src/PhotoFeeder/PFGLImage.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 980}}";
 			sepNavSelRange = "{1856, 38}";
@@ -807,6 +818,12 @@
 		};
 	};
 	3A848A0D0B3B63FE00B65C13 /* PFRenderer.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PFRenderer.h;
+		path = /Users/rasmus/src/PhotoFeeder/PFRenderer.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 906}}";
 			sepNavSelRange = "{590, 0}";
@@ -814,6 +831,12 @@
 		};
 	};
 	3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFRenderer.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFRenderer.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 906}}";
 			sepNavSelRange = "{638, 98}";
@@ -3287,17 +3310,16 @@
 		};
 	};
 	3A8F92380AE578A50027DC3B /* PFText.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFText.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFText.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 906}}";
 			sepNavSelRange = "{528, 0}";
 			sepNavVisRect = "{{0, 0}, {935, 906}}";
-		};
-	};
-	3A8F923F0AE578E70027DC3B /* PFText.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {928, 733}}";
-			sepNavSelRange = "{528, 0}";
-			sepNavVisRect = "{{0, 0}, {928, 733}}";
 		};
 	};
 	3AD263BA0B2333F1005CE2C6 /* PBXTextBookmark */ = {
@@ -3450,13 +3472,6 @@
 			sepNavVisRect = "{{0, 0}, {935, 906}}";
 		};
 	};
-	CDE1F85B0AEAC93B00D865FD /* PFImage.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {928, 733}}";
-			sepNavSelRange = "{527, 0}";
-			sepNavVisRect = "{{0, 0}, {928, 733}}";
-		};
-	};
 	F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 906}}";
@@ -3468,8 +3483,8 @@
 	F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {935, 3066}}";
-			sepNavSelRange = "{3339, 0}";
-			sepNavVisRect = "{{0, 812}, {935, 906}}";
+			sepNavSelRange = "{3381, 0}";
+			sepNavVisRect = "{{0, 1311}, {935, 906}}";
 			sepNavWindowFrame = "{{15, 345}, {598, 828}}";
 		};
 	};
