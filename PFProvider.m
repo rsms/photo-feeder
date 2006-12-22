@@ -13,10 +13,27 @@
 
 @implementation PFProvider
 
--(PFImage*)nextImage
+
+// An array of file extensions this implementation can read and parse
+static NSArray *acceptableFileExtensions = nil;
+
+
+-(NSImage*)nextImage
 {
 	throw_ex(@"PFProviderException", @"[PFProvider nextImage] method is abstract and not overridden");
 	return nil;
+}
+
+
++ (NSArray*) acceptableFileExtensions
+{
+	if(!acceptableFileExtensions)
+	{
+		// init on demand
+		acceptableFileExtensions = [[NSArray arrayWithObjects:
+			@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
+	}
+	return acceptableFileExtensions;
 }
 
 @end

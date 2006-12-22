@@ -22,18 +22,17 @@
 }
 
 
--(PFImage*)nextImage
+-(NSImage*)nextImage
 {
 	NSString* file;
-	NSArray* acceptExts = [PFGLImage acceptableFileExtensions];
+	NSArray* acceptExts = [PFProvider acceptableFileExtensions];
 	
 	while( file = [dirEnum nextObject] )
 	{
 		if( [acceptExts containsObject:[file pathExtension]] )
 		{
 			DLog(@"%@", file);
-			PFGLImage* gli = [[PFGLImage alloc] initWithContentsOfFile:[dir stringByAppendingPathComponent:file]];
-			return [[PFImage alloc] initWithGLImage:gli];
+			return [[NSImage alloc] initWithContentsOfFile:[dir stringByAppendingPathComponent:file]];
 		}
 	}
 	

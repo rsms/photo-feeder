@@ -12,8 +12,11 @@
 #import "PFProvider.h"
 
 @interface PFDiskProvider : PFProvider {
-	NSString* dir;
+	NSString*              dir;
 	NSDirectoryEnumerator* dirEnum;
+	
+	// TODO: move into another class or something:
+	NSArray*               acceptableFileExtensions;
 }
 
 - (id) initWithPathToDirectory:(NSString*)dir;

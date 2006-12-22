@@ -12,12 +12,8 @@
 
 #import <Quartz/Quartz.h>
 
-@interface PFGLRenderer : QCView {
-	NSOpenGLPixelFormat* pixelFormat;
-	QCRenderer*          qcRenderer;
+@interface PFRenderer : QCView
+{
 }
-
-- (PFGLRenderer*) initWithDefaultPixelFormat;
-- (QCRenderer*) qcRenderer;
 
 @end

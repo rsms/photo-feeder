@@ -10,14 +10,14 @@
 		3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A127B550AEA7341007E60ED /* PFFlickrProvider.h */; };
 		3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
 		3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
+		3A142A0D0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
+		3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
 		3A216B1C0AEED2E00070394E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		3A216B390AEED3520070394E /* TestAppFlickr-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A216B380AEED3520070394E /* TestAppFlickr-Info.plist */; };
 		3A216B790AEED4430070394E /* TestApp_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F918E0AE5721B0027DC3B /* TestApp_main.m */; };
 		3A216B910AEED4CF0070394E /* TestAppFlickr.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A216B900AEED4CF0070394E /* TestAppFlickr.nib */; };
 		3A216B940AEED4D60070394E /* TestAppFlickrController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A216B920AEED4D60070394E /* TestAppFlickrController.m */; };
-		3A2547AC0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
 		3A2547AD0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
-		3A2547AE0B14938B0081E689 /* PFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2547AB0B14938B0081E689 /* PFImage.m */; };
 		3A2547C90B1493D90081E689 /* PFImage_old.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547C80B1493D90081E689 /* PFImage_old.h */; };
 		3A2547CA0B1493D90081E689 /* PFImage_old.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2547C80B1493D90081E689 /* PFImage_old.h */; };
 		3A2547DF0B1495530081E689 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547DE0B1495530081E689 /* types.h */; };
@@ -29,11 +29,9 @@
 		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C403F0AE4432D00970E7C /* PFQueue.h */; };
-		3A4B1E480B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
 		3A4B1E490B21DD420017671F /* PFGLImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */; };
 		3A4B1E4A0B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
 		3A4B1E4B0B21DD420017671F /* PFGLImage.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4B1E470B21DD420017671F /* PFGLImage.h */; };
-		3A4B1E4C0B21DD420017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
 		3A4B1E720B21DF100017671F /* TestAppGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E700B21DF100017671F /* TestAppGLView.m */; };
 		3A4B1E820B21DF4E0017671F /* TestAppGL.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4B1E7D0B21DF4E0017671F /* TestAppGL.nib */; };
 		3A4B1E920B21DFB10017671F /* PFGLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4B1E460B21DD420017671F /* PFGLImage.m */; };
@@ -46,6 +44,13 @@
 		3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */; };
 		3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
 		3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
+		3A848A0F0B3B63FE00B65C13 /* PFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */; };
+		3A848A100B3B63FE00B65C13 /* PFRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A848A0D0B3B63FE00B65C13 /* PFRenderer.h */; };
+		3A848A110B3B63FE00B65C13 /* PFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */; };
+		3A848A120B3B63FE00B65C13 /* PFRenderer.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3A848A0D0B3B63FE00B65C13 /* PFRenderer.h */; };
+		3A848A130B3B63FE00B65C13 /* PFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */; };
+		3A848A140B3B63FE00B65C13 /* PFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */; };
+		3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3A8F91670AE571960027DC3B /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A8F91680AE571960027DC3B /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
@@ -55,13 +60,16 @@
 		3A8F91790AE571C40027DC3B /* TestAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F91780AE571C40027DC3B /* TestAppController.m */; };
 		3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F918E0AE5721B0027DC3B /* TestApp_main.m */; };
 		3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F91B80AE5731E0027DC3B /* TestApp-Info.plist */; };
-		3A8F92390AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
-		3A8F923A0AE578A50027DC3B /* PFText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F92380AE578A50027DC3B /* PFText.m */; };
 		3A8F92400AE578E70027DC3B /* PFText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8F923F0AE578E70027DC3B /* PFText.h */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264350B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264360B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
+		3AD3839E0B3B30FD009F8887 /* TestAppQC.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3AD3839D0B3B30FD009F8887 /* TestAppQC.qtz */; };
+		3AD383A40B3B312B009F8887 /* TestAppQC_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD383A30B3B312B009F8887 /* TestAppQC_main.m */; };
+		3AD383B20B3B32B5009F8887 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
+		3AD383B30B3B32C1009F8887 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		3AD383BF0B3B32E5009F8887 /* TestAppQC.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD383BA0B3B32E5009F8887 /* TestAppQC.nib */; };
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
 		3AFBD4430AF2669C00B626A0 /* Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
 		3AFBD4520AF2671C00B626A0 /* Flickr.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFBD43B0AF2669C00B626A0 /* Flickr.framework */; };
@@ -74,14 +82,10 @@
 		8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
-		CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */; };
-		CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */; };
-		CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */; };
 		CDE1F8260AEAC68000D865FD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8150AEAC68000D865FD /* OpenGL.framework */; };
 		CDE1F8270AEAC68000D865FD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8150AEAC68000D865FD /* OpenGL.framework */; };
 		CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE1F85B0AEAC93B00D865FD /* PFImage.h */; };
 		CDE1F8D90AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
-		CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +99,7 @@
 				3A2547CA0B1493D90081E689 /* PFImage_old.h in Copy Frameworks */,
 				3A2547E00B1495530081E689 /* types.h in Copy Frameworks */,
 				3A4B1E4B0B21DD420017671F /* PFGLImage.h in Copy Frameworks */,
+				3A848A120B3B63FE00B65C13 /* PFRenderer.h in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +115,7 @@
 		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
 		3A127B550AEA7341007E60ED /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
 		3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFlickrProvider.m; sourceTree = "<group>"; };
+		3A142A0C0B3B4F1100D7F86E /* renderer.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; path = renderer.qtz; sourceTree = "<group>"; };
 		3A216B220AEED2E00070394E /* TestAppFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAppFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A216B380AEED3520070394E /* TestAppFlickr-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TestAppFlickr-Info.plist"; sourceTree = "<group>"; };
 		3A216B900AEED4CF0070394E /* TestAppFlickr.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestAppFlickr.nib; sourceTree = "<group>"; };
@@ -133,6 +139,8 @@
 		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
 		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
 		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
+		3A848A0D0B3B63FE00B65C13 /* PFRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFRenderer.h; sourceTree = "<group>"; };
+		3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFRenderer.m; sourceTree = "<group>"; };
 		3A8F91600AE571820027DC3B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F91750AE571B30027DC3B /* TestApp.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestApp.nib; sourceTree = "<group>"; };
 		3A8F91770AE571C40027DC3B /* TestAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAppController.h; sourceTree = "<group>"; };
@@ -142,6 +150,12 @@
 		3A8F92380AE578A50027DC3B /* PFText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFText.m; sourceTree = "<group>"; };
 		3A8F923F0AE578E70027DC3B /* PFText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFText.h; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3AD383940B3B309B009F8887 /* TestAppQC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAppQC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD383960B3B309B009F8887 /* TestAppQC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TestAppQC-Info.plist"; sourceTree = "<group>"; };
+		3AD3839D0B3B30FD009F8887 /* TestAppQC.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestAppQC.qtz; sourceTree = "<group>"; };
+		3AD383A30B3B312B009F8887 /* TestAppQC_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAppQC_main.m; sourceTree = "<group>"; };
+		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
+		3AD383BA0B3B32E5009F8887 /* TestAppQC.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TestAppQC.nib; sourceTree = "<group>"; };
 		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
 		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
@@ -149,8 +163,6 @@
 		3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGLRenderer.h; sourceTree = "<group>"; };
-		CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGLRenderer.m; sourceTree = "<group>"; };
 		CDE1F8150AEAC68000D865FD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		CDE1F85B0AEAC93B00D865FD /* PFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFImage.h; sourceTree = "<group>"; };
 		CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
@@ -182,11 +194,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */,
 				3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */,
 				3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */,
 				CDE1F8260AEAC68000D865FD /* OpenGL.framework in Frameworks */,
-				CDE1F8DA0AEACD0F00D865FD /* QuartzCore.framework in Frameworks */,
 				3A254DF50B14D1020081E689 /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AD383920B3B309B009F8887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD383B30B3B32C1009F8887 /* Cocoa.framework in Frameworks */,
+				3AD383B20B3B32B5009F8887 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +255,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A142A0C0B3B4F1100D7F86E /* renderer.qtz */,
 				3AD264320B2334AB005CE2C6 /* LICENSE */,
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
@@ -245,6 +267,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD383AC0B3B32B5009F8887 /* Quartz.framework */,
 				3A254DD00B14D1020081E689 /* QuickTime.framework */,
 				3AFBD43B0AF2669C00B626A0 /* Flickr.framework */,
 				CDE1F8BB0AEACD0F00D865FD /* QuartzCore.framework */,
@@ -271,6 +294,7 @@
 				3A8F91600AE571820027DC3B /* TestApp.app */,
 				3A216B220AEED2E00070394E /* TestAppFlickr.app */,
 				3A4B1E6A0B21DEEE0017671F /* TestAppGL.app */,
+				3AD383940B3B309B009F8887 /* TestAppQC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,10 +338,10 @@
 			children = (
 				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
+				3A848A0D0B3B63FE00B65C13 /* PFRenderer.h */,
+				3A848A0E0B3B63FE00B65C13 /* PFRenderer.m */,
 				3A4B1E470B21DD420017671F /* PFGLImage.h */,
 				3A4B1E460B21DD420017671F /* PFGLImage.m */,
-				CDE1F8090AEAC40D00D865FD /* PFGLRenderer.h */,
-				CDE1F80A0AEAC40D00D865FD /* PFGLRenderer.m */,
 			);
 			name = Renderer;
 			sourceTree = "<group>";
@@ -325,6 +349,7 @@
 		3A216B700AEED3E10070394E /* Test apps */ = {
 			isa = PBXGroup;
 			children = (
+				3AD383850B3B3067009F8887 /* TestAppQC */,
 				3A8F918E0AE5721B0027DC3B /* TestApp_main.m */,
 				3A4B1E440B21DD210017671F /* TestAppGL */,
 				3A8F917E0AE571E30027DC3B /* TestApp */,
@@ -353,6 +378,17 @@
 				3A8F91750AE571B30027DC3B /* TestApp.nib */,
 			);
 			name = TestApp;
+			sourceTree = "<group>";
+		};
+		3AD383850B3B3067009F8887 /* TestAppQC */ = {
+			isa = PBXGroup;
+			children = (
+				3AD383960B3B309B009F8887 /* TestAppQC-Info.plist */,
+				3AD383A30B3B312B009F8887 /* TestAppQC_main.m */,
+				3AD3839D0B3B30FD009F8887 /* TestAppQC.qtz */,
+				3AD383BA0B3B32E5009F8887 /* TestAppQC.nib */,
+			);
+			name = TestAppQC;
 			sourceTree = "<group>";
 		};
 		3AEF430B0AEA7C350062B848 /* Providers */ = {
@@ -384,13 +420,13 @@
 				3A8F92400AE578E70027DC3B /* PFText.h in Headers */,
 				3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */,
 				3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */,
-				CDE1F80C0AEAC40D00D865FD /* PFGLRenderer.h in Headers */,
 				CDE1F85D0AEAC93B00D865FD /* PFImage.h in Headers */,
 				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
 				3A2547C90B1493D90081E689 /* PFImage_old.h in Headers */,
 				3A2547DF0B1495530081E689 /* types.h in Headers */,
 				3A4B1E490B21DD420017671F /* PFGLImage.h in Headers */,
 				3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */,
+				3A848A100B3B63FE00B65C13 /* PFRenderer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +485,23 @@
 			productReference = 3A8F91600AE571820027DC3B /* TestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3AD383930B3B309B009F8887 /* TestAppQC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AD383970B3B309C009F8887 /* Build configuration list for PBXNativeTarget "TestAppQC" */;
+			buildPhases = (
+				3AD383900B3B309B009F8887 /* Resources */,
+				3AD383910B3B309B009F8887 /* Sources */,
+				3AD383920B3B309B009F8887 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestAppQC;
+			productName = TestAppQC;
+			productReference = 3AD383940B3B309B009F8887 /* TestAppQC.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8D255AC50486D3F9007BF209 /* PhotoFeeder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "PhotoFeeder" */;
@@ -483,6 +536,7 @@
 				3A8F915F0AE571820027DC3B /* TestApp */,
 				3A216B080AEED2E00070394E /* TestAppFlickr */,
 				3A4B1E690B21DEEE0017671F /* TestAppGL */,
+				3AD383930B3B309B009F8887 /* TestAppQC */,
 			);
 		};
 /* End PBXProject section */
@@ -516,6 +570,16 @@
 				3A8F91B90AE5731E0027DC3B /* TestApp-Info.plist in Resources */,
 				3A674FC00AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 				3AD264330B2334AB005CE2C6 /* LICENSE in Resources */,
+				3A142A0D0B3B4F1100D7F86E /* renderer.qtz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AD383900B3B309B009F8887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD3839E0B3B30FD009F8887 /* TestAppQC.qtz in Resources */,
+				3AD383BF0B3B32E5009F8887 /* TestAppQC.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +590,7 @@
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 				3AD264340B2334AB005CE2C6 /* LICENSE in Resources */,
+				3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +615,7 @@
 				3A216B940AEED4D60070394E /* TestAppFlickrController.m in Sources */,
 				3A2547AD0B14938B0081E689 /* PFImage.m in Sources */,
 				3A4B1E4A0B21DD420017671F /* PFGLImage.m in Sources */,
+				3A848A130B3B63FE00B65C13 /* PFRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +626,7 @@
 				3A4B1EC10B21E05B0017671F /* TestApp_main.m in Sources */,
 				3A4B1E920B21DFB10017671F /* PFGLImage.m in Sources */,
 				3A4B1E720B21DF100017671F /* TestAppGLView.m in Sources */,
+				3A848A140B3B63FE00B65C13 /* PFRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,13 +639,18 @@
 				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
 				3A8F91790AE571C40027DC3B /* TestAppController.m in Sources */,
 				3A8F918F0AE5721B0027DC3B /* TestApp_main.m in Sources */,
-				3A8F92390AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
-				CDE1F80B0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
-				3A2547AE0B14938B0081E689 /* PFImage.m in Sources */,
-				3A4B1E4C0B21DD420017671F /* PFGLImage.m in Sources */,
 				3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */,
+				3A848A0F0B3B63FE00B65C13 /* PFRenderer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AD383910B3B309B009F8887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD383A40B3B312B009F8887 /* TestAppQC_main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,13 +661,10 @@
 				8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */,
 				3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
-				3A8F923A0AE578A50027DC3B /* PFText.m in Sources */,
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
-				CDE1F80D0AEAC40D00D865FD /* PFGLRenderer.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
-				3A2547AC0B14938B0081E689 /* PFImage.m in Sources */,
-				3A4B1E480B21DD420017671F /* PFGLImage.m in Sources */,
 				3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */,
+				3A848A110B3B63FE00B65C13 /* PFRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +868,56 @@
 			};
 			name = Release;
 		};
+		3AD383980B3B309C009F8887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "TestAppQC-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestAppQC;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		3AD383990B3B309C009F8887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "TestAppQC-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = TestAppQC;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -890,6 +1009,15 @@
 			buildConfigurations = (
 				3A8F91640AE571820027DC3B /* Debug */,
 				3A8F91650AE571820027DC3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AD383970B3B309C009F8887 /* Build configuration list for PBXNativeTarget "TestAppQC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AD383980B3B309C009F8887 /* Debug */,
+				3AD383990B3B309C009F8887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

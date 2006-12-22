@@ -87,12 +87,12 @@ DLog(@"%@", [res URL]);
 }
 
 
--(PFImage*)nextImage
+-(NSImage*)nextImage
 {
 	// Would be nice to handle "to small images" right here
 	NSURL* url = (NSURL *)[urls take];
 	DLog(@"%@", url);
-	return [[PFImage alloc] initWithGLImage:[[PFGLImage alloc] initWithContentsOfURL:url]];
+	return [[NSImage alloc] initWithContentsOfURL:url];
 }
 
 

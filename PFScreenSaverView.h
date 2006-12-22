@@ -10,34 +10,30 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import <ScreenSaver/ScreenSaver.h>
-#import <QuartzCore/QuartzCore.h>
+#import <Quartz/Quartz.h>
 #import "PFText.h"
 #import "PFQueue.h"
-#import "PFGLRenderer.h"
-#import "PFImage.h"
 
 @interface PFScreenSaverView : ScreenSaverView {
-	PFQueue*			queue;
+	PFQueue*					queue;
 	NSMutableArray*		providers;
-	NSConditionLock*	imageCreatorLock;
-	PFText*				statusText;
-	PFGLRenderer*		renderer;
+	QCView*					qcView;
 	
-	NSSize				screenSize;
-	CIContext *			ciContext;
+	NSImage*					sourceImage; // back
+	NSImage*					destinationImage; // front
 	
-	PFImage*			frontImage;
-	PFImage*			backImage;
+	id							configureSheetController;
 	
-	CIFilter *			transition;
-	
-	id configureSheetController;
+	BOOL						animationIsInitialized;
+	double					animationInterval;            // 1.0/FPS
+	double               animationTime;                // Current time in animation sequence
+	double					userFadeInterval;            // User-defined transition interval
+	double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
+	double					transitionAndDisplayInterval; // Total time an image is visible on the screen
 }
 
-- (void)queueFillerThread:(id)obj;
-- (void)imageCreatorThread:(id)obj;
-
-//- (PFImage*)createResizedImageFromCIImage:(CIImage *)im;
-- (void) setupAnimationForImage:(PFImage*)im;
+- (void) queueFillerThread:(id)obj;
+- (void) switchImage:(NSString*)imagePortName;
+- (void) initAnimation;
 
 @end
