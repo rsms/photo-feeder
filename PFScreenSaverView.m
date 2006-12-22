@@ -175,7 +175,7 @@
 	
 	else if([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0)
 	{
-		[qcView setValue: [NSNumber numberWithBool:NO]  forInputKey: @"statusMessageEnabled"];
+		[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
 	}
 	
 	// Set image in QC
