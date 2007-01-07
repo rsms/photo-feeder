@@ -17,17 +17,13 @@
 	PFQueue*					queue;
 	NSMutableArray*		providers;
 	QCView*					qcView;
+	NSThread*            switchImageDispatchT;
 	
 	NSImage*					sourceImage; // back
 	NSImage*					destinationImage; // front
 	
 	id							configureSheetController;
-
-	NSTimer*					animationTimer;
-	NSDate*              animationTimerStarted;
-	BOOL						animationIsInitialized;
-	double					animationInterval;            // 1.0/FPS
-	double					transitionAndDisplayInterval; // Total time an image is visible on the screen
+	
 	NSString*            imagePortName;
 	
 	double					userFadeInterval;            // User-defined transition interval

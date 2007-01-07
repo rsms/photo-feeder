@@ -49,6 +49,8 @@ static NSString* srcImageId = @"sourceImage";
 		[qcView loadCompositionFromFile:rendererQtzPath];
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];
+		
+		switchImageDispatchT = nil;
     }
     return self;
 }
@@ -70,24 +72,19 @@ static NSString* srcImageId = @"sourceImage";
 {
 	DLog(@"");
 	
-	NSUserDefaults* ud = [NSUserDefaults standardUserDefaults]; // TODO
+	NSUserDefaults* ud = [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"]; // TODO
 	
 	userFps = [ud floatForKey:@"rendererFPS"];
 	if(userFps == 0.0)
 		userFps = 60.0;
 	
 	userFadeInterval = [ud floatForKey:@"fadeInterval"];
-	//if(userFadeInterval == 0.0)
+	if(userFadeInterval == 0.0)
 		userFadeInterval = 1.0;
 	
 	userDisplayInterval = [ud floatForKey:@"displayInterval"];
-	//if(userDisplayInterval == 0.0)
+	if(userDisplayInterval == 0.0)
 		userDisplayInterval = 3.0;
-	
-	animationInterval = 1.0/userFps;
-	
-	// Beräkna total tid (pungsvett från räkan)
-	transitionAndDisplayInterval = (userDisplayInterval + userFadeInterval) * 2;
 	
 	// Berätta för Q-kompositionen hur länge bilder skall visas & fadeas
 	// Regarding the "enabled" key... it has the following three states:
@@ -99,19 +96,17 @@ static NSString* srcImageId = @"sourceImage";
 	[qcView setValue: [NSNumber numberWithDouble:2.0]                  forInputKey: @"statusMessageEnabled"];
 	
 
-	[qcView setMaxRenderingFrameRate: 60];
+	[qcView setMaxRenderingFrameRate: userFps];
 	[qcView startRendering];
 	
-	// Schedule first 2 switches
+	// Fork the imageSwitchDispatchThread (pungsvett från räkan)
 	imagePortName = dstImageId;
-	/*[self performSelector:@selector(switchImage:) 
-				  withObject:[NSNumber numberWithInt:1] // indicate 1:st time call
-				  afterDelay:0.0];*/
-	
-	// Fork the imageSwitchDispatchThread
-	[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
-									 toTarget: self
-								  withObject: nil];
+	if(!switchImageDispatchT)
+	{
+		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
+										 toTarget: self
+									  withObject: nil];
+	}
 }
 
 
@@ -125,7 +120,6 @@ static NSString* srcImageId = @"sourceImage";
 - (void)stopAnimation
 {
 	DLog(@"");
-	animationIsInitialized = NO;
 	[qcView stopRendering];
 	[super stopAnimation];
 }
@@ -172,6 +166,7 @@ static NSString* srcImageId = @"sourceImage";
 - (void) switchImageDispatchThread:(id)obj
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	switchImageDispatchT = [NSThread currentThread];
 	@try
 	{
 		NSObject* firstTime = [NSThread currentThread];

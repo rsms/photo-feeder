@@ -1,9 +1,9 @@
 // !$*UTF8*$!
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 3A8F91610AE571820027DC3B /* Viewer */;
-		activeTarget = 3A8F915F0AE571820027DC3B /* Viewer */;
+		activeTarget = 8D255AC50486D3F9007BF209 /* PhotoFeeder */;
 		addToTargets = (
 			3A8F915F0AE571820027DC3B /* Viewer */,
 		);
@@ -294,6 +294,123 @@
 			3ABF2EC50B50979600222076 /* PBXTextBookmark */ = 3ABF2EC50B50979600222076 /* PBXTextBookmark */;
 			3ABF2EC60B50979600222076 /* PBXTextBookmark */ = 3ABF2EC60B50979600222076 /* PBXTextBookmark */;
 			3ABF2EC70B50979600222076 /* PBXTextBookmark */ = 3ABF2EC70B50979600222076 /* PBXTextBookmark */;
+			3ABF2EC90B50979600222076 /* PBXTextBookmark */ = 3ABF2EC90B50979600222076 /* PBXTextBookmark */;
+			3ABF2ECB0B50979600222076 /* PBXTextBookmark */ = 3ABF2ECB0B50979600222076 /* PBXTextBookmark */;
+			3ABF2ECD0B50979600222076 /* PBXTextBookmark */ = 3ABF2ECD0B50979600222076 /* PBXTextBookmark */;
+			3ABF2ED10B50979600222076 /* PBXTextBookmark */ = 3ABF2ED10B50979600222076 /* PBXTextBookmark */;
+			3ABF2EDC0B50979600222076 /* PBXTextBookmark */ = 3ABF2EDC0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EDE0B50979600222076 /* PBXTextBookmark */ = 3ABF2EDE0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EDF0B50979600222076 /* PBXTextBookmark */ = 3ABF2EDF0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EE00B50979600222076 /* PBXTextBookmark */ = 3ABF2EE00B50979600222076 /* PBXTextBookmark */;
+			3ABF2EE20B50979600222076 /* PBXTextBookmark */ = 3ABF2EE20B50979600222076 /* PBXTextBookmark */;
+			3ABF2EFC0B50979600222076 /* PBXTextBookmark */ = 3ABF2EFC0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EFD0B50979600222076 /* PBXTextBookmark */ = 3ABF2EFD0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EFE0B50979600222076 /* PBXTextBookmark */ = 3ABF2EFE0B50979600222076 /* PBXTextBookmark */;
+			3ABF2EFF0B50979600222076 /* PBXTextBookmark */ = 3ABF2EFF0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F000B50979600222076 /* PBXBookmark */ = 3ABF2F000B50979600222076 /* PBXBookmark */;
+			3ABF2F010B50979600222076 /* PBXTextBookmark */ = 3ABF2F010B50979600222076 /* PBXTextBookmark */;
+			3ABF2F020B50979600222076 /* PBXTextBookmark */ = 3ABF2F020B50979600222076 /* PBXTextBookmark */;
+			3ABF2F030B50979600222076 /* PBXTextBookmark */ = 3ABF2F030B50979600222076 /* PBXTextBookmark */;
+			3ABF2F040B50979600222076 /* PBXTextBookmark */ = 3ABF2F040B50979600222076 /* PBXTextBookmark */;
+			3ABF2F050B50979600222076 /* PBXTextBookmark */ = 3ABF2F050B50979600222076 /* PBXTextBookmark */;
+			3ABF2F060B50979600222076 /* PBXTextBookmark */ = 3ABF2F060B50979600222076 /* PBXTextBookmark */;
+			3ABF2F070B50979600222076 /* PBXTextBookmark */ = 3ABF2F070B50979600222076 /* PBXTextBookmark */;
+			3ABF2F080B50979600222076 /* PBXTextBookmark */ = 3ABF2F080B50979600222076 /* PBXTextBookmark */;
+			3ABF2F090B50979600222076 /* PBXTextBookmark */ = 3ABF2F090B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0A0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0A0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0B0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0B0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0C0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0C0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0D0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0D0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0E0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0E0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F0F0B50979600222076 /* PBXTextBookmark */ = 3ABF2F0F0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F100B50979600222076 /* PBXTextBookmark */ = 3ABF2F100B50979600222076 /* PBXTextBookmark */;
+			3ABF2F110B50979600222076 /* PBXTextBookmark */ = 3ABF2F110B50979600222076 /* PBXTextBookmark */;
+			3ABF2F180B50979600222076 /* PBXTextBookmark */ = 3ABF2F180B50979600222076 /* PBXTextBookmark */;
+			3ABF2F190B50979600222076 /* PBXTextBookmark */ = 3ABF2F190B50979600222076 /* PBXTextBookmark */;
+			3ABF2F1A0B50979600222076 /* PBXTextBookmark */ = 3ABF2F1A0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F1B0B50979600222076 /* PBXTextBookmark */ = 3ABF2F1B0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F1C0B50979600222076 /* PBXTextBookmark */ = 3ABF2F1C0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F1D0B50979600222076 /* PBXTextBookmark */ = 3ABF2F1D0B50979600222076 /* PBXTextBookmark */;
+			3ABF2F220B50979600222076 /* PBXTextBookmark */ = 3ABF2F220B50979600222076 /* PBXTextBookmark */;
+			3ABF2F260B5097F300222076 /* PBXTextBookmark */ = 3ABF2F260B5097F300222076 /* PBXTextBookmark */;
+			3ABF2F2D0B50985600222076 /* PBXTextBookmark */ = 3ABF2F2D0B50985600222076 /* PBXTextBookmark */;
+			3ABF2F350B5098F900222076 /* PBXTextBookmark */ = 3ABF2F350B5098F900222076 /* PBXTextBookmark */;
+			3ABF2F3F0B5099D900222076 /* PBXTextBookmark */ = 3ABF2F3F0B5099D900222076 /* PBXTextBookmark */;
+			3ABF2F490B509B6100222076 /* PBXTextBookmark */ = 3ABF2F490B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4A0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4A0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4B0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4B0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4C0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4C0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4D0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4D0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4E0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4E0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F4F0B509B6100222076 /* PBXTextBookmark */ = 3ABF2F4F0B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F500B509B6100222076 /* PBXTextBookmark */ = 3ABF2F500B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F510B509B6100222076 /* PBXTextBookmark */ = 3ABF2F510B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F520B509B6100222076 /* PBXTextBookmark */ = 3ABF2F520B509B6100222076 /* PBXTextBookmark */;
+			3ABF2F540B509B6500222076 /* PBXTextBookmark */ = 3ABF2F540B509B6500222076 /* PBXTextBookmark */;
+			3ABF2F5A0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5A0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F5B0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5B0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F5C0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5C0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F5D0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5D0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F5E0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5E0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F5F0B509BDA00222076 /* PBXTextBookmark */ = 3ABF2F5F0B509BDA00222076 /* PBXTextBookmark */;
+			3ABF2F640B509BF400222076 /* PBXTextBookmark */ = 3ABF2F640B509BF400222076 /* PBXTextBookmark */;
+			3ABF2F650B509BF400222076 /* PBXTextBookmark */ = 3ABF2F650B509BF400222076 /* PBXTextBookmark */;
+			3ABF2F660B509BF400222076 /* PBXTextBookmark */ = 3ABF2F660B509BF400222076 /* PBXTextBookmark */;
+			3ABF2F670B509BF400222076 /* PBXTextBookmark */ = 3ABF2F670B509BF400222076 /* PBXTextBookmark */;
+			3ABF2F6A0B509C2D00222076 /* PBXTextBookmark */ = 3ABF2F6A0B509C2D00222076 /* PBXTextBookmark */;
+			3ABF2F6B0B509C2F00222076 /* PBXTextBookmark */ = 3ABF2F6B0B509C2F00222076 /* PBXTextBookmark */;
+			3ABF2F700B509C6000222076 /* PBXTextBookmark */ = 3ABF2F700B509C6000222076 /* PBXTextBookmark */;
+			3ABF2F740B509C8900222076 /* PBXTextBookmark */ = 3ABF2F740B509C8900222076 /* PBXTextBookmark */;
+			3ABF2F790B509C9E00222076 /* PBXTextBookmark */ = 3ABF2F790B509C9E00222076 /* PBXTextBookmark */;
+			3ABF2F7E0B509CEC00222076 /* PBXTextBookmark */ = 3ABF2F7E0B509CEC00222076 /* PBXTextBookmark */;
+			3ABF2F7F0B509CEC00222076 /* PBXTextBookmark */ = 3ABF2F7F0B509CEC00222076 /* PBXTextBookmark */;
+			3ABF2F800B509CEC00222076 /* PBXTextBookmark */ = 3ABF2F800B509CEC00222076 /* PBXTextBookmark */;
+			3ABF2F810B509CEC00222076 /* PBXTextBookmark */ = 3ABF2F810B509CEC00222076 /* PBXTextBookmark */;
+			3ABF2F820B509CEC00222076 /* PBXTextBookmark */ = 3ABF2F820B509CEC00222076 /* PBXTextBookmark */;
+			3ABF2F850B509D2200222076 /* PBXTextBookmark */ = 3ABF2F850B509D2200222076 /* PBXTextBookmark */;
+			3ABF2F8A0B509D2F00222076 /* PBXTextBookmark */ = 3ABF2F8A0B509D2F00222076 /* PBXTextBookmark */;
+			3ABF2F8E0B509D6900222076 /* PBXTextBookmark */ = 3ABF2F8E0B509D6900222076 /* PBXTextBookmark */;
+			3ABF2F910B509D6B00222076 /* PBXTextBookmark */ = 3ABF2F910B509D6B00222076 /* PBXTextBookmark */;
+			3ABF2F940B509D9700222076 /* PBXTextBookmark */ = 3ABF2F940B509D9700222076 /* PBXTextBookmark */;
+			3ABF2F9B0B509DBE00222076 /* PBXTextBookmark */ = 3ABF2F9B0B509DBE00222076 /* PBXTextBookmark */;
+			3ABF2F9C0B509DBE00222076 /* PBXTextBookmark */ = 3ABF2F9C0B509DBE00222076 /* PBXTextBookmark */;
+			3ABF2F9D0B509DBE00222076 /* PBXTextBookmark */ = 3ABF2F9D0B509DBE00222076 /* PBXTextBookmark */;
+			3ABF2F9E0B509DBE00222076 /* PBXTextBookmark */ = 3ABF2F9E0B509DBE00222076 /* PBXTextBookmark */;
+			3ABF2FA30B509DD700222076 /* PBXTextBookmark */ = 3ABF2FA30B509DD700222076 /* PBXTextBookmark */;
+			3ABF2FA80B509DE600222076 /* PBXTextBookmark */ = 3ABF2FA80B509DE600222076 /* PBXTextBookmark */;
+			3ABF2FB10B509E9100222076 /* PBXTextBookmark */ = 3ABF2FB10B509E9100222076 /* PBXTextBookmark */;
+			3ABF2FB20B509E9100222076 /* PBXTextBookmark */ = 3ABF2FB20B509E9100222076 /* PBXTextBookmark */;
+			3ABF2FB30B509E9100222076 /* PBXTextBookmark */ = 3ABF2FB30B509E9100222076 /* PBXTextBookmark */;
+			3ABF2FB40B509E9100222076 /* PBXTextBookmark */ = 3ABF2FB40B509E9100222076 /* PBXTextBookmark */;
+			3ABF2FB50B509E9100222076 /* PBXTextBookmark */ = 3ABF2FB50B509E9100222076 /* PBXTextBookmark */;
+			3ABF2FBA0B509EB800222076 /* PBXTextBookmark */ = 3ABF2FBA0B509EB800222076 /* PBXTextBookmark */;
+			3ABF2FCB0B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FCB0B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FCC0B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FCC0B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FCD0B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FCD0B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FCE0B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FCE0B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FCF0B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FCF0B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD00B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD00B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD10B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD10B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD20B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD20B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD30B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD30B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD40B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD40B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD50B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD50B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD60B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD60B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD70B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD70B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FD80B509FAE00222076 /* PBXTextBookmark */ = 3ABF2FD80B509FAE00222076 /* PBXTextBookmark */;
+			3ABF2FEC0B509FFD00222076 /* PBXTextBookmark */ = 3ABF2FEC0B509FFD00222076 /* PBXTextBookmark */;
+			3ABF2FED0B509FFF00222076 /* PBXTextBookmark */ = 3ABF2FED0B509FFF00222076 /* PBXTextBookmark */;
+			3ABF30010B50A06100222076 /* PBXTextBookmark */ = 3ABF30010B50A06100222076 /* PBXTextBookmark */;
+			3ABF30020B50A06100222076 /* PBXTextBookmark */ = 3ABF30020B50A06100222076 /* PBXTextBookmark */;
+			3ABF30030B50A06100222076 /* PBXTextBookmark */ = 3ABF30030B50A06100222076 /* PBXTextBookmark */;
+			3ABF30080B50A07B00222076 /* PBXTextBookmark */ = 3ABF30080B50A07B00222076 /* PBXTextBookmark */;
+			3ABF30090B50A07B00222076 /* PBXTextBookmark */ = 3ABF30090B50A07B00222076 /* PBXTextBookmark */;
+			3ABF300A0B50A07B00222076 /* PBXTextBookmark */ = 3ABF300A0B50A07B00222076 /* PBXTextBookmark */;
+			3ABF300E0B50A0DA00222076 /* PBXTextBookmark */ = 3ABF300E0B50A0DA00222076 /* PBXTextBookmark */;
+			3ABF30110B50A25000222076 /* PBXTextBookmark */ = 3ABF30110B50A25000222076 /* PBXTextBookmark */;
+			3ABF30120B50A25000222076 /* PBXTextBookmark */ = 3ABF30120B50A25000222076 /* PBXTextBookmark */;
+			3ABF30130B50A25000222076 /* PBXTextBookmark */ = 3ABF30130B50A25000222076 /* PBXTextBookmark */;
+			3ABF30160B50A2C400222076 /* PBXTextBookmark */ = 3ABF30160B50A2C400222076 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3A2C3EB60AE42FE500970E7C /* Source Control */;
 		userBuildSettings = {
@@ -324,7 +441,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1076, 2100}}";
 			sepNavSelRange = "{2749, 0}";
-			sepNavVisRect = "{{0, 886}, {935, 906}}";
+			sepNavVisRect = "{{0, 97}, {901, 906}}";
 		};
 	};
 	3A2547DE0B1495530081E689 /* types.h */ = {
@@ -385,16 +502,16 @@
 	};
 	3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {928, 733}}";
-			sepNavSelRange = "{528, 0}";
-			sepNavVisRect = "{{0, 0}, {928, 733}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
+			sepNavSelRange = "{668, 0}";
+			sepNavVisRect = "{{0, 0}, {901, 875}}";
 		};
 	};
 	3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {935, 906}}";
-			sepNavSelRange = "{528, 0}";
-			sepNavVisRect = "{{0, 0}, {935, 906}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
+			sepNavSelRange = "{1200, 0}";
+			sepNavVisRect = "{{0, 0}, {901, 875}}";
 		};
 	};
 	3A71E4270B50201700D212BC /* PBXTextBookmark */ = {
@@ -452,7 +569,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 209";
 		rLen = 0;
-		rLoc = 6255;
+		rLoc = 6064;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4511;
@@ -462,7 +579,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 209";
 		rLen = 0;
-		rLoc = 6255;
+		rLoc = 6064;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4511;
@@ -482,7 +599,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = NSNumber;
 		rLen = 8;
-		rLoc = 5762;
+		rLoc = 5571;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 4388;
@@ -509,7 +626,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = animationTimer;
 		rLen = 0;
-		rLoc = 730;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -519,7 +636,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 99";
 		rLen = 0;
-		rLoc = 3232;
+		rLoc = 3137;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 2297;
@@ -529,7 +646,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationTime";
 		rLen = 0;
-		rLoc = 730;
+		rLoc = 774;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -539,7 +656,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 99";
 		rLen = 0;
-		rLoc = 3232;
+		rLoc = 3137;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 2297;
@@ -549,7 +666,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: 38";
 		rLen = 0;
-		rLoc = 1516;
+		rLoc = 1308;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -559,7 +676,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 65";
 		rLen = 0;
-		rLoc = 2006;
+		rLoc = 2039;
 		rType = 0;
 		vrLen = 2045;
 		vrLoc = 1883;
@@ -569,7 +686,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: userFps";
 		rLen = 0;
-		rLoc = 1382;
+		rLoc = 1174;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -579,7 +696,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 65";
 		rLen = 0;
-		rLoc = 2006;
+		rLoc = 2039;
 		rType = 0;
 		vrLen = 2044;
 		vrLoc = 1817;
@@ -589,7 +706,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = animationTime;
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -599,7 +716,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 94";
 		rLen = 0;
-		rLoc = 3201;
+		rLoc = 3109;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 2756;
@@ -609,7 +726,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationIsInitialized";
 		rLen = 0;
-		rLoc = 922;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 0;
@@ -619,7 +736,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 94";
 		rLen = 0;
-		rLoc = 3201;
+		rLoc = 3109;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 2756;
@@ -629,7 +746,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationTimerStarted";
 		rLen = 0;
-		rLoc = 914;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1438;
 		vrLoc = 0;
@@ -639,7 +756,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: imagePortName";
 		rLen = 0;
-		rLoc = 1111;
+		rLoc = 903;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -649,7 +766,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 307";
 		rLen = 0;
-		rLoc = 7918;
+		rLoc = 7727;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 6305;
@@ -659,7 +776,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: switchImageState";
 		rLen = 0;
-		rLoc = 1136;
+		rLoc = 928;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -669,7 +786,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 307";
 		rLen = 0;
-		rLoc = 7918;
+		rLoc = 7727;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 6305;
@@ -679,7 +796,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = hasSwitchedFirstImage;
 		rLen = 13;
-		rLoc = 1123;
+		rLoc = 915;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -688,8 +805,8 @@
 		isa = PBXTextBookmark;
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = imagePortName;
-		rLen = 13;
-		rLoc = 3261;
+		rLen = 0;
+		rLoc = 3139;
 		rType = 0;
 		vrLen = 1784;
 		vrLoc = 2458;
@@ -699,7 +816,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: imagePortName";
 		rLen = 0;
-		rLoc = 1111;
+		rLoc = 903;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -720,9 +837,9 @@
 	};
 	3A848C640B3B720B00B65C13 /* ViewerController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 906}}";
-			sepNavSelRange = "{722, 14}";
-			sepNavVisRect = "{{0, 0}, {901, 906}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
+			sepNavSelRange = "{738, 0}";
+			sepNavVisRect = "{{0, 0}, {901, 875}}";
 		};
 	};
 	3A8F915F0AE571820027DC3B /* Viewer */ = {
@@ -764,7 +881,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = NSNumber;
 		rLen = 8;
-		rLoc = 5762;
+		rLoc = 5571;
 		rType = 0;
 		vrLen = 1924;
 		vrLoc = 4388;
@@ -774,7 +891,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 199";
 		rLen = 0;
-		rLoc = 6000;
+		rLoc = 5809;
 		rType = 0;
 		vrLen = 2107;
 		vrLoc = 4433;
@@ -784,7 +901,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 191";
 		rLen = 0;
-		rLoc = 5950;
+		rLoc = 5759;
 		rType = 0;
 		vrLen = 2108;
 		vrLoc = 4433;
@@ -794,7 +911,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 195";
 		rLen = 0;
-		rLoc = 5950;
+		rLoc = 5759;
 		rType = 0;
 		vrLen = 2107;
 		vrLoc = 4589;
@@ -804,7 +921,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 192";
 		rLen = 0;
-		rLoc = 5950;
+		rLoc = 5759;
 		rType = 0;
 		vrLen = 2106;
 		vrLoc = 4589;
@@ -814,7 +931,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 192";
 		rLen = 0;
-		rLoc = 5950;
+		rLoc = 5759;
 		rType = 0;
 		vrLen = 2106;
 		vrLoc = 4589;
@@ -824,7 +941,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 189";
 		rLen = 0;
-		rLoc = 5948;
+		rLoc = 5757;
 		rType = 0;
 		vrLen = 2081;
 		vrLoc = 4589;
@@ -864,7 +981,7 @@
 		comments = "warning: local declaration of 'userFps' hides instance variable";
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		rLen = 1;
-		rLoc = 74;
+		rLoc = 76;
 		rType = 1;
 	};
 	3ABF2D350B5082FC00222076 /* PBXTextBookmark */ = {
@@ -872,7 +989,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "userFps = [ud floatForKey:@\"rendererFPS\"];";
 		rLen = 44;
-		rLoc = 2078;
+		rLoc = 2146;
 		rType = 0;
 		vrLen = 282;
 		vrLoc = 2239;
@@ -882,7 +999,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: switchImage:";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1307;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 0;
@@ -892,7 +1009,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "- (void) switchImage:(NSObject*)isFirstTime";
 		rLen = 45;
-		rLoc = 5054;
+		rLoc = 4863;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 3894;
@@ -902,7 +1019,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "- (void) switchImage:(NSObject*)isFirstTime";
 		rLen = 45;
-		rLoc = 5054;
+		rLoc = 4863;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 3894;
@@ -912,7 +1029,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: switchImage:";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1307;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 0;
@@ -922,7 +1039,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: switchImage:";
 		rLen = 0;
-		rLoc = 5099;
+		rLoc = 4908;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 3894;
@@ -962,7 +1079,7 @@
 		comments = "warning: conflicting types for '-(void)switchImage:(NSObject *)isFirstTime'";
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		rLen = 1;
-		rLoc = 197;
+		rLoc = 192;
 		rType = 1;
 	};
 	3ABF2D4E0B50849400222076 /* PBXTextBookmark */ = {
@@ -970,7 +1087,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "{";
 		rLen = 3;
-		rLoc = 5100;
+		rLoc = 4909;
 		rType = 0;
 		vrLen = 267;
 		vrLoc = 4518;
@@ -1010,7 +1127,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: queueFillerThread:";
 		rLen = 0;
-		rLoc = 4638;
+		rLoc = 4397;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 4137;
@@ -1020,7 +1137,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 192";
 		rLen = 0;
-		rLoc = 5139;
+		rLoc = 4948;
 		rType = 0;
 		vrLen = 1960;
 		vrLoc = 4137;
@@ -1030,7 +1147,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 171";
 		rLen = 0;
-		rLoc = 4718;
+		rLoc = 4527;
 		rType = 0;
 		vrLen = 1960;
 		vrLoc = 4137;
@@ -1040,7 +1157,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 175";
 		rLen = 0;
-		rLoc = 4877;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1946;
 		vrLoc = 4137;
@@ -1050,7 +1167,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 175";
 		rLen = 0;
-		rLoc = 4877;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1946;
 		vrLoc = 4137;
@@ -1070,7 +1187,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 175";
 		rLen = 0;
-		rLoc = 4877;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1894;
 		vrLoc = 4137;
@@ -1080,7 +1197,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 175";
 		rLen = 0;
-		rLoc = 4877;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1946;
 		vrLoc = 4137;
@@ -1100,7 +1217,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 173";
 		rLen = 0;
-		rLoc = 4877;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1868;
 		vrLoc = 4137;
@@ -1110,7 +1227,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 233";
 		rLen = 0;
-		rLoc = 6733;
+		rLoc = 6542;
 		rType = 0;
 		vrLen = 2134;
 		vrLoc = 4864;
@@ -1120,7 +1237,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 236";
 		rLen = 0;
-		rLoc = 7195;
+		rLoc = 7004;
 		rType = 0;
 		vrLen = 2141;
 		vrLoc = 4864;
@@ -1130,7 +1247,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationInterval";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -1140,7 +1257,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = double;
 		rLen = 6;
-		rLoc = 5057;
+		rLoc = 4866;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 4528;
@@ -1150,7 +1267,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 219";
 		rLen = 0;
-		rLoc = 6230;
+		rLoc = 6039;
 		rType = 0;
 		vrLen = 2162;
 		vrLoc = 4840;
@@ -1160,7 +1277,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = animationImageSwitchDelay;
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 0;
@@ -1170,7 +1287,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = double;
 		rLen = 6;
-		rLoc = 5057;
+		rLoc = 4866;
 		rType = 0;
 		vrLen = 1736;
 		vrLoc = 4528;
@@ -1180,7 +1297,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: switchImage:";
 		rLen = 0;
-		rLoc = 1431;
+		rLoc = 1223;
 		rType = 0;
 		vrLen = 1524;
 		vrLoc = 0;
@@ -1190,7 +1307,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = double;
 		rLen = 6;
-		rLoc = 5057;
+		rLoc = 4866;
 		rType = 0;
 		vrLen = 1733;
 		vrLoc = 4528;
@@ -1200,7 +1317,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationInterval";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -1210,7 +1327,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = double;
 		rLen = 6;
-		rLoc = 5057;
+		rLoc = 4866;
 		rType = 0;
 		vrLen = 1726;
 		vrLoc = 4526;
@@ -1220,7 +1337,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = double;
 		rLen = 6;
-		rLoc = 5057;
+		rLoc = 4866;
 		rType = 0;
 		vrLen = 1726;
 		vrLoc = 4526;
@@ -1230,7 +1347,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 194";
 		rLen = 0;
-		rLoc = 5139;
+		rLoc = 4948;
 		rType = 0;
 		vrLen = 2108;
 		vrLoc = 4692;
@@ -1240,7 +1357,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 53";
 		rLen = 0;
-		rLoc = 1787;
+		rLoc = 1820;
 		rType = 0;
 		vrLen = 1743;
 		vrLoc = 811;
@@ -1250,7 +1367,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 53";
 		rLen = 0;
-		rLoc = 1787;
+		rLoc = 1820;
 		rType = 0;
 		vrLen = 1745;
 		vrLoc = 811;
@@ -1260,7 +1377,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 54";
 		rLen = 0;
-		rLoc = 1787;
+		rLoc = 1820;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 811;
@@ -1270,7 +1387,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 52";
 		rLen = 0;
-		rLoc = 1793;
+		rLoc = 1826;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 811;
@@ -1280,7 +1397,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 177";
 		rLen = 0;
-		rLoc = 4944;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1830;
 		vrLoc = 4142;
@@ -1290,7 +1407,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 120";
 		rLen = 0;
-		rLoc = 3648;
+		rLoc = 3437;
 		rType = 0;
 		vrLen = 1717;
 		vrLoc = 2804;
@@ -1300,7 +1417,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 218";
 		rLen = 0;
-		rLoc = 6000;
+		rLoc = 5809;
 		rType = 0;
 		vrLen = 2087;
 		vrLoc = 4858;
@@ -1310,7 +1427,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 172";
 		rLen = 0;
-		rLoc = 4798;
+		rLoc = 4607;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 4488;
@@ -1320,7 +1437,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 172";
 		rLen = 0;
-		rLoc = 4798;
+		rLoc = 4607;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 4488;
@@ -1330,7 +1447,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 172";
 		rLen = 0;
-		rLoc = 4790;
+		rLoc = 4599;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 4488;
@@ -1340,7 +1457,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 230";
 		rLen = 0;
-		rLoc = 6292;
+		rLoc = 6101;
 		rType = 0;
 		vrLen = 2173;
 		vrLoc = 4952;
@@ -1350,7 +1467,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 172";
 		rLen = 0;
-		rLoc = 4790;
+		rLoc = 4599;
 		rType = 0;
 		vrLen = 1656;
 		vrLoc = 4521;
@@ -1360,7 +1477,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 246";
 		rLen = 0;
-		rLoc = 7157;
+		rLoc = 6966;
 		rType = 0;
 		vrLen = 2167;
 		vrLoc = 5023;
@@ -1370,7 +1487,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 178";
 		rLen = 0;
-		rLoc = 4944;
+		rLoc = 4686;
 		rType = 0;
 		vrLen = 1538;
 		vrLoc = 4479;
@@ -1380,7 +1497,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 267";
 		rLen = 0;
-		rLoc = 7345;
+		rLoc = 7154;
 		rType = 0;
 		vrLen = 1818;
 		vrLoc = 6031;
@@ -1390,7 +1507,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 269";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1706;
 		vrLoc = 6241;
@@ -1400,7 +1517,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 270";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1710;
 		vrLoc = 6241;
@@ -1410,7 +1527,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 271";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1726;
 		vrLoc = 6241;
@@ -1420,7 +1537,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 269";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 6241;
@@ -1430,7 +1547,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 270";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1824;
 		vrLoc = 6241;
@@ -1440,7 +1557,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 269";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1726;
 		vrLoc = 6241;
@@ -1450,7 +1567,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 274";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 6241;
@@ -1470,7 +1587,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 274";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 6241;
@@ -1480,7 +1597,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 274";
 		rLen = 0;
-		rLoc = 7333;
+		rLoc = 7142;
 		rType = 0;
 		vrLen = 1787;
 		vrLoc = 6241;
@@ -1500,7 +1617,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 251";
 		rLen = 0;
-		rLoc = 7164;
+		rLoc = 6973;
 		rType = 0;
 		vrLen = 1985;
 		vrLoc = 5611;
@@ -1510,7 +1627,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 195";
 		rLen = 0;
-		rLoc = 5103;
+		rLoc = 4912;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 4521;
@@ -1520,7 +1637,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 265";
 		rLen = 0;
-		rLoc = 7266;
+		rLoc = 7075;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 5793;
@@ -1530,7 +1647,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 265";
 		rLen = 0;
-		rLoc = 7266;
+		rLoc = 7075;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 5793;
@@ -1540,7 +1657,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 265";
 		rLen = 0;
-		rLoc = 7266;
+		rLoc = 7075;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 5793;
@@ -1550,7 +1667,7 @@
 		comments = "warning: 'PFScreenSaverView' may not respond to '-resizeImageIfNeeded:'";
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		rLen = 1;
-		rLoc = 151;
+		rLoc = 145;
 		rType = 1;
 	};
 	3ABF2E540B50979300222076 /* PBXTextBookmark */ = {
@@ -1558,7 +1675,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "[queue put:[self resizeImageIfNeeded:im]];";
 		rLen = 47;
-		rLoc = 4128;
+		rLoc = 3887;
 		rType = 0;
 		vrLen = 454;
 		vrLoc = 3977;
@@ -1568,7 +1685,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 265";
 		rLen = 0;
-		rLoc = 7266;
+		rLoc = 7075;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 5793;
@@ -1618,7 +1735,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationInterval";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -1628,7 +1745,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = resizeImageIfNeeded;
 		rLen = 19;
-		rLoc = 4149;
+		rLoc = 3908;
 		rType = 0;
 		vrLen = 1335;
 		vrLoc = 3606;
@@ -1688,7 +1805,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationInterval";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -1718,7 +1835,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = resizeImageIfNeeded;
 		rLen = 19;
-		rLoc = 4149;
+		rLoc = 3908;
 		rType = 0;
 		vrLen = 1335;
 		vrLoc = 3606;
@@ -1728,7 +1845,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: animationInterval";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 891;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 0;
@@ -1738,7 +1855,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 220";
 		rLen = 0;
-		rLoc = 6018;
+		rLoc = 5827;
 		rType = 0;
 		vrLen = 2082;
 		vrLoc = 4903;
@@ -1748,7 +1865,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 220";
 		rLen = 0;
-		rLoc = 6018;
+		rLoc = 5827;
 		rType = 0;
 		vrLen = 2119;
 		vrLoc = 4903;
@@ -1758,7 +1875,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 218";
 		rLen = 0;
-		rLoc = 5948;
+		rLoc = 5757;
 		rType = 0;
 		vrLen = 2197;
 		vrLoc = 4978;
@@ -1768,7 +1885,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 218";
 		rLen = 0;
-		rLoc = 5948;
+		rLoc = 5757;
 		rType = 0;
 		vrLen = 2198;
 		vrLoc = 4978;
@@ -1778,7 +1895,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 218";
 		rLen = 0;
-		rLoc = 5966;
+		rLoc = 5775;
 		rType = 0;
 		vrLen = 2197;
 		vrLoc = 4978;
@@ -1788,7 +1905,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "[image release];";
 		rLen = 18;
-		rLoc = 6000;
+		rLoc = 5809;
 		rType = 0;
 		vrLen = 2197;
 		vrLoc = 4978;
@@ -1798,7 +1915,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 183";
 		rLen = 0;
-		rLoc = 4985;
+		rLoc = 4794;
 		rType = 0;
 		vrLen = 1619;
 		vrLoc = 4430;
@@ -1808,7 +1925,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 188";
 		rLen = 0;
-		rLoc = 5007;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 1579;
 		vrLoc = 4430;
@@ -1818,7 +1935,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 139";
 		rLen = 0;
-		rLoc = 3880;
+		rLoc = 3639;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 3794;
@@ -1828,7 +1945,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 152";
 		rLen = 0;
-		rLoc = 4170;
+		rLoc = 3929;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 3941;
@@ -1846,7 +1963,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 152";
 		rLen = 0;
-		rLoc = 4170;
+		rLoc = 3929;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 3941;
@@ -1866,7 +1983,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 147";
 		rLen = 0;
-		rLoc = 3988;
+		rLoc = 3747;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 3794;
@@ -1884,7 +2001,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 147";
 		rLen = 0;
-		rLoc = 3988;
+		rLoc = 3747;
 		rType = 0;
 		vrLen = 1307;
 		vrLoc = 3794;
@@ -1924,7 +2041,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 208";
 		rLen = 0;
-		rLoc = 5277;
+		rLoc = 5086;
 		rType = 0;
 		vrLen = 2121;
 		vrLoc = 5099;
@@ -1944,7 +2061,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 258";
 		rLen = 0;
-		rLoc = 7171;
+		rLoc = 6980;
 		rType = 0;
 		vrLen = 2127;
 		vrLoc = 5139;
@@ -1954,7 +2071,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: 258";
 		rLen = 0;
-		rLoc = 7171;
+		rLoc = 6980;
 		rType = 0;
 		vrLen = 2127;
 		vrLoc = 5139;
@@ -1974,7 +2091,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: resizeImageIfNeeded:";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1307;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 0;
@@ -1984,7 +2101,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "- (NSImage*) resizeImageIfNeeded:(NSImage*)im";
 		rLen = 45;
-		rLoc = 7219;
+		rLoc = 7028;
 		rType = 0;
 		vrLen = 1843;
 		vrLoc = 5948;
@@ -1994,7 +2111,7 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "- (NSImage*) resizeImageIfNeeded:(NSImage*)im";
 		rLen = 45;
-		rLoc = 7219;
+		rLoc = 7028;
 		rType = 0;
 		vrLen = 1843;
 		vrLoc = 5948;
@@ -2004,7 +2121,7 @@
 		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
 		name = "PFScreenSaverView.h: resizeImageIfNeeded:";
 		rLen = 0;
-		rLoc = 1515;
+		rLoc = 1307;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 0;
@@ -2014,10 +2131,1192 @@
 		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
 		name = "PFScreenSaverView.m: queueFillerThread:";
 		rLen = 0;
-		rLoc = 4613;
+		rLoc = 4372;
 		rType = 0;
 		vrLen = 1665;
 		vrLoc = 3989;
+	};
+	3ABF2EC90B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "}";
+		rLen = 2;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 118;
+		vrLoc = 745;
+	};
+	3ABF2ECB0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 85";
+		rLen = 0;
+		rLoc = 2457;
+		rType = 0;
+		vrLen = 2044;
+		vrLoc = 1506;
+	};
+	3ABF2ECD0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 84";
+		rLen = 0;
+		rLoc = 2402;
+		rType = 0;
+		vrLen = 2040;
+		vrLoc = 1506;
+	};
+	3ABF2ED10B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 85";
+		rLen = 0;
+		rLoc = 2460;
+		rType = 0;
+		vrLen = 2040;
+		vrLoc = 1506;
+	};
+	3ABF2EDC0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3ABF2EDD0B50979600222076 /* ScreenSaverDefaults.h */;
+		name = ScreenSaverDefaults;
+		rLen = 19;
+		rLoc = 155;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 0;
+	};
+	3ABF2EDD0B50979600222076 /* ScreenSaverDefaults.h */ = {
+		isa = PBXFileReference;
+		name = ScreenSaverDefaults.h;
+		path = /System/Library/Frameworks/ScreenSaver.framework/Headers/ScreenSaverDefaults.h;
+		sourceTree = "<absolute>";
+	};
+	3ABF2EDE0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 73";
+		rLen = 0;
+		rLoc = 2063;
+		rType = 0;
+		vrLen = 1966;
+		vrLoc = 1506;
+	};
+	3ABF2EDF0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 73";
+		rLen = 0;
+		rLoc = 2063;
+		rType = 0;
+		vrLen = 2040;
+		vrLoc = 1506;
+	};
+	3ABF2EE00B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3ABF2EE10B50979600222076 /* ScreenSaverDefaults.h */;
+		name = ScreenSaverDefaults;
+		rLen = 19;
+		rLoc = 155;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 0;
+	};
+	3ABF2EE10B50979600222076 /* ScreenSaverDefaults.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ScreenSaverDefaults.h;
+		path = /System/Library/Frameworks/ScreenSaver.framework/Headers/ScreenSaverDefaults.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {901, 906}}";
+			sepNavSelRange = "{177, 14}";
+			sepNavVisRect = "{{0, 0}, {901, 906}}";
+		};
+	};
+	3ABF2EE20B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 73";
+		rLen = 0;
+		rLoc = 2082;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2EFC0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3ABF2EE10B50979600222076 /* ScreenSaverDefaults.h */;
+		name = NSUserDefaults;
+		rLen = 14;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 0;
+	};
+	3ABF2EFD0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 83";
+		rLen = 0;
+		rLoc = 2386;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2EFE0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: fps";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 0;
+	};
+	3ABF2EFF0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1716;
+		vrLoc = 0;
+	};
+	3ABF2F000B50979600222076 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+	};
+	3ABF2F010B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = ScreenSaverDefaults;
+		rLen = 19;
+		rLoc = 2063;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2F020B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 21";
+		rLen = 0;
+		rLoc = 772;
+		rType = 0;
+		vrLen = 1607;
+		vrLoc = 0;
+	};
+	3ABF2F030B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "[ScreenSaverDefaults standardUserDefaults]";
+		rLen = 72;
+		rLoc = 2062;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2F040B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = ScreenSaverDefaults;
+		rLen = 19;
+		rLoc = 773;
+		rType = 0;
+		vrLen = 1650;
+		vrLoc = 0;
+	};
+	3ABF2F050B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3ABF2EE10B50979600222076 /* ScreenSaverDefaults.h */;
+		name = NSUserDefaults;
+		rLen = 14;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 317;
+		vrLoc = 0;
+	};
+	3ABF2F060B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = ScreenSaverDefaults;
+		rLen = 19;
+		rLoc = 773;
+		rType = 0;
+		vrLen = 1650;
+		vrLoc = 0;
+	};
+	3ABF2F070B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = defaults;
+		rLen = 8;
+		rLoc = 742;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 0;
+	};
+	3ABF2F080B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1708;
+		vrLoc = 0;
+	};
+	3ABF2F090B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = rendererFPS;
+		rLen = 11;
+		rLoc = 2175;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2F0A0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = defaults;
+		rLen = 8;
+		rLoc = 742;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 0;
+	};
+	3ABF2F0B0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1697;
+		vrLoc = 0;
+	};
+	3ABF2F0C0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = defaults;
+		rLen = 8;
+		rLoc = 742;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 0;
+	};
+	3ABF2F0D0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 83";
+		rLen = 0;
+		rLoc = 2386;
+		rType = 0;
+		vrLen = 1971;
+		vrLoc = 1506;
+	};
+	3ABF2F0E0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1716;
+		vrLoc = 0;
+	};
+	3ABF2F0F0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: fps";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 0;
+	};
+	3ABF2F100B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1716;
+		vrLoc = 0;
+	};
+	3ABF2F110B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 97";
+		rLen = 0;
+		rLoc = 2749;
+		rType = 0;
+		vrLen = 1569;
+		vrLoc = 1880;
+	};
+	3ABF2F180B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 97";
+		rLen = 0;
+		rLoc = 2749;
+		rType = 0;
+		vrLen = 1719;
+		vrLoc = 275;
+	};
+	3ABF2F190B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "defaultsForModuleWithName:@\"com.flajm.PhotoFeeder\"";
+		rLen = 50;
+		rLoc = 2083;
+		rType = 0;
+		vrLen = 2001;
+		vrLoc = 1506;
+	};
+	3ABF2F1A0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 30";
+		rLen = 0;
+		rLoc = 1088;
+		rType = 0;
+		vrLen = 1716;
+		vrLoc = 0;
+	};
+	3ABF2F1B0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */;
+		name = "PFFlickrProvider.m: 97";
+		rLen = 0;
+		rLoc = 2749;
+		rType = 0;
+		vrLen = 1719;
+		vrLoc = 275;
+	};
+	3ABF2F1C0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "defaultsForModuleWithName:@\"com.flajm.PhotoFeeder\"";
+		rLen = 50;
+		rLoc = 2083;
+		rType = 0;
+		vrLen = 2001;
+		vrLoc = 1506;
+	};
+	3ABF2F1D0B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 21";
+		rLen = 0;
+		rLoc = 843;
+		rType = 0;
+		vrLen = 1746;
+		vrLoc = 0;
+	};
+	3ABF2F220B50979600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 29";
+		rLen = 0;
+		rLoc = 985;
+		rType = 0;
+		vrLen = 1779;
+		vrLoc = 0;
+	};
+	3ABF2F260B5097F300222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 53";
+		rLen = 0;
+		rLoc = 1263;
+		rType = 0;
+		vrLen = 1804;
+		vrLoc = 0;
+	};
+	3ABF2F2D0B50985600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 42";
+		rLen = 0;
+		rLoc = 1154;
+		rType = 0;
+		vrLen = 1970;
+		vrLoc = 0;
+	};
+	3ABF2F350B5098F900222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1968;
+		vrLoc = 0;
+	};
+	3ABF2F3F0B5099D900222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1970;
+		vrLoc = 0;
+	};
+	3ABF2F490B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1970;
+		vrLoc = 0;
+	};
+	3ABF2F4A0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = switchImageDispatchThreadRun;
+		rLen = 0;
+		rLoc = 3139;
+		rType = 0;
+		vrLen = 1836;
+		vrLoc = 2183;
+	};
+	3ABF2F4B0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = switchImageDispatchThreadRun;
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 0;
+	};
+	3ABF2F4C0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1970;
+		vrLoc = 0;
+	};
+	3ABF2F4D0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = switchImageDispatchThreadRef;
+		rLen = 0;
+		rLoc = 3391;
+		rType = 0;
+		vrLen = 1920;
+		vrLoc = 1815;
+	};
+	3ABF2F4E0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: switchImageDispatchThreadRef";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 0;
+	};
+	3ABF2F4F0B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 112";
+		rLen = 0;
+		rLoc = 3391;
+		rType = 0;
+		vrLen = 1869;
+		vrLoc = 1991;
+	};
+	3ABF2F500B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = switchImageDispatchThreadRun;
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 0;
+	};
+	3ABF2F510B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = switchImageDispatchThreadRun;
+		rLen = 0;
+		rLoc = 3139;
+		rType = 0;
+		vrLen = 1836;
+		vrLoc = 2183;
+	};
+	3ABF2F520B509B6100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: switchImageDispatchThreadRun";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 0;
+	};
+	3ABF2F540B509B6500222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: switchImageDispatchThreadRun";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1574;
+		vrLoc = 0;
+	};
+	3ABF2F5A0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: qcView";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1522;
+		vrLoc = 0;
+	};
+	3ABF2F5B0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1681;
+		vrLoc = 2113;
+	};
+	3ABF2F5C0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: qcView";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1522;
+		vrLoc = 0;
+	};
+	3ABF2F5D0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1681;
+		vrLoc = 2113;
+	};
+	3ABF2F5E0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: qcView";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1522;
+		vrLoc = 0;
+	};
+	3ABF2F5F0B509BDA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1670;
+		vrLoc = 2113;
+	};
+	3ABF2F640B509BF400222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1819;
+		vrLoc = 1669;
+	};
+	3ABF2F650B509BF400222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1970;
+		vrLoc = 0;
+	};
+	3ABF2F660B509BF400222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1819;
+		vrLoc = 1669;
+	};
+	3ABF2F670B509BF400222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1968;
+		vrLoc = 0;
+	};
+	3ABF2F6A0B509C2D00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "}";
+		rLen = 2;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 118;
+		vrLoc = 745;
+	};
+	3ABF2F6B0B509C2F00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1906;
+		vrLoc = 62;
+	};
+	3ABF2F700B509C6000222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1909;
+		vrLoc = 62;
+	};
+	3ABF2F740B509C8900222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1895;
+		vrLoc = 62;
+	};
+	3ABF2F790B509C9E00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1908;
+		vrLoc = 62;
+	};
+	3ABF2F7E0B509CEC00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: fps";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 0;
+	};
+	3ABF2F7F0B509CEC00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1908;
+		vrLoc = 62;
+	};
+	3ABF2F800B509CEC00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 39";
+		rLen = 0;
+		rLoc = 1051;
+		rType = 0;
+		vrLen = 1908;
+		vrLoc = 62;
+	};
+	3ABF2F810B509CEC00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: fps";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 894;
+		vrLoc = 0;
+	};
+	3ABF2F820B509CEC00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 31";
+		rLen = 0;
+		rLoc = 986;
+		rType = 0;
+		vrLen = 1927;
+		vrLoc = 59;
+	};
+	3ABF2F850B509D2200222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 31";
+		rLen = 0;
+		rLoc = 986;
+		rType = 0;
+		vrLen = 1927;
+		vrLoc = 59;
+	};
+	3ABF2F8A0B509D2F00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 28";
+		rLen = 0;
+		rLoc = 897;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 59;
+	};
+	3ABF2F8E0B509D6900222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "}";
+		rLen = 2;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 118;
+		vrLoc = 745;
+	};
+	3ABF2F910B509D6B00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 29";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 1930;
+		vrLoc = 59;
+	};
+	3ABF2F940B509D9700222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 29";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 1870;
+		vrLoc = 59;
+	};
+	3ABF2F9B0B509DBE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 28";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 1865;
+		vrLoc = 3;
+	};
+	3ABF2F9C0B509DBE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 106";
+		rLen = 0;
+		rLoc = 3258;
+		rType = 0;
+		vrLen = 1729;
+		vrLoc = 1759;
+	};
+	3ABF2F9D0B509DBE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 28";
+		rLen = 0;
+		rLoc = 926;
+		rType = 0;
+		vrLen = 1865;
+		vrLoc = 3;
+	};
+	3ABF2F9E0B509DBE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 76";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 1732;
+		vrLoc = 1759;
+	};
+	3ABF2FA30B509DD700222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 79";
+		rLen = 0;
+		rLoc = 2227;
+		rType = 0;
+		vrLen = 1762;
+		vrLoc = 1759;
+	};
+	3ABF2FA80B509DE600222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 75";
+		rLen = 0;
+		rLoc = 2189;
+		rType = 0;
+		vrLen = 1734;
+		vrLoc = 1759;
+	};
+	3ABF2FB10B509E9100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: switchImageDispatchT";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 0;
+	};
+	3ABF2FB20B509E9100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = switchImageDispatchT;
+		rLen = 0;
+		rLoc = 3261;
+		rType = 0;
+		vrLen = 1777;
+		vrLoc = 1759;
+	};
+	3ABF2FB30B509E9100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = switchImageDispatchT;
+		rLen = 0;
+		rLoc = 3261;
+		rType = 0;
+		vrLen = 1777;
+		vrLoc = 1759;
+	};
+	3ABF2FB40B509E9100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: switchImageDispatchT";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 1566;
+		vrLoc = 0;
+	};
+	3ABF2FB50B509E9100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 113";
+		rLen = 0;
+		rLoc = 3388;
+		rType = 0;
+		vrLen = 1725;
+		vrLoc = 1938;
+	};
+	3ABF2FBA0B509EB800222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 175";
+		rLen = 0;
+		rLoc = 4518;
+		rType = 0;
+		vrLen = 1333;
+		vrLoc = 3746;
+	};
+	3ABF2FCB0B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 87";
+		rLen = 0;
+		rLoc = 2461;
+		rType = 0;
+		vrLen = 1653;
+		vrLoc = 1960;
+	};
+	3ABF2FCC0B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: userFadeInterval";
+		rLen = 0;
+		rLoc = 944;
+		rType = 0;
+		vrLen = 1403;
+		vrLoc = 0;
+	};
+	3ABF2FCD0B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 127";
+		rLen = 0;
+		rLoc = 3499;
+		rType = 0;
+		vrLen = 1713;
+		vrLoc = 2038;
+	};
+	3ABF2FCE0B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: animationTimerStarted";
+		rLen = 0;
+		rLoc = 891;
+		rType = 0;
+		vrLen = 1531;
+		vrLoc = 0;
+	};
+	3ABF2FCF0B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 127";
+		rLen = 0;
+		rLoc = 3499;
+		rType = 0;
+		vrLen = 1713;
+		vrLoc = 2038;
+	};
+	3ABF2FD00B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = animationInterval;
+		rLen = 0;
+		rLoc = 891;
+		rType = 0;
+		vrLen = 1531;
+		vrLoc = 0;
+	};
+	3ABF2FD10B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 87";
+		rLen = 0;
+		rLoc = 2461;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 2038;
+	};
+	3ABF2FD20B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = animationTimerStarted;
+		rLen = 0;
+		rLoc = 891;
+		rType = 0;
+		vrLen = 1478;
+		vrLoc = 0;
+	};
+	3ABF2FD30B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 87";
+		rLen = 0;
+		rLoc = 2461;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 2038;
+	};
+	3ABF2FD40B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = animationTimer;
+		rLen = 0;
+		rLoc = 891;
+		rType = 0;
+		vrLen = 1433;
+		vrLoc = 0;
+	};
+	3ABF2FD50B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 87";
+		rLen = 0;
+		rLoc = 2461;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 2038;
+	};
+	3ABF2FD60B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: userFadeInterval";
+		rLen = 0;
+		rLoc = 944;
+		rType = 0;
+		vrLen = 1403;
+		vrLoc = 0;
+	};
+	3ABF2FD70B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 87";
+		rLen = 0;
+		rLoc = 2461;
+		rType = 0;
+		vrLen = 1653;
+		vrLoc = 1960;
+	};
+	3ABF2FD80B509FAE00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: 26";
+		rLen = 0;
+		rLoc = 892;
+		rType = 0;
+		vrLen = 1314;
+		vrLoc = 0;
+	};
+	3ABF2FEC0B509FFD00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */;
+		name = "}";
+		rLen = 2;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 118;
+		vrLoc = 745;
+	};
+	3ABF2FED0B509FFF00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: 26";
+		rLen = 0;
+		rLoc = 892;
+		rType = 0;
+		vrLen = 1314;
+		vrLoc = 0;
+	};
+	3ABF30010B50A06100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: 26";
+		rLen = 0;
+		rLoc = 892;
+		rType = 0;
+		vrLen = 1314;
+		vrLoc = 0;
+	};
+	3ABF30020B50A06100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */;
+		name = "PFScreenSaverView.h: 26";
+		rLen = 0;
+		rLoc = 892;
+		rType = 0;
+		vrLen = 1314;
+		vrLoc = 0;
+	};
+	3ABF30030B50A06100222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A848C640B3B720B00B65C13 /* ViewerController.m */;
+		name = "ViewerController.m: 20";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 0;
+	};
+	3ABF30080B50A07B00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A848C640B3B720B00B65C13 /* ViewerController.m */;
+		name = "ViewerController.m: 20";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 0;
+	};
+	3ABF30090B50A07B00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A848C640B3B720B00B65C13 /* ViewerController.m */;
+		name = "ViewerController.m: 20";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 1095;
+		vrLoc = 0;
+	};
+	3ABF300A0B50A07B00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 40";
+		rLen = 0;
+		rLoc = 1141;
+		rType = 0;
+		vrLen = 1872;
+		vrLoc = 0;
+	};
+	3ABF300E0B50A0DA00222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 40";
+		rLen = 0;
+		rLoc = 1200;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 0;
+	};
+	3ABF30110B50A25000222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 40";
+		rLen = 0;
+		rLoc = 1200;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 0;
+	};
+	3ABF30120B50A25000222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */;
+		name = "PFConfigureSheetController.m: 40";
+		rLen = 0;
+		rLoc = 1200;
+		rType = 0;
+		vrLen = 1434;
+		vrLoc = 0;
+	};
+	3ABF30130B50A25000222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: providerSettingsWin";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 938;
+		vrLoc = 0;
+	};
+	3ABF30160B50A2C400222076 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */;
+		name = "PFConfigureSheetController.h: providerSettingsPanel";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 940;
+		vrLoc = 0;
 	};
 	3AD264320B2334AB005CE2C6 /* LICENSE */ = {
 		uiCtxt = {
@@ -2066,17 +3365,17 @@
 	};
 	F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 906}}";
-			sepNavSelRange = "{1515, 0}";
-			sepNavVisRect = "{{0, 0}, {901, 906}}";
+			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
+			sepNavSelRange = "{892, 0}";
+			sepNavVisRect = "{{0, 0}, {901, 875}}";
 			sepNavWindowFrame = "{{15, 137}, {757, 636}}";
 		};
 	};
 	F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1238, 4228}}";
-			sepNavSelRange = "{4613, 0}";
-			sepNavVisRect = "{{0, 2070}, {901, 906}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1238, 4158}}";
+			sepNavSelRange = "{5809, 0}";
+			sepNavVisRect = "{{0, 2945}, {768, 203}}";
 			sepNavWindowFrame = "{{15, 345}, {598, 828}}";
 		};
 	};

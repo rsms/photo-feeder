@@ -18,25 +18,27 @@
 {
 	[self initWithWindowNibName:filename];
 	ssv = _ssv;
+	defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"];
 	return self;
 }
 
 
-- (IBAction)done:(id)sender
+- (void)awakeFromNib
+{
+	//NSTrace(@"[%@ awakeFromNib]", self);
+	[fps setFloatValue:[defaults floatForKey:@"rendererFPS"]];
+}
+
+
+
+- (IBAction) done:(id)sender
 {
 	DLog(@"[%@ done]", self);
 	
-	// tag 0 = OK, tag 1 = cancel
-	/*if([(NSButton*)sender tag] == 0)
-	{
-		[[StarryView defaults] setInteger:[starsSlider intValue] forKey:@"numStars"];
-		[[StarryView defaults] setFloat:[sizeSlider floatValue] forKey:@"starSize"];
-		[[StarryView defaults] setInteger:[saturationSlider intValue] forKey:@"colorSaturation"];
-		[[StarryView defaults] setInteger:[fpsSlider intValue] forKey:@"fps"];
-	}
-	else {
-		[self loadSavedStates];
-	}*/
+	[defaults setFloat:[fps floatValue] forKey:@"rendererFPS"];
+	[defaults synchronize];
+	//NSTrace(@"fps: %f", [defaults floatForKey:@"rendererFPS"]);
+	
 	[[NSApplication sharedApplication] endSheet:[self window]];
 }
 
@@ -46,12 +48,4 @@
 	DLog(@"[%@ about]", self);
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/PhotoFeeder"]];
 }
-
-
-- (void)awakeFromNib
-{
-	DLog(@"[%@ awakeFromNib]", self);
-	//[self loadSavedStates];
-}
-
 @end

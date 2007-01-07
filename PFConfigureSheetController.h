@@ -14,7 +14,11 @@
 
 @interface PFConfigureSheetController : NSWindowController
 {
+	IBOutlet NSTextField* fps;
+	IBOutlet NSPanel*     providerSettingsPanel;
+	
 	PFScreenSaverView* ssv;
+	NSUserDefaults*    defaults;
 }
 
 - (id)initWithWindowNibName:(NSString*)filename withReferenceToSSV:(PFScreenSaverView*)ssv;
