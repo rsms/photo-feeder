@@ -31,6 +31,7 @@
 		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
+		3ABF2D060B50827300222076 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
@@ -97,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABF2D060B50827300222076 /* Quartz.framework in Frameworks */,
 				8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */,
 				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
 			);

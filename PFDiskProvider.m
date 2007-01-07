@@ -21,6 +21,13 @@
 	return self;
 }
 
+- (void) dealloc
+{
+	[dir release];
+	[dirEnum release];
+	[super dealloc];
+}
+
 
 -(NSImage*)nextImage
 {
@@ -29,9 +36,9 @@
 	
 	while( file = [dirEnum nextObject] )
 	{
-		if( [acceptExts containsObject:[file pathExtension]] )
+		if( [acceptExts containsObject:[[file pathExtension] lowercaseString]] )
 		{
-			DLog(@"%@", file);
+			//DLog(@"%@", file);
 			return [[NSImage alloc] initWithContentsOfFile:[dir stringByAppendingPathComponent:file]];
 		}
 	}

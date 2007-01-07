@@ -22,16 +22,21 @@
 	NSImage*					destinationImage; // front
 	
 	id							configureSheetController;
-	
+
+	NSTimer*					animationTimer;
+	NSDate*              animationTimerStarted;
 	BOOL						animationIsInitialized;
 	double					animationInterval;            // 1.0/FPS
-	double               animationTime;                // Current time in animation sequence
+	double					transitionAndDisplayInterval; // Total time an image is visible on the screen
+	NSString*            imagePortName;
+	
 	double					userFadeInterval;            // User-defined transition interval
 	double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
-	double					transitionAndDisplayInterval; // Total time an image is visible on the screen
+	double               userFps;
 }
 
 - (void) queueFillerThread:(id)obj;
-- (void) switchImage:(NSString*)imagePortName;
+- (double) switchImage:(NSObject*)isFirstTime;
+- (NSImage*) resizeImageIfNeeded:(NSImage*)im;
 
 @end
