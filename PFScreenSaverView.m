@@ -33,10 +33,15 @@ static NSString* srcImageId = @"sourceImage";
 		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:5];
 		
+		
 		// Setup providers
 		providers = [[NSMutableArray alloc] initWithCapacity:2];
+		
 		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
 			stringByAppendingPathComponent:@"Pictures/_temp"]]];
+		
+		[providers addObject:[[PFFlickrProvider alloc] init]];
+		
 		
 		// Start filling the queue with images from providers
 		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
