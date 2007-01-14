@@ -10,22 +10,13 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFScreenSaverView.h"
+#ifndef	NSARRAY_RANDOM_H
+#define	NSARRAY_RANDOM_H
 
-@interface PFConfigureSheetController : NSWindowController
-{
-	IBOutlet NSTextField* fps;
-	IBOutlet NSTextField* displayInterval;
-	IBOutlet NSTextField* fadeInterval;
-	IBOutlet NSPanel*     providerSettingsPanel;
-	
-	PFScreenSaverView* ssv;
-}
+#import <Foundation/Foundation.h>
 
-- (id)initWithWindowNibName:(NSString*)filename withReferenceToSSV:(PFScreenSaverView*)ssv;
-
-- (IBAction)done:(id)sender;
-- (IBAction)about:(id)sender;
-//- (void)loadSavedStates;
-
+@interface NSArray (RandomAddition)
+- (NSArray*) randomCopy;
 @end
+
+#endif

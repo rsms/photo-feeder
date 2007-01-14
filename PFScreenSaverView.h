@@ -18,6 +18,11 @@
 	NSMutableArray*		providers;
 	QCView*					qcView;
 	NSThread*            switchImageDispatchT;
+	NSConditionLock*     runCond;
+	
+	short*               runningProviders; // map over all providers run state
+	unsigned             runningProvidersCount;
+	NSConditionLock*     providerThreadsAvailableCondLock;
 	
 	NSImage*					sourceImage; // back
 	NSImage*					destinationImage; // front
@@ -32,6 +37,7 @@
 }
 
 - (void) queueFillerThread:(id)obj;
+- (void)providerQueueFillerThread:(id)_providerAndProviderIndex;
 - (double) switchImage:(NSObject*)isFirstTime;
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im;
 

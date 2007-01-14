@@ -10,6 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import "PFConfigureSheetController.h"
+#import "PFUtil.h"
 
 @implementation PFConfigureSheetController
 
@@ -18,7 +19,6 @@
 {
 	[self initWithWindowNibName:filename];
 	ssv = _ssv;
-	defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"];
 	return self;
 }
 
@@ -26,7 +26,9 @@
 - (void)awakeFromNib
 {
 	//NSTrace(@"[%@ awakeFromNib]", self);
-	[fps setFloatValue:[defaults floatForKey:@"rendererFPS"]];
+	[fps             setFloatValue:[PFUtil defaultFloatForKey:@"fps"]];
+	[displayInterval setFloatValue:[PFUtil defaultFloatForKey:@"displayInterval"]];
+	[fadeInterval    setFloatValue:[PFUtil defaultFloatForKey:@"fadeInterval"]];
 }
 
 
@@ -35,8 +37,10 @@
 {
 	DLog(@"[%@ done]", self);
 	
-	[defaults setFloat:[fps floatValue] forKey:@"rendererFPS"];
-	[defaults synchronize];
+	[[PFUtil defaults] setFloat:[fps             floatValue] forKey:@"fps"];
+	[[PFUtil defaults] setFloat:[displayInterval floatValue] forKey:@"displayInterval"];
+	[[PFUtil defaults] setFloat:[fadeInterval    floatValue] forKey:@"fadeInterval"];
+	[[PFUtil defaults] synchronize];
 	//NSTrace(@"fps: %f", [defaults floatForKey:@"rendererFPS"]);
 	
 	[[NSApplication sharedApplication] endSheet:[self window]];

@@ -14,7 +14,7 @@
 #import "PFDiskProvider.h"
 #import "PFQueue.h"
 #import "PFConfigureSheetController.h"
-
+#import "PFUtil.h"
 
 @implementation PFScreenSaverView
 
@@ -31,7 +31,7 @@ static NSString* srcImageId = @"sourceImage";
 		DLog(@"");
 		
 		// Create the mother-queue
-		queue = [[PFQueue alloc] initWithCapacity:5];
+		queue = [[PFQueue alloc] initWithCapacity:7];
 		
 		
 		// Setup providers
@@ -40,13 +40,18 @@ static NSString* srcImageId = @"sourceImage";
 		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
 			stringByAppendingPathComponent:@"Pictures/_temp"]]];
 		
+		/*PFProvider* empty = [[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
+			stringByAppendingPathComponent:@"Pictures/_empty"]];
+		[providers addObject:empty];
+		[providers addObject:empty];*/
+		
 		[providers addObject:[[PFFlickrProvider alloc] init]];
 		
 		
-		// Start filling the queue with images from providers
-		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
-								 toTarget: self
-							   withObject: nil];
+		// Init runningProvidersCount
+		runningProvidersCount = 0;
+		providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:TRUE];
+		
 		
 		// Load composition into a QCView and keep it as a subview
 		qcView = [[QCView alloc] initWithFrame:frame];
@@ -55,7 +60,9 @@ static NSString* srcImageId = @"sourceImage";
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];
 		
+		
 		switchImageDispatchT = nil;
+		runCond = [[NSConditionLock alloc] initWithCondition:FALSE];
     }
     return self;
 }
@@ -77,19 +84,9 @@ static NSString* srcImageId = @"sourceImage";
 {
 	DLog(@"");
 	
-	NSUserDefaults* ud = [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"]; // TODO
-	
-	userFps = [ud floatForKey:@"rendererFPS"];
-	if(userFps == 0.0)
-		userFps = 60.0;
-	
-	userFadeInterval = [ud floatForKey:@"fadeInterval"];
-	if(userFadeInterval == 0.0)
-		userFadeInterval = 1.0;
-	
-	userDisplayInterval = [ud floatForKey:@"displayInterval"];
-	if(userDisplayInterval == 0.0)
-		userDisplayInterval = 3.0;
+	userFps = [PFUtil defaultFloatForKey:@"fps"];
+	userFadeInterval = [PFUtil defaultFloatForKey:@"fadeInterval"];
+	userDisplayInterval = [PFUtil defaultFloatForKey:@"displayInterval"];
 	
 	// Berätta för Q-kompositionen hur länge bilder skall visas & fadeas
 	// Regarding the "enabled" key... it has the following three states:
@@ -100,18 +97,39 @@ static NSString* srcImageId = @"sourceImage";
 	[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
 	[qcView setValue: [NSNumber numberWithDouble:2.0]                  forInputKey: @"statusMessageEnabled"];
 	
+	DLog(@"userFadeInterval: %f", userFadeInterval);
 
 	[qcView setMaxRenderingFrameRate: userFps];
 	[qcView startRendering];
 	
-	// Fork the imageSwitchDispatchThread (pungsvett från räkan)
+	
+	// Index over providers running state (1=running, 0=not running)
+	runningProviders = (short *)malloc(sizeof(short) * [providers count]);
+	unsigned i = [providers count];
+	while(i--)
+		runningProviders[i] = 0;
+
+	
+	// Reset image ports
 	imagePortName = dstImageId;
+	
+	// Fork threads on first call to startAnimation (pungsvett från räkan)
 	if(!switchImageDispatchT)
 	{
 		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
 										 toTarget: self
 									  withObject: nil];
+		
+		// Start filling the queue with images from providers
+		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
+										 toTarget: self
+									  withObject: nil];
 	}
+	
+	
+	[super startAnimation];
+	[runCond lock];
+	[runCond unlockWithCondition:TRUE];
 }
 
 
@@ -125,8 +143,11 @@ static NSString* srcImageId = @"sourceImage";
 - (void)stopAnimation
 {
 	DLog(@"");
+	[runCond lock];
+	[runCond unlockWithCondition:FALSE];
 	[qcView stopRendering];
 	[super stopAnimation];
+	free(runningProviders);
 }
 
 
@@ -137,31 +158,95 @@ static NSString* srcImageId = @"sourceImage";
 {
 	NSAutoreleasePool *pool;
 	PFProvider* provider;
-	NSImage* im;
+	unsigned providerIndex, providerCount;
+	
+	pool = [[NSAutoreleasePool alloc] init];
 	
 	@try
 	{
 		while(1)
 		{
-			pool = [[NSAutoreleasePool alloc] init];
-			provider = (PFProvider*)[providers objectAtIndex:SSRandomIntBetween(0, [providers count]-1)];
+			// Hold here if animation is stopped
+			[runCond lockWhenCondition:TRUE];
+			[runCond unlock];
 			
-			if(im = [provider nextImage])
+			// Lock and run if we have available providers
+			[providerThreadsAvailableCondLock lockWhenCondition:TRUE];
+			
+			// Pick a random provider
+			providerCount = [providers count];
+			providerIndex = SSRandomIntBetween(0, [providers count]-1);
+			while(runningProviders[providerIndex])
+				if(++providerIndex == providerCount)
+					providerIndex = 0;
+			
+			
+			if(providerIndex != -1)
 			{
-				[queue put:[self resizeImageIfNeeded:im]];
-			}
-			else
-			{
-				// TODO: implement suspension of specific providers instead of blocking the whole thread
-				static float suspendSecs = 3.0f;
-				DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for %.0f second...", provider, suspendSecs);
-				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:suspendSecs]];
+				provider = (PFProvider*)[providers objectAtIndex:providerIndex];
+				runningProviders[providerIndex] = 1;
+				runningProvidersCount++;
+				
+				[NSThread detachNewThreadSelector: @selector(providerQueueFillerThread:)
+												 toTarget: self
+											  withObject: [NSArray arrayWithObjects:provider, [NSNumber numberWithUnsignedInt:providerIndex], nil]];
 			}
 			
-			[pool release];
+			[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
 		}
 	}
 	@finally {
+		if(pool)
+			[pool release];
+	}
+}
+
+
+- (void)providerQueueFillerThread:(id)_providerAndProviderIndex
+{
+	NSAutoreleasePool *pool;
+	PFProvider* provider;
+	NSArray* providerAndProviderIndex;
+	NSImage* im;
+	unsigned providerIndex;
+	double timer;
+	
+	pool = [[NSAutoreleasePool alloc] init];
+	timer = [PFUtil microtime];
+	providerAndProviderIndex = (NSArray*)_providerAndProviderIndex;
+	provider = (PFProvider*)[providerAndProviderIndex objectAtIndex:0];
+	providerIndex = [(NSNumber*)[providerAndProviderIndex objectAtIndex:1] unsignedIntValue];
+			
+	@try
+	{
+		// Pick a random provider and request an image
+		im = [provider nextImage];
+		
+		// Now, do we have an image or not?
+		if(im)
+		{
+			[queue put:[self resizeImageIfNeeded:im]];
+		}
+		else
+		{
+			// TODO: implement suspension of specific providers instead of blocking the whole thread
+			static float suspendSecs = 3.0f;
+			DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for %.0f second...", provider, suspendSecs);
+			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:suspendSecs]];
+		}
+		
+		timer = [PFUtil microtime] - timer;
+		if(timer < userDisplayInterval/2.0)
+			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:(userDisplayInterval/2.0)-timer]];
+	}
+	@finally
+	{
+		// Reset running state to false for this provider
+		[providerThreadsAvailableCondLock lock];
+		runningProviders[providerIndex] = 0;
+		runningProvidersCount--;
+		[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
+		
 		if(pool)
 			[pool release];
 	}
@@ -180,6 +265,10 @@ static NSString* srcImageId = @"sourceImage";
 		
 		while(1)
 		{
+			// Hold here if animation is stopped
+			[runCond lockWhenCondition:TRUE];
+			[runCond unlock];
+			
 			delay = [self switchImage:firstTime];
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
 			if(firstTime)
@@ -196,11 +285,11 @@ static NSString* srcImageId = @"sourceImage";
 
 - (double) switchImage:(NSObject*)isFirstTime
 {
-	// Log!
-	DLog(@"%@", imagePortName);
+	NSImage* image;
+	double delay;
 	
 	// Take the next image from the image queue
-	NSImage* image = (NSImage*)[queue poll];
+	image = (NSImage*)[queue poll];
 	
 	// Check if queue is empty
 	if(!image)
@@ -208,57 +297,46 @@ static NSString* srcImageId = @"sourceImage";
 		DLog(@"Image queue is depleted");
 		if(!([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0))
 			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
-
-		[qcView setValue: @"Image queue is depleted.\nI will not show any new images until\nI've fetched/downloaded some..."  forInputKey: @"statusMessageText"];
-		return 1.0;
+		
+		[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
 	}
-	else if([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0)
+	else
 	{
-		[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
+		// TODO: Fullösning -- gör avstängningsmekanismen generell och inte beroende av bild finns
+		if(image && [[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0)
+		{
+			[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
+		}
+		
+		// Pass the image to QC, which will cause the bitmap data to be copied onto a
+		// texture. Takes some time...
+		[qcView setValue:image forInputKey:imagePortName];
+		[image release];
 	}
 	
-	// Pass the image to QC, which will cause the bitmap data to be copied onto a
-	// texture. Takes some time...
-	[qcView setValue:image forInputKey:imagePortName];
-	[image release];
 	
-	
-	// Now, let's decide on delay for the next switch
-	double delay;
-	double time = [[qcView valueForInputKey: @"time"] doubleValue];
-	double userDisplayAndFadeInterval = userDisplayInterval + userFadeInterval;
-	
+	// First time, we know the exact delay:
 	if(isFirstTime)
 	{
 		delay = userFadeInterval;
 	}
+	// Following calls, we sync the delay with the rendering cycle, 
+	// getting "time" from the qc-composition:
 	else
 	{
+		double time = [[qcView valueForInputKey: @"time"] doubleValue];
+		double userDisplayAndFadeInterval = userDisplayInterval + userFadeInterval;
 		delay = (userDisplayAndFadeInterval - (time - (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval))) + userFadeInterval;
-		
-		//DLog(@"time: %f, delay: %f \n  userDisplayAndFadeInterval = %f \n  floor(time / userDisplayAndFadeInterval) = %f \n  (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval) = %f",
-		//	  time, delay, userDisplayAndFadeInterval, floor(time / userDisplayAndFadeInterval), 
-		//	  floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval);
 	}
 	
 	
-	// Switch image port name back and fourth each time
-	// TODO: Fix this. Will not work with alot of large images
-	//if(delay <= userDisplayAndFadeInterval)
-	//{
-		//DLog(@"switching im port name");
-		imagePortName = (imagePortName == srcImageId) ? dstImageId : srcImageId;
-	//}
-	//else
-	//{
-	//	DLog(@"I was to slow - wont switch im port name");
-	//}
+	// Switch image ports. Needs to be done every time this method is run.
+	imagePortName = (imagePortName == srcImageId) ? dstImageId : srcImageId;
 	
-	
-	DLog(@"delay: %f", delay);
-	
+	DLog(@"Next switch will operate on '%@' in %f seconds", imagePortName, delay);
 	return delay;
 }
+
 
 
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im

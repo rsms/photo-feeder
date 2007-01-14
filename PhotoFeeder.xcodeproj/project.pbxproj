@@ -31,6 +31,12 @@
 		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		3A8F916D0AE5719B0027DC3B /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
+		3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94047E0B59A133001FBD1C /* NSArray_random.m */; };
+		3A9404800B59A133001FBD1C /* NSArray_random.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A94047D0B59A133001FBD1C /* NSArray_random.h */; };
+		3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94047E0B59A133001FBD1C /* NSArray_random.m */; };
+		3A9404C60B59A8D7001FBD1C /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */; };
+		3A9404C70B59A8D7001FBD1C /* PFUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9404C40B59A8D7001FBD1C /* PFUtil.h */; };
+		3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */; };
 		3ABF2D060B50827300222076 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
@@ -70,6 +76,10 @@
 		3A848C630B3B720B00B65C13 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		3A848C640B3B720B00B65C13 /* ViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerController.m; sourceTree = "<group>"; };
 		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A94047D0B59A133001FBD1C /* NSArray_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_random.h; sourceTree = "<group>"; };
+		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_random.m; sourceTree = "<group>"; };
+		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUtil.h; sourceTree = "<group>"; };
+		3A9404C50B59A8D7001FBD1C /* PFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUtil.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
@@ -180,6 +190,10 @@
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
+				3A94047D0B59A133001FBD1C /* NSArray_random.h */,
+				3A94047E0B59A133001FBD1C /* NSArray_random.m */,
+				3A9404C40B59A8D7001FBD1C /* PFUtil.h */,
+				3A9404C50B59A8D7001FBD1C /* PFUtil.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -236,6 +250,8 @@
 				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
 				3A2547DF0B1495530081E689 /* types.h in Headers */,
 				3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */,
+				3A9404800B59A133001FBD1C /* NSArray_random.h in Headers */,
+				3A9404C70B59A8D7001FBD1C /* PFUtil.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +359,8 @@
 				3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */,
 				3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */,
 				3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */,
+				3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */,
+				3A9404C60B59A8D7001FBD1C /* PFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +374,8 @@
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */,
+				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
+				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,10 +398,6 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
-				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/Flickr/build/Release\"";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -414,10 +430,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
-				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/Flickr/build/Release\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;

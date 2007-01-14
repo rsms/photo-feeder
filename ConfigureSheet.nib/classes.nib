@@ -5,7 +5,12 @@
             ACTIONS = {about = id; done = id; }; 
             CLASS = PFConfigureSheetController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {fps = NSTextField; providerSettingsPanel = NSPanel; }; 
+            OUTLETS = {
+                displayInterval = NSTextField; 
+                fadeInterval = NSTextField; 
+                fps = NSTextField; 
+                providerSettingsPanel = NSPanel; 
+            }; 
             SUPERCLASS = NSWindowController; 
         }
     ); 

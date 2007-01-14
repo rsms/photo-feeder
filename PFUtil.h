@@ -10,22 +10,25 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFScreenSaverView.h"
-
-@interface PFConfigureSheetController : NSWindowController
-{
-	IBOutlet NSTextField* fps;
-	IBOutlet NSTextField* displayInterval;
-	IBOutlet NSTextField* fadeInterval;
-	IBOutlet NSPanel*     providerSettingsPanel;
-	
-	PFScreenSaverView* ssv;
+@interface PFUtil : NSObject {
 }
 
-- (id)initWithWindowNibName:(NSString*)filename withReferenceToSSV:(PFScreenSaverView*)ssv;
+/// Returns 0 on failure
++ (unsigned long) microseed;
 
-- (IBAction)done:(id)sender;
-- (IBAction)about:(id)sender;
-//- (void)loadSavedStates;
+/// Returns -1.0 on failure
++ (double) microtime;
+
+/// Cause the current thread to sleep for random number of seconds
++ (void) randomSleep:(unsigned)min maxSeconds:(unsigned)max;
+
+/// Screeen saver defaults for PhotoFeeder
++ (NSUserDefaults*) defaults;
+
+/// Hard-coded application defaults
++ (NSDictionary*) appDefaults;
+
+/// Convenience method
++ (float) defaultFloatForKey:(NSString*)key;
 
 @end
