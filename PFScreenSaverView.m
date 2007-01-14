@@ -341,7 +341,35 @@ static NSString* srcImageId = @"sourceImage";
 
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im
 {
-	// TODO: if im.size > (120% of screen.size) then resize it to fit
+	// We need to take size from rep because nsimage compensates for dpi or something
+	NSImageRep* imr = [im bestRepresentationForDevice:nil];
+	if(!imr)
+		return im;
+	NSSize outSize = [self frame].size;
+	NSSize inSize = NSMakeSize([imr pixelsWide], [imr pixelsHigh]);
+	
+	if(inSize.width < outSize.width || inSize.height < outSize.height)
+		return im;
+	
+	float inAs = inSize.width / inSize.height;
+	float outAs = outSize.width / outSize.height;
+	
+	if(inAs > outAs) // in is wider than put
+		outSize.width = outSize.height * inAs;
+	else
+		outSize.height = outSize.width / inAs;
+	
+	NSImage *resizedImage = [[NSImage alloc] initWithSize:outSize];
+	[resizedImage lockFocus];
+	[imr drawInRect:NSMakeRect(0, 0, outSize.width, outSize.height)];
+	[resizedImage unlockFocus];
+	
+	NSImage* old = im;
+	im = resizedImage;
+	[old release];
+	
+	//DLog(@"Resized from %f x %f  ->  %f x %f", inSize.width, inSize.height, outSize.width, outSize.height);
+	
 	return im;
 }
 

@@ -224,8 +224,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -300,7 +298,7 @@
 							<real>251</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>666 162 1221 1015 0 0 1920 1178 </string>
+						<string>668 163 1221 1015 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -311,12 +309,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFUtil.m</string>
+								<string>PFScreenSaverView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFUtil.m</string>
+										<string>PFScreenSaverView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A9408920B59DCF2001FBD1C</string>
+										<string>3A9409880B59F326001FBD1C</string>
 										<key>history</key>
 										<array>
 											<string>3A71E4270B50201700D212BC</string>
@@ -339,7 +339,6 @@
 											<string>3A94054A0B59ACCA001FBD1C</string>
 											<string>3A9405DF0B59B171001FBD1C</string>
 											<string>3A9405EC0B59B2B3001FBD1C</string>
-											<string>3A9406280B59B6EA001FBD1C</string>
 											<string>3A9406590B59B8EC001FBD1C</string>
 											<string>3A9407720B59CF9D001FBD1C</string>
 											<string>3A9407730B59CF9D001FBD1C</string>
@@ -348,13 +347,14 @@
 											<string>3A9408190B59D87D001FBD1C</string>
 											<string>3A94081A0B59D87D001FBD1C</string>
 											<string>3A94081B0B59D87D001FBD1C</string>
-											<string>3A94081C0B59D87D001FBD1C</string>
 											<string>3A94081D0B59D87D001FBD1C</string>
 											<string>3A9408200B59D87D001FBD1C</string>
 											<string>3A9408210B59D87D001FBD1C</string>
 											<string>3A9408490B59DA81001FBD1C</string>
-											<string>3A9408740B59DC8E001FBD1C</string>
-											<string>3A9408750B59DC8E001FBD1C</string>
+											<string>3A9408CB0B59E599001FBD1C</string>
+											<string>3A9408CC0B59E599001FBD1C</string>
+											<string>3A9409670B59F0EF001FBD1C</string>
+											<string>3A9409680B59F0EF001FBD1C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -471,6 +471,12 @@
 											<string>3A94084B0B59DA81001FBD1C</string>
 											<string>3A94086B0B59DC03001FBD1C</string>
 											<string>3A9408760B59DC8E001FBD1C</string>
+											<string>3A9408CF0B59E599001FBD1C</string>
+											<string>3A9408D00B59E599001FBD1C</string>
+											<string>3A9408D10B59E599001FBD1C</string>
+											<string>3A9408D20B59E599001FBD1C</string>
+											<string>3A9409610B59F096001FBD1C</string>
+											<string>3A9409690B59F0EF001FBD1C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -484,7 +490,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {948, 907}}</string>
 								<key>RubberWindowFrame</key>
-								<string>666 162 1221 1015 0 0 1920 1178 </string>
+								<string>668 163 1221 1015 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -504,7 +510,7 @@
 								<key>Frame</key>
 								<string>{{0, 912}, {948, 62}}</string>
 								<key>RubberWindowFrame</key>
-								<string>666 162 1221 1015 0 0 1920 1178 </string>
+								<string>668 163 1221 1015 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -668,13 +674,13 @@
 		<string>3A9405550B59ACCA001FBD1C</string>
 		<string>3A2C40090AE4429B00970E7C</string>
 		<string>3A2C3EBE0AE4301E00970E7C</string>
-		<string>3A9404350B599ABB001FBD1C</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>3A9404350B599ABB001FBD1C</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>666 162 1221 1015 0 0 1920 1178 </string>
+	<string>668 163 1221 1015 0 0 1920 1178 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -875,7 +881,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
