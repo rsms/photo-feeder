@@ -18,10 +18,27 @@
 static NSArray *acceptableFileExtensions = nil;
 
 
+- (id) initWithConfiguration:(NSDictionary*)conf
+{
+	return [super init];
+}
+
+
 -(NSImage*)nextImage
 {
 	throw_ex(@"PFProviderException", @"[PFProvider nextImage] method is abstract and not overridden");
 	return nil;
+}
+
+
++ (BOOL)initClass:(NSBundle*)theBundle
+{
+	return NO;
+}
+
+
++ (void)terminateClass
+{
 }
 
 
