@@ -9,24 +9,27 @@
 /* Begin PBXBuildFile section */
 		3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A127B550AEA7341007E60ED /* PFFlickrProvider.h */; };
 		3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
-		3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
 		3A142A0D0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
 		3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
 		3A2547DF0B1495530081E689 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547DE0B1495530081E689 /* types.h */; };
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
-		3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C403F0AE4432D00970E7C /* PFQueue.h */; };
 		3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
 		3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */; };
 		3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
 		3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
+		3A6C691D0B5D819100BD74E1 /* Disk.pfprovider in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */; };
+		3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */; };
+		3A6C6A250B5D8CFC00BD74E1 /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6A210B5D8CE900BD74E1 /* PFFlickrProvider.m */; };
+		3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */; };
+		3A6C6A360B5D8DBD00BD74E1 /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
+		3A6C6AD50B5D932300BD74E1 /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */; };
 		3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3A848C690B3B720B00B65C13 /* Viewer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C600B3B720B00B65C13 /* Viewer-Info.plist */; };
 		3A848C6A0B3B720B00B65C13 /* Viewer.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C610B3B720B00B65C13 /* Viewer.nib */; };
 		3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848C620B3B720B00B65C13 /* Viewer_main.m */; };
 		3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848C640B3B720B00B65C13 /* ViewerController.m */; };
-		3A8F91670AE571960027DC3B /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C3EF60AE4342700970E7C /* PFProvider.m */; };
 		3A8F91680AE571960027DC3B /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		3A8F916A0AE5719A0027DC3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -41,9 +44,6 @@
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
-		3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */; };
-		3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */; };
-		3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */; };
 		8D255AC70486D3F9007BF209 /* prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -51,6 +51,38 @@
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A6C694F0B5D825900BD74E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A6C688D0B5D7BA300BD74E1 /* Disk Provider */;
+			remoteInfo = "Disk Provider";
+		};
+		3A6C6AB60B5D926300BD74E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
+			remoteInfo = "Flickr Provider";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A6C69490B5D822300BD74E1 /* Copy Plugins */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */,
+				3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */,
+			);
+			name = "Copy Plugins";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
@@ -64,12 +96,19 @@
 		3A142A0C0B3B4F1100D7F86E /* renderer.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; path = renderer.qtz; sourceTree = "<group>"; };
 		3A2547DE0B1495530081E689 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProvider.h; sourceTree = "<group>"; };
-		3A2C3EF60AE4342700970E7C /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProvider.m; sourceTree = "<group>"; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
 		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFQueue.h; sourceTree = "<group>"; };
 		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
 		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
 		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
+		3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Disk.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Flickr.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
+		3A6C6A210B5D8CE900BD74E1 /* PFFlickrProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFlickrProvider.m; sourceTree = "<group>"; };
+		3A6C6A310B5D8D5100BD74E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A6C6AD20B5D931A00BD74E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDiskProvider.h; sourceTree = "<group>"; };
+		3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		3A848C600B3B720B00B65C13 /* Viewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Viewer-Info.plist"; sourceTree = "<group>"; };
 		3A848C610B3B720B00B65C13 /* Viewer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Viewer.nib; sourceTree = "<group>"; };
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
@@ -85,8 +124,6 @@
 		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
 		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
-		3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDiskProvider.h; sourceTree = "<group>"; };
-		3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenSaverView.h; sourceTree = "<group>"; };
@@ -94,6 +131,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A6C688C0B5D7BA300BD74E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6C6A0A0B5D8C5900BD74E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8F915E0AE571820027DC3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +230,8 @@
 			children = (
 				8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */,
 				3A8F91600AE571820027DC3B /* Viewer.app */,
+				3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */,
+				3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +260,28 @@
 			name = "Settings and UI";
 			sourceTree = "<group>";
 		};
+		3A6C6A1F0B5D8CE900BD74E1 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C6A310B5D8D5100BD74E1 /* Info.plist */,
+				3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */,
+				3A6C6A210B5D8CE900BD74E1 /* PFFlickrProvider.m */,
+			);
+			name = Flickr;
+			path = Providers/Flickr;
+			sourceTree = "<group>";
+		};
+		3A6C6AD10B5D931A00BD74E1 /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C6AD20B5D931A00BD74E1 /* Info.plist */,
+				3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */,
+				3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */,
+			);
+			name = Disk;
+			path = Providers/Disk;
+			sourceTree = "<group>";
+		};
 		3A848C5F0B3B720B00B65C13 /* Viewer */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +298,10 @@
 			isa = PBXGroup;
 			children = (
 				3A2C3EF50AE4342700970E7C /* PFProvider.h */,
-				3A2C3EF60AE4342700970E7C /* PFProvider.m */,
+				3A6C6AD10B5D931A00BD74E1 /* Disk */,
+				3A6C6A1F0B5D8CE900BD74E1 /* Flickr */,
 				3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */,
 				3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */,
-				3AFEB6B20B2306D100F3979C /* PFDiskProvider.h */,
-				3AFEB6B30B2306D100F3979C /* PFDiskProvider.m */,
 				3A127B550AEA7341007E60ED /* PFFlickrProvider.h */,
 				3A127B560AEA7341007E60ED /* PFFlickrProvider.m */,
 			);
@@ -249,7 +323,6 @@
 				3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */,
 				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
 				3A2547DF0B1495530081E689 /* types.h in Headers */,
-				3AFEB6B50B2306D100F3979C /* PFDiskProvider.h in Headers */,
 				3A9404800B59A133001FBD1C /* NSArray_random.h in Headers */,
 				3A9404C70B59A8D7001FBD1C /* PFUtil.h in Headers */,
 			);
@@ -258,6 +331,40 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3A6C688D0B5D7BA300BD74E1 /* Disk Provider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A6C68900B5D7BA300BD74E1 /* Build configuration list for PBXNativeTarget "Disk Provider" */;
+			buildPhases = (
+				3A6C688A0B5D7BA300BD74E1 /* Resources */,
+				3A6C688B0B5D7BA300BD74E1 /* Sources */,
+				3A6C688C0B5D7BA300BD74E1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Disk Provider";
+			productName = "Disk Provider";
+			productReference = 3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */;
+			productType = "com.apple.product-type.bundle";
+		};
+		3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A6C6A0B0B5D8C5900BD74E1 /* Build configuration list for PBXNativeTarget "Flickr Provider" */;
+			buildPhases = (
+				3A6C6A070B5D8C5900BD74E1 /* Resources */,
+				3A6C6A080B5D8C5900BD74E1 /* Sources */,
+				3A6C6A0A0B5D8C5900BD74E1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flickr Provider";
+			productName = "Disk Provider";
+			productReference = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */;
+			productType = "com.apple.product-type.bundle";
+		};
 		3A8F915F0AE571820027DC3B /* Viewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A8F91630AE571820027DC3B /* Build configuration list for PBXNativeTarget "Viewer" */;
@@ -265,10 +372,13 @@
 				3A8F915C0AE571820027DC3B /* Resources */,
 				3A8F915D0AE571820027DC3B /* Sources */,
 				3A8F915E0AE571820027DC3B /* Frameworks */,
+				3A6C69490B5D822300BD74E1 /* Copy Plugins */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3A6C69500B5D825900BD74E1 /* PBXTargetDependency */,
+				3A6C6AB70B5D926300BD74E1 /* PBXTargetDependency */,
 			);
 			name = Viewer;
 			productName = TestApp;
@@ -307,11 +417,27 @@
 			targets = (
 				8D255AC50486D3F9007BF209 /* PhotoFeeder */,
 				3A8F915F0AE571820027DC3B /* Viewer */,
+				3A6C688D0B5D7BA300BD74E1 /* Disk Provider */,
+				3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A6C688A0B5D7BA300BD74E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6C6A070B5D8C5900BD74E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8F915C0AE571820027DC3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,6 +457,7 @@
 				3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 				3AD264340B2334AB005CE2C6 /* LICENSE in Resources */,
 				3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */,
+				3A6C691D0B5D819100BD74E1 /* Disk.pfprovider in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,16 +474,30 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A6C688B0B5D7BA300BD74E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6C6AD50B5D932300BD74E1 /* PFDiskProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6C6A080B5D8C5900BD74E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6C6A360B5D8DBD00BD74E1 /* PFQueue.m in Sources */,
+				3A6C6A250B5D8CFC00BD74E1 /* PFFlickrProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8F915D0AE571820027DC3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8F91670AE571960027DC3B /* PFProvider.m in Sources */,
 				3A8F91680AE571960027DC3B /* PFQueue.m in Sources */,
 				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
-				3A127B590AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
-				3AFEB6B40B2306D100F3979C /* PFDiskProvider.m in Sources */,
 				3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */,
 				3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */,
 				3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */,
@@ -369,17 +510,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */,
-				3A2C3EF80AE4342700970E7C /* PFProvider.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
 				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
-				3AFEB6B60B2306D100F3979C /* PFDiskProvider.m in Sources */,
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A6C69500B5D825900BD74E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A6C688D0B5D7BA300BD74E1 /* Disk Provider */;
+			targetProxy = 3A6C694F0B5D825900BD74E1 /* PBXContainerItemProxy */;
+		};
+		3A6C6AB70B5D926300BD74E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
+			targetProxy = 3A6C6AB60B5D926300BD74E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
@@ -393,6 +545,120 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A6C68910B5D7BA300BD74E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
+				INFOPLIST_FILE = Providers/$PRODUCT_NAME/Info.plist;
+				INSTALL_PATH = "$(HOME)/Desktop";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Disk;
+				WRAPPER_EXTENSION = pfprovider;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		3A6C68920B5D7BA300BD74E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(NATIVE_ARCH)",
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = Providers/$PRODUCT_NAME/Info.plist;
+				INSTALL_PATH = "$(HOME)/Desktop";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Disk;
+				WRAPPER_EXTENSION = pfprovider;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		3A6C6A0C0B5D8C5900BD74E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
+				INFOPLIST_FILE = Providers/$PRODUCT_NAME/Info.plist;
+				INSTALL_PATH = "$(HOME)/Desktop";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Flickr;
+				WRAPPER_EXTENSION = pfprovider;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		3A6C6A0D0B5D8C5900BD74E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(NATIVE_ARCH)",
+					i386,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = Providers/$PRODUCT_NAME/Info.plist;
+				INSTALL_PATH = "$(HOME)/Desktop";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Flickr;
+				WRAPPER_EXTENSION = pfprovider;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		3A8F91640AE571820027DC3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,6 +789,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A6C68900B5D7BA300BD74E1 /* Build configuration list for PBXNativeTarget "Disk Provider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A6C68910B5D7BA300BD74E1 /* Debug */,
+				3A6C68920B5D7BA300BD74E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A6C6A0B0B5D8C5900BD74E1 /* Build configuration list for PBXNativeTarget "Flickr Provider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A6C6A0C0B5D8C5900BD74E1 /* Debug */,
+				3A6C6A0D0B5D8C5900BD74E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3A8F91630AE571820027DC3B /* Build configuration list for PBXNativeTarget "Viewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

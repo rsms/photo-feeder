@@ -12,7 +12,7 @@
 #import "PFProvider.h"
 #import "PFQueue.h"
 
-@interface PFFlickrProvider : PFProvider {
+@interface PFFlickrProvider : NSObject<PFProvider> {
 	PFQueue*  urls;
 }
 

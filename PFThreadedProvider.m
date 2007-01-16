@@ -13,6 +13,18 @@
 
 @implementation PFThreadedProvider
 
+
++ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
+{
+	return YES;
+}
+
++ (void) terminateClass
+{
+	DLog(@"");
+}
+
+
 -(id)init
 {
 	[super init];

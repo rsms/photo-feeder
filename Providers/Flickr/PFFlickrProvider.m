@@ -10,12 +10,16 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import "PFFlickrProvider.h"
-
 @implementation PFFlickrProvider
+
+
+static NSUserDefaults* defaults = nil;
 
 
 + (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
 {
+	DLog(@"");
+	defaults = [def retain];
 	return YES;
 }
 
@@ -28,13 +32,13 @@
 
 /* GOTT MOS:
 NSURLRequest* req = [NSURLRequest requestWithURL: url 
-									 cachePolicy: NSURLRequestReturnCacheDataElseLoad
-								 timeoutInterval: 5.0];
+												 cachePolicy: NSURLRequestReturnCacheDataElseLoad
+											timeoutInterval: 5.0];
 NSURLResponse* res;
 NSError* err;
 NSData* imData = [NSURLConnection sendSynchronousRequest: req 
-									   returningResponse: &res
-												   error: &err];
+													returningResponse: &res
+																	error: &err];
 DLog(@"%@", [res URL]);
 */
 
@@ -44,8 +48,8 @@ DLog(@"%@", [res URL]);
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
 	DLog(@"urls: %@", urls);
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
-							 toTarget:self 
-						   withObject:nil];
+									 toTarget:self 
+								  withObject:nil];
 	return self;
 }
 
@@ -53,7 +57,7 @@ DLog(@"%@", [res URL]);
 - (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size
 {
 	NSXMLElement* root = [self callMethod:@"flickr.photos.getSizes" 
-								   params:[NSString stringWithFormat:@"photo_id=%@", photoId]];
+											 params:[NSString stringWithFormat:@"photo_id=%@", photoId]];
 	
 	if(!root)
 		return nil;
@@ -123,7 +127,7 @@ DLog(@"%@", [res URL]);
 - (void)addURLs
 {
 	NSXMLElement* root = [self callMethod:@"flickr.favorites.getPublicList" 
-								   params:@"user_id=12281432@N00&per_page=999&extras=date_taken"];
+											 params:@"user_id=12281432@N00&per_page=999&extras=date_taken"];
 	
 	if(!root)
 		return;
@@ -141,8 +145,8 @@ DLog(@"%@", [res URL]);
 	while (n = (NSXMLElement*)[it nextObject])
 	{
 		urlString = [self urlForSize: [[n attributeForName:@"id"] stringValue] 
-								//size: @"Medium"];
-								size: @"Large"];
+									 //size: @"Medium"];
+										size: @"Large"];
 		if(urlString) {
 			[urls put:[NSURL URLWithString:urlString]];
 			//DLog(@"Queued %@", urlString);

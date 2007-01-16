@@ -11,7 +11,7 @@
  */
 #import "PFProvider.h"
 
-@interface PFThreadedProvider : PFProvider {
+@interface PFThreadedProvider : NSObject<PFProvider> {
 	NSConditionLock* urlsLock;
 	NSMutableArray*  urls;
 }

@@ -15,6 +15,7 @@
 
 @interface PFScreenSaverView : ScreenSaverView {
 	PFQueue*					queue;
+	NSMutableArray*		availableProviders;
 	NSMutableArray*		providers;
 	QCView*					qcView;
 	NSThread*            switchImageDispatchT;
@@ -40,5 +41,10 @@
 - (void)providerQueueFillerThread:(id)_providerAndProviderIndex;
 - (double) switchImage:(NSObject*)isFirstTime;
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im;
+
+#pragma mark -- Plugins
+- (void) loadPlugins;
+- (void) loadProvidersFromPath:(NSString*)path;
+- (void) loadProviderFromPath:(NSString*)path;
 
 @end

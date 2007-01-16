@@ -10,15 +10,15 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import "PFScreenSaverView.h"
+#import "PFProvider.h"
 #import "PFFlickrProvider.h"
-#import "PFDiskProvider.h"
 #import "PFQueue.h"
 #import "PFConfigureSheetController.h"
 #import "PFUtil.h"
 
 @implementation PFScreenSaverView
 
-
+// Our two image ports
 static NSString* dstImageId = @"destinationImage";
 static NSString* srcImageId = @"sourceImage";
 
@@ -33,19 +33,24 @@ static NSString* srcImageId = @"sourceImage";
 		// Create the mother-queue
 		queue = [[PFQueue alloc] initWithCapacity:7];
 		
+		// Setup available providers storage
+		availableProviders = [[NSMutableArray alloc] init];
 		
-		// Setup providers
-		providers = [[NSMutableArray alloc] initWithCapacity:2];
+		// Load plugins (providers, etc)
+		[self loadPlugins];
 		
-		[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
-			stringByAppendingPathComponent:@"Pictures/_temp"]]];
-		
-		/*PFProvider* empty = [[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
-			stringByAppendingPathComponent:@"Pictures/_empty"]];
-		[providers addObject:empty];
-		[providers addObject:empty];*/
-		
-		[providers addObject:[[PFFlickrProvider alloc] init]];
+		// Setup and instantiate providers
+		providers = [[NSMutableArray alloc] init];
+		NSEnumerator* en = [availableProviders objectEnumerator];
+		Class providerClass;
+		while ((providerClass = [en nextObject]))
+		{
+			PFProviderClass* provider = [[providerClass alloc] init];
+			[providers addObject:provider];
+		}
+		/*[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
+			stringByAppendingPathComponent:@"Pictures/_temp"]]];*/
+		//[providers addObject:[[PFFlickrProvider alloc] init]];
 		
 		
 		// Init runningProvidersCount
@@ -74,6 +79,85 @@ static NSString* srcImageId = @"sourceImage";
 	[qcView release];
 	[providers release];
 	[super dealloc];
+}
+
+
+#pragma mark -- Plugins
+
+
+- (void) loadPlugins
+{
+	DLog(@"");
+	[self loadProvidersFromPath:[[NSBundle bundleForClass:[self class]] builtInPlugInsPath]];
+	//[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/PhotoFeeder/Plugins"];
+}
+
+
+- (void) loadProvidersFromPath:(NSString*)path
+{
+	DLog(@"path: %@", path);
+	if(path)
+	{
+		NSString* pluginPath;
+		NSEnumerator* enumerator = [[NSBundle pathsForResourcesOfType:@"pfprovider"
+																		  inDirectory:path] objectEnumerator];
+		while ((pluginPath = [enumerator nextObject]))
+		{
+			[self loadProviderFromPath:pluginPath];
+		}
+	}
+}
+
+
+- (void) loadProviderFromPath:(NSString*)path
+{
+	DLog(@"path: %@", path);
+	
+	// Locate bundle
+	NSBundle* pluginBundle = [NSBundle bundleWithPath:path];
+	if(!pluginBundle)
+	{
+		NSTrace(@"ERROR: Unable to load provider bundle with path '%@'", path);
+		return;
+	}
+	
+	// Get entry-classname
+	NSDictionary* pluginDict = [pluginBundle infoDictionary];
+	NSString* pluginClassName = [pluginDict objectForKey:@"NSPrincipalClass"];
+	if(!pluginClassName)
+	{
+		NSTrace(@"ERROR: Unable to get NSPrincipalClass from provider bundle at path '%@'", path);
+		return;
+	}
+	
+	// Already loaded?
+	Class pluginClass = NSClassFromString(pluginClassName);
+	if(pluginClass)
+	{
+		NSTrace(@"ERROR: Provider namespace conflict: %@ is already loaded", pluginClassName);
+		return;
+	}
+	
+	//	Type and inheritance sanity checks
+	pluginClass = [pluginBundle principalClass];
+	NSString* pluginIdentifier = [pluginBundle bundleIdentifier];
+	if(![pluginClass conformsToProtocol:@protocol(PFProvider)])
+	{
+		NSTrace(@"ERROR: Provider '%@' must conform to the PFProvider protocol", pluginIdentifier);
+		return;
+	}
+	else if(![pluginClass isKindOfClass:[NSObject class]])
+	{
+		NSTrace(@"ERROR: Provider '%@' must be a subclass of NSObject", pluginIdentifier);
+		return;
+	}
+	
+	// If it loads, it can run
+	if([pluginClass initClass:pluginBundle
+						  defaults:[ScreenSaverDefaults defaultsForModuleWithName:pluginIdentifier]])
+	{
+		[availableProviders addObject:pluginClass];
+	}
 }
 
 
@@ -157,7 +241,7 @@ static NSString* srcImageId = @"sourceImage";
 - (void)queueFillerThread:(id)obj
 {
 	NSAutoreleasePool *pool;
-	PFProvider* provider;
+	PFProviderClass* provider;
 	unsigned providerIndex, providerCount;
 	
 	pool = [[NSAutoreleasePool alloc] init];
@@ -183,7 +267,7 @@ static NSString* srcImageId = @"sourceImage";
 			
 			if(providerIndex != -1)
 			{
-				provider = (PFProvider*)[providers objectAtIndex:providerIndex];
+				provider = (PFProviderClass*)[providers objectAtIndex:providerIndex];
 				runningProviders[providerIndex] = 1;
 				runningProvidersCount++;
 				
@@ -205,7 +289,7 @@ static NSString* srcImageId = @"sourceImage";
 - (void)providerQueueFillerThread:(id)_providerAndProviderIndex
 {
 	NSAutoreleasePool *pool;
-	PFProvider* provider;
+	PFProviderClass* provider;
 	NSArray* providerAndProviderIndex;
 	NSImage* im;
 	unsigned providerIndex;
@@ -214,7 +298,7 @@ static NSString* srcImageId = @"sourceImage";
 	pool = [[NSAutoreleasePool alloc] init];
 	timer = [PFUtil microtime];
 	providerAndProviderIndex = (NSArray*)_providerAndProviderIndex;
-	provider = (PFProvider*)[providerAndProviderIndex objectAtIndex:0];
+	provider = (PFProviderClass*)[providerAndProviderIndex objectAtIndex:0];
 	providerIndex = [(NSNumber*)[providerAndProviderIndex objectAtIndex:1] unsignedIntValue];
 			
 	@try

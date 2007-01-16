@@ -10,18 +10,21 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-@protocol PFProvider
+// prefix.pch is only needed for debug macros (DLog, and so on)
+// Not required by external plugin developers.
+#import "../../prefix.pch"
 
-/// Called when loading plugin
-+ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
+#import "PFProvider.h"
+#import "PFQueue.h"
 
-/// Called when unloading plugin
-+ (void) terminateClass;
+@interface PFFlickrProvider : NSObject<PFProvider> {
+	PFQueue*  urls;
+}
 
-/// Return an Image
--(NSImage*) nextImage;
+- (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;
+- (NSXMLElement*)callMethod:(NSString*)method params:(NSString*)params;
+
+- (void)addURLsThread:(id)o;
+- (void)addURLs;
 
 @end
-
-/// Convenience type
-typedef NSObject<PFProvider> PFProviderClass;
