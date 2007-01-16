@@ -60,7 +60,7 @@ static NSString* srcImageId = @"sourceImage";
 		
 		// Load composition into a QCView and keep it as a subview
 		qcView = [[QCView alloc] initWithFrame:frame];
-		NSString* rendererQtzPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"renderer" ofType:@"qtz"];
+		NSString* rendererQtzPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"standard" ofType:@"qtz"];
 		[qcView loadCompositionFromFile:rendererQtzPath];
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];

@@ -5,6 +5,8 @@
 		activeExecutable = 3A8F91610AE571820027DC3B /* Viewer */;
 		activeTarget = 3A8F915F0AE571820027DC3B /* Viewer */;
 		addToTargets = (
+			3A8F915F0AE571820027DC3B /* Viewer */,
+			8D255AC50486D3F9007BF209 /* PhotoFeeder */,
 		);
 		breakpoints = (
 		);
@@ -459,6 +461,17 @@
 			3A6C6AE40B5D949800BD74E1 /* PBXTextBookmark */ = 3A6C6AE40B5D949800BD74E1 /* PBXTextBookmark */;
 			3A6C6AE50B5D949A00BD74E1 /* PBXBookmark */ = 3A6C6AE50B5D949A00BD74E1 /* PBXBookmark */;
 			3A6C6AE60B5D949A00BD74E1 /* PBXTextBookmark */ = 3A6C6AE60B5D949A00BD74E1 /* PBXTextBookmark */;
+			3A6C6AFC0B5D97C200BD74E1 /* PBXTextBookmark */ = 3A6C6AFC0B5D97C200BD74E1 /* PBXTextBookmark */;
+			3A6C6AFD0B5D97C200BD74E1 /* PBXTextBookmark */ = 3A6C6AFD0B5D97C200BD74E1 /* PBXTextBookmark */;
+			3A6C6B030B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B030B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B040B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B040B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B050B5D97F600BD74E1 /* PBXBookmark */ = 3A6C6B050B5D97F600BD74E1 /* PBXBookmark */;
+			3A6C6B060B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B060B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B070B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B070B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B080B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B080B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B090B5D97F600BD74E1 /* PBXTextBookmark */ = 3A6C6B090B5D97F600BD74E1 /* PBXTextBookmark */;
+			3A6C6B120B5D984100BD74E1 /* PBXTextBookmark */ = 3A6C6B120B5D984100BD74E1 /* PBXTextBookmark */;
+			3A6C6B130B5D984100BD74E1 /* PBXTextBookmark */ = 3A6C6B130B5D984100BD74E1 /* PBXTextBookmark */;
 			3A71E4270B50201700D212BC = 3A71E4270B50201700D212BC /* PBXTextBookmark */;
 			3A71E42E0B50201700D212BC = 3A71E42E0B50201700D212BC /* PBXTextBookmark */;
 			3A71E42F0B50201700D212BC = 3A71E42F0B50201700D212BC /* PBXTextBookmark */;
@@ -944,13 +957,6 @@
 		userBuildSettings = {
 		};
 	};
-	089C167EFE841241C02AAC07 /* English */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {946, 734}}";
-			sepNavSelRange = "{103, 0}";
-			sepNavVisRect = "{{0, 0}, {946, 734}}";
-		};
-	};
 	32DBCFA80370C50100C91783 /* prefix.pch */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
@@ -959,6 +965,12 @@
 		};
 	};
 	3A127B550AEA7341007E60ED /* PFFlickrProvider.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PFFlickrProvider.h;
+		path = /Users/rasmus/src/PhotoFeeder/PFFlickrProvider.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
 			sepNavSelRange = "{603, 20}";
@@ -966,6 +978,12 @@
 		};
 	};
 	3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFFlickrProvider.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFFlickrProvider.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1076, 2282}}";
 			sepNavSelRange = "{557, 0}";
@@ -3348,9 +3366,9 @@
 	};
 	3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
-			sepNavSelRange = "{970, 0}";
-			sepNavVisRect = "{{0, 0}, {901, 875}}";
+			sepNavIntBoundsRect = "{{0, 0}, {791, 434}}";
+			sepNavSelRange = "{660, 0}";
+			sepNavVisRect = "{{0, 126}, {791, 155}}";
 		};
 	};
 	3A6C6A210B5D8CE900BD74E1 /* PFFlickrProvider.m */ = {
@@ -3533,7 +3551,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 15";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 661;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 485;
@@ -3603,7 +3621,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 28";
 		rLen = 0;
-		rLoc = 969;
+		rLoc = 974;
 		rType = 0;
 		vrLen = 965;
 		vrLoc = 0;
@@ -3713,7 +3731,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 20";
 		rLen = 0;
-		rLoc = 901;
+		rLoc = 906;
 		rType = 0;
 		vrLen = 831;
 		vrLoc = 0;
@@ -3783,7 +3801,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 28";
 		rLen = 0;
-		rLoc = 969;
+		rLoc = 974;
 		rType = 0;
 		vrLen = 965;
 		vrLoc = 0;
@@ -3933,7 +3951,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 20";
 		rLen = 0;
-		rLoc = 743;
+		rLoc = 748;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -3983,7 +4001,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 20";
 		rLen = 0;
-		rLoc = 743;
+		rLoc = 748;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -4203,7 +4221,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 20";
 		rLen = 0;
-		rLoc = 743;
+		rLoc = 748;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 0;
@@ -4243,7 +4261,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 20";
 		rLen = 0;
-		rLoc = 763;
+		rLoc = 768;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4253,7 +4271,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 15";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 661;
 		rType = 0;
 		vrLen = 298;
 		vrLoc = 485;
@@ -4263,7 +4281,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 29";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 975;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4280,7 +4298,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 29";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 975;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4290,7 +4308,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 29";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 975;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4300,7 +4318,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 29";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 975;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4310,7 +4328,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 29";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 975;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 0;
@@ -4320,7 +4338,7 @@
 		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
 		name = "PFFlickrProvider.h: 15";
 		rLen = 0;
-		rLoc = 656;
+		rLoc = 661;
 		rType = 0;
 		vrLen = 298;
 		vrLoc = 485;
@@ -4338,6 +4356,110 @@
 		rType = 0;
 		vrLen = 695;
 		vrLoc = 0;
+	};
+	3A6C6AFC0B5D97C200BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
+		name = "PFFlickrProvider.h: 15";
+		rLen = 0;
+		rLoc = 660;
+		rType = 0;
+		vrLen = 303;
+		vrLoc = 485;
+	};
+	3A6C6AFD0B5D97C200BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */;
+		name = "PFFlickrProvider.h: 15";
+		rLen = 0;
+		rLoc = 660;
+		rType = 0;
+		vrLen = 303;
+		vrLoc = 485;
+	};
+	3A6C6B030B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */;
+		name = "PFDiskProvider.h: filesIndex";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 695;
+		vrLoc = 0;
+	};
+	3A6C6B040B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */;
+		name = "PFProvider.h: 21";
+		rLen = 0;
+		rLoc = 733;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 0;
+	};
+	3A6C6B050B5D97F600BD74E1 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+	};
+	3A6C6B060B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */;
+		name = "PFDiskProvider.h: filesIndex";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 695;
+		vrLoc = 0;
+	};
+	3A6C6B070B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */;
+		name = "PFDiskProvider.h: filesIndex";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 695;
+		vrLoc = 0;
+	};
+	3A6C6B080B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */;
+		name = "PFProvider.h: 21";
+		rLen = 0;
+		rLoc = 733;
+		rType = 0;
+		vrLen = 831;
+		vrLoc = 0;
+	};
+	3A6C6B090B5D97F600BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 63";
+		rLen = 0;
+		rLoc = 2118;
+		rType = 0;
+		vrLen = 1768;
+		vrLoc = 724;
+	};
+	3A6C6B120B5D984100BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 63";
+		rLen = 0;
+		rLoc = 2118;
+		rType = 0;
+		vrLen = 1768;
+		vrLoc = 724;
+	};
+	3A6C6B130B5D984100BD74E1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 63";
+		rLen = 0;
+		rLoc = 2118;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 723;
 	};
 	3A71E4270B50201700D212BC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -9265,6 +9387,12 @@
 		};
 	};
 	3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PFThreadedProvider.h;
+		path = /Users/rasmus/src/PhotoFeeder/PFThreadedProvider.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 875}}";
 			sepNavSelRange = "{605, 0}";
@@ -9272,6 +9400,12 @@
 		};
 	};
 	3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PFThreadedProvider.m;
+		path = /Users/rasmus/src/PhotoFeeder/PFThreadedProvider.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 1162}}";
 			sepNavSelRange = "{597, 128}";
@@ -9325,8 +9459,8 @@
 	F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {901, 6888}}";
-			sepNavSelRange = "{3859, 0}";
-			sepNavVisRect = "{{0, 1439}, {901, 875}}";
+			sepNavSelRange = "{2118, 0}";
+			sepNavVisRect = "{{0, 277}, {901, 875}}";
 			sepNavWindowFrame = "{{15, 345}, {598, 828}}";
 		};
 	};

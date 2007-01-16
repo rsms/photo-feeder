@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A127B550AEA7341007E60ED /* PFFlickrProvider.h */; };
-		3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A127B560AEA7341007E60ED /* PFFlickrProvider.m */; };
-		3A142A0D0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
-		3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A142A0C0B3B4F1100D7F86E /* renderer.qtz */; };
 		3A2547DF0B1495530081E689 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2547DE0B1495530081E689 /* types.h */; };
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
@@ -25,8 +21,10 @@
 		3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */; };
 		3A6C6A360B5D8DBD00BD74E1 /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A6C6AD50B5D932300BD74E1 /* PFDiskProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */; };
+		3A6C6AF00B5D978B00BD74E1 /* standard.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */; };
+		3A6C6AF10B5D978B00BD74E1 /* standard.qtz in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */; };
 		3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
-		3A848C690B3B720B00B65C13 /* Viewer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C600B3B720B00B65C13 /* Viewer-Info.plist */; };
+		3A848C690B3B720B00B65C13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C600B3B720B00B65C13 /* Info.plist */; };
 		3A848C6A0B3B720B00B65C13 /* Viewer.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C610B3B720B00B65C13 /* Viewer.nib */; };
 		3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848C620B3B720B00B65C13 /* Viewer_main.m */; };
 		3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A848C640B3B720B00B65C13 /* ViewerController.m */; };
@@ -43,10 +41,8 @@
 		3ABF2D060B50827300222076 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
-		3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */; };
 		8D255AC70486D3F9007BF209 /* prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* PFScreenSaverView.h */; };
-		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
@@ -87,20 +83,16 @@
 /* Begin PBXFileReference section */
 		06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
-		3A127B550AEA7341007E60ED /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
-		3A127B560AEA7341007E60ED /* PFFlickrProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFFlickrProvider.m; sourceTree = "<group>"; };
-		3A142A0C0B3B4F1100D7F86E /* renderer.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; path = renderer.qtz; sourceTree = "<group>"; };
-		3A2547DE0B1495530081E689 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prefix.pch; path = Core/prefix.pch; sourceTree = "<group>"; };
+		3A2547DE0B1495530081E689 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = Core/types.h; sourceTree = "<group>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProvider.h; sourceTree = "<group>"; };
-		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFQueue.m; sourceTree = "<group>"; };
-		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFQueue.h; sourceTree = "<group>"; };
-		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ConfigureSheet.nib; sourceTree = "<group>"; };
-		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFConfigureSheetController.h; sourceTree = "<group>"; };
-		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFConfigureSheetController.m; sourceTree = "<group>"; };
+		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFQueue.m; path = Core/PFQueue.m; sourceTree = "<group>"; };
+		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFQueue.h; path = Core/PFQueue.h; sourceTree = "<group>"; };
+		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ConfigureSheet.nib; path = Screensaver/ConfigureSheet.nib; sourceTree = "<group>"; };
+		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFConfigureSheetController.h; path = Screensaver/PFConfigureSheetController.h; sourceTree = "<group>"; };
+		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFConfigureSheetController.m; path = Screensaver/PFConfigureSheetController.m; sourceTree = "<group>"; };
 		3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Disk.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Flickr.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
@@ -109,25 +101,24 @@
 		3A6C6AD20B5D931A00BD74E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A6C6AD30B5D931A00BD74E1 /* PFDiskProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDiskProvider.h; sourceTree = "<group>"; };
 		3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
-		3A848C600B3B720B00B65C13 /* Viewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Viewer-Info.plist"; sourceTree = "<group>"; };
+		3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; name = standard.qtz; path = Renderers/standard.qtz; sourceTree = "<group>"; };
+		3A848C600B3B720B00B65C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A848C610B3B720B00B65C13 /* Viewer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Viewer.nib; sourceTree = "<group>"; };
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
 		3A848C630B3B720B00B65C13 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		3A848C640B3B720B00B65C13 /* ViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerController.m; sourceTree = "<group>"; };
 		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A94047D0B59A133001FBD1C /* NSArray_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_random.h; sourceTree = "<group>"; };
-		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_random.m; sourceTree = "<group>"; };
-		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUtil.h; sourceTree = "<group>"; };
-		3A9404C50B59A8D7001FBD1C /* PFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUtil.m; sourceTree = "<group>"; };
+		3A94047D0B59A133001FBD1C /* NSArray_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArray_random.h; path = Core/NSArray_random.h; sourceTree = "<group>"; };
+		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray_random.m; path = Core/NSArray_random.m; sourceTree = "<group>"; };
+		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Core/PFUtil.h; sourceTree = "<group>"; };
+		3A9404C50B59A8D7001FBD1C /* PFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFUtil.m; path = Core/PFUtil.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
-		3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFThreadedProvider.h; sourceTree = "<group>"; };
-		3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFThreadedProvider.m; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
-		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = Screensaver/Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFScreenSaverView.h; sourceTree = "<group>"; };
-		F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFScreenSaverView.m; sourceTree = "<group>"; };
+		F50079790118B23001CA0E54 /* PFScreenSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScreenSaverView.h; path = Screensaver/PFScreenSaverView.h; sourceTree = "<group>"; };
+		F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScreenSaverView.m; path = Screensaver/PFScreenSaverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +166,7 @@
 				3A2547DE0B1495530081E689 /* types.h */,
 				3AEF430B0AEA7C350062B848 /* Providers */,
 				3A216B6D0AEED38F0070394E /* Core */,
-				3A216B6E0AEED3A70070394E /* Settings and UI */,
+				3A216B6E0AEED3A70070394E /* Screensaver */,
 				3A848C5F0B3B720B00B65C13 /* Viewer */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
@@ -196,11 +187,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A142A0C0B3B4F1100D7F86E /* renderer.qtz */,
 				3AD264320B2334AB005CE2C6 /* LICENSE */,
-				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
-				8D255AD20486D3F9007BF209 /* Info.plist */,
-				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -239,8 +226,6 @@
 		3A216B6D0AEED38F0070394E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
-				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
 				3A94047D0B59A133001FBD1C /* NSArray_random.h */,
@@ -251,13 +236,18 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		3A216B6E0AEED3A70070394E /* Settings and UI */ = {
+		3A216B6E0AEED3A70070394E /* Screensaver */ = {
 			isa = PBXGroup;
 			children = (
+				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
+				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */,
 				3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */,
+				3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */,
+				8D255AD20486D3F9007BF209 /* Info.plist */,
+				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 			);
-			name = "Settings and UI";
+			name = Screensaver;
 			sourceTree = "<group>";
 		};
 		3A6C6A1F0B5D8CE900BD74E1 /* Flickr */ = {
@@ -285,7 +275,7 @@
 		3A848C5F0B3B720B00B65C13 /* Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				3A848C600B3B720B00B65C13 /* Viewer-Info.plist */,
+				3A848C600B3B720B00B65C13 /* Info.plist */,
 				3A848C610B3B720B00B65C13 /* Viewer.nib */,
 				3A848C620B3B720B00B65C13 /* Viewer_main.m */,
 				3A848C630B3B720B00B65C13 /* ViewerController.h */,
@@ -300,10 +290,6 @@
 				3A2C3EF50AE4342700970E7C /* PFProvider.h */,
 				3A6C6AD10B5D931A00BD74E1 /* Disk */,
 				3A6C6A1F0B5D8CE900BD74E1 /* Flickr */,
-				3AEF42F70AEA7BB80062B848 /* PFThreadedProvider.h */,
-				3AEF42F80AEA7BB80062B848 /* PFThreadedProvider.m */,
-				3A127B550AEA7341007E60ED /* PFFlickrProvider.h */,
-				3A127B560AEA7341007E60ED /* PFFlickrProvider.m */,
 			);
 			name = Providers;
 			sourceTree = "<group>";
@@ -319,8 +305,6 @@
 				8D255AC80486D3F9007BF209 /* PFScreenSaverView.h in Headers */,
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
 				3A2C40410AE4432D00970E7C /* PFQueue.h in Headers */,
-				3A127B570AEA7341007E60ED /* PFFlickrProvider.h in Headers */,
-				3AEF42F90AEA7BB80062B848 /* PFThreadedProvider.h in Headers */,
 				3A6750080AEAED7D0057912E /* PFConfigureSheetController.h in Headers */,
 				3A2547DF0B1495530081E689 /* types.h in Headers */,
 				3A9404800B59A133001FBD1C /* NSArray_random.h in Headers */,
@@ -443,9 +427,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD264330B2334AB005CE2C6 /* LICENSE in Resources */,
-				3A142A0D0B3B4F1100D7F86E /* renderer.qtz in Resources */,
-				3A848C690B3B720B00B65C13 /* Viewer-Info.plist in Resources */,
+				3A848C690B3B720B00B65C13 /* Info.plist in Resources */,
 				3A848C6A0B3B720B00B65C13 /* Viewer.nib in Resources */,
+				3A6C6AF00B5D978B00BD74E1 /* standard.qtz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,11 +437,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */,
 				3AD264340B2334AB005CE2C6 /* LICENSE in Resources */,
-				3A142A0E0B3B4F1100D7F86E /* renderer.qtz in Resources */,
 				3A6C691D0B5D819100BD74E1 /* Disk.pfprovider in Resources */,
+				3A6C6AF10B5D978B00BD74E1 /* standard.qtz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +494,6 @@
 			files = (
 				8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
-				3A127B580AEA7341007E60ED /* PFFlickrProvider.m in Sources */,
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
@@ -532,17 +514,6 @@
 			targetProxy = 3A6C6AB60B5D926300BD74E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C167EFE841241C02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3A6C68910B5D7BA300BD74E1 /* Debug */ = {
@@ -675,9 +646,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_PREFIX_HEADER = Core/prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = _DEBUG;
-				INFOPLIST_FILE = "Viewer/Viewer-Info.plist";
+				INFOPLIST_FILE = Viewer/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -705,8 +676,8 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = prefix.pch;
-				INFOPLIST_FILE = "Viewer/Viewer-Info.plist";
+				GCC_PREFIX_HEADER = Core/prefix.pch;
+				INFOPLIST_FILE = Viewer/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",

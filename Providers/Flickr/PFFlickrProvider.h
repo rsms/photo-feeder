@@ -12,7 +12,7 @@
 
 // prefix.pch is only needed for debug macros (DLog, and so on)
 // Not required by external plugin developers.
-#import "../../prefix.pch"
+#import "../../Core/prefix.pch"
 
 #import "PFProvider.h"
 #import "PFQueue.h"
