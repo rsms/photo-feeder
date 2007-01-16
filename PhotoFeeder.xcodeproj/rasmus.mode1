@@ -270,19 +270,20 @@
 								<string>089C1671FE841209C02AAC07</string>
 								<string>19C28FB8FE9D52D311CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>3A6C6AFE0B5D97F600BD74E1</string>
-								<string>3A6C6AFF0B5D97F600BD74E1</string>
-								<string>3A6C6B000B5D97F600BD74E1</string>
-								<string>3A6C6B010B5D97F600BD74E1</string>
-								<string>3A6C6B020B5D97F600BD74E1</string>
+								<string>3A6C6B810B5D99A700BD74E1</string>
+								<string>3A6C6B4E0B5D998D00BD74E1</string>
+								<string>3A6C6B820B5D99A700BD74E1</string>
+								<string>3A6C6B830B5D99A700BD74E1</string>
+								<string>3A6C6B840B5D99A700BD74E1</string>
+								<string>3A6C6B850B5D99A700BD74E1</string>
+								<string>3A6C6B860B5D99A700BD74E1</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>9</integer>
-									<integer>3</integer>
+									<integer>22</integer>
+									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -324,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFFlickrProvider.h</string>
+								<string>PFScreenSaverView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,19 +333,22 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFFlickrProvider.h</string>
+										<string>PFScreenSaverView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A6C6B2D0B5D98E700BD74E1</string>
+										<string>3A6C6B980B5D9BFD00BD74E1</string>
 										<key>history</key>
 										<array>
 											<string>3A6C6B040B5D97F600BD74E1</string>
-											<string>3A6C6B210B5D98E700BD74E1</string>
 											<string>3A6C6B220B5D98E700BD74E1</string>
 											<string>3A6C6B230B5D98E700BD74E1</string>
 											<string>3A6C6B240B5D98E700BD74E1</string>
-											<string>3A6C6B250B5D98E700BD74E1</string>
+											<string>3A6C6B870B5D99A700BD74E1</string>
+											<string>3A6C6B880B5D99A700BD74E1</string>
+											<string>3A6C6B890B5D99A700BD74E1</string>
+											<string>3A6C6B960B5D9BFD00BD74E1</string>
+											<string>3A6C6B210B5D98E700BD74E1</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -364,6 +368,10 @@
 											<string>3A6C6B2A0B5D98E700BD74E1</string>
 											<string>3A6C6B2B0B5D98E700BD74E1</string>
 											<string>3A6C6B2C0B5D98E700BD74E1</string>
+											<string>3A6C6B8B0B5D99A700BD74E1</string>
+											<string>3A6C6B8C0B5D99A700BD74E1</string>
+											<string>3A6C6B8D0B5D99A700BD74E1</string>
+											<string>3A6C6B970B5D9BFD00BD74E1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -583,7 +591,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>&lt;No Editor&gt;</string>
+								<string>PFConfigureSheetController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -592,7 +600,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {838, 187}}</string>
 								<key>RubberWindowFrame</key>
-								<string>173 145 838 469 0 0 1920 1178 </string>
+								<string>944 207 838 469 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -618,7 +626,7 @@
 								<key>Frame</key>
 								<string>{{0, 192}, {838, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>173 145 838 469 0 0 1920 1178 </string>
+								<string>944 207 838 469 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -648,7 +656,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.build</string>
 			<key>WindowString</key>
-			<string>173 145 838 469 0 0 1920 1178 </string>
+			<string>944 207 838 469 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>3A2C3EBE0AE4301E00970E7C</string>
 			<key>WindowToolIsVisible</key>

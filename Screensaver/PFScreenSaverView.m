@@ -11,10 +11,9 @@
  */
 #import "PFScreenSaverView.h"
 #import "PFProvider.h"
-#import "PFFlickrProvider.h"
-#import "PFQueue.h"
 #import "PFConfigureSheetController.h"
-#import "PFUtil.h"
+#import "../Core/PFQueue.h"
+#import "../Core/PFUtil.h"
 
 @implementation PFScreenSaverView
 
@@ -26,7 +25,7 @@ static NSString* srcImageId = @"sourceImage";
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
-    if(self = ([super initWithFrame:frame isPreview:isPreview]))
+	if(self = ([super initWithFrame:frame isPreview:isPreview]))
 	{
 		DLog(@"");
 		
@@ -40,6 +39,7 @@ static NSString* srcImageId = @"sourceImage";
 		[self loadPlugins];
 		
 		// Setup and instantiate providers
+		// TODO: only load providers which are enabled by the user
 		providers = [[NSMutableArray alloc] init];
 		NSEnumerator* en = [availableProviders objectEnumerator];
 		Class providerClass;
@@ -48,10 +48,6 @@ static NSString* srcImageId = @"sourceImage";
 			PFProviderClass* provider = [[providerClass alloc] init];
 			[providers addObject:provider];
 		}
-		/*[providers addObject:[[PFDiskProvider alloc] initWithPathToDirectory:[NSHomeDirectory() 
-			stringByAppendingPathComponent:@"Pictures/_temp"]]];*/
-		//[providers addObject:[[PFFlickrProvider alloc] init]];
-		
 		
 		// Init runningProvidersCount
 		runningProvidersCount = 0;
@@ -259,6 +255,15 @@ static NSString* srcImageId = @"sourceImage";
 			
 			// Pick a random provider
 			providerCount = [providers count];
+			
+			// Hold if count < 1
+			if(!providerCount)
+			{
+				NSTrace(@"ERROR: No providers loaded. Sleeping forever...");
+				[NSThread sleepUntilDate:[NSDate distantFuture]];
+			}
+			
+			// Get a non-running provider index
 			providerIndex = SSRandomIntBetween(0, [providers count]-1);
 			while(runningProviders[providerIndex])
 				if(++providerIndex == providerCount)

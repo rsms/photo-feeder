@@ -10,7 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import "PFConfigureSheetController.h"
-#import "PFUtil.h"
+#import "../Core/PFUtil.h"
 
 @implementation PFConfigureSheetController
 

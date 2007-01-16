@@ -11,7 +11,7 @@
  */
 #import <ScreenSaver/ScreenSaver.h>
 #import <Quartz/Quartz.h>
-#import "PFQueue.h"
+#import "../Core/PFQueue.h"
 
 @interface PFScreenSaverView : ScreenSaverView {
 	PFQueue*					queue;
