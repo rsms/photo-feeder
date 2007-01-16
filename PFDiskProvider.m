@@ -14,12 +14,35 @@
 
 @implementation PFDiskProvider
 
-- (id) initWithPathToDirectory:(NSString*)d
+static NSArray* acceptableFileExtensions = nil;
+static NSUserDefaults* defaults = nil;
+
+
++ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
 {
-	dir = [d retain];
+	DLog(@"");
+	defaults = [def retain];
+	acceptableFileExtensions = [[NSArray arrayWithObjects:
+		@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
+	
+	return YES;
+}
+
++ (void) terminateClass
+{
+	DLog(@"");
+}
+
+//-------------------
+
+- (id) init
+{
+	dir = [[@"~/Pictures/_temp" stringByExpandingTildeInPath] retain];
 	files = nil;
+	DLog(@"dir: %@", dir);
 	return self;
 }
+
 
 - (void) dealloc
 {
@@ -27,6 +50,8 @@
 		[files release];
 	if(dir)
 		[dir release];
+	if(defaults)
+		[defaults release];
 	[super dealloc];
 }
 
@@ -34,16 +59,14 @@
 - (void) scrambleFiles
 {
 	NSDirectoryEnumerator* dirEnum;
-	NSArray* acceptExts;
 	NSMutableArray* filesTemp;
 	NSString* file;
 	
 	filesTemp = [NSMutableArray array]; // autoreleased
-	acceptExts = [PFProvider acceptableFileExtensions];
 	dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:dir];
 	
 	while( file = [dirEnum nextObject] )
-		if( [acceptExts containsObject:[[file pathExtension] lowercaseString]] )
+		if( [acceptableFileExtensions containsObject:[[file pathExtension] lowercaseString]] )
 			[filesTemp addObject:file];
 	
 	files = [[filesTemp randomCopy] retain];
