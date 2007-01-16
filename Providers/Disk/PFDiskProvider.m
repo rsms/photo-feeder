@@ -10,6 +10,10 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
+// prefix.pch is only needed for debug macros (DLog, and so on)
+// Not required by external plugin developers.
+#import "../../Core/prefix.pch"
+
 #import "PFDiskProvider.h"
 
 @implementation PFDiskProvider

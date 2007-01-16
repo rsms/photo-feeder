@@ -9,7 +9,13 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
+
+// prefix.pch is only needed for debug macros (DLog, and so on)
+// Not required by external plugin developers.
+#import "../../Core/prefix.pch"
+
 #import "PFFlickrProvider.h"
+
 @implementation PFFlickrProvider
 
 
