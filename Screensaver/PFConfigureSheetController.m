@@ -15,22 +15,16 @@
 @implementation PFConfigureSheetController
 
 
-- (id)initWithWindowNibName:(NSString*)filename withReferenceToSSV:(PFScreenSaverView*)_ssv
-{
-	[self initWithWindowNibName:filename];
-	ssv = _ssv;
-	return self;
-}
-
-
 - (void)awakeFromNib
 {
 	[fps             setFloatValue:[PFUtil defaultFloatForKey:@"fps"]];
 	[displayInterval setFloatValue:[PFUtil defaultFloatForKey:@"displayInterval"]];
 	[fadeInterval    setFloatValue:[PFUtil defaultFloatForKey:@"fadeInterval"]];
 	
+	// Load table of active providers
 	// TODO: load config about active providers
-	activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithTestData];
+	//NSDictionary* activeProviders = [PFUtil defaultDictForKey:@"activeProviders"];
+	activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithDefaults:nil];
 	[activeProvidersTable setDataSource:activeProvidersDS];
 }
 
@@ -38,15 +32,17 @@
 
 - (IBAction) done:(id)sender
 {
-	DLog(@"[%@ done]", self);
+	DLog(@"");
 	
-	[[PFUtil defaults] setFloat:[fps             floatValue] forKey:@"fps"];
-	[[PFUtil defaults] setFloat:[displayInterval floatValue] forKey:@"displayInterval"];
-	[[PFUtil defaults] setFloat:[fadeInterval    floatValue] forKey:@"fadeInterval"];
-	[[PFUtil defaults] synchronize];
+	NSUserDefaults* defaults = [PFUtil defaults];
+	
+	[defaults setFloat:[fps             floatValue] forKey:@"fps"];
+	[defaults setFloat:[displayInterval floatValue] forKey:@"displayInterval"];
+	[defaults setFloat:[fadeInterval    floatValue] forKey:@"fadeInterval"];
+	[defaults synchronize];
 	//NSTrace(@"fps: %f", [defaults floatForKey:@"rendererFPS"]);
 	
-	[[NSApplication sharedApplication] endSheet:[self window]];
+	[NSApp endSheet:[self window]];
 }
 
 
