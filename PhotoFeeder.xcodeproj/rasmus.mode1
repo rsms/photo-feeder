@@ -224,6 +224,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,8 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>21</integer>
+									<integer>42</integer>
+									<integer>41</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -310,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFConfigureSheetController.m</string>
+								<string>ViewerController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFConfigureSheetController.m</string>
+										<string>ViewerController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A6C6C630B5DAA3600BD74E1</string>
+										<string>3A6C6C990B5DAB2C00BD74E1</string>
 										<key>history</key>
 										<array>
 											<string>3A6C6BCE0B5DA38000BD74E1</string>
@@ -340,8 +340,8 @@
 											<string>3A6C6C2C0B5DA80C00BD74E1</string>
 											<string>3A6C6C520B5DAA0F00BD74E1</string>
 											<string>3A6C6C540B5DAA0F00BD74E1</string>
-											<string>3A6C6C600B5DAA3600BD74E1</string>
-											<string>3A6C6C610B5DAA3600BD74E1</string>
+											<string>3A6C6C960B5DAB2C00BD74E1</string>
+											<string>3A6C6C970B5DAB2C00BD74E1</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -387,6 +387,7 @@
 											<string>3A6C6C590B5DAA0F00BD74E1</string>
 											<string>3A6C6C5A0B5DAA0F00BD74E1</string>
 											<string>3A6C6C620B5DAA3600BD74E1</string>
+											<string>3A6C6C980B5DAB2C00BD74E1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -581,8 +582,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>3A2C3EBE0AE4301E00970E7C</string>
-		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>382 148 1221 1015 0 0 1920 1178 </string>
@@ -601,14 +602,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ViewerController.m</string>
+								<string>PFConfigureSheetController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -625,6 +624,8 @@
 							<string>187pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -675,7 +676,7 @@
 			<key>WindowToolGUID</key>
 			<string>3A2C3EBE0AE4301E00970E7C</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
