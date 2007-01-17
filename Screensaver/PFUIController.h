@@ -10,25 +10,16 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFScreenSaverView.h"
-#import "PFActiveProvidersTableViewDataSource.h"
-
-@interface PFConfigureSheetController : NSWindowController
+@interface PFUIController : NSWindowController
 {
 	IBOutlet NSTextField* fps;
 	IBOutlet NSTextField* displayInterval;
 	IBOutlet NSTextField* fadeInterval;
 	IBOutlet NSPanel*     providerSettingsPanel;
 	IBOutlet NSTableView* activeProvidersTable;
-	
-	PFActiveProvidersTableViewDataSource* activeProvidersDS;
-	PFScreenSaverView* ssv;
 }
 
-- (id)initWithWindowNibName:(NSString*)filename withReferenceToSSV:(PFScreenSaverView*)ssv;
-
-- (IBAction)done:(id)sender;
-- (IBAction)about:(id)sender;
-//- (void)loadSavedStates;
+- (IBAction) done:(id)sender;
+- (IBAction) about:(id)sender;
 
 @end

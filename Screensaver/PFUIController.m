@@ -9,14 +9,16 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
-#import "PFConfigureSheetController.h"
+#import "PFUIController.h"
 #import "../Core/PFUtil.h"
 
-@implementation PFConfigureSheetController
+@implementation PFUIController
 
 
 - (void)awakeFromNib
 {
+	DLog(@"");
+	
 	[fps             setFloatValue:[PFUtil defaultFloatForKey:@"fps"]];
 	[displayInterval setFloatValue:[PFUtil defaultFloatForKey:@"displayInterval"]];
 	[fadeInterval    setFloatValue:[PFUtil defaultFloatForKey:@"fadeInterval"]];
@@ -24,8 +26,8 @@
 	// Load table of active providers
 	// TODO: load config about active providers
 	//NSDictionary* activeProviders = [PFUtil defaultDictForKey:@"activeProviders"];
-	activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithDefaults:nil];
-	[activeProvidersTable setDataSource:activeProvidersDS];
+	//activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithDefaults:nil];
+	//[activeProvidersTable setDataSource:activeProvidersDS];
 }
 
 
@@ -48,7 +50,6 @@
 
 - (IBAction)about:(id)sender
 {
-	DLog(@"[%@ about]", self);
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/PhotoFeeder"]];
 }
 @end

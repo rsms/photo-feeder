@@ -63,6 +63,7 @@ static NSDictionary* appDefaults = nil;
 			[NSNumber numberWithFloat:60.0], @"fps",
 			[NSNumber numberWithFloat:3.0],  @"displayInterval",
 			[NSNumber numberWithFloat:1.0],  @"fadeInterval",
+			[NSDictionary dictionary],       @"activeProviders",
 			nil] retain];
 	}
 	return appDefaults;
@@ -72,10 +73,25 @@ static NSDictionary* appDefaults = nil;
 + (float) defaultFloatForKey:(NSString*)key
 {
 	NSNumber* n = [[PFUtil defaults] objectForKey:key];
-	if(n == nil)
-		return [[[PFUtil appDefaults] objectForKey:key] floatValue];
-	else
+	
+	if(!n)
+		n = [[PFUtil appDefaults] objectForKey:key];
+	
+	if(n)
 		return [n floatValue];
+	
+	return 0.0;
+}
+
+
++ (NSObject*) defaultObjectForKey:(NSString*)key
+{
+	NSObject* o = [[PFUtil defaults] objectForKey:key];
+	
+	if(!o)
+		o = [[PFUtil appDefaults] objectForKey:key];
+	
+	return o;
 }
 
 @end

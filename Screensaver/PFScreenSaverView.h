@@ -11,24 +11,13 @@
  */
 #import <ScreenSaver/ScreenSaver.h>
 #import <Quartz/Quartz.h>
-#import "../Core/PFQueue.h"
 
 @interface PFScreenSaverView : ScreenSaverView {
-	PFQueue*					queue;
-	NSMutableArray*		availableProviders;
-	NSMutableArray*		providers;
-	QCView*					qcView;
-	NSThread*            switchImageDispatchT;
-	NSConditionLock*     runCond;
-	
-	short*               runningProviders; // map over all providers run state
-	unsigned             runningProvidersCount;
-	NSConditionLock*     providerThreadsAvailableCondLock;
+	QCView*					qcView;  // The quartz composition
+	BOOL                 switchImageThreadsAreRunning;
 	
 	NSImage*					sourceImage; // back
 	NSImage*					destinationImage; // front
-	
-	id							configureSheetController;
 	
 	NSString*            imagePortName;
 	
@@ -39,6 +28,5 @@
 
 // Image switching
 - (double) switchImage:(NSObject*)isFirstTime;
-- (NSImage*) resizeImageIfNeeded:(NSImage*)im;
 
 @end

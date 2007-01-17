@@ -10,8 +10,8 @@
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
 		3A674FBF0AEAEBE50057912E /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
-		3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
-		3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */; };
+		3A6750090AEAED7D0057912E /* PFUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFUIController.m */; };
+		3A67500A0AEAED7D0057912E /* PFUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6750070AEAED7D0057912E /* PFUIController.m */; };
 		3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */; };
 		3A6C6A250B5D8CFC00BD74E1 /* PFFlickrProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6A210B5D8CE900BD74E1 /* PFFlickrProvider.m */; };
 		3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */; };
@@ -41,6 +41,10 @@
 		3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94047E0B59A133001FBD1C /* NSArray_random.m */; };
 		3A9404C60B59A8D7001FBD1C /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */; };
 		3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */; };
+		3AB8D2850B5EA78D00FC9D56 /* PFMain.h in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3AB8D2830B5EA78D00FC9D56 /* PFMain.h */; };
+		3AB8D2860B5EA78D00FC9D56 /* PFMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */; };
+		3AB8D2870B5EA78D00FC9D56 /* PFMain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB8D2830B5EA78D00FC9D56 /* PFMain.h */; };
+		3AB8D2880B5EA78D00FC9D56 /* PFMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */; };
 		3ABF2D060B50827300222076 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
@@ -90,6 +94,7 @@
 				3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */,
 				3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */,
 				3A6C6BB50B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Copy Plugins */,
+				3AB8D2850B5EA78D00FC9D56 /* PFMain.h in Copy Plugins */,
 			);
 			name = "Copy Plugins";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +124,8 @@
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFQueue.m; path = Core/PFQueue.m; sourceTree = "<group>"; };
 		3A2C403F0AE4432D00970E7C /* PFQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFQueue.h; path = Core/PFQueue.h; sourceTree = "<group>"; };
 		3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ConfigureSheet.nib; path = Screensaver/ConfigureSheet.nib; sourceTree = "<group>"; };
-		3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFConfigureSheetController.h; path = Screensaver/PFConfigureSheetController.h; sourceTree = "<group>"; };
-		3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFConfigureSheetController.m; path = Screensaver/PFConfigureSheetController.m; sourceTree = "<group>"; };
+		3A6750060AEAED7D0057912E /* PFUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUIController.h; path = Screensaver/PFUIController.h; sourceTree = "<group>"; };
+		3A6750070AEAED7D0057912E /* PFUIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFUIController.m; path = Screensaver/PFUIController.m; sourceTree = "<group>"; };
 		3A6C688E0B5D7BA300BD74E1 /* Disk.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Disk.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Flickr.pfprovider; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6C6A200B5D8CE900BD74E1 /* PFFlickrProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFFlickrProvider.h; sourceTree = "<group>"; };
@@ -143,6 +148,8 @@
 		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray_random.m; path = Core/NSArray_random.m; sourceTree = "<group>"; };
 		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Core/PFUtil.h; sourceTree = "<group>"; };
 		3A9404C50B59A8D7001FBD1C /* PFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFUtil.m; path = Core/PFUtil.m; sourceTree = "<group>"; };
+		3AB8D2830B5EA78D00FC9D56 /* PFMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMain.h; path = Core/PFMain.h; sourceTree = "<group>"; };
+		3AB8D2840B5EA78D00FC9D56 /* PFMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMain.m; path = Core/PFMain.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
@@ -195,8 +202,8 @@
 			children = (
 				3AD264320B2334AB005CE2C6 /* LICENSE */,
 				3A216B6D0AEED38F0070394E /* Core */,
-				3AEF430B0AEA7C350062B848 /* Providers */,
 				3A216B6E0AEED3A70070394E /* Screensaver */,
+				3AEF430B0AEA7C350062B848 /* Providers */,
 				3A848C5F0B3B720B00B65C13 /* Viewer */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
@@ -255,6 +262,8 @@
 				3A94047E0B59A133001FBD1C /* NSArray_random.m */,
 				3A9404C40B59A8D7001FBD1C /* PFUtil.h */,
 				3A9404C50B59A8D7001FBD1C /* PFUtil.m */,
+				3AB8D2830B5EA78D00FC9D56 /* PFMain.h */,
+				3AB8D2840B5EA78D00FC9D56 /* PFMain.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -265,8 +274,8 @@
 				3A6C6BA60B5D9D3000BD74E1 /* InfoPlist.strings */,
 				F50079790118B23001CA0E54 /* PFScreenSaverView.h */,
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
-				3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */,
-				3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */,
+				3A6750060AEAED7D0057912E /* PFUIController.h */,
+				3A6750070AEAED7D0057912E /* PFUIController.m */,
 				3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */,
 				3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */,
 				3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */,
@@ -329,6 +338,7 @@
 			files = (
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
 				3A6C6BB30B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Headers */,
+				3AB8D2870B5EA78D00FC9D56 /* PFMain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
+				3A67500A0AEAED7D0057912E /* PFUIController.m in Sources */,
 				3A6C6BB60B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
 				3A8F91680AE571960027DC3B /* PFQueue.m in Sources */,
 				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
@@ -511,6 +521,7 @@
 				3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */,
 				3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C60B59A8D7001FBD1C /* PFUtil.m in Sources */,
+				3AB8D2860B5EA78D00FC9D56 /* PFMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,10 +531,11 @@
 			files = (
 				8D255ACC0486D3F9007BF209 /* PFScreenSaverView.m in Sources */,
 				3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */,
-				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
+				3A6750090AEAED7D0057912E /* PFUIController.m in Sources */,
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
 				3A6C6BB40B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
+				3AB8D2880B5EA78D00FC9D56 /* PFMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					ppc,
+					"$(NATIVE_ARCH)",
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
@@ -653,7 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					ppc,
+					"$(NATIVE_ARCH)",
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;

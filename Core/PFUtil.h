@@ -31,4 +31,7 @@
 /// Convenience method
 + (float) defaultFloatForKey:(NSString*)key;
 
+/// Convenience method
++ (NSObject*) defaultObjectForKey:(NSString*)key;
+
 @end

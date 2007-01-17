@@ -11,8 +11,8 @@
  */
 #import "PFScreenSaverView.h"
 #import "PFProvider.h"
-#import "PFConfigureSheetController.h"
-#import "../Core/PFQueue.h"
+#import "PFUIController.h"
+#import "../Core/PFMain.h"
 #import "../Core/PFUtil.h"
 
 @implementation PFScreenSaverView
@@ -30,11 +30,11 @@ static NSString* srcImageId = @"sourceImage";
 		DLog(@"");
 		
 		// Register ourselves in PFMain
-		[[PFMain instance] registerView:self];
+		[[PFMain instance] registerView:self isPreview:isPreview];
 		
 		// Load composition into a QCView and keep it as a subview
 		qcView = [[QCView alloc] initWithFrame:frame];
-		[qcView loadCompositionFromFile:[[PFMain bundle] pathForResource:@"standard" ofType:@"qtz"]];
+		[qcView loadCompositionFromFile:[[[PFMain instance] bundle] pathForResource:@"standard" ofType:@"qtz"]];
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];
     }
@@ -46,7 +46,6 @@ static NSString* srcImageId = @"sourceImage";
 {
 	[qcView removeFromSuperview];
 	[qcView release];
-	[providers release];
 	[super dealloc];
 }
 
@@ -79,33 +78,22 @@ static NSString* srcImageId = @"sourceImage";
 	[qcView startRendering];
 	
 	
-	// Index over providers running state (1=running, 0=not running)
-	runningProviders = (short *)malloc(sizeof(short) * [[[PFMain instance] providers] count]);
-	unsigned i = [[[PFMain instance] providers] count];
-	while(i--)
-		runningProviders[i] = 0;
-
-	
 	// Reset image ports
 	imagePortName = dstImageId;
 	
 	// Fork threads on first call to startAnimation (pungsvett från räkan)
-	if(!switchImageDispatchT)
+	if(!switchImageThreadsAreRunning)
 	{
 		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
 										 toTarget: self
 									  withObject: nil];
 		
-		// Start filling the queue with images from providers
-		[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
-										 toTarget: self
-									  withObject: nil];
+		
 	}
 	
 	// Start animation timer and unlock "critical section"
 	[super startAnimation];
-	[runCond lock];
-	[runCond unlockWithCondition:TRUE];
+	[[PFMain instance] animationStartedByView:self];
 }
 
 
@@ -119,11 +107,9 @@ static NSString* srcImageId = @"sourceImage";
 - (void) stopAnimation
 {
 	DLog(@"");
-	[runCond lock];
-	[runCond unlockWithCondition:FALSE];
+	[[PFMain instance] animationStoppedByView:self]; // need to be called first
 	[qcView stopRendering];
 	[super stopAnimation];
-	free(runningProviders);
 }
 
 
@@ -136,7 +122,7 @@ static NSString* srcImageId = @"sourceImage";
 - (void) switchImageDispatchThread:(id)obj
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	switchImageDispatchT = [NSThread currentThread];
+	switchImageThreadsAreRunning = YES;
 	@try
 	{
 		NSObject* firstTime = [NSThread currentThread];
@@ -146,8 +132,7 @@ static NSString* srcImageId = @"sourceImage";
 		while(1)
 		{
 			// Hold here if animation is stopped
-			[runCond lockWhenCondition:TRUE];
-			[runCond unlock];
+			[[PFMain instance] blockWhileStopped];
 			
 			delay = [self switchImage:firstTime];
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
@@ -161,8 +146,10 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
+
 #pragma mark -
 #pragma mark Image switching
+
 
 - (double) switchImage:(NSObject*)isFirstTime
 {
@@ -218,42 +205,6 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-// Downsizes a image which is larger than needed (this speeds things up with very large images)
-- (NSImage*) resizeImageIfNeeded:(NSImage*)im
-{
-	// We need to take size from rep because nsimage compensates for dpi or something
-	NSImageRep* imr = [im bestRepresentationForDevice:nil];
-	if(!imr)
-		return im;
-	NSSize outSize = [self frame].size;
-	NSSize inSize = NSMakeSize([imr pixelsWide], [imr pixelsHigh]);
-	
-	if(inSize.width < outSize.width || inSize.height < outSize.height)
-		return im;
-	
-	float inAs = inSize.width / inSize.height;
-	float outAs = outSize.width / outSize.height;
-	
-	if(inAs > outAs) // in is wider than put
-		outSize.width = outSize.height * inAs;
-	else
-		outSize.height = outSize.width / inAs;
-	
-	NSImage *resizedImage = [[NSImage alloc] initWithSize:outSize];
-	[resizedImage lockFocus];
-	[imr drawInRect:NSMakeRect(0, 0, outSize.width, outSize.height)];
-	[resizedImage unlockFocus];
-	
-	NSImage* old = im;
-	im = resizedImage;
-	[old release];
-	
-	//DLog(@"Resized from %f x %f  ->  %f x %f", inSize.width, inSize.height, outSize.width, outSize.height);
-	
-	return im;
-}
-
-
 
 #pragma mark -
 #pragma mark Delegate methods
@@ -267,7 +218,6 @@ static NSString* srcImageId = @"sourceImage";
 
 - (NSWindow*)configureSheet
 {
-	DLog(@"");
 	return [[PFMain instance] configureSheet];
 }
 
