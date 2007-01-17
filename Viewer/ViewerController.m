@@ -13,12 +13,49 @@
 
 @implementation ViewerController
 
+
 -(void)awakeFromNib
 {
 	ssv = [[PFScreenSaverView alloc] initWithFrame:[win frame] isPreview:NO];
 	[win setContentView:ssv];
 	[ssv startAnimation];
 }
+
+
+- (IBAction) showConfigureSheet:(id)sender
+
+	// User has asked to see the custom display. Display it.
+{
+	if (!configureSheet)
+	{
+		//Check the myCustomSheet instance variable to make sure the custom sheet does not already exist. 
+		NSBundle* b = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"ConfigureSheet" ofType:@"nib"]];
+		[b load];
+	}
+	NSLog(@"configureSheet: %@", configureSheet);
+	
+	[NSApp beginSheet: configureSheet
+		modalForWindow: win
+		 modalDelegate: self
+		didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+			contextInfo: nil];
+	
+	// Sheet is up here.
+	// Return processing to the event loop
+}
+
+
+- (IBAction) done:(id)sender
+{
+	DLog(@"[%@ done]", self);
+}
+
+
+- (IBAction)closeConfigureSheet:(id)sender
+{
+	[NSApp endSheet:configureSheet];
+}
+
 
 -(void)toggleAnimation:(id)sender
 {
@@ -28,6 +65,7 @@
 		[ssv startAnimation];
 }
 
+
 - (void)windowWillClose:(NSNotification *)aNotification
 {
 	[ssv stopAnimation];
@@ -35,9 +73,17 @@
 	[ssv release];
 }
 
+
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+	[sheet orderOut:self];
+}
+
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
 	return YES;
 }
+
 
 @end

@@ -14,6 +14,7 @@
 @interface ViewerController : NSObject
 {
 	IBOutlet NSWindow* win;
+	IBOutlet NSWindow* configureSheet;
 	PFScreenSaverView* ssv;
 }
 

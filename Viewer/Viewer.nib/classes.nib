@@ -2,7 +2,7 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {toggleAnimation = id; }; 
+            ACTIONS = {showConfigureSheet = id; toggleAnimation = id; }; 
             CLASS = ViewerController; 
             LANGUAGE = ObjC; 
             OUTLETS = {win = NSWindow; }; 

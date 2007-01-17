@@ -25,10 +25,13 @@
 
 - (void)awakeFromNib
 {
-	//NSTrace(@"[%@ awakeFromNib]", self);
 	[fps             setFloatValue:[PFUtil defaultFloatForKey:@"fps"]];
 	[displayInterval setFloatValue:[PFUtil defaultFloatForKey:@"displayInterval"]];
 	[fadeInterval    setFloatValue:[PFUtil defaultFloatForKey:@"fadeInterval"]];
+	
+	// TODO: load config about active providers
+	activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithTestData];
+	[activeProvidersTable setDataSource:activeProvidersDS];
 }
 
 

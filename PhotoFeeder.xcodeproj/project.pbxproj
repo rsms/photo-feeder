@@ -23,6 +23,11 @@
 		3A6C6B520B5D999E00BD74E1 /* Flickr.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */; };
 		3A6C6BA80B5D9D3000BD74E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6BA60B5D9D3000BD74E1 /* InfoPlist.strings */; };
 		3A6C6BA90B5D9D3000BD74E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6BA60B5D9D3000BD74E1 /* InfoPlist.strings */; };
+		3A6C6BB30B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */; };
+		3A6C6BB40B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */; };
+		3A6C6BB50B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */; };
+		3A6C6BB60B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */; };
+		3A6C6BE90B5DA42500BD74E1 /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
 		3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3A848C690B3B720B00B65C13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C600B3B720B00B65C13 /* Info.plist */; };
 		3A848C6A0B3B720B00B65C13 /* Viewer.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C610B3B720B00B65C13 /* Viewer.nib */; };
@@ -84,6 +89,7 @@
 			files = (
 				3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */,
 				3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */,
+				3A6C6BB50B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Copy Plugins */,
 			);
 			name = "Copy Plugins";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +131,8 @@
 		3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; name = standard.qtz; path = Renderers/standard.qtz; sourceTree = "<group>"; };
 		3A6C6BA70B5D9D3000BD74E1 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Screensaver/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActiveProvidersTableViewDataSource.h; path = Screensaver/PFActiveProvidersTableViewDataSource.h; sourceTree = "<group>"; };
+		3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFActiveProvidersTableViewDataSource.m; path = Screensaver/PFActiveProvidersTableViewDataSource.m; sourceTree = "<group>"; };
 		3A848C600B3B720B00B65C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A848C610B3B720B00B65C13 /* Viewer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Viewer.nib; sourceTree = "<group>"; };
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
@@ -259,6 +267,8 @@
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A6750060AEAED7D0057912E /* PFConfigureSheetController.h */,
 				3A6750070AEAED7D0057912E /* PFConfigureSheetController.m */,
+				3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */,
+				3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */,
 				3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
@@ -318,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
+				3A6C6BB30B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6C6BE90B5DA42500BD74E1 /* ConfigureSheet.nib in Resources */,
 				3AD264330B2334AB005CE2C6 /* LICENSE in Resources */,
 				3A848C690B3B720B00B65C13 /* Info.plist in Resources */,
 				3A848C6A0B3B720B00B65C13 /* Viewer.nib in Resources */,
@@ -491,9 +503,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
+				3A6C6BB60B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
 				3A8F91680AE571960027DC3B /* PFQueue.m in Sources */,
 				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
-				3A67500A0AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */,
 				3A848C6C0B3B720B00B65C13 /* ViewerController.m in Sources */,
 				3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */,
@@ -510,6 +523,7 @@
 				3A6750090AEAED7D0057912E /* PFConfigureSheetController.m in Sources */,
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
+				3A6C6BB40B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

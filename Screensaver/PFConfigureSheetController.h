@@ -11,6 +11,7 @@
  */
 
 #import "PFScreenSaverView.h"
+#import "PFActiveProvidersTableViewDataSource.h"
 
 @interface PFConfigureSheetController : NSWindowController
 {
@@ -18,7 +19,9 @@
 	IBOutlet NSTextField* displayInterval;
 	IBOutlet NSTextField* fadeInterval;
 	IBOutlet NSPanel*     providerSettingsPanel;
+	IBOutlet NSTableView* activeProvidersTable;
 	
+	PFActiveProvidersTableViewDataSource* activeProvidersDS;
 	PFScreenSaverView* ssv;
 }
 

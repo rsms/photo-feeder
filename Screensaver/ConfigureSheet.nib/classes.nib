@@ -6,6 +6,7 @@
             CLASS = PFConfigureSheetController; 
             LANGUAGE = ObjC; 
             OUTLETS = {
+                activeProvidersTable = NSTableView; 
                 displayInterval = NSTextField; 
                 fadeInterval = NSTextField; 
                 fps = NSTextField; 
