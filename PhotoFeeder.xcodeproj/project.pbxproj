@@ -54,28 +54,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A6C688D0B5D7BA300BD74E1 /* Disk Provider */;
+			remoteGlobalIDString = 3A6C688D0B5D7BA300BD74E1;
 			remoteInfo = "Disk Provider";
 		};
 		3A6C6AB60B5D926300BD74E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
+			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1;
 			remoteInfo = "Flickr Provider";
 		};
 		3A6C6B490B5D997B00BD74E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A6C688D0B5D7BA300BD74E1 /* Disk Provider */;
+			remoteGlobalIDString = 3A6C688D0B5D7BA300BD74E1;
 			remoteInfo = "Disk Provider";
 		};
 		3A6C6B4B0B5D997D00BD74E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
+			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1;
 			remoteInfo = "Flickr Provider";
 		};
 /* End PBXContainerItemProxy section */
@@ -596,7 +596,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					"$(NATIVE_ARCH)",
+					ppc,
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
@@ -653,7 +653,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					"$(NATIVE_ARCH)",
+					ppc,
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
