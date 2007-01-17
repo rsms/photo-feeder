@@ -29,41 +29,14 @@ static NSString* srcImageId = @"sourceImage";
 	{
 		DLog(@"");
 		
-		// Create the mother-queue
-		queue = [[PFQueue alloc] initWithCapacity:7];
-		
-		// Setup available providers storage
-		availableProviders = [[NSMutableArray alloc] init];
-		
-		// Load plugins (providers, etc)
-		[self loadPlugins];
-		
-		// Setup and instantiate providers
-		// TODO: only load providers which are enabled by the user
-		providers = [[NSMutableArray alloc] init];
-		NSEnumerator* en = [availableProviders objectEnumerator];
-		Class providerClass;
-		while ((providerClass = [en nextObject]))
-		{
-			PFProviderClass* provider = [[providerClass alloc] init];
-			[providers addObject:provider];
-		}
-		
-		// Init runningProvidersCount
-		runningProvidersCount = 0;
-		providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:TRUE];
-		
+		// Register ourselves in PFMain
+		[[PFMain instance] registerView:self];
 		
 		// Load composition into a QCView and keep it as a subview
 		qcView = [[QCView alloc] initWithFrame:frame];
-		NSString* rendererQtzPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"standard" ofType:@"qtz"];
-		[qcView loadCompositionFromFile:rendererQtzPath];
+		[qcView loadCompositionFromFile:[[PFMain bundle] pathForResource:@"standard" ofType:@"qtz"]];
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];
-		
-		
-		switchImageDispatchT = nil;
-		runCond = [[NSConditionLock alloc] initWithCondition:FALSE];
     }
     return self;
 }
@@ -78,86 +51,9 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-#pragma mark -- Plugins
 
-
-- (void) loadPlugins
-{
-	DLog(@"");
-	[self loadProvidersFromPath:[[NSBundle bundleForClass:[self class]] builtInPlugInsPath]];
-	//[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/PhotoFeeder/Plugins"];
-}
-
-
-- (void) loadProvidersFromPath:(NSString*)path
-{
-	DLog(@"path: %@", path);
-	if(path)
-	{
-		NSString* pluginPath;
-		NSEnumerator* enumerator = [[NSBundle pathsForResourcesOfType:@"pfprovider"
-																		  inDirectory:path] objectEnumerator];
-		while ((pluginPath = [enumerator nextObject]))
-		{
-			[self loadProviderFromPath:pluginPath];
-		}
-	}
-}
-
-
-- (void) loadProviderFromPath:(NSString*)path
-{
-	DLog(@"path: %@", path);
-	
-	// Locate bundle
-	NSBundle* pluginBundle = [NSBundle bundleWithPath:path];
-	if(!pluginBundle)
-	{
-		NSTrace(@"ERROR: Unable to load provider bundle with path '%@'", path);
-		return;
-	}
-	
-	// Get entry-classname
-	NSDictionary* pluginDict = [pluginBundle infoDictionary];
-	NSString* pluginClassName = [pluginDict objectForKey:@"NSPrincipalClass"];
-	if(!pluginClassName)
-	{
-		NSTrace(@"ERROR: Unable to get NSPrincipalClass from provider bundle at path '%@'", path);
-		return;
-	}
-	
-	// Already loaded?
-	Class pluginClass = NSClassFromString(pluginClassName);
-	if(pluginClass)
-	{
-		NSTrace(@"ERROR: Provider namespace conflict: %@ is already loaded", pluginClassName);
-		return;
-	}
-	
-	//	Type and inheritance sanity checks
-	pluginClass = [pluginBundle principalClass];
-	NSString* pluginIdentifier = [pluginBundle bundleIdentifier];
-	if(![pluginClass conformsToProtocol:@protocol(PFProvider)])
-	{
-		NSTrace(@"ERROR: Provider '%@' must conform to the PFProvider protocol", pluginIdentifier);
-		return;
-	}
-	else if(![pluginClass isKindOfClass:[NSObject class]])
-	{
-		NSTrace(@"ERROR: Provider '%@' must be a subclass of NSObject", pluginIdentifier);
-		return;
-	}
-	
-	// If it loads, it can run
-	if([pluginClass initClass:pluginBundle
-						  defaults:[ScreenSaverDefaults defaultsForModuleWithName:pluginIdentifier]])
-	{
-		[availableProviders addObject:pluginClass];
-	}
-}
-
-
-#pragma mark -- Animation & Rendering
+#pragma mark -
+#pragma mark Animation & Rendering
 
 
 - (void) startAnimation
@@ -184,8 +80,8 @@ static NSString* srcImageId = @"sourceImage";
 	
 	
 	// Index over providers running state (1=running, 0=not running)
-	runningProviders = (short *)malloc(sizeof(short) * [providers count]);
-	unsigned i = [providers count];
+	runningProviders = (short *)malloc(sizeof(short) * [[[PFMain instance] providers] count]);
+	unsigned i = [[[PFMain instance] providers] count];
 	while(i--)
 		runningProviders[i] = 0;
 
@@ -206,7 +102,7 @@ static NSString* srcImageId = @"sourceImage";
 									  withObject: nil];
 	}
 	
-	
+	// Start animation timer and unlock "critical section"
 	[super startAnimation];
 	[runCond lock];
 	[runCond unlockWithCondition:TRUE];
@@ -220,7 +116,7 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-- (void)stopAnimation
+- (void) stopAnimation
 {
 	DLog(@"");
 	[runCond lock];
@@ -232,114 +128,9 @@ static NSString* srcImageId = @"sourceImage";
 
 
 
-#pragma mark -- Threads
 
-- (void)queueFillerThread:(id)obj
-{
-	NSAutoreleasePool *pool;
-	PFProviderClass* provider;
-	unsigned providerIndex, providerCount;
-	
-	pool = [[NSAutoreleasePool alloc] init];
-	
-	@try
-	{
-		while(1)
-		{
-			// Hold here if animation is stopped
-			[runCond lockWhenCondition:TRUE];
-			[runCond unlock];
-			
-			// Lock and run if we have available providers
-			[providerThreadsAvailableCondLock lockWhenCondition:TRUE];
-			
-			// Pick a random provider
-			providerCount = [providers count];
-			
-			// Hold if count < 1
-			if(!providerCount)
-			{
-				NSTrace(@"ERROR: No providers loaded. Sleeping forever...");
-				[NSThread sleepUntilDate:[NSDate distantFuture]];
-			}
-			
-			// Get a non-running provider index
-			providerIndex = SSRandomIntBetween(0, [providers count]-1);
-			while(runningProviders[providerIndex])
-				if(++providerIndex == providerCount)
-					providerIndex = 0;
-			
-			
-			if(providerIndex != -1)
-			{
-				provider = (PFProviderClass*)[providers objectAtIndex:providerIndex];
-				runningProviders[providerIndex] = 1;
-				runningProvidersCount++;
-				
-				[NSThread detachNewThreadSelector: @selector(providerQueueFillerThread:)
-												 toTarget: self
-											  withObject: [NSArray arrayWithObjects:provider, [NSNumber numberWithUnsignedInt:providerIndex], nil]];
-			}
-			
-			[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
-		}
-	}
-	@finally {
-		if(pool)
-			[pool release];
-	}
-}
-
-
-- (void)providerQueueFillerThread:(id)_providerAndProviderIndex
-{
-	NSAutoreleasePool *pool;
-	PFProviderClass* provider;
-	NSArray* providerAndProviderIndex;
-	NSImage* im;
-	unsigned providerIndex;
-	double timer;
-	
-	pool = [[NSAutoreleasePool alloc] init];
-	timer = [PFUtil microtime];
-	providerAndProviderIndex = (NSArray*)_providerAndProviderIndex;
-	provider = (PFProviderClass*)[providerAndProviderIndex objectAtIndex:0];
-	providerIndex = [(NSNumber*)[providerAndProviderIndex objectAtIndex:1] unsignedIntValue];
-			
-	@try
-	{
-		// Pick a random provider and request an image
-		im = [provider nextImage];
-		
-		// Now, do we have an image or not?
-		if(im)
-		{
-			[queue put:[self resizeImageIfNeeded:im]];
-		}
-		else
-		{
-			// TODO: implement suspension of specific providers instead of blocking the whole thread
-			static float suspendSecs = 3.0f;
-			DLog(@"[%@ nextImage] returned nil. Suspending queue filler thread for %.0f second...", provider, suspendSecs);
-			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:suspendSecs]];
-		}
-		
-		timer = [PFUtil microtime] - timer;
-		if(timer < userDisplayInterval/2.0)
-			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:(userDisplayInterval/2.0)-timer]];
-	}
-	@finally
-	{
-		// Reset running state to false for this provider
-		[providerThreadsAvailableCondLock lock];
-		runningProviders[providerIndex] = 0;
-		runningProvidersCount--;
-		[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
-		
-		if(pool)
-			[pool release];
-	}
-}
+#pragma mark -
+#pragma mark Threads
 
 
 - (void) switchImageDispatchThread:(id)obj
@@ -370,7 +161,8 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-#pragma mark -- Etc...
+#pragma mark -
+#pragma mark Image switching
 
 - (double) switchImage:(NSObject*)isFirstTime
 {
@@ -378,7 +170,7 @@ static NSString* srcImageId = @"sourceImage";
 	double delay;
 	
 	// Take the next image from the image queue
-	image = (NSImage*)[queue poll];
+	image = (NSImage*)[[[PFMain instance] queue] poll];
 	
 	// Check if queue is empty
 	if(!image)
@@ -418,7 +210,6 @@ static NSString* srcImageId = @"sourceImage";
 		delay = (userDisplayAndFadeInterval - (time - (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval))) + userFadeInterval;
 	}
 	
-	
 	// Switch image ports. Needs to be done every time this method is run.
 	imagePortName = (imagePortName == srcImageId) ? dstImageId : srcImageId;
 	
@@ -427,7 +218,7 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-
+// Downsizes a image which is larger than needed (this speeds things up with very large images)
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im
 {
 	// We need to take size from rep because nsimage compensates for dpi or something
@@ -463,6 +254,11 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
+
+#pragma mark -
+#pragma mark Delegate methods
+
+
 - (BOOL)hasConfigureSheet
 {
     return YES;
@@ -471,15 +267,8 @@ static NSString* srcImageId = @"sourceImage";
 
 - (NSWindow*)configureSheet
 {
-	DLog(@"[%@ configureSheet]", self);
-    if(configureSheetController == nil)
-		configureSheetController = [[PFConfigureSheetController alloc] initWithWindowNibName: @"ConfigureSheet" 
-																		  withReferenceToSSV: self];
-	
-	NSWindow* win = [configureSheetController window];
-	if(win == nil)
-		DLog(@"[%@ configureSheet]: win == nil", self);
-	return win;
+	DLog(@"");
+	return [[PFMain instance] configureSheet];
 }
 
 

@@ -10,14 +10,21 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
+// TODO: Replace this class with bindings and a NSArrayController
+// like in http://cocoadevcentral.com/articles/000080.php
+
 #import "PFActiveProvidersTableViewDataSource.h"
 @implementation PFActiveProvidersTableViewDataSource
 
 
-- (id) initWithTestData
+- (id) initWithDefaults:(NSDictionary*)defaults
 {
 	self = [super init];
 	records = [[NSMutableArray alloc] init];
+	
+	// Iterate defaults and add info from it
+	//NSEnumerator *enumerator = [myDictionary keyEnumerator];
+	
 	// add test-data
 	[records addObject:[NSDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithBool:YES], @"enabled",
@@ -27,6 +34,7 @@
 		[NSNumber numberWithBool:YES], @"enabled",
 		@"Disk 1", @"name",
 		nil]];
+	
 	return self;
 }
 

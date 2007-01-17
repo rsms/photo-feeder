@@ -37,14 +37,8 @@
 	double               userFps;
 }
 
-- (void) queueFillerThread:(id)obj;
-- (void)providerQueueFillerThread:(id)_providerAndProviderIndex;
+// Image switching
 - (double) switchImage:(NSObject*)isFirstTime;
 - (NSImage*) resizeImageIfNeeded:(NSImage*)im;
-
-#pragma mark -- Plugins
-- (void) loadPlugins;
-- (void) loadProvidersFromPath:(NSString*)path;
-- (void) loadProviderFromPath:(NSString*)path;
 
 @end

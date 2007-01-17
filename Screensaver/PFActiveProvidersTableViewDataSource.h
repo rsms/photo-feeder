@@ -14,4 +14,6 @@
 	NSMutableArray* records;
 }
 
+- (id) initWithDefaults:(NSDictionary*)defaults;
+
 @end
