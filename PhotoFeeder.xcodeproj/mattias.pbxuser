@@ -229,6 +229,7 @@
 			CDDF61F30B601CC3006D784B /* PBXTextBookmark */ = CDDF61F30B601CC3006D784B /* PBXTextBookmark */;
 			CDDF61F40B601CC3006D784B /* PBXTextBookmark */ = CDDF61F40B601CC3006D784B /* PBXTextBookmark */;
 			CDDF61F80B601CF6006D784B /* PBXTextBookmark */ = CDDF61F80B601CF6006D784B /* PBXTextBookmark */;
+			CDDF62010B6020B0006D784B /* PBXTextBookmark */ = CDDF62010B6020B0006D784B /* PBXTextBookmark */;
 			CDE1F7B90AEAC17F00D865FD = CDE1F7B90AEAC17F00D865FD /* PBXTextBookmark */;
 			CDE1F83B0AEAC6B400D865FD = CDE1F83B0AEAC6B400D865FD /* PBXTextBookmark */;
 			CDE1F83C0AEAC6B400D865FD = CDE1F83C0AEAC6B400D865FD /* PBXTextBookmark */;
@@ -1046,6 +1047,16 @@
 		vrLen = 1005;
 		vrLoc = 3001;
 	};
+	CDDF62010B6020B0006D784B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F500797A0118B23001CA0E54 /* PFScreenSaverView.m */;
+		name = "PFScreenSaverView.m: 127";
+		rLen = 0;
+		rLoc = 3409;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 2937;
+	};
 	CDE1F7B90AEAC17F00D865FD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		name = "PFProvider.m: 38";
@@ -1151,8 +1162,8 @@
 	F500797A0118B23001CA0E54 /* PFScreenSaverView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {918, 3318}}";
-			sepNavSelRange = "{3583, 0}";
-			sepNavVisRect = "{{0, 1422}, {918, 819}}";
+			sepNavSelRange = "{3409, 0}";
+			sepNavVisRect = "{{0, 1362}, {918, 819}}";
 		};
 	};
 }

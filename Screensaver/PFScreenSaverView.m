@@ -124,7 +124,7 @@ static NSString* srcImageId = @"sourceImage";
 	@try
 	{
 		BOOL firstTime = YES;
-		imagePortName = srcImageId;
+		imagePortName = dstImageId;
 		double delay;
 		
 		while(1)
