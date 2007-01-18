@@ -27,6 +27,6 @@
 }
 
 // Image switching
-- (double) switchImage:(NSObject*)isFirstTime;
+- (double) switchImage:(BOOL)isFirstTime;
 
 @end

@@ -101,7 +101,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D255AC50486D3F9007BF209 /* PhotoFeeder */;
+			remoteGlobalIDString = 8D255AC50486D3F9007BF209;
 			remoteInfo = PhotoFeeder;
 		};
 /* End PBXContainerItemProxy section */

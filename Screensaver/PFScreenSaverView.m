@@ -75,7 +75,7 @@ static NSString* srcImageId = @"sourceImage";
 	DLog(@"userFadeInterval: %f", userFadeInterval);
 
 	[qcView setMaxRenderingFrameRate: userFps];
-	[qcView startRendering];
+	//[qcView startRendering]; // moved to switchImageDispatchThread
 	
 	
 	// Reset image ports
@@ -85,10 +85,8 @@ static NSString* srcImageId = @"sourceImage";
 	if(!switchImageThreadsAreRunning)
 	{
 		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
-										 toTarget: self
-									  withObject: nil];
-		
-		
+								 toTarget: self
+							   withObject: nil];
 	}
 	
 	// Start animation timer and unlock "critical section"
@@ -125,7 +123,7 @@ static NSString* srcImageId = @"sourceImage";
 	switchImageThreadsAreRunning = YES;
 	@try
 	{
-		NSObject* firstTime = [NSThread currentThread];
+		BOOL firstTime = YES;
 		imagePortName = srcImageId;
 		double delay;
 		
@@ -134,10 +132,13 @@ static NSString* srcImageId = @"sourceImage";
 			// Hold here if animation is stopped
 			[[PFMain instance] blockWhileStopped];
 			
+			if(firstTime)
+				[qcView startRendering];
+			
 			delay = [self switchImage:firstTime];
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
 			if(firstTime)
-				firstTime = nil;
+				firstTime = NO;
 		}
 	}
 	@finally {
@@ -151,7 +152,7 @@ static NSString* srcImageId = @"sourceImage";
 #pragma mark Image switching
 
 
-- (double) switchImage:(NSObject*)isFirstTime
+- (double) switchImage:(BOOL)isFirstTime
 {
 	NSImage* image;
 	double delay;
