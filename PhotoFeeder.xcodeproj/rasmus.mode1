@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>45</integer>
+									<integer>46</integer>
 									<integer>44</integer>
 									<integer>39</integer>
 								</array>
@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A938F1C0B5FB080002F64A8</string>
+										<string>3A938F240B5FB1DE002F64A8</string>
 										<key>history</key>
 										<array>
 											<string>3A6C6BCE0B5DA38000BD74E1</string>
@@ -556,9 +556,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>3A2C3EBE0AE4301E00970E7C</string>
 		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
-		<string>3A2C3EBE0AE4301E00970E7C</string>
 	</array>
 	<key>WindowString</key>
 	<string>382 148 1221 1015 0 0 1920 1178 </string>
@@ -653,7 +653,7 @@
 			<key>WindowToolGUID</key>
 			<string>3A2C3EBE0AE4301E00970E7C</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

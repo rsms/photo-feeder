@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		3A938EEC0B5F8BF8002F64A8 /* Upload Latest Build */ = {
+		3A938EEC0B5F8BF8002F64A8 /* Build and Distribute Screensaver */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Upload Latest Build" */;
+			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Build and Distribute Screensaver" */;
 			buildPhases = (
 				3A938EED0B5F8C06002F64A8 /* ShellScript */,
 			);
 			dependencies = (
+				3A938F210B5FB19A002F64A8 /* PBXTargetDependency */,
 			);
-			name = "Upload Latest Build";
+			name = "Build and Distribute Screensaver";
 			productName = "Upload Latest Build";
 		};
 /* End PBXAggregateTarget section */
@@ -95,6 +96,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1;
 			remoteInfo = "Flickr Provider";
+		};
+		3A938F200B5FB19A002F64A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D255AC50486D3F9007BF209 /* PhotoFeeder */;
+			remoteInfo = PhotoFeeder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -450,7 +458,7 @@
 				3A8F915F0AE571820027DC3B /* Viewer */,
 				3A6C688D0B5D7BA300BD74E1 /* Disk Provider */,
 				3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */,
-				3A938EEC0B5F8BF8002F64A8 /* Upload Latest Build */,
+				3A938EEC0B5F8BF8002F64A8 /* Build and Distribute Screensaver */,
 			);
 		};
 /* End PBXProject section */
@@ -519,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se ln -fs \"$RMT_PATH/$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
+			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -593,6 +601,11 @@
 			isa = PBXTargetDependency;
 			target = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
 			targetProxy = 3A6C6B4B0B5D997D00BD74E1 /* PBXContainerItemProxy */;
+		};
+		3A938F210B5FB19A002F64A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D255AC50486D3F9007BF209 /* PhotoFeeder */;
+			targetProxy = 3A938F200B5FB19A002F64A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -905,7 +918,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Upload Latest Build" */ = {
+		3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Build and Distribute Screensaver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A938EF60B5F8C16002F64A8 /* Debug */,
