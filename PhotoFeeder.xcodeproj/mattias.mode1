@@ -220,6 +220,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -266,12 +268,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>33</integer>
-									<integer>32</integer>
+									<integer>28</integer>
+									<integer>27</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 141}, {231, 658}}</string>
+							<string>{{0, 0}, {231, 658}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -301,14 +304,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFUIController.h</string>
+								<string>PFScreenSaverView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -316,11 +317,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFUIController.h</string>
+										<string>PFScreenSaverView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CD5A1E8A0B5F808A00C9E35C</string>
+										<string>CDF063AA0B5F8AA90069330B</string>
 										<key>history</key>
 										<array>
 											<string>CD3A08600AE92D830024A99C</string>
@@ -343,9 +344,9 @@
 											<string>CDB7655A0B3BD7C2006E5D65</string>
 											<string>CDB765740B3C58B0006E5D65</string>
 											<string>CDB765930B3C635A006E5D65</string>
-											<string>CDB3CA6B0B5D743800EB52A0</string>
+											<string>CDF063730B5F85C40069330B</string>
+											<string>CDF063740B5F85C40069330B</string>
 											<string>CDFEB2E10B5DBF8E00FAC9EA</string>
-											<string>CDF974860B5F800500FB25E6</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -373,6 +374,8 @@
 											<string>CDBF0D9C0AEB1208003C94B1</string>
 											<string>CDB765780B3C58B0006E5D65</string>
 											<string>CDFEB2E30B5DBF8E00FAC9EA</string>
+											<string>CDF063750B5F85C40069330B</string>
+											<string>CDF063760B5F85C40069330B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -430,9 +433,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CD5A1E880B5F808A00C9E35C</string>
+				<string>CDF063700B5F85610069330B</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CD5A1E890B5F808A00C9E35C</string>
+				<string>CDF063710B5F85610069330B</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -566,6 +569,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>CD1ACC270AE68B4D0093085B</string>
 		<string>/Volumes/split/Programming/Personal/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -646,7 +650,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CD1ACC270AE68B4D0093085B</string>
-				<string>CD267A5C0B5DC02000AC72DD</string>
+				<string>CDF063780B5F85C40069330B</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
