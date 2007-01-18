@@ -375,7 +375,7 @@ static PFMain* instance = nil;
 
 - (void) animationStartedByView:(PFScreenSaverView*)view
 {
-	DLog(@"view: %@");
+	DLog(@"view: %@", view);
 	
 	// Update from defaults
 	// This is used frequently by providerQueueFillerThread and therefore cached
@@ -395,7 +395,7 @@ static PFMain* instance = nil;
 
 - (void) animationStoppedByView:(PFScreenSaverView*)view
 {
-	DLog(@"view: %@");
+	DLog(@"view: %@", view);
 	[runCond lock];
 	[runCond unlockWithCondition:FALSE];
 }

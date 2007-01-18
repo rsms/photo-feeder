@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		3A938EEC0B5F8BF8002F64A8 /* Build and Distribute Screensaver */ = {
+		3A938EEC0B5F8BF8002F64A8 /* PhotoFeeder + Dist */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Build and Distribute Screensaver" */;
+			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "PhotoFeeder + Dist" */;
 			buildPhases = (
 				3A938EED0B5F8C06002F64A8 /* ShellScript */,
 			);
 			dependencies = (
 				3A938F210B5FB19A002F64A8 /* PBXTargetDependency */,
 			);
-			name = "Build and Distribute Screensaver";
+			name = "PhotoFeeder + Dist";
 			productName = "Upload Latest Build";
 		};
 /* End PBXAggregateTarget section */
@@ -455,10 +455,10 @@
 			projectDirPath = "";
 			targets = (
 				8D255AC50486D3F9007BF209 /* PhotoFeeder */,
+				3A938EEC0B5F8BF8002F64A8 /* PhotoFeeder + Dist */,
 				3A8F915F0AE571820027DC3B /* Viewer */,
 				3A6C688D0B5D7BA300BD74E1 /* Disk Provider */,
 				3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */,
-				3A938EEC0B5F8BF8002F64A8 /* Build and Distribute Screensaver */,
 			);
 		};
 /* End PBXProject section */
@@ -918,7 +918,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Build and Distribute Screensaver" */ = {
+		3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "PhotoFeeder + Dist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A938EF60B5F8C16002F64A8 /* Debug */,
