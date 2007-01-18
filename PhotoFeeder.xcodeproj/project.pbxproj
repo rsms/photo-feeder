@@ -608,7 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					"$(NATIVE_ARCH)",
+					ppc,
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
@@ -665,7 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					"$(NATIVE_ARCH)",
+					ppc,
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
@@ -726,6 +726,10 @@
 		3A8F91650AE571820027DC3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/objectiveflickr/build/Release\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/Flickr/build/Release\"";
