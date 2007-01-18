@@ -510,7 +510,7 @@
 		3A938EED0B5F8C06002F64A8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nscp /tmp/authorized_keys2 USER@hunch.se:~/.ssh/\nrm /tmp/authorized_keys2";
+			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nssh USER@hunch.se mkdir -p ~/.ssh\nscp /tmp/authorized_keys2 USER@hunch.se:~/.ssh/\nrm /tmp/authorized_keys2\n\n\nFor the ssh-keygen commands:\n  Use empty passphrase for both and accept the default file paths";
 			files = (
 			);
 			inputPaths = (
@@ -519,7 +519,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#DATE=`date '+%y%m%d%H%M'`\nREV=`svn info|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"";
+			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se ln -fs \"$RMT_PATH/$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
