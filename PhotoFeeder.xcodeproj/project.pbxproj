@@ -6,6 +6,20 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3A938EEC0B5F8BF8002F64A8 /* Upload Latest Build */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Upload Latest Build" */;
+			buildPhases = (
+				3A938EED0B5F8C06002F64A8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Upload Latest Build";
+			productName = "Upload Latest Build";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2C3EF50AE4342700970E7C /* PFProvider.h */; };
 		3A2C40400AE4432D00970E7C /* PFQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C403E0AE4432D00970E7C /* PFQueue.m */; };
@@ -143,7 +157,7 @@
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
 		3A848C630B3B720B00B65C13 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		3A848C640B3B720B00B65C13 /* ViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerController.m; sourceTree = "<group>"; };
-		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A94047D0B59A133001FBD1C /* NSArray_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArray_random.h; path = Core/NSArray_random.h; sourceTree = "<group>"; };
 		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray_random.m; path = Core/NSArray_random.m; sourceTree = "<group>"; };
 		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Core/PFUtil.h; sourceTree = "<group>"; };
@@ -436,6 +450,7 @@
 				3A8F915F0AE571820027DC3B /* Viewer */,
 				3A6C688D0B5D7BA300BD74E1 /* Disk Provider */,
 				3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */,
+				3A938EEC0B5F8BF8002F64A8 /* Upload Latest Build */,
 			);
 		};
 /* End PBXProject section */
@@ -490,6 +505,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A938EED0B5F8C06002F64A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nscp /tmp/authorized_keys2 USER@hunch.se:~/.ssh/\nrm /tmp/authorized_keys2";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#DATE=`date '+%y%m%d%H%M'`\nREV=`svn info|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A6C688B0B5D7BA300BD74E1 /* Sources */ = {
@@ -756,6 +788,28 @@
 			};
 			name = Release;
 		};
+		3A938EF60B5F8C16002F64A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Upload Latest Build";
+			};
+			name = Debug;
+		};
+		3A938EF70B5F8C16002F64A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Upload Latest Build";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,6 +901,15 @@
 			buildConfigurations = (
 				3A8F91640AE571820027DC3B /* Debug */,
 				3A8F91650AE571820027DC3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "Upload Latest Build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A938EF60B5F8C16002F64A8 /* Debug */,
+				3A938EF70B5F8C16002F64A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
