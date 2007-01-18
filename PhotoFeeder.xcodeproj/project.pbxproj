@@ -527,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
+			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se chgrp www-data \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
