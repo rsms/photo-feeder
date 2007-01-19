@@ -124,7 +124,7 @@ static NSString* srcImageId = @"sourceImage";
 	@try
 	{
 		BOOL firstTime = YES;
-		imagePortName = dstImageId;
+		imagePortName = srcImageId;
 		double delay;
 		
 		while(1)
@@ -136,9 +136,18 @@ static NSString* srcImageId = @"sourceImage";
 				[qcView startRendering];
 			
 			delay = [self switchImage:firstTime];
-			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
-			if(firstTime)
+			
+			// If we don't have an image yet, wait a short while before trying again.
+			if (delay == -1.0)
+			{
+				firstTime = YES;
+				delay == 1.0;
+			}
+			
+			else
 				firstTime = NO;
+				
+			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
 		}
 	}
 	@finally {
@@ -163,19 +172,25 @@ static NSString* srcImageId = @"sourceImage";
 	// Check if queue is empty
 	if(!image)
 	{
-		DLog(@"Image queue is depleted");
-		if(!([[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0))
+		if(isFirstTime)
+		{
+			// Tell user we are loading images, and tell caller of this method
+			// that we do not yet have any images.
 			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
-		
-		[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
+			[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
+			return -1.0;
+		}
+	
+		else
+		{
+			DLog(@"Image queue is depleted");
+			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
+		}
 	}
+	
 	else
 	{
-		// TODO: Fullösning -- gör avstängningsmekanismen generell och inte beroende av bild finns
-		if(image && [[qcView valueForInputKey:@"statusMessageEnabled"] doubleValue] == 1.0)
-		{
-			[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
-		}
+		[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
 		
 		// Pass the image to QC, which will cause the bitmap data to be copied onto a
 		// texture. Takes some time...
@@ -183,10 +198,10 @@ static NSString* srcImageId = @"sourceImage";
 		[image release];
 	}
 	
-	
 	// First time, we know the exact delay:
 	if(isFirstTime)
 	{
+		[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"startTime"];
 		delay = userFadeInterval;
 	}
 	// Following calls, we sync the delay with the rendering cycle, 
