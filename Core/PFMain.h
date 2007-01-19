@@ -33,11 +33,12 @@
 	
 	// Need for speed
 	double           userDisplayInterval;
+	short            numAnimatingViews;
 }
 
 + (PFMain*)instance;
 
-	// Accessors
+// Accessors
 - (NSBundle*) bundle;
 - (PFQueue*) queue;
 - (NSMutableArray*) providers;
@@ -59,6 +60,8 @@
 - (void) animationStartedByView:(PFScreenSaverView*)view;
 - (void) animationStoppedByView:(PFScreenSaverView*)view;
 - (void) blockWhileStopped;
+- (BOOL) isRunning;
+- (void) renderingParametersDidChange;
 
 // User Interface
 - (NSWindow*) configureSheet;

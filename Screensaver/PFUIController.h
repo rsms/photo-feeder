@@ -16,10 +16,44 @@
 	IBOutlet NSTextField* displayInterval;
 	IBOutlet NSTextField* fadeInterval;
 	IBOutlet NSPanel*     providerSettingsPanel;
-	IBOutlet NSTableView* activeProvidersTable;
 }
 
 - (IBAction) done:(id)sender;
 - (IBAction) about:(id)sender;
+
+
+#pragma mark -
+#pragma mark Providers bindings
+
+/// Active providers
+- (NSMutableArray *) activeProviders;
+- (void) setActiveProviders:(NSArray *)a;
+
+
+
+#pragma mark -
+#pragma mark Renderer bindings
+
+/// FPS
+-(int) fps;
+-(void) setFps:(int)d;
+
+/// Display interval
+-(float) displayInterval;
+-(void) setDisplayInterval:(float)f;
+
+/// Fade interval
+-(float) fadeInterval;
+-(void) setFadeInterval:(float)f;
+
+
+#pragma mark -
+#pragma mark About bindings
+
+/// Application revision number
+- (int) appRevision;
+
+/// Build date in users locale
+- (NSString*) buildDate;
 
 @end

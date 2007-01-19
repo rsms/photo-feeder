@@ -18,8 +18,20 @@
 /// Called when unloading plugin
 + (void) terminateClass;
 
+/// Human-readable name of the plugin
++ (NSString*) name;
+
 /// Return an Image
 -(NSImage*) nextImage;
+
+/// Active or not
+-(BOOL) active;
+-(void) setActive:(BOOL)active;
+
+/// Instance name
+-(NSString*) name;
+-(void) setName:(NSString*)name;
+
 
 @end
 

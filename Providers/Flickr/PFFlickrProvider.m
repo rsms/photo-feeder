@@ -20,6 +20,7 @@
 
 
 static NSUserDefaults* defaults = nil;
+static int instanceCounter = 0;
 
 
 + (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
@@ -32,6 +33,12 @@ static NSUserDefaults* defaults = nil;
 + (void) terminateClass
 {
 	DLog(@"");
+}
+
+
++ (NSString*) name
+{
+	return @"Flickr";
 }
 
 
@@ -52,11 +59,40 @@ DLog(@"%@", [res URL]);
 {
 	[super init];
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
+	active = YES;
+	name = [[NSString alloc] initWithFormat:@"%@ #%d", [[self class] name], instanceCounter++];
 	DLog(@"urls: %@", urls);
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 									 toTarget:self 
 								  withObject:nil];
 	return self;
+}
+
+
+-(BOOL) active
+{
+	return active;
+}
+
+
+-(void) setActive:(BOOL)b
+{
+	active = b;
+}
+
+
+-(NSString*) name
+{
+	return name;
+}
+
+
+-(void) setName:(NSString*)s
+{
+	NSString* old = name;
+	name = [s retain];
+	if(old)
+		[old release];
 }
 
 

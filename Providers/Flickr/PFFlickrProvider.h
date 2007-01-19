@@ -14,6 +14,9 @@
 
 @interface PFFlickrProvider : NSObject<PFProvider> {
 	PFQueue*  urls;
+	
+	BOOL       active;
+	NSString*  name;
 }
 
 - (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;

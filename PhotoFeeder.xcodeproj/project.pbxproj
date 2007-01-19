@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		3A7F798B0B6153760006CEFA /* Update version.h */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3A7F79900B6153A80006CEFA /* Build configuration list for PBXAggregateTarget "Update version.h" */;
+			buildPhases = (
+				3A7F798E0B61538A0006CEFA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Update version.h";
+			productName = "Update version.h";
+		};
 		3A938EEC0B5F8BF8002F64A8 /* PhotoFeeder + Dist */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 3A938EF50B5F8C16002F64A8 /* Build configuration list for PBXAggregateTarget "PhotoFeeder + Dist" */;
@@ -38,10 +49,6 @@
 		3A6C6B520B5D999E00BD74E1 /* Flickr.pfprovider in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */; };
 		3A6C6BA80B5D9D3000BD74E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6BA60B5D9D3000BD74E1 /* InfoPlist.strings */; };
 		3A6C6BA90B5D9D3000BD74E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C6BA60B5D9D3000BD74E1 /* InfoPlist.strings */; };
-		3A6C6BB30B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */; };
-		3A6C6BB40B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */; };
-		3A6C6BB50B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */; };
-		3A6C6BB60B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */; };
 		3A6C6BE90B5DA42500BD74E1 /* ConfigureSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */; };
 		3A848B8C0B3B6CC700B65C13 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD383AC0B3B32B5009F8887 /* Quartz.framework */; };
 		3A848C690B3B720B00B65C13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A848C600B3B720B00B65C13 /* Info.plist */; };
@@ -97,6 +104,20 @@
 			remoteGlobalIDString = 3A6C6A060B5D8C5900BD74E1;
 			remoteInfo = "Flickr Provider";
 		};
+		3A7F79950B61540B0006CEFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			remoteInfo = "Update version.h";
+		};
+		3A7F79990B61541B0006CEFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			remoteInfo = "Update version.h";
+		};
 		3A938F200B5FB19A002F64A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
@@ -115,7 +136,6 @@
 			files = (
 				3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */,
 				3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */,
-				3A6C6BB50B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Copy Plugins */,
 				3AB8D2850B5EA78D00FC9D56 /* PFMain.h in Copy Plugins */,
 			);
 			name = "Copy Plugins";
@@ -158,8 +178,7 @@
 		3A6C6AD40B5D931A00BD74E1 /* PFDiskProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDiskProvider.m; sourceTree = "<group>"; };
 		3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */ = {isa = PBXFileReference; lastKnownFileType = file; name = standard.qtz; path = Renderers/standard.qtz; sourceTree = "<group>"; };
 		3A6C6BA70B5D9D3000BD74E1 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Screensaver/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActiveProvidersTableViewDataSource.h; path = Screensaver/PFActiveProvidersTableViewDataSource.h; sourceTree = "<group>"; };
-		3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFActiveProvidersTableViewDataSource.m; path = Screensaver/PFActiveProvidersTableViewDataSource.m; sourceTree = "<group>"; };
+		3A7F797B0B6152E90006CEFA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = Core/version.h; sourceTree = "<group>"; };
 		3A848C600B3B720B00B65C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A848C610B3B720B00B65C13 /* Viewer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Viewer.nib; sourceTree = "<group>"; };
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
@@ -277,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				32DBCFA80370C50100C91783 /* prefix.pch */,
+				3A7F797B0B6152E90006CEFA /* version.h */,
 				3A2547DE0B1495530081E689 /* types.h */,
 				3A2C403F0AE4432D00970E7C /* PFQueue.h */,
 				3A2C403E0AE4432D00970E7C /* PFQueue.m */,
@@ -298,8 +318,6 @@
 				F500797A0118B23001CA0E54 /* PFScreenSaverView.m */,
 				3A6750060AEAED7D0057912E /* PFUIController.h */,
 				3A6750070AEAED7D0057912E /* PFUIController.m */,
-				3A6C6BB10B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h */,
-				3A6C6BB20B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m */,
 				3A6C6AEF0B5D978A00BD74E1 /* standard.qtz */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
@@ -359,7 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
-				3A6C6BB30B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.h in Headers */,
 				3AB8D2870B5EA78D00FC9D56 /* PFMain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +430,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3A7F799A0B61541B0006CEFA /* PBXTargetDependency */,
 				3A6C69500B5D825900BD74E1 /* PBXTargetDependency */,
 				3A6C6AB70B5D926300BD74E1 /* PBXTargetDependency */,
 			);
@@ -435,6 +453,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3A7F79960B61540B0006CEFA /* PBXTargetDependency */,
 				3A6C6B4A0B5D997B00BD74E1 /* PBXTargetDependency */,
 				3A6C6B4C0B5D997D00BD74E1 /* PBXTargetDependency */,
 			);
@@ -459,6 +478,7 @@
 				3A8F915F0AE571820027DC3B /* Viewer */,
 				3A6C688D0B5D7BA300BD74E1 /* Disk Provider */,
 				3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */,
+				3A7F798B0B6153760006CEFA /* Update version.h */,
 			);
 		};
 /* End PBXProject section */
@@ -515,6 +535,19 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A7F798E0B61538A0006CEFA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REV=`/usr/local/bin/svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nNOW_STR=`date '+%Y-%m-%d %H:%M:%S %Z'`\nNOW_TS=`date '+%s'`\necho \"// Do not alter -- automatically generated\" > Core/version.h\necho \"#define PF_REVISION $REV\" >> Core/version.h\necho \"#define PF_BUILD_TIMESTAMP $NOW_TS\" >> Core/version.h";
+		};
 		3A938EED0B5F8C06002F64A8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,7 +560,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se chgrp www-data \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se chmod g=rw \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
+			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`/usr/local/bin/svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se chgrp www-data \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se chmod g=rw \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -554,7 +587,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A67500A0AEAED7D0057912E /* PFUIController.m in Sources */,
-				3A6C6BB60B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
 				3A8F91680AE571960027DC3B /* PFQueue.m in Sources */,
 				3A8F91690AE571960027DC3B /* PFScreenSaverView.m in Sources */,
 				3A848C6B0B3B720B00B65C13 /* Viewer_main.m in Sources */,
@@ -574,7 +606,6 @@
 				3A6750090AEAED7D0057912E /* PFUIController.m in Sources */,
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
-				3A6C6BB40B5DA08C00BD74E1 /* PFActiveProvidersTableViewDataSource.m in Sources */,
 				3AB8D2880B5EA78D00FC9D56 /* PFMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +632,16 @@
 			isa = PBXTargetDependency;
 			target = 3A6C6A060B5D8C5900BD74E1 /* Flickr Provider */;
 			targetProxy = 3A6C6B4B0B5D997D00BD74E1 /* PBXContainerItemProxy */;
+		};
+		3A7F79960B61540B0006CEFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			targetProxy = 3A7F79950B61540B0006CEFA /* PBXContainerItemProxy */;
+		};
+		3A7F799A0B61541B0006CEFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			targetProxy = 3A7F79990B61541B0006CEFA /* PBXContainerItemProxy */;
 		};
 		3A938F210B5FB19A002F64A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -731,6 +772,28 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = Flickr;
 				WRAPPER_EXTENSION = pfprovider;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		3A7F79910B6153A80006CEFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Update version.h";
+			};
+			name = Debug;
+		};
+		3A7F79920B6153A80006CEFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Update version.h";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -905,6 +968,15 @@
 			buildConfigurations = (
 				3A6C6A0C0B5D8C5900BD74E1 /* Debug */,
 				3A6C6A0D0B5D8C5900BD74E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A7F79900B6153A80006CEFA /* Build configuration list for PBXAggregateTarget "Update version.h" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A7F79910B6153A80006CEFA /* Debug */,
+				3A7F79920B6153A80006CEFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

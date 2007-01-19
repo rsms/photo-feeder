@@ -59,6 +59,34 @@ static NSString* srcImageId = @"sourceImage";
 {
 	DLog(@"");
 	
+	[self renderingParametersDidChange];
+	
+	[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
+	
+	// Reset image ports
+	imagePortName = dstImageId;
+	
+	// Fork threads on first call to startAnimation (pungsvett från räkan)
+	if(!switchImageThreadsAreRunning)
+	{
+		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
+										 toTarget: self
+									  withObject: nil];
+	}
+	
+	// Start animation timer and unlock "critical section"
+	[super startAnimation];
+	[qcView startRendering];
+	[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"resetTime"];
+	[[PFMain instance] animationStartedByView:self];
+}
+
+
+- (void) renderingParametersDidChange
+{
+	DLog(@"");
+	
+	// Cache these values in the instance
 	userFps = [PFUtil defaultFloatForKey:@"fps"];
 	userFadeInterval = [PFUtil defaultFloatForKey:@"fadeInterval"];
 	userDisplayInterval = [PFUtil defaultFloatForKey:@"displayInterval"];
@@ -70,28 +98,7 @@ static NSString* srcImageId = @"sourceImage";
 	// 2 means not fading at all, keeping it at 0% alpha
 	[qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
 	[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
-	[qcView setValue: [NSNumber numberWithDouble:2.0]                  forInputKey: @"statusMessageEnabled"];
-	
-	DLog(@"userFadeInterval: %f", userFadeInterval);
-
 	[qcView setMaxRenderingFrameRate: userFps];
-	//[qcView startRendering]; // moved to switchImageDispatchThread
-	
-	
-	// Reset image ports
-	imagePortName = dstImageId;
-	
-	// Fork threads on first call to startAnimation (pungsvett från räkan)
-	if(!switchImageThreadsAreRunning)
-	{
-		[NSThread detachNewThreadSelector: @selector(switchImageDispatchThread:)
-								 toTarget: self
-							   withObject: nil];
-	}
-	
-	// Start animation timer and unlock "critical section"
-	[super startAnimation];
-	[[PFMain instance] animationStartedByView:self];
 }
 
 
@@ -123,31 +130,27 @@ static NSString* srcImageId = @"sourceImage";
 	switchImageThreadsAreRunning = YES;
 	@try
 	{
-		BOOL firstTime = YES;
+		BOOL isFirstTime = YES;
 		imagePortName = srcImageId;
 		double delay;
 		
 		while(1)
 		{
+			
 			// Hold here if animation is stopped
 			[[PFMain instance] blockWhileStopped];
 			
-			if(firstTime)
-				[qcView startRendering];
-			
-			delay = [self switchImage:firstTime];
+			delay = [self switchImage:isFirstTime];
 			
 			// If we don't have an image yet, wait a short while before trying again.
 			if (delay == -1.0)
-			{
-				firstTime = YES;
 				delay == 1.0;
-			}
-			
 			else
-				firstTime = NO;
+				isFirstTime = NO;
 				
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
+			
+			
 		}
 	}
 	@finally {
@@ -174,20 +177,15 @@ static NSString* srcImageId = @"sourceImage";
 	{
 		if(isFirstTime)
 		{
-			// Tell user we are loading images, and tell caller of this method
-			// that we do not yet have any images.
-			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
-			[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
 			return -1.0;
 		}
-	
 		else
 		{
-			DLog(@"Image queue is depleted");
+			[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
 			[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
+			DLog(@"Image queue is depleted");
 		}
 	}
-	
 	else
 	{
 		[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];

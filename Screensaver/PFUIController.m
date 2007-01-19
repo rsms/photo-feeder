@@ -11,6 +11,8 @@
  */
 #import "PFUIController.h"
 #import "../Core/PFUtil.h"
+#import "../Core/PFMain.h"
+#import "../Core/version.h"
 
 @implementation PFUIController
 
@@ -18,38 +20,88 @@
 - (void)awakeFromNib
 {
 	DLog(@"");
-	
-	[fps             setFloatValue:[PFUtil defaultFloatForKey:@"fps"]];
-	[displayInterval setFloatValue:[PFUtil defaultFloatForKey:@"displayInterval"]];
-	[fadeInterval    setFloatValue:[PFUtil defaultFloatForKey:@"fadeInterval"]];
-	
-	// Load table of active providers
-	// TODO: load config about active providers
-	//NSDictionary* activeProviders = [PFUtil defaultDictForKey:@"activeProviders"];
-	//activeProvidersDS = [[PFActiveProvidersTableViewDataSource alloc] initWithDefaults:nil];
-	//[activeProvidersTable setDataSource:activeProvidersDS];
 }
 
+
+-(int) fps
+{
+	DLog(@"");
+	return [PFUtil defaultIntForKey:@"fps"];
+}
+
+-(void) setFps:(int)d
+{
+	DLog(@"%d", d);
+	[[PFUtil defaults] setInteger:d forKey:@"fps"];
+	[[PFMain instance] renderingParametersDidChange];
+}
+
+
+-(float) displayInterval
+{
+	DLog(@"");
+	return [PFUtil defaultIntForKey:@"displayInterval"];
+}
+
+-(void) setDisplayInterval:(float)f
+{
+	DLog(@"%f", f);
+	[[PFUtil defaults] setInteger:f forKey:@"displayInterval"];
+	[[PFMain instance] renderingParametersDidChange];
+}
+
+
+-(float) fadeInterval
+{
+	DLog(@"");
+	return [PFUtil defaultIntForKey:@"fadeInterval"];
+}
+
+-(void) setFadeInterval:(float)f
+{
+	DLog(@"%f", f);
+	[[PFUtil defaults] setInteger:f forKey:@"fadeInterval"];
+	[[PFMain instance] renderingParametersDidChange];
+}
+
+
+- (NSMutableArray *) activeProviders
+{
+	DLog(@"");
+	return [[PFMain instance] providers];
+}
+
+
+- (void) setActiveProviders:(NSArray *)v
+{
+	DLog(@"TODO");
+	[[PFMain instance] renderingParametersDidChange];
+}
+
+
+- (int) appRevision
+{
+	return PF_REVISION;
+}
+
+
+- (NSString*) buildDate
+{
+	return [[NSDate dateWithTimeIntervalSince1970:PF_BUILD_TIMESTAMP] description];
+}
 
 
 - (IBAction) done:(id)sender
 {
 	DLog(@"");
-	
-	NSUserDefaults* defaults = [PFUtil defaults];
-	
-	[defaults setFloat:[fps             floatValue] forKey:@"fps"];
-	[defaults setFloat:[displayInterval floatValue] forKey:@"displayInterval"];
-	[defaults setFloat:[fadeInterval    floatValue] forKey:@"fadeInterval"];
-	[defaults synchronize];
-	//NSTrace(@"fps: %f", [defaults floatForKey:@"rendererFPS"]);
-	
+	[[PFUtil defaults] synchronize];
 	[NSApp endSheet:[self window]];
 }
 
 
 - (IBAction)about:(id)sender
 {
+	DLog(@"");
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/PhotoFeeder"]];
 }
 @end

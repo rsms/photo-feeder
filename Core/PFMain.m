@@ -63,6 +63,9 @@ static PFMain* instance = nil;
 	DLog(@"");
 	self = [super init];
 	
+	// Keeps track of animation views. Increased on start animation, decreased on stop.
+	numAnimatingViews = 0;
+	
 	// Save reference to our bundle
 	bundle = [NSBundle bundleForClass:[self class]];
 	
@@ -71,6 +74,9 @@ static PFMain* instance = nil;
 	
 	// Setup available providers storage
 	availableProviders = [[NSMutableArray alloc] init];
+	
+	// Keeps references to active views
+	views = [[NSMutableArray alloc] init];
 	
 	// Make sure uiController is nil
 	uiController = nil;
@@ -163,12 +169,14 @@ static PFMain* instance = nil;
 - (void) registerView:(PFScreenSaverView*)view isPreview:(BOOL)isPreview
 {
 	DLog(@"view: %@  isPreview: %@", view, isPreview ? @"YES" : @"NO");
+	[views addObject:view];
 }
 
 
 - (void) unregisterView:(PFScreenSaverView*)view
 {
 	DLog(@"view: %@", view);
+	[views removeObject:view];
 }
 
 
@@ -262,7 +270,7 @@ static PFMain* instance = nil;
 {
 	NSAutoreleasePool *pool;
 	PFProviderClass* provider;
-	unsigned providerIndex, providerCount;
+	unsigned providerIndex, providerCount, altProviderIndexCountdown;
 	
 	pool = [[NSAutoreleasePool alloc] init];
 	
@@ -289,9 +297,19 @@ static PFMain* instance = nil;
 			
 			// Get a non-running provider index
 			providerIndex = SSRandomIntBetween(0, [providers count]-1);
-			while(runningProviders[providerIndex])
+			altProviderIndexCountdown = providerCount;
+			while(runningProviders[providerIndex] || ![(NSObject<PFProvider>*)[providers objectAtIndex:providerIndex] active])
+			{
 				if(++providerIndex == providerCount)
 					providerIndex = 0;
+				
+				// Needed for avoiding deadlock
+				if(!--altProviderIndexCountdown)
+				{
+					providerIndex = -1;
+					break;
+				}
+			}
 			
 			
 			if(providerIndex != -1)
@@ -306,6 +324,9 @@ static PFMain* instance = nil;
 			}
 			
 			[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
+			
+			if(providerIndex == -1)
+				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
 		}
 	}
 	@finally {
@@ -360,6 +381,7 @@ static PFMain* instance = nil;
 		[providerThreadsAvailableCondLock lock];
 		runningProviders[providerIndex] = 0;
 		runningProvidersCount--;
+		DLog(@"runningProvidersCount: %d", runningProvidersCount);
 		[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
 		
 		if(pool)
@@ -388,16 +410,26 @@ static PFMain* instance = nil;
 	if(frameSize.height > largestScreenSize.height)
 		largestScreenSize.height = frameSize.height;
 	
-	[runCond lock];
-	[runCond unlockWithCondition:TRUE];
+	numAnimatingViews++;
+	//DLog(@"numAnimatingViews: %d", numAnimatingViews);
+	if(numAnimatingViews)
+	{
+		[runCond lock];
+		[runCond unlockWithCondition:TRUE];
+	}
 }
 
 
 - (void) animationStoppedByView:(PFScreenSaverView*)view
 {
 	DLog(@"view: %@", view);
-	[runCond lock];
-	[runCond unlockWithCondition:FALSE];
+	//DLog(@"numAnimatingViews: %d", numAnimatingViews);
+	
+	if(--numAnimatingViews < 1)
+	{
+		[runCond lock];
+		[runCond unlockWithCondition:FALSE];
+	}
 }
 
 
@@ -407,6 +439,24 @@ static PFMain* instance = nil;
 	[runCond unlock];
 }
 
+
+- (BOOL) isRunning
+{
+	return [runCond condition];
+}
+
+
+- (void) renderingParametersDidChange
+{
+	DLog(@"views: %@", views);
+	// TODO: Replace this whole chain with notifications using NSNotificationCenter
+	NSEnumerator *en = [views objectEnumerator];
+	PFScreenSaverView* o;
+	while(o = (PFScreenSaverView*)[en nextObject])
+	{
+		[o renderingParametersDidChange];
+	}
+}
 
 
 #pragma mark -

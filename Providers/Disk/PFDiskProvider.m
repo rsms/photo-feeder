@@ -37,12 +37,20 @@ static NSUserDefaults* defaults = nil;
 	DLog(@"");
 }
 
+
++ (NSString*) name
+{
+	return @"Disk";
+}
+
 //-------------------
 
 - (id) init
 {
 	dir = [[@"~/Pictures/_temp" stringByExpandingTildeInPath] retain];
 	files = nil;
+	active = YES;
+	name = [[NSString alloc] initWithFormat:@"%@ (%@)", [[self class] name], dir];
 	DLog(@"dir: %@", dir);
 	return self;
 }
@@ -57,6 +65,33 @@ static NSUserDefaults* defaults = nil;
 	if(defaults)
 		[defaults release];
 	[super dealloc];
+}
+
+
+-(BOOL) active
+{
+	return active;
+}
+
+
+-(void) setActive:(BOOL)b
+{
+	active = b;
+}
+
+
+-(NSString*) name
+{
+	return name;
+}
+
+
+-(void) setName:(NSString*)s
+{
+	NSString* old = name;
+	name = [s retain];
+	if(old)
+		[old release];
 }
 
 

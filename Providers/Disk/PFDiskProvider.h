@@ -15,6 +15,9 @@
 	NSString*  dir;
 	NSArray*   files;
 	unsigned   filesIndex;
+	
+	BOOL       active;
+	NSString*  name;
 }
 
 

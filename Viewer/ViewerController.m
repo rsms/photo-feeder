@@ -10,6 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 #import "ViewerController.h"
+#import "PFMain.h"
 
 @implementation ViewerController
 
@@ -23,25 +24,19 @@
 
 
 - (IBAction) showConfigureSheet:(id)sender
-
-	// User has asked to see the custom display. Display it.
 {
-	if (!configureSheet)
+	DLog(@"");
+	NSWindow* confWin;
+	
+	if(confWin = [[PFMain instance] configureSheet])
 	{
-		//Check the myCustomSheet instance variable to make sure the custom sheet does not already exist. 
-		NSBundle* b = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"ConfigureSheet" ofType:@"nib"]];
-		[b load];
+		[NSApp beginSheet: confWin
+			modalForWindow: win
+			 modalDelegate: self
+			didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+				contextInfo: nil];
 	}
-	NSLog(@"configureSheet: %@", configureSheet);
-	
-	[NSApp beginSheet: configureSheet
-		modalForWindow: win
-		 modalDelegate: self
-		didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
-			contextInfo: nil];
-	
-	// Sheet is up here.
-	// Return processing to the event loop
+	// Sheet is up. Return processing to the event loop
 }
 
 

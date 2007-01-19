@@ -12,7 +12,8 @@
 #import <ScreenSaver/ScreenSaver.h>
 #import <Quartz/Quartz.h>
 
-@interface PFScreenSaverView : ScreenSaverView {
+@interface PFScreenSaverView : ScreenSaverView
+{
 	QCView*					qcView;  // The quartz composition
 	BOOL                 switchImageThreadsAreRunning;
 	
@@ -25,6 +26,9 @@
 	double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
 	double               userFps;
 }
+
+// Animation & Rendering
+- (void) renderingParametersDidChange;
 
 // Image switching
 - (double) switchImage:(BOOL)isFirstTime;
