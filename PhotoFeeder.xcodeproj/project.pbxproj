@@ -75,6 +75,23 @@
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildStyle section */
+		3AAA878B0B619B9300E38C02 /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Development;
+		};
+		3AAA878C0B619B9300E38C02 /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
+
 /* Begin PBXContainerItemProxy section */
 		3A6C694F0B5D825900BD74E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,14 +125,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			remoteGlobalIDString = 3A7F798B0B6153760006CEFA;
 			remoteInfo = "Update version.h";
 		};
 		3A7F79990B61541B0006CEFA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A7F798B0B6153760006CEFA /* Update version.h */;
+			remoteGlobalIDString = 3A7F798B0B6153760006CEFA;
 			remoteInfo = "Update version.h";
 		};
 		3A938F200B5FB19A002F64A8 /* PBXContainerItemProxy */ = {
@@ -184,7 +201,7 @@
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
 		3A848C630B3B720B00B65C13 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		3A848C640B3B720B00B65C13 /* ViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerController.m; sourceTree = "<group>"; };
-		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A94047D0B59A133001FBD1C /* NSArray_random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArray_random.h; path = Core/NSArray_random.h; sourceTree = "<group>"; };
 		3A94047E0B59A133001FBD1C /* NSArray_random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray_random.m; path = Core/NSArray_random.m; sourceTree = "<group>"; };
 		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Core/PFUtil.h; sourceTree = "<group>"; };
@@ -469,6 +486,12 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "PhotoFeeder" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				3AAA878B0B619B9300E38C02 /* Development */,
+				3AAA878C0B619B9300E38C02 /* Deployment */,
+			);
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* PhotoFeeder */;
 			projectDirPath = "";
@@ -551,7 +574,7 @@
 		3A938EED0B5F8C06002F64A8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nssh USER@hunch.se mkdir -p ~/.ssh\nscp /tmp/authorized_keys2 USER@hunch.se:~/.ssh/\nrm /tmp/authorized_keys2\n\n\nFor the ssh-keygen commands:\n  Use empty passphrase for both and accept the default file paths";
+			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nssh $USER@hunch.se mkdir -p ~/.ssh\nscp /tmp/authorized_keys2 $USER@hunch.se:~/.ssh/\nrm /tmp/authorized_keys2\n\n\nFor the ssh-keygen commands:\n  Use empty passphrase for both and accept the default file paths";
 			files = (
 			);
 			inputPaths = (
@@ -560,7 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`/usr/local/bin/svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.tgz\"\nrm -f \"$TEMPFILE\"\ntar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\nscp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se chgrp www-data \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se chmod g=rw \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se ln -fs \"$FILENAME.tgz\" \"$RMT_PATH/PhotoFeeder-latest.tgz\"\nexit 0";
+			shellScript = "RMT_PATH='/var/www/rasmus/hunch.se/projects/PhotoFeeder/builds'\nREV=`/usr/local/bin/svn info PhotoFeeder.xcodeproj/project.pbxproj|grep Revision:|sed 's/Revision: //g'`\nFILENAME=\"PhotoFeeder-r$REV\"\nTEMPFILE=\"/tmp/$FILENAME.zip\"\nrm -f \"$TEMPFILE\"\ncd build/Release\n#tar czf \"$TEMPFILE\" \"build/Release/PhotoFeeder.saver\"\n/usr/bin/zip -oqr \"$TEMPFILE\" PhotoFeeder.saver\ncd ../..\nscp -qp \"$TEMPFILE\" \"$USER@hunch.se:$RMT_PATH/\"\nrm -f \"$TEMPFILE\"\nssh $USER@hunch.se chgrp www-data \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se chmod g=rw \"$RMT_PATH/$FILENAME.tgz\"\nssh $USER@hunch.se ln -fs \"$FILENAME.zip\" \"$RMT_PATH/PhotoFeeder-latest.zip\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
