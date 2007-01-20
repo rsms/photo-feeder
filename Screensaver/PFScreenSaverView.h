@@ -12,7 +12,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 #import <Quartz/Quartz.h>
 
-@interface PFScreenSaverView : ScreenSaverView
+@interface PFView : ScreenSaverView
 {
 	QCView*					qcView;  // The quartz composition
 	BOOL                 switchImageThreadsAreRunning;

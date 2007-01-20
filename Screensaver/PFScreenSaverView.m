@@ -9,13 +9,13 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
-#import "PFScreenSaverView.h"
+#import "PFView.h"
 #import "PFProvider.h"
 #import "PFUIController.h"
 #import "../Core/PFMain.h"
 #import "../Core/PFUtil.h"
 
-@implementation PFScreenSaverView
+@implementation PFView
 
 // Our two image ports
 static NSString* dstImageId = @"destinationImage";
@@ -104,7 +104,6 @@ static NSString* srcImageId = @"sourceImage";
 
 - (void) drawRect:(NSRect)r
 {
-	DLog(@"");
 	[qcView setFrame:r];
 }
 
