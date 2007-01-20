@@ -13,10 +13,10 @@
 @protocol PFProvider
 
 /// Called when loading plugin
-+ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
++ (BOOL) initPlugin:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
 
 /// Called when unloading plugin
-+ (void) terminateClass;
++ (void) deallocPlugin;
 
 /// Human-readable name of the plugin
 + (NSString*) name;
