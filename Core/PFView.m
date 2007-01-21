@@ -143,10 +143,12 @@ static NSString* srcImageId = @"sourceImage";
 			
 			// If we don't have an image yet, wait a short while before trying again.
 			if (delay == -1.0)
-				delay == 1.0;
+			{
+				delay = 1.0;
+			}
 			else
 				isFirstTime = NO;
-				
+			
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
 			
 			
