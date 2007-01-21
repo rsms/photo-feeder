@@ -268,13 +268,14 @@
 								<string>3A216B6E0AEED3A70070394E</string>
 								<string>19C28FB8FE9D52D311CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>3AE7307E0B63178E00DBE48D</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
-									<integer>30</integer>
-									<integer>0</integer>
+									<integer>49</integer>
+									<integer>47</integer>
+									<integer>45</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -315,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFUIController.m</string>
+								<string>PFAddProviderController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFUIController.m</string>
+										<string>PFAddProviderController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3AE730250B6313A100DBE48D</string>
+										<string>3AE7307F0B63178E00DBE48D</string>
 										<key>history</key>
 										<array>
 											<string>3A7F79F50B615A0F0006CEFA</string>
@@ -341,11 +342,9 @@
 											<string>3AE72DBA0B62F04A00DBE48D</string>
 											<string>3AE72DBB0B62F04A00DBE48D</string>
 											<string>3AE72DD30B62F6D300DBE48D</string>
-											<string>3AE72DDB0B62F77400DBE48D</string>
 											<string>3AE72E2B0B62FDA900DBE48D</string>
 											<string>3AE72E2C0B62FDA900DBE48D</string>
 											<string>3AE72E2E0B62FDA900DBE48D</string>
-											<string>3AE72E600B6303CC00DBE48D</string>
 											<string>3AE72E870B63077600DBE48D</string>
 											<string>3AE72E880B63077600DBE48D</string>
 											<string>3AE72E890B63077600DBE48D</string>
@@ -355,8 +354,11 @@
 											<string>3AE72F910B630D3E00DBE48D</string>
 											<string>3AE72F940B630D3E00DBE48D</string>
 											<string>3AE72FE10B630FAF00DBE48D</string>
-											<string>3AE730130B63133C00DBE48D</string>
-											<string>3AE730140B63133C00DBE48D</string>
+											<string>3AE730630B63157700DBE48D</string>
+											<string>3AE730640B63157700DBE48D</string>
+											<string>3AE730650B63157700DBE48D</string>
+											<string>3AE730660B63157700DBE48D</string>
+											<string>3AE730670B63157700DBE48D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -436,6 +438,18 @@
 											<string>3AE730160B63133C00DBE48D</string>
 											<string>3AE730170B63133C00DBE48D</string>
 											<string>3AE730180B63133C00DBE48D</string>
+											<string>3AE730680B63157700DBE48D</string>
+											<string>3AE730690B63157700DBE48D</string>
+											<string>3AE7306A0B63157700DBE48D</string>
+											<string>3AE7306B0B63157700DBE48D</string>
+											<string>3AE7306C0B63157700DBE48D</string>
+											<string>3AE7306D0B63157700DBE48D</string>
+											<string>3AE7306E0B63157700DBE48D</string>
+											<string>3AE7306F0B63157700DBE48D</string>
+											<string>3AE730700B63157700DBE48D</string>
+											<string>3AE730710B63157700DBE48D</string>
+											<string>3AE730720B63157700DBE48D</string>
+											<string>3AE730730B63157700DBE48D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -656,14 +670,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFMain.m</string>
+								<string>PFUIController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -680,6 +692,8 @@
 							<string>452pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
