@@ -10,48 +10,33 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-// prefix.pch is only needed for debug macros (DLog, and so on)
-// Not required by external plugin developers.
-#import "../../Core/prefix.pch"
-
 #import "PFDiskProvider.h"
 
 @implementation PFDiskProvider
 
 static NSArray* acceptableFileExtensions = nil;
-static NSUserDefaults* defaults = nil;
 
 
-+ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
-{
-	DLog(@"");
-	defaults = [def retain];
-	acceptableFileExtensions = [[NSArray arrayWithObjects:
-		@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
-	
-	return YES;
-}
-
-+ (void) terminateClass
-{
-	DLog(@"");
-}
-
-
-+ (NSString*) name
++ (NSString*) pluginName
 {
 	return @"Disk";
 }
 
-//-------------------
 
-- (id) init
+- (id) initWithConfiguration:(NSDictionary*)conf
 {
+	[super initWithConfiguration:conf];
+	
+	// Setup acceptable file extensions
+	if(!acceptableFileExtensions)
+	{
+		acceptableFileExtensions = [[NSArray arrayWithObjects:
+			@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
+	}
+	
 	dir = [[@"~/Pictures/_temp" stringByExpandingTildeInPath] retain];
 	files = nil;
-	active = YES;
-	name = [[NSString alloc] initWithFormat:@"%@ (%@)", [[self class] name], dir];
-	DLog(@"dir: %@", dir);
+	
 	return self;
 }
 
@@ -62,36 +47,7 @@ static NSUserDefaults* defaults = nil;
 		[files release];
 	if(dir)
 		[dir release];
-	if(defaults)
-		[defaults release];
 	[super dealloc];
-}
-
-
--(BOOL) active
-{
-	return active;
-}
-
-
--(void) setActive:(BOOL)b
-{
-	active = b;
-}
-
-
--(NSString*) name
-{
-	return name;
-}
-
-
--(void) setName:(NSString*)s
-{
-	NSString* old = name;
-	name = [s retain];
-	if(old)
-		[old release];
 }
 
 

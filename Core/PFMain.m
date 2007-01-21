@@ -14,6 +14,8 @@
 #import "PFProvider.h"
 #import "PFUtil.h"
 
+NSString* const PFActiveProvidersDidChangeNotification = @"PFActiveProvidersDidChangeNotification";
+
 @implementation PFMain
 
 
@@ -58,6 +60,9 @@ static PFMain* instance = nil;
 - (id)autorelease { return self; }
 
 
+#pragma mark -
+#pragma mark Instance
+
 - (id) init
 {
 	DLog(@"");
@@ -78,44 +83,24 @@ static PFMain* instance = nil;
 	// Keeps references to active views
 	views = [[NSMutableArray alloc] init];
 	
-	// Make sure uiController is nil
+	// Make sure uiController is nil. Lazy cache.
 	uiController = nil;
 	
-	// Load plugins (providers, etc)
+	// Load and activate plugins (providers, etc)
 	[self loadPlugins];
-	
-	
-	// Setup and instantiate providers
-	// TODO: only load providers which are enabled by the user
-	providers = [[NSMutableArray alloc] init];
-	NSEnumerator* en = [availableProviders objectEnumerator];
-	Class providerClass;
-	while ((providerClass = [en nextObject]))
-	{
-		PFProviderClass* provider = [[providerClass alloc] init];
-		[providers addObject:provider];
-	}
-	
+	[self activatePlugins];
 	
 	// Index over providers running state (1=running, 0=not running)
-	runningProviders = (short *)malloc(sizeof(short) * [[[PFMain instance] providers] count]);
-	unsigned i = [[[PFMain instance] providers] count];
+	runningProviders = (short *)malloc(sizeof(short) * [[[PFMain instance] activeProviders] count]);
+	unsigned i = [[[PFMain instance] activeProviders] count];
 	while(i--)
 		runningProviders[i] = 0;
-	
 	runningProvidersCount = 0; // num providers currently in private threads aquiring images
-	providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:TRUE];
-	if([[[PFMain instance] providers] count] == 0)
-	{
-		[providerThreadsAvailableCondLock lock];
-		[providerThreadsAvailableCondLock unlockWithCondition:FALSE];
-	}
-	
+	providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:([[[PFMain instance] activeProviders] count] ? TRUE : FALSE)];
 	
 	// Init runCond lock as FALSE (dont run)
 	// This is unlocked as TRUE by any view when it's time to start animation
 	runCond = [[NSConditionLock alloc] initWithCondition:FALSE];
-	
 	
 	// We keep track of largest possible screen size to be able to downscale 
 	// images correctly
@@ -155,9 +140,23 @@ static PFMain* instance = nil;
 	return queue;
 }
 
-- (NSMutableArray*) providers
+- (NSMutableArray*) availableProviders
+{
+	return availableProviders;
+}
+
+- (NSMutableArray*) activeProviders
 {
 	return providers;
+}
+
+- (void) setActiveProviders:(NSMutableArray*)newProviders
+{
+	DLog(@"");
+	NSMutableArray* old = providers;
+	providers = [newProviders retain];
+	if(old)
+		[old release];
 }
 
 
@@ -166,14 +165,14 @@ static PFMain* instance = nil;
 #pragma mark View Registration
 
 
-- (void) registerView:(PFScreenSaverView*)view isPreview:(BOOL)isPreview
+- (void) registerView:(PFView*)view isPreview:(BOOL)isPreview
 {
 	DLog(@"view: %@  isPreview: %@", view, isPreview ? @"YES" : @"NO");
 	[views addObject:view];
 }
 
 
-- (void) unregisterView:(PFScreenSaverView*)view
+- (void) unregisterView:(PFView*)view
 {
 	DLog(@"view: %@", view);
 	[views removeObject:view];
@@ -189,7 +188,7 @@ static PFMain* instance = nil;
 {
 	DLog(@"");
 	[self loadProvidersFromPath:[[NSBundle bundleForClass:[self class]] builtInPlugInsPath]];
-	//[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/PhotoFeeder/Plugins"];
+	//[self loadProvidersFromPath:[@"~/Library/Application Support/PhotoFeeder/Plugins" stringByExpandingTildeInPath]];
 }
 
 
@@ -253,11 +252,73 @@ static PFMain* instance = nil;
 	}
 	
 	// If it loads, it can run
-	if([pluginClass initClass:pluginBundle
-						  defaults:[ScreenSaverDefaults defaultsForModuleWithName:pluginIdentifier]])
+	if([pluginClass initPluginWithBundle:pluginBundle])
 	{
 		[availableProviders addObject:pluginClass];
 	}
+}
+
+
+- (void) activatePlugins
+{
+	[self activateProviders];
+}
+
+
+- (void) activateProviders
+{
+	// Setup and instantiate providers
+	// TODO: Only load providers which are enabled by the user
+	// TODO: Move into separate method(s)
+	providers = [[NSMutableArray alloc] init];
+	NSDictionary* defaultActiveProviders;
+	
+	if(defaultActiveProviders = (NSDictionary*)[PFUtil defaultObjectForKey:@"activeProviders"])
+	{
+		NSEnumerator* enumerator;
+		NSString*     providerClassName;
+		
+		enumerator = [defaultActiveProviders keyEnumerator];
+		
+		while (providerClassName = [enumerator nextObject])
+		{
+			Class providerClass = NSClassFromString(providerClassName);
+			if(!providerClass)
+			{
+				NSTrace(@"Unknown provider %@", providerClassName);
+			}
+			else
+			{
+				[self activateProviderOfClass: providerClass
+					  lookingUpConfigurationIn: defaultActiveProviders];
+			}
+		}
+	}
+}
+
+
+- (void) activateProviderOfClass:(Class)providerClass lookingUpConfigurationIn:(NSDictionary*)confDict
+{
+	PFProviderClass* provider;
+	NSDictionary* providerConfiguration = nil;
+	
+	if(!confDict)
+		confDict = (NSDictionary*)[PFUtil defaultObjectForKey:@"activeProviders"];
+	
+	if(confDict)
+		providerConfiguration = (NSDictionary*)[confDict objectForKey:NSStringFromClass(providerClass)];
+	
+	if(!providerConfiguration) // Empty dict if none found
+		providerConfiguration = [[NSDictionary alloc] init];
+	
+	if(provider = [[providerClass alloc] initWithConfiguration:providerConfiguration])
+	{
+		//DLog(@"Adding provider %@", provider);
+		[providers addObject:provider];
+		[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];
+	}
+	else
+		NSTrace(@"Failed to initialize instance of provider '%@'", NSStringFromClass(providerClass));
 }
 
 
@@ -381,7 +442,6 @@ static PFMain* instance = nil;
 		[providerThreadsAvailableCondLock lock];
 		runningProviders[providerIndex] = 0;
 		runningProvidersCount--;
-		DLog(@"runningProvidersCount: %d", runningProvidersCount);
 		[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
 		
 		if(pool)
@@ -395,7 +455,7 @@ static PFMain* instance = nil;
 #pragma mark Animation
 
 
-- (void) animationStartedByView:(PFScreenSaverView*)view
+- (void) animationStartedByView:(PFView*)view
 {
 	DLog(@"view: %@", view);
 	
@@ -420,7 +480,7 @@ static PFMain* instance = nil;
 }
 
 
-- (void) animationStoppedByView:(PFScreenSaverView*)view
+- (void) animationStoppedByView:(PFView*)view
 {
 	DLog(@"view: %@", view);
 	//DLog(@"numAnimatingViews: %d", numAnimatingViews);
@@ -451,8 +511,8 @@ static PFMain* instance = nil;
 	DLog(@"views: %@", views);
 	// TODO: Replace this whole chain with notifications using NSNotificationCenter
 	NSEnumerator *en = [views objectEnumerator];
-	PFScreenSaverView* o;
-	while(o = (PFScreenSaverView*)[en nextObject])
+	PFView* o;
+	while(o = (PFView*)[en nextObject])
 	{
 		[o renderingParametersDidChange];
 	}

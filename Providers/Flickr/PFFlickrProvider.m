@@ -10,37 +10,15 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-// prefix.pch is only needed for debug macros (DLog, and so on)
-// Not required by external plugin developers.
-#import "../../Core/prefix.pch"
-
 #import "PFFlickrProvider.h"
 
 @implementation PFFlickrProvider
 
 
-static NSUserDefaults* defaults = nil;
-static int instanceCounter = 0;
-
-
-+ (BOOL) initClass:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
++ (NSString*) pluginName
 {
-	DLog(@"");
-	defaults = [def retain];
-	return YES;
+	return @"Flickr: rsms favourites";
 }
-
-+ (void) terminateClass
-{
-	DLog(@"");
-}
-
-
-+ (NSString*) name
-{
-	return @"Flickr";
-}
-
 
 
 /* GOTT MOS:
@@ -55,13 +33,14 @@ NSData* imData = [NSURLConnection sendSynchronousRequest: req
 DLog(@"%@", [res URL]);
 */
 
--(id)init
+
+- (id) initWithConfiguration:(NSDictionary*)conf
 {
-	[super init];
+	[super initWithConfiguration:conf];
+	
+	// Internal URL queue
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
-	active = YES;
-	name = [[NSString alloc] initWithFormat:@"%@ #%d", [[self class] name], instanceCounter++];
-	DLog(@"urls: %@", urls);
+	
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 									 toTarget:self 
 								  withObject:nil];
@@ -69,34 +48,14 @@ DLog(@"%@", [res URL]);
 }
 
 
--(BOOL) active
+- (void) dealloc
 {
-	return active;
+	[urls release];
+	[super dealloc];
 }
 
 
--(void) setActive:(BOOL)b
-{
-	active = b;
-}
-
-
--(NSString*) name
-{
-	return name;
-}
-
-
--(void) setName:(NSString*)s
-{
-	NSString* old = name;
-	name = [s retain];
-	if(old)
-		[old release];
-}
-
-
-- (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size
+- (NSString*) urlForSize:(NSString*)photoId size:(NSString*)size
 {
 	NSXMLElement* root = [self callMethod:@"flickr.photos.getSizes" 
 											 params:[NSString stringWithFormat:@"photo_id=%@", photoId]];

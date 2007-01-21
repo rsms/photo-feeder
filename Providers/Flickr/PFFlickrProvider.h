@@ -9,14 +9,11 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
-#import "PFProvider.h"
+#import "PFBasicProvider.h"
 #import "PFQueue.h"
 
-@interface PFFlickrProvider : NSObject<PFProvider> {
+@interface PFFlickrProvider : PFBasicProvider {
 	PFQueue*  urls;
-	
-	BOOL       active;
-	NSString*  name;
 }
 
 - (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;

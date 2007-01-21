@@ -10,30 +10,12 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-@protocol PFProvider
+#import "PFProvider.h"
 
-/// Called when loading plugin
-+ (BOOL) initPlugin:(NSBundle*)theBundle defaults:(NSUserDefaults*)def;
-
-/// Called when unloading plugin
-+ (void) deallocPlugin;
-
-/// Human-readable name of the plugin
-+ (NSString*) name;
-
-/// Return an Image
--(NSImage*) nextImage;
-
-/// Active or not
--(BOOL) active;
--(void) setActive:(BOOL)active;
-
-/// Instance name
--(NSString*) name;
--(void) setName:(NSString*)name;
-
+@interface PFBasicProvider : NSObject<PFProvider>
+{
+	BOOL       active;
+	NSString*  name;
+}
 
 @end
-
-/// Convenience type
-typedef NSObject<PFProvider> PFProviderClass;

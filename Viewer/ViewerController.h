@@ -9,13 +9,13 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
-#import "PFScreenSaverView.h"
+#import "PFView.h"
 
 @interface ViewerController : NSObject
 {
 	IBOutlet NSWindow* win;
 	IBOutlet NSWindow* configureSheet;
-	PFScreenSaverView* ssv;
+	PFView* ssv;
 }
 
 -(void)toggleAnimation:(id)sender;

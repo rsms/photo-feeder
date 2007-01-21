@@ -1,11 +1,27 @@
 {
     IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {about = id; done = id; }; 
-            CLASS = PFConfigureSheetController; 
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PFAddProviderController; 
             LANGUAGE = ObjC; 
             OUTLETS = {}; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {about = id; addProviderBegin = id; addProviderCommit = id; done = id; }; 
+            CLASS = PFConfigureSheetController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                activeProvidersController = NSArrayController; 
+                activeProvidersTable = NSTableView; 
+                addProviderWindow = NSWindow; 
+                availableProvidersController = NSArrayController; 
+            }; 
             SUPERCLASS = NSWindowController; 
         }
     ); 

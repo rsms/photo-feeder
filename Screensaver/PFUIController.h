@@ -12,14 +12,22 @@
 
 @interface PFUIController : NSWindowController
 {
-	IBOutlet NSTextField* fps;
-	IBOutlet NSTextField* displayInterval;
-	IBOutlet NSTextField* fadeInterval;
-	IBOutlet NSPanel*     providerSettingsPanel;
+	IBOutlet NSWindow*          addProviderWindow;
+	IBOutlet NSArrayController* availableProvidersController;
+	IBOutlet NSArrayController* activeProvidersController;
+	IBOutlet NSTableView*       activeProvidersTable;
 }
 
 - (IBAction) done:(id)sender;
 - (IBAction) about:(id)sender;
+- (IBAction) addProviderBegin:(id)sender;
+- (IBAction) addProviderCommit:(id)sender;
+
+
+#pragma mark -
+#pragma mark Notofication observer callbacks
+
+- (void) onActiveProvidersDidChange:(NSNotification*)notification;
 
 
 #pragma mark -
@@ -27,8 +35,11 @@
 
 /// Active providers
 - (NSMutableArray *) activeProviders;
-- (void) setActiveProviders:(NSArray *)a;
+- (void) setActiveProviders:(NSMutableArray *)a;
 
+/// Available providers
+- (NSArray*) availableProviders;
+- (void) setAvailableProviders:(NSArray*)v;
 
 
 #pragma mark -

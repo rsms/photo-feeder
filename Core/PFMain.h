@@ -10,14 +10,19 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFScreenSaverView.h"
+#import "PFView.h"
 #import "PFQueue.h"
 #import "PFUIController.h"
+
+
+// Notifications
+NSString* const PFActiveProvidersDidChangeNotification;
+
 
 @interface PFMain : NSObject
 {
 	NSBundle*        bundle;             // The PhotoFeeder.saver bundle
-	NSMutableArray*  views;              // Active PFScreenSaverView's
+	NSMutableArray*  views;              // Active PFView's
 	PFQueue*         queue;              // Image queue
 	NSMutableArray*  availableProviders; // Available providers -- a collection of Class'es
 	NSMutableArray*  providers;          // Active providers
@@ -41,24 +46,29 @@
 // Accessors
 - (NSBundle*) bundle;
 - (PFQueue*) queue;
-- (NSMutableArray*) providers;
+- (NSMutableArray*) availableProviders; // Array of Class'es
+- (NSMutableArray*) activeProviders;    // Array of NSObject<PFProvider>*'s
+- (void) setActiveProviders:(NSMutableArray*)v;
 
 // View Registration
-- (void) registerView:(PFScreenSaverView*)view isPreview:(BOOL)yay;
-- (void) unregisterView:(PFScreenSaverView*)view;
+- (void) registerView:(PFView*)view isPreview:(BOOL)yay;
+- (void) unregisterView:(PFView*)view;
 
 // Plugins
 - (void) loadPlugins;
 - (void) loadProvidersFromPath:(NSString*)path;
 - (void) loadProviderFromPath:(NSString*)path;
+- (void) activatePlugins;
+- (void) activateProviders;
+- (void) activateProviderOfClass:(Class)cls lookingUpConfigurationIn:(NSDictionary*)confDict;
 
 // Threads
 - (void) queueFillerThread:(id)obj;
 - (void) providerQueueFillerThread:(id)providerInfo;
 
 // Animation
-- (void) animationStartedByView:(PFScreenSaverView*)view;
-- (void) animationStoppedByView:(PFScreenSaverView*)view;
+- (void) animationStartedByView:(PFView*)view;
+- (void) animationStoppedByView:(PFView*)view;
 - (void) blockWhileStopped;
 - (BOOL) isRunning;
 - (void) renderingParametersDidChange;

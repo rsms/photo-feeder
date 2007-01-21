@@ -59,11 +59,22 @@ static NSDictionary* appDefaults = nil;
 	// Lazy initializer
 	if(!appDefaults)
 	{
+		// Default activated providers
+		NSDictionary* defaultActiveProviders = 
+		[NSDictionary dictionaryWithObjectsAndKeys:
+			[NSDictionary dictionaryWithObjectsAndKeys:
+				[NSNumber numberWithBool:YES], @"active",
+				@"Images in ~/Pictures/_temp", @"name",
+				@"~/Pictures/_temp",           @"path",
+			nil], @"PFDiskProvider",
+		nil];
+		
+		// Application defaults
 		appDefaults = [[NSDictionary dictionaryWithObjectsAndKeys:
 			[NSNumber numberWithInt:60],     @"fps",
 			[NSNumber numberWithFloat:3.0],  @"displayInterval",
 			[NSNumber numberWithFloat:1.0],  @"fadeInterval",
-			[NSDictionary dictionary],       @"activeProviders",
+			defaultActiveProviders,          @"activeProviders",
 			nil] retain];
 	}
 	return appDefaults;
@@ -72,39 +83,27 @@ static NSDictionary* appDefaults = nil;
 
 + (float) defaultFloatForKey:(NSString*)key
 {
-	NSNumber* n = [[PFUtil defaults] objectForKey:key];
-	
-	if(!n)
+	NSNumber* n;
+	if(!(n = [[PFUtil defaults] objectForKey:key]))
 		n = [[PFUtil appDefaults] objectForKey:key];
-	
-	if(n)
-		return [n floatValue];
-	
-	return 0.0;
+	return n ? [n floatValue] : 0.0;
 }
 
 
 + (int) defaultIntForKey:(NSString*)key
 {
-	NSNumber* n = [[PFUtil defaults] objectForKey:key];
-	
-	if(!n)
+	NSNumber* n;
+	if(!(n = [[PFUtil defaults] objectForKey:key]))
 		n = [[PFUtil appDefaults] objectForKey:key];
-	
-	if(n)
-		return [n intValue];
-	
-	return 0.0;
+	return n ? [n intValue] : 0;
 }
 
 
 + (NSObject*) defaultObjectForKey:(NSString*)key
 {
-	NSObject* o = [[PFUtil defaults] objectForKey:key];
-	
-	if(!o)
+	NSObject* o;
+	if(!(o = [[PFUtil defaults] objectForKey:key]))
 		o = [[PFUtil appDefaults] objectForKey:key];
-	
 	return o;
 }
 
