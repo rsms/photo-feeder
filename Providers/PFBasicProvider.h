@@ -14,8 +14,8 @@
 
 @interface PFBasicProvider : NSObject<PFProvider>
 {
-	BOOL       active;
-	NSString*  name;
+	NSString*            identifier;
+	NSMutableDictionary* configuration;
 }
 
 @end

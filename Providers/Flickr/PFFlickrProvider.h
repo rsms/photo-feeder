@@ -14,6 +14,7 @@
 
 @interface PFFlickrProvider : PFBasicProvider {
 	PFQueue*  urls;
+	NSConditionLock* activeCondLock;
 }
 
 - (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;

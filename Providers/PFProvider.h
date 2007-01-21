@@ -12,6 +12,9 @@
 
 @protocol PFProvider
 
+#pragma mark -
+#pragma mark Plugin methods
+
 /// Called when loading plugin
 + (BOOL) initPluginWithBundle:(NSBundle*)theBundle;
 
@@ -21,28 +24,41 @@
 /// Human-readable name of the plugin
 + (NSString*) pluginName;
 
-/// Plugin description text
+/// Plugin description text, nil if none
 + (NSString*) pluginDescription;
 
 /// Configuration UI, nil if none
 + (NSWindow*) configureSheet;
 
-/// Initializer
-- (id) initWithConfiguration:(NSDictionary*)conf;
 
-/// Return an Image
--(NSImage*) nextImage;
+#pragma mark -
+#pragma mark Instance methods
+
+/// Provider instance configuration
+-(NSDictionary*) configuration;
+-(void) setConfiguration:(NSMutableDictionary*)conf;
+
+/// Provider instance identifier
+- (NSString*) identifier;
+- (void) setIdentifier:(NSString*)pid;
 
 /// Active or not
 -(BOOL) active;
 -(void) setActive:(BOOL)active;
 
-/// Instance name
+/// Human-readable instance name
 -(NSString*) name;
 -(void) setName:(NSString*)name;
 
+/// Return an Image
+-(NSImage*) nextImage;
+
 
 @end
+
+
+#pragma mark -
+#pragma mark Types
 
 /// Convenience type
 typedef NSObject<PFProvider> PFProviderClass;

@@ -15,6 +15,10 @@
 
 @implementation PFUtil
 
+
+static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
+
+
 + (unsigned long) microseed
 {
 	struct timeval tp;
@@ -44,14 +48,113 @@
 }
 
 
-+ (NSUserDefaults*) defaults
++ (NSString*) providerIdFromProvider:(PFProviderClass*)provider
 {
-	return [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"];
+	// TODO: Fix this -- class name is not unique per instance ;)
+	return NSStringFromClass([provider class]);
+}
+
+
++ (NSString*) generateUniqueIdentifierForInstanceOfClass:(Class)cls
+{
+	if(!uniqueIdentifiersDictKeyedByClass)
+		uniqueIdentifiersDictKeyedByClass = [[NSMutableDictionary alloc] init];
+	
+	NSString* className = NSStringFromClass(cls);
+	NSNumber* nextNumObj;
+	int nextNum = 0;
+	
+	@synchronized(uniqueIdentifiersDictKeyedByClass)
+	{
+		if(nextNumObj = [uniqueIdentifiersDictKeyedByClass objectForKey:className])
+			nextNum = [nextNumObj intValue];
+		[uniqueIdentifiersDictKeyedByClass setObject:[[NSNumber alloc] initWithInt:nextNum+1] forKey:className];
+	}
+	
+	return [NSString stringWithFormat:@"%@#%d", className, nextNum];
+}
+
+
+#pragma mark -
+#pragma mark Provider Configuration
+
+
+/*
+ LAYOUT:
+ 
+ "activeProviders" => NSArray:
+   "id" => NSDict:
+     "class" => "MyClass"
+     "configuration" => NSDict:
+       "active" => YES
+       "name" => "My provider"
+       "something" => "Bobobob"
+ 
+ */
+
+
++ (NSMutableDictionary*) configurationForProvider:(NSObject<PFProvider>*)provider
+{
+	return [PFUtil configurationForProviderWithIdentifier:[provider identifier]];
+}
+
+
++ (NSMutableDictionary*) configurationForProviderWithIdentifier:(NSString*)providerId
+{
+	NSDictionary* activeProvidersDict;
+	NSDictionary* providerDefinitionDict;
+	NSMutableDictionary* providerConfiguration;
+	
+	@synchronized([PFUtil defaults])
+	{
+		if(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"])
+			if(providerDefinitionDict = [activeProvidersDict objectForKey:providerId])
+				if(providerConfiguration = [providerDefinitionDict objectForKey:@"configuration"])
+					return providerConfiguration;
+	}
+	
+	return [[NSMutableDictionary alloc] init];
+}
+
+
++ (void) setConfiguration:(NSDictionary*)conf forProvider:(NSObject<PFProvider>*)provider
+{
+	[PFUtil setConfiguration:conf forProviderWithIdentifier:[provider identifier]];
+}
+
+
++ (void) setConfiguration:(NSDictionary*)conf forProviderWithIdentifier:(NSString*)providerId
+{
+	NSMutableDictionary* activeProvidersDict;
+	NSMutableDictionary* providerDefinitionDict;
+	
+	@synchronized([PFUtil defaults])
+	{
+		if(!(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"]))
+			activeProvidersDict = [[NSMutableDictionary alloc] init];
+			
+		if(!(providerDefinitionDict = [activeProvidersDict objectForKey:providerId]))
+			providerDefinitionDict = [[NSMutableDictionary alloc] init];
+			
+		[providerDefinitionDict setObject:conf forKey:@"configuration"];
+		[activeProvidersDict setObject:providerDefinitionDict forKey:providerId];
+		[[PFUtil defaults] setObject:activeProvidersDict forKey:@"activeProviders"];
+	}
 }
 
 
 
+#pragma mark -
+#pragma mark Defaults
+
+
 static NSDictionary* appDefaults = nil;
+
+
++ (NSUserDefaults*) defaults
+{
+	return [ScreenSaverDefaults defaultsForModuleWithName:@"com.flajm.PhotoFeeder"];
+}
 
 
 + (NSDictionary*) appDefaults
@@ -61,13 +164,18 @@ static NSDictionary* appDefaults = nil;
 	{
 		// Default activated providers
 		NSDictionary* defaultActiveProviders = 
-		[NSDictionary dictionaryWithObjectsAndKeys:
 			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithBool:YES], @"active",
-				@"Images in ~/Pictures/_temp", @"name",
-				@"~/Pictures/_temp",           @"path",
-			nil], @"PFDiskProvider",
-		nil];
+				[NSDictionary dictionaryWithObjectsAndKeys:
+					@"PFDiskProvider", @"class",
+					[NSMutableDictionary dictionaryWithObjectsAndKeys:
+						[NSNumber numberWithBool:YES], @"active",
+						@"Images in ~/Pictures/_temp", @"name",
+						@"~/Pictures/_temp",           @"path",
+					nil],
+					@"configuration",
+				nil],
+				@"PFDiskProvider#-1",
+			nil];
 		
 		// Application defaults
 		appDefaults = [[NSDictionary dictionaryWithObjectsAndKeys:
@@ -99,7 +207,7 @@ static NSDictionary* appDefaults = nil;
 }
 
 
-+ (NSObject*) defaultObjectForKey:(NSString*)key
++ (id) defaultObjectForKey:(NSString*)key
 {
 	NSObject* o;
 	if(!(o = [[PFUtil defaults] objectForKey:key]))

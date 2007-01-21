@@ -71,10 +71,6 @@
 		3ACE78DE0B6293B800BC66F9 /* PFBasicProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE78DC0B6293B800BC66F9 /* PFBasicProvider.m */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
 		3AD264340B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
-		3AE72E530B63036200DBE48D /* PFAddProviderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE72E510B63036200DBE48D /* PFAddProviderController.m */; };
-		3AE72E540B63036200DBE48D /* PFAddProviderController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE72E520B63036200DBE48D /* PFAddProviderController.h */; };
-		3AE72E550B63036200DBE48D /* PFAddProviderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE72E510B63036200DBE48D /* PFAddProviderController.m */; };
-		3AE72E560B63036200DBE48D /* PFAddProviderController.h in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 3AE72E520B63036200DBE48D /* PFAddProviderController.h */; };
 		8D255ACC0486D3F9007BF209 /* PFView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
@@ -141,7 +137,6 @@
 			files = (
 				3A6C6A350B5D8D9500BD74E1 /* Flickr.pfprovider in Copy Plugins */,
 				3A6C694B0B5D823900BD74E1 /* Disk.pfprovider in Copy Plugins */,
-				3AE72E560B63036200DBE48D /* PFAddProviderController.h in Copy Plugins */,
 			);
 			name = "Copy Plugins";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,8 +195,6 @@
 		3ACE78DC0B6293B800BC66F9 /* PFBasicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBasicProvider.m; path = Providers/PFBasicProvider.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
-		3AE72E510B63036200DBE48D /* PFAddProviderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAddProviderController.m; path = Screensaver/PFAddProviderController.m; sourceTree = "<group>"; };
-		3AE72E520B63036200DBE48D /* PFAddProviderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAddProviderController.h; path = Screensaver/PFAddProviderController.h; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = Screensaver/Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,8 +323,6 @@
 				3A674FBE0AEAEBE50057912E /* ConfigureSheet.nib */,
 				3A6750060AEAED7D0057912E /* PFUIController.h */,
 				3A6750070AEAED7D0057912E /* PFUIController.m */,
-				3AE72E520B63036200DBE48D /* PFAddProviderController.h */,
-				3AE72E510B63036200DBE48D /* PFAddProviderController.m */,
 			);
 			name = Screensaver;
 			sourceTree = "<group>";
@@ -399,7 +390,6 @@
 			files = (
 				3A2C3EF70AE4342700970E7C /* PFProvider.h in Headers */,
 				3AB8D2870B5EA78D00FC9D56 /* PFMain.h in Headers */,
-				3AE72E540B63036200DBE48D /* PFAddProviderController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +608,6 @@
 				3A94047F0B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C60B59A8D7001FBD1C /* PFUtil.m in Sources */,
 				3AB8D2860B5EA78D00FC9D56 /* PFMain.m in Sources */,
-				3AE72E550B63036200DBE48D /* PFAddProviderController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +621,6 @@
 				3A9404810B59A133001FBD1C /* NSArray_random.m in Sources */,
 				3A9404C80B59A8D7001FBD1C /* PFUtil.m in Sources */,
 				3AB8D2880B5EA78D00FC9D56 /* PFMain.m in Sources */,
-				3AE72E530B63036200DBE48D /* PFAddProviderController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +713,7 @@
 				);
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -781,7 +770,9 @@
 					i386,
 				);
 				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -11,7 +11,6 @@
  */
 
 #import "PFMain.h"
-#import "PFProvider.h"
 #import "PFUtil.h"
 
 NSString* const PFActiveProvidersDidChangeNotification = @"PFActiveProvidersDidChangeNotification";
@@ -80,6 +79,9 @@ static PFMain* instance = nil;
 	// Setup available providers storage
 	availableProviders = [[NSMutableArray alloc] init];
 	
+	// Busy providers
+	busyProviders = [[NSMutableArray alloc] init];
+	
 	// Keeps references to active views
 	views = [[NSMutableArray alloc] init];
 	
@@ -90,13 +92,8 @@ static PFMain* instance = nil;
 	[self loadPlugins];
 	[self activatePlugins];
 	
-	// Index over providers running state (1=running, 0=not running)
-	runningProviders = (short *)malloc(sizeof(short) * [[[PFMain instance] activeProviders] count]);
-	unsigned i = [[[PFMain instance] activeProviders] count];
-	while(i--)
-		runningProviders[i] = 0;
-	runningProvidersCount = 0; // num providers currently in private threads aquiring images
-	providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:([[[PFMain instance] activeProviders] count] ? TRUE : FALSE)];
+	// Conditional locks used to pause and run queueFilleThreads
+	providerThreadsAvailableCondLock = [[NSConditionLock alloc] initWithCondition:([providers count] ? TRUE : FALSE)];
 	
 	// Init runCond lock as FALSE (dont run)
 	// This is unlocked as TRUE by any view when it's time to start animation
@@ -119,8 +116,8 @@ static PFMain* instance = nil;
 {
 	[providers release];
 	[availableProviders release];
+	[busyProviders release];
 	[queue release];
-	free(runningProviders);
 	[super dealloc];
 }
 
@@ -157,6 +154,11 @@ static PFMain* instance = nil;
 	providers = [newProviders retain];
 	if(old)
 		[old release];
+}
+
+- (NSMutableArray*) busyProviders
+{
+	return busyProviders;
 }
 
 
@@ -261,64 +263,84 @@ static PFMain* instance = nil;
 
 - (void) activatePlugins
 {
-	[self activateProviders];
+	[self instantiateProviders];
 }
 
 
-- (void) activateProviders
+// Setup and instantiate providers
+// TODO: Only load providers which are enabled by the user
+// TODO: Move into separate method(s)
+- (void) instantiateProviders
 {
-	// Setup and instantiate providers
-	// TODO: Only load providers which are enabled by the user
-	// TODO: Move into separate method(s)
-	providers = [[NSMutableArray alloc] init];
-	NSDictionary* defaultActiveProviders;
+	NSDictionary*        activeProvidersDict;
+	NSDictionary*        providersDefinitionDict;
+	NSString*            providerIdentifier;
+	NSString*            providerClassName;
+	Class                providerClass;
+	NSMutableDictionary* providerConfiguration;
+	NSEnumerator*        enumerator;
 	
-	if(defaultActiveProviders = (NSDictionary*)[PFUtil defaultObjectForKey:@"activeProviders"])
+	providers = [[NSMutableArray alloc] init];
+	
+	if(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"])
 	{
-		NSEnumerator* enumerator;
-		NSString*     providerClassName;
-		
-		enumerator = [defaultActiveProviders keyEnumerator];
-		
-		while (providerClassName = [enumerator nextObject])
+		enumerator = [activeProvidersDict keyEnumerator];
+		while (providerIdentifier = [enumerator nextObject])
 		{
-			Class providerClass = NSClassFromString(providerClassName);
-			if(!providerClass)
+			if(providersDefinitionDict = [activeProvidersDict objectForKey:providerIdentifier])
 			{
-				NSTrace(@"Unknown provider %@", providerClassName);
-			}
-			else
-			{
-				[self activateProviderOfClass: providerClass
-					  lookingUpConfigurationIn: defaultActiveProviders];
+				if(providerClassName = [providersDefinitionDict objectForKey:@"class"])
+				{
+					if(providerClass = NSClassFromString(providerClassName))
+					{
+						providerConfiguration = [providersDefinitionDict objectForKey:@"configuration"];
+						// We need to create a new empty config here if not found, or else the call to 
+						// activateProviderWithIdentifier... will try to look it up again
+						if(!providerConfiguration)
+							providerConfiguration = [[NSMutableDictionary alloc] init];
+						
+						[self instantiateProviderWithIdentifier: providerIdentifier
+																  ofClass: providerClass
+													usingConfiguration: providerConfiguration];
+					}
+					else
+					{
+						NSTrace(@"Unable to load provider with id '%@': Unknown provider class '%@'", providerIdentifier, providerClassName);
+					}
+				}
 			}
 		}
 	}
 }
 
 
-- (void) activateProviderOfClass:(Class)providerClass lookingUpConfigurationIn:(NSDictionary*)confDict
+- (NSObject<PFProvider>*) instantiateProviderWithIdentifier: (NSString*)identifier
+																	 ofClass: (Class)providerClass
+													  usingConfiguration: (NSMutableDictionary*)configuration
 {
-	PFProviderClass* provider;
-	NSDictionary* providerConfiguration = nil;
+	NSObject<PFProvider>* provider;
 	
-	if(!confDict)
-		confDict = (NSDictionary*)[PFUtil defaultObjectForKey:@"activeProviders"];
+	if(!identifier)
+		identifier = [PFUtil generateUniqueIdentifierForInstanceOfClass:providerClass];
 	
-	if(confDict)
-		providerConfiguration = (NSDictionary*)[confDict objectForKey:NSStringFromClass(providerClass)];
+	if(!configuration)
+		configuration = [PFUtil configurationForProviderWithIdentifier:identifier];
 	
-	if(!providerConfiguration) // Empty dict if none found
-		providerConfiguration = [[NSDictionary alloc] init];
-	
-	if(provider = [[providerClass alloc] initWithConfiguration:providerConfiguration])
+	if(provider = [[providerClass alloc] init])
 	{
-		//DLog(@"Adding provider %@", provider);
-		[providers addObject:provider];
-		[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];
+		DLog(@"Adding provider %@ of type '%@' with identifier '%@'", provider, providerClass, identifier);
+		[provider setIdentifier:identifier];
+		[provider setConfiguration:configuration];
+		@synchronized(providers)
+		{
+			[providers addObject:provider];
+		}
 	}
 	else
-		NSTrace(@"Failed to initialize instance of provider '%@'", NSStringFromClass(providerClass));
+	{
+		NSTrace(@"Failed to instantiate provider of type '%@' with identifier '%@'", providerClass, identifier);
+	}
+	return provider;
 }
 
 
@@ -331,7 +353,8 @@ static PFMain* instance = nil;
 {
 	NSAutoreleasePool *pool;
 	PFProviderClass* provider;
-	unsigned providerIndex, providerCount, altProviderIndexCountdown;
+	unsigned providerIndex, providerCount;
+	int altProviderIndexCountdown;
 	
 	pool = [[NSAutoreleasePool alloc] init];
 	
@@ -339,56 +362,66 @@ static PFMain* instance = nil;
 	{
 		while(1)
 		{
-			// Hold here if animation is stopped
+			// Wait here if animation is stopped
 			[runCond lockWhenCondition:TRUE];
 			[runCond unlock];
 			
-			// Lock and run if we have available providers
+			// Wait here until there are provider work threads available.
+			// Pause here if all active providers currently are inside it's nextImage method.
 			[providerThreadsAvailableCondLock lockWhenCondition:TRUE];
 			
-			// Pick a random provider
-			providerCount = [providers count];
-			
-			// Hold if count < 1
-			if(!providerCount)
-			{
-				NSTrace(@"ERROR: No providers loaded. Sleeping forever...");
-				[NSThread sleepUntilDate:[NSDate distantFuture]];
-			}
-			
-			// Get a non-running provider index
+			// Get a available provider
 			providerIndex = SSRandomIntBetween(0, [providers count]-1);
-			altProviderIndexCountdown = providerCount;
-			while(runningProviders[providerIndex] || ![(NSObject<PFProvider>*)[providers objectAtIndex:providerIndex] active])
+			altProviderIndexCountdown = [providers count]-1;
+			provider = [providers objectAtIndex:providerIndex];
+			@synchronized(busyProviders)
 			{
-				if(++providerIndex == providerCount)
-					providerIndex = 0;
-				
-				// Needed for avoiding deadlock
-				if(!--altProviderIndexCountdown)
+				while(![provider active] || [busyProviders containsObject:provider])
 				{
-					providerIndex = -1;
-					break;
+					if(++providerIndex == providerCount)
+						providerIndex = 0;
+					
+					// Needed for avoiding deadlock
+					altProviderIndexCountdown--;
+					if(altProviderIndexCountdown < 1)
+					{
+						provider = nil;
+						break;
+					}
+					else
+					{
+						provider = [providers objectAtIndex:providerIndex];
+					}
 				}
 			}
 			
 			
-			if(providerIndex != -1)
+			// If we have an available provider, let's use it
+			if(provider)
 			{
-				provider = (PFProviderClass*)[providers objectAtIndex:providerIndex];
-				runningProviders[providerIndex] = 1;
-				runningProvidersCount++;
+				// Put this procider in the "busy" stack
+				@synchronized(busyProviders)
+				{
+					[busyProviders addObject:provider];
+				}
 				
+				// Spawn thread to query the provider whitout blocking this thread
 				[NSThread detachNewThreadSelector: @selector(providerQueueFillerThread:)
 												 toTarget: self
 											  withObject: [NSArray arrayWithObjects:provider, [NSNumber numberWithUnsignedInt:providerIndex], nil]];
 			}
 			
-			[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
+			// Unlock with TRUE if it's possible we have more available providers, or FALSE if not
+			[providerThreadsAvailableCondLock unlockWithCondition:([busyProviders count] < [providers count])];
 			
-			if(providerIndex == -1)
+			// This is a fulfix for not consuming loads of cpu when there are no available providers
+			if(!provider)
 				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.5]];
 		}
+	}
+	@catch(NSException* e)
+	{
+		NSTrace(@"FATAL: %@", e);
 	}
 	@finally {
 		if(pool)
@@ -439,10 +472,12 @@ static PFMain* instance = nil;
 	@finally
 	{
 		// Reset running state to false for this provider
-		[providerThreadsAvailableCondLock lock];
-		runningProviders[providerIndex] = 0;
-		runningProvidersCount--;
-		[providerThreadsAvailableCondLock unlockWithCondition:(runningProvidersCount < [providers count])];
+		@synchronized(busyProviders)
+		{
+			[busyProviders removeObject:provider];
+			[providerThreadsAvailableCondLock lock];
+			[providerThreadsAvailableCondLock unlockWithCondition:([busyProviders count] < [providers count])];
+		}
 		
 		if(pool)
 			[pool release];

@@ -34,12 +34,15 @@ DLog(@"%@", [res URL]);
 */
 
 
-- (id) initWithConfiguration:(NSDictionary*)conf
+- (id) init
 {
-	[super initWithConfiguration:conf];
+	[super init];
 	
 	// Internal URL queue
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
+	
+	// Used to pause the addURLsThread when not active
+	activeCondLock = [[NSConditionLock alloc] initWithCondition:YES];
 	
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 									 toTarget:self 
@@ -52,6 +55,30 @@ DLog(@"%@", [res URL]);
 {
 	[urls release];
 	[super dealloc];
+}
+
+
+-(void) setConfiguration:(NSMutableDictionary*)conf
+{
+	[super setConfiguration:conf];
+	
+	// Update our condlock implementation of active/setActive
+	[activeCondLock lock];
+	[activeCondLock unlockWithCondition:[super active]];
+}
+
+
+-(BOOL) active
+{
+	return [activeCondLock condition];
+}
+
+
+-(void) setActive:(BOOL)b
+{
+	[super setActive:b];
+	[activeCondLock lock];
+	[activeCondLock unlockWithCondition:b];
 }
 
 
@@ -117,16 +144,29 @@ DLog(@"%@", [res URL]);
 - (void)addURLsThread:(id)o
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	while(1) {
-		DLog(@"calling [%@ addURLs]...", self);
-		[self addURLs];
+	@try
+	{
+		while(1)
+			[self addURLs];
 	}
-	[pool release];
+	@catch(NSException* e)
+	{
+		NSTrace(@"FATAL: %@ -- provider disabled", e);
+		[self setActive:NO];
+	}
+	@finally
+	{
+		[pool release];
+	}
 }
 
 
 - (void)addURLs
 {
+	// Wait here until activated
+	[activeCondLock lockWhenCondition:TRUE];
+	[activeCondLock unlock];
+	
 	NSXMLElement* root = [self callMethod:@"flickr.favorites.getPublicList" 
 											 params:@"user_id=12281432@N00&per_page=999&extras=date_taken"];
 	
@@ -145,12 +185,17 @@ DLog(@"%@", [res URL]);
 	NSString* urlString;
 	while (n = (NSXMLElement*)[it nextObject])
 	{
+		// Wait here until activated
+		[activeCondLock lockWhenCondition:TRUE];
+		[activeCondLock unlock];
+		
+		// Build url
 		urlString = [self urlForSize: [[n attributeForName:@"id"] stringValue] 
 									 //size: @"Medium"];
 										size: @"Large"];
 		if(urlString) {
 			[urls put:[NSURL URLWithString:urlString]];
-			//DLog(@"Queued %@", urlString);
+			DLog(@"Queued %@", urlString);
 		}
 		else
 			DLog(@"Image was too small");

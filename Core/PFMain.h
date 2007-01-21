@@ -13,6 +13,7 @@
 #import "PFView.h"
 #import "PFQueue.h"
 #import "PFUIController.h"
+#import "PFProvider.h"
 
 
 // Notifications
@@ -24,16 +25,15 @@ NSString* const PFActiveProvidersDidChangeNotification;
 	NSBundle*        bundle;             // The PhotoFeeder.saver bundle
 	NSMutableArray*  views;              // Active PFView's
 	PFQueue*         queue;              // Image queue
-	NSMutableArray*  availableProviders; // Available providers -- a collection of Class'es
-	NSMutableArray*  providers;          // Active providers
 	PFUIController*  uiController;       // Configure-sheet controller
 	NSConditionLock* runCond;            // TRUE when animating, FALSE when stopped
 	NSSize           largestScreenSize;  // Keep track of largest possible screen size
 	
 	
-	// Running providers control
-	short*           runningProviders; // map over all providers run state
-	unsigned         runningProvidersCount;
+	// Providers control
+	NSMutableArray*  availableProviders; // Available providers -- a collection of Class'es
+	NSMutableArray*  providers;          // Provider instances
+	NSMutableArray*  busyProviders;      // Providers currently in nextImage call
 	NSConditionLock* providerThreadsAvailableCondLock;
 	
 	// Need for speed
@@ -48,6 +48,7 @@ NSString* const PFActiveProvidersDidChangeNotification;
 - (PFQueue*) queue;
 - (NSMutableArray*) availableProviders; // Array of Class'es
 - (NSMutableArray*) activeProviders;    // Array of NSObject<PFProvider>*'s
+- (NSMutableArray*) busyProviders;      // Providers currently in nextImage call. This method is not thread-safe.
 - (void) setActiveProviders:(NSMutableArray*)v;
 
 // View Registration
@@ -59,8 +60,10 @@ NSString* const PFActiveProvidersDidChangeNotification;
 - (void) loadProvidersFromPath:(NSString*)path;
 - (void) loadProviderFromPath:(NSString*)path;
 - (void) activatePlugins;
-- (void) activateProviders;
-- (void) activateProviderOfClass:(Class)cls lookingUpConfigurationIn:(NSDictionary*)confDict;
+- (void) instantiateProviders;
+- (NSObject<PFProvider>*) instantiateProviderWithIdentifier: (NSString*)identifier
+																	 ofClass: (Class)providerClass
+													  usingConfiguration: (NSMutableDictionary*)configuration;
 
 // Threads
 - (void) queueFillerThread:(id)obj;

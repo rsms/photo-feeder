@@ -11,6 +11,7 @@
  */
 
 #import "PFBasicProvider.h"
+#import "PFMain.h"
 
 @implementation PFBasicProvider
 
@@ -50,57 +51,74 @@
 #pragma mark -
 #pragma mark Instance methods
 
-- (id) initWithConfiguration:(NSDictionary*)conf
-{
-	NSNumber* activeSetting;
-	NSString* customName;
-	
-	if(activeSetting = [conf objectForKey:@"active"])
-		[self setActive:[activeSetting boolValue]];
-	else
-		[self setActive:YES];
-	
-	if(customName = [conf objectForKey:@"name"])
-		[self setName:customName];
-	else
-		[self setName:[[self class] pluginName]];
-	
-	return self;
-}
-
 
 - (void) dealloc
 {
-	if(name)
-		[name release];
+	if(identifier)
+		[identifier release];
+	if(configuration)
+		[configuration release];
 	[super dealloc];
+}
+
+
+-(NSDictionary*) configuration
+{
+	return configuration;
+}
+
+
+-(void) setConfiguration:(NSMutableDictionary*)conf
+{
+	NSMutableDictionary* old = configuration;
+	configuration = [conf retain];
+	if(old)
+		[old release];
+	
+	if(![configuration objectForKey:@"active"])
+		[configuration setObject:[NSNumber numberWithBool:YES] forKey:@"active"];
+	
+	if(![configuration objectForKey:@"name"])
+		[configuration setObject:[[self class] pluginName] forKey:@"name"];
+}
+
+
+- (NSString*) identifier
+{
+	return identifier;
+}
+
+
+- (void) setIdentifier:(NSString*)pid
+{
+	NSString* old = identifier;
+	identifier = [pid retain];
+	if(old)
+		[old release];
 }
 
 
 -(BOOL) active
 {
-	return active;
+	return [[configuration objectForKey:@"active"] boolValue];
 }
 
 
 -(void) setActive:(BOOL)b
 {
-	active = b;
+	[configuration setObject:[NSNumber numberWithBool:b] forKey:@"active"];
 }
 
 
 -(NSString*) name
 {
-	return name;
+	return [configuration objectForKey:@"name"];
 }
 
 
--(void) setName:(NSString*)s
+-(void) setName:(NSString*)name
 {
-	NSString* old = name;
-	name = [s retain];
-	if(old)
-		[old release];
+	[configuration setObject:name forKey:@"name"];
 }
 
 

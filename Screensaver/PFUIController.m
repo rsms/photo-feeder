@@ -20,10 +20,12 @@
 - (void)awakeFromNib
 {
 	DLog(@"");
+	
+	// PFMain -> self
 	[[NSNotificationCenter defaultCenter] addObserver: self
 														  selector: @selector(onActiveProvidersDidChange:)
 																name: PFActiveProvidersDidChangeNotification
-															 object: [PFMain instance]]; // only from PFMain
+															 object: [PFMain instance]];
 }
 
 
@@ -38,20 +40,27 @@
 }
 
 
+// TODO
 - (IBAction) addProviderCommit:(id)sender
 {
-	Class providerClass = [[availableProvidersController selectedObjects] lastObject];
-	DLog(@"providerClass: %@", providerClass);
-	NSWindow* pluginConfigureSheet = [providerClass configureSheet];
+	Class providerClass;
+	NSObject<PFProvider>* provider;
+	NSWindow* pluginConfigureSheet;
 	
-	if(pluginConfigureSheet)
-	{
-		[pluginConfigureSheet makeKeyAndOrderFront:sender];
-	}
-	
+	providerClass = [[availableProvidersController selectedObjects] lastObject];
 	[addProviderWindow performClose:sender];
-	[[PFMain instance] activateProviderOfClass: providerClass
-							lookingUpConfigurationIn: nil];
+	provider = [[PFMain instance] instantiateProviderWithIdentifier: nil
+																			  ofClass: providerClass
+																usingConfiguration: nil];
+	if(provider)
+	{
+		[activeProvidersController rearrangeObjects];
+		if(pluginConfigureSheet = [providerClass configureSheet])
+		{
+			[NSApp runModalForWindow:pluginConfigureSheet];
+			//[pluginConfigureSheet makeKeyAndOrderFront:sender];
+		}
+	}
 }
 
 
@@ -70,19 +79,28 @@
 }
 
 
+
+#pragma mark -
+#pragma mark "Add Provider" window delegate methods
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+	if([notification object] == addProviderWindow)
+		[NSApp stopModal];
+}
+
+
 #pragma mark -
 #pragma mark Bindings
 
 
 -(int) fps
 {
-	DLog(@"");
 	return [PFUtil defaultIntForKey:@"fps"];
 }
 
 -(void) setFps:(int)d
 {
-	DLog(@"%d", d);
 	[[PFUtil defaults] setInteger:d forKey:@"fps"];
 	[[PFMain instance] renderingParametersDidChange];
 }
@@ -90,13 +108,11 @@
 
 -(float) displayInterval
 {
-	DLog(@"");
 	return [PFUtil defaultIntForKey:@"displayInterval"];
 }
 
 -(void) setDisplayInterval:(float)f
 {
-	DLog(@"%f", f);
 	[[PFUtil defaults] setInteger:f forKey:@"displayInterval"];
 	[[PFMain instance] renderingParametersDidChange];
 }
@@ -104,13 +120,11 @@
 
 -(float) fadeInterval
 {
-	DLog(@"");
 	return [PFUtil defaultIntForKey:@"fadeInterval"];
 }
 
 -(void) setFadeInterval:(float)f
 {
-	DLog(@"%f", f);
 	[[PFUtil defaults] setInteger:f forKey:@"fadeInterval"];
 	[[PFMain instance] renderingParametersDidChange];
 }
@@ -130,7 +144,6 @@
 
 - (NSMutableArray *) activeProviders
 {
-	DLog(@"");
 	return [[PFMain instance] activeProviders];
 }
 
@@ -160,7 +173,6 @@
 
 - (IBAction) done:(id)sender
 {
-	DLog(@"");
 	[[PFUtil defaults] synchronize];
 	[NSApp endSheet:[self window]];
 }
@@ -168,7 +180,6 @@
 
 - (IBAction)about:(id)sender
 {
-	DLog(@"");
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/PhotoFeeder"]];
 }
 @end

@@ -23,9 +23,9 @@ static NSArray* acceptableFileExtensions = nil;
 }
 
 
-- (id) initWithConfiguration:(NSDictionary*)conf
+- (id) init
 {
-	[super initWithConfiguration:conf];
+	[super init];
 	
 	// Setup acceptable file extensions
 	if(!acceptableFileExtensions)
