@@ -117,11 +117,8 @@ static NSString* srcImageId = @"sourceImage";
 }
 
 
-
-
 #pragma mark -
 #pragma mark Threads
-
 
 - (void) switchImageDispatchThread:(id)obj
 {
@@ -150,7 +147,6 @@ static NSString* srcImageId = @"sourceImage";
 				isFirstTime = NO;
 			
 			[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:delay]];
-			
 			
 		}
 	}

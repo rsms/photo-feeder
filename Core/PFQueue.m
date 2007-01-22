@@ -31,14 +31,26 @@
 		[NSException raise:@"PFQueue" format:@"Memory failure - memset(%p, 0, %d) failed", _buckets, sizeof(id)*capacity];
 	}
 	
-	_fullCL = [[NSConditionLock alloc] initWithCondition:FALSE];
-	_emptyCL = [[NSConditionLock alloc] initWithCondition:TRUE];
+	_fullCL = [[[NSConditionLock alloc] initWithCondition:FALSE] retain];
+	_emptyCL = [[[NSConditionLock alloc] initWithCondition:TRUE] retain];
 	
-	_putLock = [[NSRecursiveLock alloc] init];
-	_takeLock = [[NSRecursiveLock alloc] init];
-	_modLock = [[NSRecursiveLock alloc] init];
+	_putLock = [[[NSRecursiveLock alloc] init] retain];
+	_takeLock = [[[NSRecursiveLock alloc] init] retain];
+	_modLock = [[[NSRecursiveLock alloc] init] retain];
 	
 	return self;
+}
+
+
+- (void) dealloc
+{
+	[_fullCL release];
+	[_emptyCL release];
+	[_putLock release];
+	[_takeLock release];
+	[_modLock release];
+	free(_buckets);
+	[super dealloc];
 }
 
 
@@ -245,14 +257,6 @@
 	
 	[item release];
 	return item;
-}
-
-
-// Deallocate buckets array
-- (void) dealloc
-{
-	free(_buckets);
-	[super dealloc];
 }
 
 

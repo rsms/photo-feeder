@@ -42,7 +42,7 @@ DLog(@"%@", [res URL]);
 	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
 	
 	// Used to pause the addURLsThread when not active
-	activeCondLock = [[NSConditionLock alloc] initWithCondition:YES];
+	activeCondLock = [[[NSConditionLock alloc] initWithCondition:YES] retain];
 	
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
 							 toTarget:self 
@@ -54,6 +54,7 @@ DLog(@"%@", [res URL]);
 - (void) dealloc
 {
 	[urls release];
+	[activeCondLock release];
 	[super dealloc];
 }
 
