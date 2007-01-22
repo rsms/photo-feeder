@@ -110,10 +110,13 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 		if(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"])
 			if(providerDefinitionDict = [activeProvidersDict objectForKey:providerId])
 				if(providerConfiguration = [providerDefinitionDict objectForKey:@"configuration"])
-					return providerConfiguration;
+					providerConfiguration = [providerConfiguration mutableCopy];
 	}
 	
-	return [[NSMutableDictionary alloc] init];
+	if(!providerConfiguration)
+		providerConfiguration = [[NSMutableDictionary alloc] init];
+	
+	return providerConfiguration;
 }
 
 
@@ -167,7 +170,7 @@ static NSDictionary* appDefaults = nil;
 			[NSDictionary dictionaryWithObjectsAndKeys:
 				[NSDictionary dictionaryWithObjectsAndKeys:
 					@"PFDiskProvider", @"class",
-					[NSMutableDictionary dictionaryWithObjectsAndKeys:
+					[NSDictionary dictionaryWithObjectsAndKeys:
 						[NSNumber numberWithBool:YES], @"active",
 						@"Images in ~/Pictures/_temp", @"name",
 						@"~/Pictures/_temp",           @"path",

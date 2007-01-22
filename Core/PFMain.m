@@ -298,6 +298,8 @@ static PFMain* instance = nil;
 						// activateProviderWithIdentifier... will try to look it up again
 						if(!providerConfiguration)
 							providerConfiguration = [[NSMutableDictionary alloc] init];
+						else
+							providerConfiguration = [providerConfiguration mutableCopy];
 						
 						[self instantiateProviderWithIdentifier: providerIdentifier
 																  ofClass: providerClass

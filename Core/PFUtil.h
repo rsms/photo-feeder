@@ -10,7 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFProvider.h"
+#import "../Providers/PFProvider.h"
 
 @interface PFUtil : NSObject {
 }
