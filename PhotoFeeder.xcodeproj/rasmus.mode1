@@ -263,6 +263,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>089C166AFE841209C02AAC07</string>
+								<string>3A09058F0B65011D00C3CFCB</string>
 								<string>3A216B6D0AEED38F0070394E</string>
 								<string>3AEF430B0AEA7C350062B848</string>
 								<string>3A6C6AD10B5D931A00BD74E1</string>
@@ -276,6 +277,7 @@
 							<array>
 								<array>
 									<integer>3</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -315,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>rasmus.pbxuser</string>
+								<string>Full Class Diagram.xcclassmodel</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>rasmus.pbxuser</string>
+										<string>Full Class Diagram.xcclassmodel</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3ABE3B4E0B6500B700416DA5</string>
+										<string>3A09059B0B65012600C3CFCB</string>
 										<key>history</key>
 										<array>
 											<string>3A7F7A760B6161FF0006CEFA</string>
@@ -358,9 +360,8 @@
 											<string>3AF63C200B650010006F012B</string>
 											<string>3AF63C210B650010006F012B</string>
 											<string>3AF63C220B650010006F012B</string>
-											<string>3AF63C3D0B65006B006F012B</string>
-											<string>3AF63C3F0B65006B006F012B</string>
-											<string>3AF63C490B65006B006F012B</string>
+											<string>3A0905970B65012600C3CFCB</string>
+											<string>3A0905980B65012600C3CFCB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -390,8 +391,7 @@
 											<string>3A9750130B64CACB00262C3F</string>
 											<string>3AF63C260B650010006F012B</string>
 											<string>3AF63C2C0B650010006F012B</string>
-											<string>3AF63C410B65006B006F012B</string>
-											<string>3AF63C450B65006B006F012B</string>
+											<string>3A0905990B65012600C3CFCB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -449,9 +449,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3ABE3B500B6500B700416DA5</string>
+				<string>3A09058D0B65011100C3CFCB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3ABE3B510B6500B700416DA5</string>
+				<string>3A09058E0B65011100C3CFCB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -585,8 +585,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>3ABE3B3E0B6500AC00416DA5</string>
 		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

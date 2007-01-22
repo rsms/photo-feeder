@@ -161,6 +161,7 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prefix.pch; path = Core/prefix.pch; sourceTree = "<group>"; };
+		3A0905900B65011D00C3CFCB /* Full Class Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = "Full Class Diagram.xcclassmodel"; sourceTree = "<group>"; };
 		3A2547DE0B1495530081E689 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = Core/types.h; sourceTree = "<group>"; };
 		3A2C3EF50AE4342700970E7C /* PFProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFProvider.h; path = Providers/PFProvider.h; sourceTree = "<group>"; };
 		3A2C403E0AE4432D00970E7C /* PFQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFQueue.m; path = Core/PFQueue.m; sourceTree = "<group>"; };
@@ -195,7 +196,6 @@
 		3ACE78DC0B6293B800BC66F9 /* PFBasicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBasicProvider.m; path = Providers/PFBasicProvider.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
-		3AF63C3C0B650061006F012B /* Full Class Diagram.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = "Full Class Diagram.xcclassmodel"; sourceTree = "<group>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = Screensaver/Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				3AD264320B2334AB005CE2C6 /* LICENSE */,
-				3AF63C3C0B650061006F012B /* Full Class Diagram.xcclassmodel */,
+				3A09058F0B65011D00C3CFCB /* Docs */,
 				3A216B6D0AEED38F0070394E /* Core */,
 				3AEF430B0AEA7C350062B848 /* Providers */,
 				3ACE7A4D0B62E0F400BC66F9 /* Renderers */,
@@ -295,6 +295,14 @@
 				3A6C6A0E0B5D8C5900BD74E1 /* Flickr.pfprovider */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3A09058F0B65011D00C3CFCB /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				3A0905900B65011D00C3CFCB /* Full Class Diagram.xcclassmodel */,
+			);
+			path = Docs;
 			sourceTree = "<group>";
 		};
 		3A216B6D0AEED38F0070394E /* Core */ = {
