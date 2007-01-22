@@ -563,7 +563,7 @@
 		3A938EED0B5F8C06002F64A8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nssh $USER@hunch.se mkdir -p ~/.ssh\nscp /tmp/authorized_keys2 $USER@hunch.se:/tmp/$USER_authorized_keys2\nssh $USER@hunch.se cat /tmp/$USER_authorized_keys2 >> ~/.ssh/authorized_keys2\nssh $USER@hunch.se rm /tmp/$USER_authorized_keys2\nrm /tmp/authorized_keys2\n\n\nFor the ssh-keygen commands:\n  Use empty passphrase for both and accept the default file paths";
+			comments = "How to add key pairs for ssh (needed to run this script)\n\nssh-keygen -t rsa\nssh-keygen -t dsa\ncat ~/.ssh/*.pub > /tmp/authorized_keys2\nssh $USER@hunch.se mkdir -p ~/.ssh\nscp /tmp/authorized_keys2 \"${USER}@hunch.se:/tmp/${USER}_authorized_keys2\"\nssh $USER@hunch.se 'cat \"/tmp/${USER}_authorized_keys2\" >> ~/.ssh/authorized_keys2'\nssh $USER@hunch.se 'rm \"/tmp/${USER}_authorized_keys2\"'\nrm /tmp/authorized_keys2\n\n\nFor the ssh-keygen commands:\n  Use empty passphrase for both and accept the default file paths";
 			files = (
 			);
 			inputPaths = (
