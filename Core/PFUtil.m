@@ -103,20 +103,25 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 {
 	NSDictionary* activeProvidersDict;
 	NSDictionary* providerDefinitionDict;
-	NSMutableDictionary* providerConfiguration;
+	NSDictionary* providerConfiguration;
 	
 	@synchronized([PFUtil defaults])
 	{
 		if(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"])
+		{
 			if(providerDefinitionDict = [activeProvidersDict objectForKey:providerId])
+			{
 				if(providerConfiguration = [providerDefinitionDict objectForKey:@"configuration"])
-					providerConfiguration = [providerConfiguration mutableCopy];
+				{
+					NSMutableDictionary* mutableProviderConfiguration = [providerConfiguration mutableCopy];
+					[providerConfiguration release];
+					return mutableProviderConfiguration;
+				}
+			}
+		}
 	}
 	
-	if(!providerConfiguration)
-		providerConfiguration = [[NSMutableDictionary alloc] init];
-	
-	return providerConfiguration;
+	return [[NSMutableDictionary alloc] init];
 }
 
 

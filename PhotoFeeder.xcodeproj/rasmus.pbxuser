@@ -187,6 +187,18 @@
 			3A9750170B64EB7700262C3F /* PBXTextBookmark */ = 3A9750170B64EB7700262C3F /* PBXTextBookmark */;
 			3A9750180B64EC9800262C3F /* PBXTextBookmark */ = 3A9750180B64EC9800262C3F /* PBXTextBookmark */;
 			3A9750190B64ECC800262C3F /* PBXTextBookmark */ = 3A9750190B64ECC800262C3F /* PBXTextBookmark */;
+			3A97502E0B64ED1400262C3F /* PBXTextBookmark */ = 3A97502E0B64ED1400262C3F /* PBXTextBookmark */;
+			3A97502F0B64ED1600262C3F /* PBXTextBookmark */ = 3A97502F0B64ED1600262C3F /* PBXTextBookmark */;
+			3A9750340B64EDF500262C3F /* PBXTextBookmark */ = 3A9750340B64EDF500262C3F /* PBXTextBookmark */;
+			3A9750350B64EDF500262C3F /* PBXTextBookmark */ = 3A9750350B64EDF500262C3F /* PBXTextBookmark */;
+			3A9750360B64EDF500262C3F /* PBXTextBookmark */ = 3A9750360B64EDF500262C3F /* PBXTextBookmark */;
+			3A9750370B64EDF500262C3F /* PBXTextBookmark */ = 3A9750370B64EDF500262C3F /* PBXTextBookmark */;
+			3A97503B0B64EE6F00262C3F /* PBXTextBookmark */ = 3A97503B0B64EE6F00262C3F /* PBXTextBookmark */;
+			3A9750410B64EE9100262C3F /* PBXTextBookmark */ = 3A9750410B64EE9100262C3F /* PBXTextBookmark */;
+			3A9750420B64EE9100262C3F /* PBXTextBookmark */ = 3A9750420B64EE9100262C3F /* PBXTextBookmark */;
+			3A9750430B64EE9100262C3F /* PBXTextBookmark */ = 3A9750430B64EE9100262C3F /* PBXTextBookmark */;
+			3A9750440B64EE9100262C3F /* PBXTextBookmark */ = 3A9750440B64EE9100262C3F /* PBXTextBookmark */;
+			3A9750450B64EE9700262C3F /* PBXTextBookmark */ = 3A9750450B64EE9700262C3F /* PBXTextBookmark */;
 			3AC6756A0B63EB9100D478CD = 3AC6756A0B63EB9100D478CD /* PBXTextBookmark */;
 			3AC6756B0B63EB9100D478CD = 3AC6756B0B63EB9100D478CD /* PBXTextBookmark */;
 			3AC6756C0B63EB9100D478CD = 3AC6756C0B63EB9100D478CD /* PBXTextBookmark */;
@@ -858,7 +870,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 95";
 		rLen = 0;
-		rLoc = 5565;
+		rLoc = 5617;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 1180;
@@ -957,16 +969,16 @@
 	};
 	3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 862}}";
-			sepNavSelRange = "{551, 0}";
-			sepNavVisRect = "{{0, 0}, {966, 862}}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 714}}";
+			sepNavSelRange = "{541, 0}";
+			sepNavVisRect = "{{0, 0}, {954, 420}}";
 		};
 	};
 	3A9404C50B59A8D7001FBD1C /* PFUtil.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 3108}}";
-			sepNavSelRange = "{3051, 0}";
-			sepNavVisRect = "{{0, 1158}, {966, 862}}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 3178}}";
+			sepNavSelRange = "{3082, 0}";
+			sepNavVisRect = "{{0, 1435}, {954, 420}}";
 		};
 	};
 	3A974FA40B64C53800262C3F /* PBXTextBookmark */ = {
@@ -1230,7 +1242,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 116";
 		rLen = 0;
-		rLoc = 3049;
+		rLoc = 3180;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 2108;
@@ -1240,7 +1252,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 302";
 		rLen = 0;
-		rLoc = 7224;
+		rLoc = 7334;
 		rType = 0;
 		vrLen = 2260;
 		vrLoc = 5903;
@@ -1250,7 +1262,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 116";
 		rLen = 0;
-		rLoc = 3049;
+		rLoc = 3180;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 2108;
@@ -1260,7 +1272,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 116";
 		rLen = 0;
-		rLoc = 3049;
+		rLoc = 3180;
 		rType = 0;
 		vrLen = 1758;
 		vrLoc = 2108;
@@ -1270,7 +1282,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 302";
 		rLen = 0;
-		rLoc = 7224;
+		rLoc = 7334;
 		rType = 0;
 		vrLen = 2260;
 		vrLoc = 5903;
@@ -1280,7 +1292,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 114";
 		rLen = 0;
-		rLoc = 3049;
+		rLoc = 3180;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 2113;
@@ -1290,7 +1302,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 115";
 		rLen = 0;
-		rLoc = 3051;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 2113;
@@ -1300,7 +1312,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 115";
 		rLen = 0;
-		rLoc = 3051;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 2113;
@@ -1310,7 +1322,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 115";
 		rLen = 0;
-		rLoc = 3051;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 2113;
@@ -1320,10 +1332,128 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 115";
 		rLen = 0;
-		rLoc = 3051;
+		rLoc = 3182;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 2113;
+	};
+	3A97502E0B64ED1400262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C40B59A8D7001FBD1C /* PFUtil.h */;
+		name = "PFUtil.h: 13";
+		rLen = 0;
+		rLoc = 541;
+		rType = 0;
+		vrLen = 1049;
+		vrLoc = 0;
+	};
+	3A97502F0B64ED1600262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
+		name = "PFUtil.m: 115";
+		rLen = 0;
+		rLoc = 3182;
+		rType = 0;
+		vrLen = 1984;
+		vrLoc = 2113;
+	};
+	3A9750340B64EDF500262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
+		name = "PFUtil.m: 118";
+		rLen = 0;
+		rLoc = 3152;
+		rType = 0;
+		vrLen = 1656;
+		vrLoc = 2891;
+	};
+	3A9750350B64EDF500262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
+		name = "PFMain.m: 302";
+		rLen = 0;
+		rLoc = 7334;
+		rType = 0;
+		vrLen = 2260;
+		vrLoc = 5903;
+	};
+	3A9750360B64EDF500262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
+		name = "PFUtil.m: 118";
+		rLen = 0;
+		rLoc = 3152;
+		rType = 0;
+		vrLen = 1656;
+		vrLoc = 2891;
+	};
+	3A9750370B64EDF500262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
+		name = "PFMain.m: 302";
+		rLen = 0;
+		rLoc = 7196;
+		rType = 0;
+		vrLen = 2120;
+		vrLoc = 5903;
+	};
+	3A97503B0B64EE6F00262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C40B59A8D7001FBD1C /* PFUtil.h */;
+		name = "PFUtil.h: 13";
+		rLen = 0;
+		rLoc = 541;
+		rType = 0;
+		vrLen = 1049;
+		vrLoc = 0;
+	};
+	3A9750410B64EE9100262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C40B59A8D7001FBD1C /* PFUtil.h */;
+		name = "PFUtil.h: 13";
+		rLen = 0;
+		rLoc = 541;
+		rType = 0;
+		vrLen = 1049;
+		vrLoc = 0;
+	};
+	3A9750420B64EE9100262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: parse error before 'release'";
+		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
+		rLen = 1;
+		rLoc = 116;
+		rType = 1;
+	};
+	3A9750430B64EE9100262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C40B59A8D7001FBD1C /* PFUtil.h */;
+		name = "PFUtil.h: 13";
+		rLen = 0;
+		rLoc = 541;
+		rType = 0;
+		vrLen = 1049;
+		vrLoc = 0;
+	};
+	3A9750440B64EE9100262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
+		name = "PFUtil.m: 116";
+		rLen = 0;
+		rLoc = 3082;
+		rType = 0;
+		vrLen = 829;
+		vrLoc = 2579;
+	};
+	3A9750450B64EE9700262C3F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
+		name = "PFMain.m: 302";
+		rLen = 0;
+		rLoc = 7196;
+		rType = 0;
+		vrLen = 2120;
+		vrLoc = 5903;
 	};
 	3AB8D2830B5EA78D00FC9D56 /* PFMain.h */ = {
 		uiCtxt = {
@@ -1334,9 +1464,9 @@
 	};
 	3AB8D2840B5EA78D00FC9D56 /* PFMain.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {966, 8680}}";
-			sepNavSelRange = "{7224, 0}";
-			sepNavVisRect = "{{0, 3788}, {966, 862}}";
+			sepNavIntBoundsRect = "{{0, 0}, {966, 8764}}";
+			sepNavSelRange = "{7196, 0}";
+			sepNavVisRect = "{{0, 3790}, {966, 862}}";
 			sepNavWindowFrame = "{{15, 336}, {1086, 837}}";
 		};
 	};
@@ -1415,7 +1545,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "DLog(@\"providerIndex: %d\", providerIndex);";
 		rLen = 49;
-		rLoc = 9742;
+		rLoc = 9852;
 		rType = 0;
 		vrLen = 1686;
 		vrLoc = 8053;
@@ -1435,7 +1565,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = runningProviders;
 		rLen = 0;
-		rLoc = 9902;
+		rLoc = 10012;
 		rType = 0;
 		vrLen = 1872;
 		vrLoc = 7811;
@@ -1475,7 +1605,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = providerThreadsAvailableCondLock;
 		rLen = 32;
-		rLoc = 10344;
+		rLoc = 10454;
 		rType = 0;
 		vrLen = 1642;
 		vrLoc = 8210;
@@ -1495,7 +1625,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = queueFillerThread;
 		rLen = 17;
-		rLoc = 8547;
+		rLoc = 8657;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 7620;
@@ -1631,7 +1761,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 350";
 		rLen = 0;
-		rLoc = 9084;
+		rLoc = 9194;
 		rType = 0;
 		vrLen = 1924;
 		vrLoc = 7729;
@@ -1641,7 +1771,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 401";
 		rLen = 0;
-		rLoc = 10690;
+		rLoc = 10800;
 		rType = 0;
 		vrLen = 1699;
 		vrLoc = 8356;
@@ -1651,7 +1781,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 354";
 		rLen = 0;
-		rLoc = 9233;
+		rLoc = 9343;
 		rType = 0;
 		vrLen = 1832;
 		vrLoc = 7627;
@@ -1699,7 +1829,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 354";
 		rLen = 0;
-		rLoc = 9233;
+		rLoc = 9343;
 		rType = 0;
 		vrLen = 1832;
 		vrLoc = 7627;
@@ -1739,7 +1869,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 354";
 		rLen = 0;
-		rLoc = 9233;
+		rLoc = 9343;
 		rType = 0;
 		vrLen = 1832;
 		vrLoc = 7627;
@@ -1919,7 +2049,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: configurationForProvider:";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3501;
 		rType = 0;
 		vrLen = 909;
 		vrLoc = 1211;
@@ -1957,7 +2087,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: configurationForProvider:";
 		rLen = 0;
-		rLoc = 3449;
+		rLoc = 3501;
 		rType = 0;
 		vrLen = 909;
 		vrLoc = 1211;
@@ -2006,7 +2136,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: defaults";
-		rLen = 1029;
+		rLen = 1081;
 		rLoc = 2326;
 		rType = 0;
 		vrLen = 1528;
@@ -2027,7 +2157,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = configurationForProvider;
 		rLen = 0;
-		rLoc = 7932;
+		rLoc = 8042;
 		rType = 0;
 		vrLen = 1772;
 		vrLoc = 5885;
@@ -2047,7 +2177,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: activateProviderOfClass:lookingUpConfigurationIn:";
 		rLen = 885;
-		rLoc = 7573;
+		rLoc = 7683;
 		rType = 0;
 		vrLen = 1741;
 		vrLoc = 5885;
@@ -2087,7 +2217,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = configurationForProvider;
 		rLen = 0;
-		rLoc = 7932;
+		rLoc = 8042;
 		rType = 0;
 		vrLen = 1772;
 		vrLoc = 5885;
@@ -2096,7 +2226,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: defaults";
-		rLen = 1029;
+		rLen = 1081;
 		rLoc = 2326;
 		rType = 0;
 		vrLen = 1528;
@@ -2117,7 +2247,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 310";
 		rLen = 0;
-		rLoc = 8277;
+		rLoc = 8387;
 		rType = 0;
 		vrLen = 1695;
 		vrLoc = 5885;
@@ -2127,7 +2257,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 310";
 		rLen = 0;
-		rLoc = 8277;
+		rLoc = 8387;
 		rType = 0;
 		vrLen = 1695;
 		vrLoc = 5885;
@@ -2146,7 +2276,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: defaults";
-		rLen = 1029;
+		rLen = 1081;
 		rLoc = 2326;
 		rType = 0;
 		vrLen = 1597;
@@ -2157,7 +2287,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 310";
 		rLen = 0;
-		rLoc = 8277;
+		rLoc = 8387;
 		rType = 0;
 		vrLen = 1695;
 		vrLoc = 5885;
@@ -2166,7 +2296,7 @@
 		isa = PBXTextBookmark;
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: defaults";
-		rLen = 1029;
+		rLen = 1081;
 		rLoc = 2326;
 		rType = 0;
 		vrLen = 1597;
@@ -2227,7 +2357,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 309";
 		rLen = 0;
-		rLoc = 7543;
+		rLoc = 7653;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 6309;
@@ -2285,7 +2415,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 309";
 		rLen = 0;
-		rLoc = 7543;
+		rLoc = 7653;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 6309;
@@ -2443,7 +2573,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 91";
 		rLen = 0;
-		rLoc = 3143;
+		rLoc = 3226;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 1416;
@@ -2463,7 +2593,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: instantiateProviders";
 		rLen = 0;
-		rLoc = 7585;
+		rLoc = 7695;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 6466;
@@ -2491,7 +2621,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "+ (void) setConfiguration:(NSDictionary*)conf forProviderWithId:(NSString*)providerId";
 		rLen = 93;
-		rLoc = 3356;
+		rLoc = 3408;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 969;
@@ -2511,7 +2641,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "+ (void) setConfiguration:(NSDictionary*)conf forProvider:(PFProviderClass*)provider";
 		rLen = 89;
-		rLoc = 3179;
+		rLoc = 3231;
 		rType = 0;
 		vrLen = 1697;
 		vrLoc = 909;
@@ -2801,7 +2931,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 310";
 		rLen = 0;
-		rLoc = 8277;
+		rLoc = 8387;
 		rType = 0;
 		vrLen = 1697;
 		vrLoc = 5883;
@@ -2821,7 +2951,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: configurationForProviderWithId:";
 		rLen = 0;
-		rLoc = 3258;
+		rLoc = 3310;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1050;
@@ -2841,7 +2971,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: defaultIntForKey:";
 		rLen = 0;
-		rLoc = 5575;
+		rLoc = 5627;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 3020;
@@ -2861,7 +2991,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: setConfiguration:forProvider:";
 		rLen = 0;
-		rLoc = 3427;
+		rLoc = 3479;
 		rType = 0;
 		vrLen = 1618;
 		vrLoc = 1535;
@@ -2881,7 +3011,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 91";
 		rLen = 0;
-		rLoc = 3143;
+		rLoc = 3226;
 		rType = 0;
 		vrLen = 1830;
 		vrLoc = 1503;
@@ -2891,7 +3021,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 307";
 		rLen = 0;
-		rLoc = 7987;
+		rLoc = 8097;
 		rType = 0;
 		vrLen = 1694;
 		vrLoc = 5885;
@@ -2911,7 +3041,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 309";
 		rLen = 0;
-		rLoc = 8057;
+		rLoc = 8167;
 		rType = 0;
 		vrLen = 1664;
 		vrLoc = 5885;
@@ -2941,7 +3071,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 91";
 		rLen = 0;
-		rLoc = 3143;
+		rLoc = 3226;
 		rType = 0;
 		vrLen = 1877;
 		vrLoc = 1416;
@@ -2951,7 +3081,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 326";
 		rLen = 0;
-		rLoc = 8010;
+		rLoc = 8120;
 		rType = 0;
 		vrLen = 1940;
 		vrLoc = 6515;
@@ -2991,7 +3121,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: instantiateProviders";
 		rLen = 201;
-		rLoc = 7573;
+		rLoc = 7683;
 		rType = 0;
 		vrLen = 2118;
 		vrLoc = 6264;
@@ -3011,7 +3141,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 319";
 		rLen = 0;
-		rLoc = 7679;
+		rLoc = 7789;
 		rType = 0;
 		vrLen = 2068;
 		vrLoc = 5426;
@@ -3031,7 +3161,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: instantiateProviders";
 		rLen = 0;
-		rLoc = 7585;
+		rLoc = 7695;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 6466;
@@ -3139,7 +3269,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = generateUniqueIdentifierForInstanceOfClass;
 		rLen = 42;
-		rLoc = 7852;
+		rLoc = 7962;
 		rType = 0;
 		vrLen = 2040;
 		vrLoc = 6443;
@@ -3159,7 +3289,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = generateUniqueIdentifierForInstanceOfClass;
 		rLen = 42;
-		rLoc = 7852;
+		rLoc = 7962;
 		rType = 0;
 		vrLen = 2037;
 		vrLoc = 6446;
@@ -3169,7 +3299,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 91";
 		rLen = 0;
-		rLoc = 3143;
+		rLoc = 3226;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 1413;
@@ -3239,7 +3369,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 323";
 		rLen = 0;
-		rLoc = 7828;
+		rLoc = 7938;
 		rType = 0;
 		vrLen = 2039;
 		vrLoc = 6443;
@@ -3249,7 +3379,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 323";
 		rLen = 0;
-		rLoc = 7828;
+		rLoc = 7938;
 		rType = 0;
 		vrLen = 2143;
 		vrLoc = 6204;
@@ -3269,7 +3399,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 323";
 		rLen = 0;
-		rLoc = 7828;
+		rLoc = 7938;
 		rType = 0;
 		vrLen = 2184;
 		vrLoc = 6163;
@@ -3289,7 +3419,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 323";
 		rLen = 0;
-		rLoc = 7828;
+		rLoc = 7938;
 		rType = 0;
 		vrLen = 2143;
 		vrLoc = 6204;
@@ -3299,7 +3429,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 181";
 		rLen = 0;
-		rLoc = 4836;
+		rLoc = 4888;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 4007;
@@ -3309,7 +3439,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 181";
 		rLen = 0;
-		rLoc = 4836;
+		rLoc = 4888;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 4007;
@@ -3319,7 +3449,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 323";
 		rLen = 0;
-		rLoc = 7828;
+		rLoc = 7938;
 		rType = 0;
 		vrLen = 2143;
 		vrLoc = 6204;
@@ -3329,7 +3459,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 181";
 		rLen = 0;
-		rLoc = 4836;
+		rLoc = 4888;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 4007;
@@ -3339,7 +3469,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 342";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 7259;
@@ -3349,7 +3479,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 338";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1568;
 		vrLoc = 7259;
@@ -3369,7 +3499,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 338";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1568;
 		vrLoc = 7259;
@@ -3409,7 +3539,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 181";
 		rLen = 0;
-		rLoc = 4836;
+		rLoc = 4888;
 		rType = 0;
 		vrLen = 1442;
 		vrLoc = 4007;
@@ -3429,7 +3559,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 171";
 		rLen = 0;
-		rLoc = 4661;
+		rLoc = 4713;
 		rType = 0;
 		vrLen = 1452;
 		vrLoc = 4007;
@@ -3439,7 +3569,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 170";
 		rLen = 0;
-		rLoc = 4592;
+		rLoc = 4644;
 		rType = 0;
 		vrLen = 1459;
 		vrLoc = 4007;
@@ -3449,7 +3579,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 170";
 		rLen = 0;
-		rLoc = 4592;
+		rLoc = 4644;
 		rType = 0;
 		vrLen = 1459;
 		vrLoc = 4007;
@@ -3469,7 +3599,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 382";
 		rLen = 0;
-		rLoc = 9311;
+		rLoc = 9421;
 		rType = 0;
 		vrLen = 1586;
 		vrLoc = 8519;
@@ -3479,7 +3609,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 170";
 		rLen = 0;
-		rLoc = 4592;
+		rLoc = 4644;
 		rType = 0;
 		vrLen = 1459;
 		vrLoc = 4007;
@@ -3489,7 +3619,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 382";
 		rLen = 0;
-		rLoc = 9311;
+		rLoc = 9421;
 		rType = 0;
 		vrLen = 1586;
 		vrLoc = 8519;
@@ -3509,7 +3639,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 380";
 		rLen = 0;
-		rLoc = 9289;
+		rLoc = 9399;
 		rType = 0;
 		vrLen = 1586;
 		vrLoc = 8519;
@@ -3519,7 +3649,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 392";
 		rLen = 0;
-		rLoc = 9712;
+		rLoc = 9822;
 		rType = 0;
 		vrLen = 1802;
 		vrLoc = 8519;
@@ -3529,7 +3659,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 384";
 		rLen = 0;
-		rLoc = 9558;
+		rLoc = 9668;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 8519;
@@ -3539,7 +3669,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 391";
 		rLen = 0;
-		rLoc = 9712;
+		rLoc = 9822;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 8519;
@@ -3549,7 +3679,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 372";
 		rLen = 0;
-		rLoc = 9084;
+		rLoc = 9194;
 		rType = 0;
 		vrLen = 1776;
 		vrLoc = 8519;
@@ -3559,7 +3689,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "@try {";
 		rLen = 0;
-		rLoc = 9661;
+		rLoc = 9771;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 8519;
@@ -3569,7 +3699,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 395";
 		rLen = 0;
-		rLoc = 9712;
+		rLoc = 9822;
 		rType = 0;
 		vrLen = 1857;
 		vrLoc = 8519;
@@ -3579,7 +3709,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 419";
 		rLen = 0;
-		rLoc = 10545;
+		rLoc = 10655;
 		rType = 0;
 		vrLen = 1876;
 		vrLoc = 8594;
@@ -3589,7 +3719,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 389";
 		rLen = 0;
-		rLoc = 9595;
+		rLoc = 9705;
 		rType = 0;
 		vrLen = 1870;
 		vrLoc = 8594;
@@ -3599,7 +3729,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 387";
 		rLen = 0;
-		rLoc = 9549;
+		rLoc = 9659;
 		rType = 0;
 		vrLen = 1959;
 		vrLoc = 8594;
@@ -3609,7 +3739,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 358";
 		rLen = 0;
-		rLoc = 8700;
+		rLoc = 8810;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 8498;
@@ -3619,7 +3749,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 401";
 		rLen = 0;
-		rLoc = 9806;
+		rLoc = 9916;
 		rType = 0;
 		vrLen = 1931;
 		vrLoc = 8768;
@@ -3629,7 +3759,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 170";
 		rLen = 0;
-		rLoc = 4592;
+		rLoc = 4644;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 3992;
@@ -3639,7 +3769,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 401";
 		rLen = 0;
-		rLoc = 9806;
+		rLoc = 9916;
 		rType = 0;
 		vrLen = 1931;
 		vrLoc = 8768;
@@ -3649,7 +3779,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 401";
 		rLen = 0;
-		rLoc = 9806;
+		rLoc = 9916;
 		rType = 0;
 		vrLen = 1931;
 		vrLoc = 8768;
@@ -3659,7 +3789,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 170";
 		rLen = 0;
-		rLoc = 4592;
+		rLoc = 4644;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 3992;
@@ -3669,7 +3799,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 400";
 		rLen = 0;
-		rLoc = 9734;
+		rLoc = 9844;
 		rType = 0;
 		vrLen = 2018;
 		vrLoc = 8768;
@@ -3679,7 +3809,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 391";
 		rLen = 0;
-		rLoc = 9617;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 2048;
 		vrLoc = 8768;
@@ -3689,7 +3819,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 421";
 		rLen = 0;
-		rLoc = 10554;
+		rLoc = 10664;
 		rType = 0;
 		vrLen = 2035;
 		vrLoc = 8788;
@@ -3699,7 +3829,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 366";
 		rLen = 0;
-		rLoc = 8810;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1913;
 		vrLoc = 8650;
@@ -3709,7 +3839,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 419";
 		rLen = 0;
-		rLoc = 10623;
+		rLoc = 10733;
 		rType = 0;
 		vrLen = 1629;
 		vrLoc = 9382;
@@ -3739,7 +3869,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 2000;
 		vrLoc = 6498;
@@ -3749,7 +3879,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = 0;
 		rLen = 1;
-		rLoc = 10622;
+		rLoc = 10732;
 		rType = 0;
 		vrLen = 1846;
 		vrLoc = 8724;
@@ -3769,7 +3899,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 2052;
 		vrLoc = 6446;
@@ -3789,7 +3919,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 414";
 		rLen = 0;
-		rLoc = 10245;
+		rLoc = 10355;
 		rType = 0;
 		vrLen = 1867;
 		vrLoc = 8774;
@@ -4029,7 +4159,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 349";
 		rLen = 0;
-		rLoc = 7565;
+		rLoc = 7675;
 		rType = 0;
 		vrLen = 2268;
 		vrLoc = 7088;
@@ -4039,7 +4169,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];";
 		rLen = 0;
-		rLoc = 7565;
+		rLoc = 7675;
 		rType = 0;
 		vrLen = 2269;
 		vrLoc = 7088;
@@ -4059,7 +4189,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];";
 		rLen = 0;
-		rLoc = 7565;
+		rLoc = 7675;
 		rType = 0;
 		vrLen = 2269;
 		vrLoc = 7088;
@@ -4089,7 +4219,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "[[NSNotificationCenter defaultCenter] postNotificationName:PFActiveProvidersDidChangeNotification object:self];";
 		rLen = 0;
-		rLoc = 7565;
+		rLoc = 7675;
 		rType = 0;
 		vrLen = 2269;
 		vrLoc = 7088;
@@ -4109,7 +4239,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 349";
 		rLen = 0;
-		rLoc = 7565;
+		rLoc = 7675;
 		rType = 0;
 		vrLen = 2196;
 		vrLoc = 7088;
@@ -4139,7 +4269,7 @@
 		comments = "error: 'activeProvidersAvailableCondLock' undeclared (first use in this function)";
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		rLen = 0;
-		rLoc = 368;
+		rLoc = 374;
 		rType = 1;
 	};
 	3AC6788D0B64176F00D478CD /* PBXTextBookmark */ = {
@@ -4157,7 +4287,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 367";
 		rLen = 0;
-		rLoc = 8868;
+		rLoc = 8978;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 8509;
@@ -4207,7 +4337,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 337";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6645;
@@ -4317,7 +4447,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 337";
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6645;
@@ -4387,7 +4517,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 327";
 		rLen = 0;
-		rLoc = 7964;
+		rLoc = 8074;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6645;
@@ -4417,7 +4547,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 327";
 		rLen = 0;
-		rLoc = 7964;
+		rLoc = 8074;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6645;
@@ -4437,7 +4567,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 367";
 		rLen = 0;
-		rLoc = 8868;
+		rLoc = 8978;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 8509;
@@ -4634,7 +4764,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 327";
 		rLen = 0;
-		rLoc = 7964;
+		rLoc = 8074;
 		rType = 0;
 		vrLen = 1836;
 		vrLoc = 6645;
@@ -4654,7 +4784,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 329";
 		rLen = 0;
-		rLoc = 8010;
+		rLoc = 8120;
 		rType = 0;
 		vrLen = 1812;
 		vrLoc = 6645;
@@ -4664,7 +4794,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 331";
 		rLen = 0;
-		rLoc = 8135;
+		rLoc = 8245;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 6645;
@@ -4684,7 +4814,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 301";
 		rLen = 0;
-		rLoc = 7231;
+		rLoc = 7341;
 		rType = 0;
 		vrLen = 1866;
 		vrLoc = 6554;
@@ -4704,7 +4834,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 301";
 		rLen = 0;
-		rLoc = 7231;
+		rLoc = 7341;
 		rType = 0;
 		vrLen = 1866;
 		vrLoc = 6554;
@@ -4814,7 +4944,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 367";
 		rLen = 0;
-		rLoc = 8868;
+		rLoc = 8978;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 8522;
@@ -4991,7 +5121,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 171";
 		rLen = 0;
-		rLoc = 4661;
+		rLoc = 4713;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 3991;
@@ -5001,7 +5131,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 171";
 		rLen = 0;
-		rLoc = 4661;
+		rLoc = 4713;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 3991;
@@ -5031,7 +5161,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 171";
 		rLen = 0;
-		rLoc = 4661;
+		rLoc = 4713;
 		rType = 0;
 		vrLen = 1475;
 		vrLoc = 3991;
@@ -5291,7 +5421,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = "PFMain.m: 367";
 		rLen = 0;
-		rLoc = 8868;
+		rLoc = 8978;
 		rType = 0;
 		vrLen = 949;
 		vrLoc = 8522;
@@ -5509,7 +5639,7 @@
 		fRef = 3A9404C50B59A8D7001FBD1C /* PFUtil.m */;
 		name = "PFUtil.m: 67";
 		rLen = 0;
-		rLoc = 4498;
+		rLoc = 4550;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 969;
@@ -5600,7 +5730,7 @@
 		fRef = 3AB8D2840B5EA78D00FC9D56 /* PFMain.m */;
 		name = PFActiveProvidersDidChange;
 		rLen = 0;
-		rLoc = 8316;
+		rLoc = 8426;
 		rType = 0;
 		vrLen = 1587;
 		vrLoc = 6379;

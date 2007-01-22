@@ -224,8 +224,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -272,7 +270,13 @@
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
-							<array/>
+							<array>
+								<array>
+									<integer>13</integer>
+									<integer>2</integer>
+									<integer>0</integer>
+								</array>
+							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
 							<string>{{0, 0}, {250, 951}}</string>
 						</dict>
@@ -304,12 +308,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFUtil.m</string>
+								<string>PFMain.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -317,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PFUtil.m</string>
+										<string>PFMain.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A9750190B64ECC800262C3F</string>
+										<string>3A9750450B64EE9700262C3F</string>
 										<key>history</key>
 										<array>
 											<string>3A7F79F50B615A0F0006CEFA</string>
@@ -348,8 +354,8 @@
 											<string>3A974FC40B64C9CD00262C3F</string>
 											<string>3A974FC50B64C9CD00262C3F</string>
 											<string>3A974FDD0B64CA0F00262C3F</string>
-											<string>3A9750110B64CACB00262C3F</string>
-											<string>3A9750120B64CACB00262C3F</string>
+											<string>3A9750340B64EDF500262C3F</string>
+											<string>3A9750350B64EDF500262C3F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -388,6 +394,7 @@
 											<string>3A974FD20B64C9CD00262C3F</string>
 											<string>3A9750130B64CACB00262C3F</string>
 											<string>3A9750140B64CACB00262C3F</string>
+											<string>3A9750360B64EDF500262C3F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -581,10 +588,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>3A2C3EBE0AE4301E00970E7C</string>
 		<string>3A974FAE0B64C53800262C3F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -611,7 +618,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PFUtil.h</string>
+								<string>PFUtil.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -1042,7 +1049,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

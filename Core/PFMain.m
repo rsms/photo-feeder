@@ -296,10 +296,16 @@ static PFMain* instance = nil;
 						providerConfiguration = [providersDefinitionDict objectForKey:@"configuration"];
 						// We need to create a new empty config here if not found, or else the call to 
 						// activateProviderWithIdentifier... will try to look it up again
-						if(!providerConfiguration)
-							providerConfiguration = [[NSMutableDictionary alloc] init];
+						if(providerConfiguration)
+						{
+							NSMutableDictionary* tmp = [providerConfiguration mutableCopy];
+							[providerConfiguration release];
+							providerConfiguration = tmp;
+						}
 						else
-							providerConfiguration = [providerConfiguration mutableCopy];
+						{
+							providerConfiguration = [[NSMutableDictionary alloc] init];
+						}
 						
 						[self instantiateProviderWithIdentifier: providerIdentifier
 																  ofClass: providerClass
