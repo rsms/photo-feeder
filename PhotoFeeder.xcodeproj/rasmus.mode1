@@ -271,16 +271,16 @@
 								<string>3A216B6E0AEED3A70070394E</string>
 								<string>19C28FB8FE9D52D311CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>E2644B35053B69B200211256</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>56</integer>
+									<integer>3</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 136}, {250, 1003}}</string>
+							<string>{{0, 0}, {250, 1003}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -327,7 +327,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3AF63C490B65006B006F012B</string>
+										<string>3ABE3B4E0B6500B700416DA5</string>
 										<key>history</key>
 										<array>
 											<string>3A7F7A760B6161FF0006CEFA</string>
@@ -360,7 +360,7 @@
 											<string>3AF63C220B650010006F012B</string>
 											<string>3AF63C3D0B65006B006F012B</string>
 											<string>3AF63C3F0B65006B006F012B</string>
-											<string>3AF63C400B65006B006F012B</string>
+											<string>3AF63C490B65006B006F012B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -388,16 +388,9 @@
 											<string>3AC678B90B6418A900D478CD</string>
 											<string>3AC6791E0B641C3D00D478CD</string>
 											<string>3A9750130B64CACB00262C3F</string>
-											<string>3AF63C250B650010006F012B</string>
 											<string>3AF63C260B650010006F012B</string>
-											<string>3AF63C270B650010006F012B</string>
-											<string>3AF63C280B650010006F012B</string>
-											<string>3AF63C290B650010006F012B</string>
-											<string>3AF63C2A0B650010006F012B</string>
-											<string>3AF63C2B0B650010006F012B</string>
 											<string>3AF63C2C0B650010006F012B</string>
 											<string>3AF63C410B65006B006F012B</string>
-											<string>3AF63C430B65006B006F012B</string>
 											<string>3AF63C450B65006B006F012B</string>
 										</array>
 									</dict>
@@ -456,9 +449,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3AF63C2F0B650010006F012B</string>
+				<string>3ABE3B500B6500B700416DA5</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3AF63C300B650010006F012B</string>
+				<string>3ABE3B510B6500B700416DA5</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -592,8 +585,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>3AF63C370B650010006F012B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>3ABE3B3E0B6500AC00416DA5</string>
 		<string>/Users/rasmus/src/PhotoFeeder/PhotoFeeder.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -718,8 +711,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {340, 469}}</string>
-											<string>{{340, 0}, {628, 469}}</string>
+											<string>{{0, 0}, {338, 469}}</string>
+											<string>{{338, 0}, {630, 469}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -782,14 +775,14 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3AF63C310B650010006F012B</string>
+				<string>3ABE3B380B6500AC00416DA5</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3AF63C320B650010006F012B</string>
-				<string>3AF63C330B650010006F012B</string>
-				<string>3AF63C340B650010006F012B</string>
-				<string>3AF63C350B650010006F012B</string>
-				<string>3AF63C360B650010006F012B</string>
-				<string>3AF63C370B650010006F012B</string>
+				<string>3ABE3B390B6500AC00416DA5</string>
+				<string>3ABE3B3A0B6500AC00416DA5</string>
+				<string>3ABE3B3B0B6500AC00416DA5</string>
+				<string>3ABE3B3C0B6500AC00416DA5</string>
+				<string>3ABE3B3D0B6500AC00416DA5</string>
+				<string>3ABE3B3E0B6500AC00416DA5</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debug</string>
@@ -798,7 +791,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
