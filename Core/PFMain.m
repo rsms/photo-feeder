@@ -313,7 +313,8 @@ static PFMain* instance = nil;
 					}
 					else
 					{
-						NSTrace(@"Unable to load provider with id '%@': Unknown provider class '%@'", providerIdentifier, providerClassName);
+						NSTrace(@"Unable to load provider with id '%@': Unknown provider class '%@'", 
+								  providerIdentifier, providerClassName);
 					}
 				}
 			}
