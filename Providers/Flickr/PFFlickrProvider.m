@@ -45,8 +45,8 @@ DLog(@"%@", [res URL]);
 	activeCondLock = [[NSConditionLock alloc] initWithCondition:YES];
 	
 	[NSThread detachNewThreadSelector:@selector(addURLsThread:) 
-									 toTarget:self 
-								  withObject:nil];
+							 toTarget:self 
+						   withObject:nil];
 	return self;
 }
 
