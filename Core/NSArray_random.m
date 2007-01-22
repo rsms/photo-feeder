@@ -17,7 +17,7 @@
 #include <CoreServices/CoreServices.h>
 
 
-@implementation NSArray (RandomAddition)
+@implementation NSArray (NSArrayRandomAddition)
 
 - (NSArray*) randomCopy
 {

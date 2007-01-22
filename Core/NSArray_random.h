@@ -15,7 +15,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (RandomAddition)
+@interface NSArray (NSArrayRandomAddition)
 - (NSArray*) randomCopy;
 @end
 
