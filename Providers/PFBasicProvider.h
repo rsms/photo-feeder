@@ -18,4 +18,8 @@
 	NSMutableDictionary* configuration;
 }
 
+
+/// Convenience method for dispatching a notification
+- (void) notifyOnConfigurationUpdate;
+
 @end
