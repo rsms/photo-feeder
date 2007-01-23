@@ -11,13 +11,13 @@
  */
 
 #import "NSArray_random.h"
-#import "PFUtil.h"
 
 #include <stdlib.h>
 #include <CoreServices/CoreServices.h>
 
 
 @implementation NSArray (NSArrayRandomAddition)
+
 
 - (NSArray*) randomCopy
 {
@@ -30,10 +30,12 @@
 	ca = [self mutableCopy];
 	na = [[NSMutableArray alloc] initWithCapacity:count];
 	x = count;
+	struct timeval tp;
 	
 	while(x--)
 	{
-		srandom([PFUtil microseed]);
+		if(gettimeofday(&tp, NULL) == 0)
+			srandom(tp.tv_usec + tp.tv_sec);
 		i = (unsigned)random() % count--;
 		
 		// Take obj from current
