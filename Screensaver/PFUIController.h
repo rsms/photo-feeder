@@ -16,6 +16,7 @@
 	IBOutlet NSArrayController* availableProvidersController;
 	IBOutlet NSArrayController* activeProvidersController;
 	IBOutlet NSTableView*       activeProvidersTable;
+	IBOutlet NSButton*          activeProvidersRemoveButton;
 }
 
 - (IBAction) done:(id)sender;

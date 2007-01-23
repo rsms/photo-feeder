@@ -108,55 +108,38 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 	@synchronized([PFUtil defaults])
 	{
 		if(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"])
-		{
 			if(providerDefinitionDict = [activeProvidersDict objectForKey:providerId])
-			{
 				if(providerConfiguration = [providerDefinitionDict objectForKey:@"configuration"])
-				{
-					NSMutableDictionary* mutableProviderConfiguration = [providerConfiguration mutableCopy];
-					[providerConfiguration release];
-					return mutableProviderConfiguration;
-				}
-			}
-		}
+					return [[providerConfiguration mutableCopy] autorelease];
 	}
 	
-	return [[NSMutableDictionary alloc] init];
+	return [[[NSMutableDictionary alloc] init] autorelease];
 }
 
 
-+ (void) setConfiguration:(NSDictionary*)conf forProvider:(NSObject<PFProvider>*)provider
-{
-	[PFUtil setConfiguration:conf forProviderWithIdentifier:[provider identifier]];
-}
-
-
-+ (void) setConfiguration:(NSDictionary*)conf forProviderWithIdentifier:(NSString*)providerId
+/*+ (void) setConfiguration:(NSDictionary*)conf forProvider:(NSObject<PFProvider>*)provider
 {
 	NSMutableDictionary* activeProvidersDict;
 	NSMutableDictionary* providerDefinitionDict;
 	
 	@synchronized([PFUtil defaults])
 	{
+		// If there is saved active providers, convert dict to mutable. If not, create a new dict.
+		activeProvidersDict = (activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"]) ?
+			[activeProvidersDict mutableCopy] : [[NSMutableDictionary alloc] init];
 		
-		if(!(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"]))
-			activeProvidersDict = [[NSMutableDictionary alloc] init];
-		else
-			activeProvidersDict = [activeProvidersDict mutableCopy];
+		providerDefinitionDict = [[NSMutableDictionary alloc] init];
 		
+		[providerDefinitionDict setObject: [provider className]  forKey: @"class"];
+		[providerDefinitionDict setObject: conf                  forKey: @"configuration"];
 		
-		if(!(providerDefinitionDict = [activeProvidersDict objectForKey:providerId]))
-			providerDefinitionDict = [[NSMutableDictionary alloc] init];
-		else
-			providerDefinitionDict = [providerDefinitionDict mutableCopy];
+		[activeProvidersDict setObject: providerDefinitionDict   forKey: [provider identifier]];
+		[providerDefinitionDict release];
 		
-		
-		NSTrace(@"TODO: Fix problem with immutable vs mutable dicts which are to be saved. Config saving is disabled.");
-		//[providerDefinitionDict setObject:conf forKey:@"configuration"];
-		//[activeProvidersDict setObject:providerDefinitionDict forKey:providerId];
-		//[[PFUtil defaults] setObject:activeProvidersDict forKey:@"activeProviders"];
+		[[PFUtil defaults] setObject: activeProvidersDict        forKey: @"activeProviders"];
+		[activeProvidersDict release];
 	}
-}
+}*/
 
 
 

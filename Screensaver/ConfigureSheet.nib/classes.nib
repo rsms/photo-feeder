@@ -16,6 +16,7 @@
             LANGUAGE = ObjC; 
             OUTLETS = {
                 activeProvidersController = NSArrayController; 
+                activeProvidersRemoveButton = NSButton; 
                 activeProvidersTable = NSTableView; 
                 addProviderWindow = NSWindow; 
                 availableProvidersController = NSArrayController; 

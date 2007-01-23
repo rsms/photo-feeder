@@ -232,6 +232,8 @@
     }
     
 	//Draw the arrow, if needed
+	/*
+	REQUIRES LINKING WITH CARBON:
 	if ([self menu]) {
 		struct HIThemePopupArrowDrawInfo drawInfo = {
 			.version = 0,
@@ -264,7 +266,7 @@
 							  &drawInfo,
 							  [[NSApp context] graphicsPort],
 							  kHIThemeOrientationNormal);
-	}
+	}*/
 }
 
 #pragma mark Accessors (should that REALLY be plural?)

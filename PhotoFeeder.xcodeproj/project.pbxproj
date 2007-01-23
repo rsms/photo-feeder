@@ -98,6 +98,10 @@
 		3ACC89D50B65AE4400BE2F7D /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC89D20B65AE4400BE2F7D /* PFProvider.m */; };
 		3ACC89D60B65AE4400BE2F7D /* PFProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC89D20B65AE4400BE2F7D /* PFProvider.m */; };
 		3AD264330B2334AB005CE2C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3AD264320B2334AB005CE2C6 /* LICENSE */; };
+		3AD907550B669D93007E8710 /* AIPlasticButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC86370B659D9000BE2F7D /* AIPlasticButton.m */; };
+		3AD907560B669D93007E8710 /* AIPlasticButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC86390B659D9000BE2F7D /* AIPlasticButtonCell.m */; };
+		3AD907570B669D93007E8710 /* AIPlasticMinusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC863B0B659D9000BE2F7D /* AIPlasticMinusButton.m */; };
+		3AD907580B669D93007E8710 /* AIPlasticPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC863D0B659D9000BE2F7D /* AIPlasticPlusButton.m */; };
 		8D255ACC0486D3F9007BF209 /* PFView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* PFView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
@@ -239,10 +243,9 @@
 		3ACC865C0B659F5900BE2F7D /* NSImagePFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSImagePFAdditions.h; path = Core/NSImagePFAdditions.h; sourceTree = "<group>"; };
 		3ACC865D0B659F5900BE2F7D /* NSImagePFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSImagePFAdditions.m; path = Core/NSImagePFAdditions.m; sourceTree = "<group>"; };
 		3ACC89D20B65AE4400BE2F7D /* PFProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProvider.m; path = Providers/PFProvider.m; sourceTree = "<group>"; };
-		3ACE78DB0B6293B800BC66F9 /* PFBasicProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFBasicProvider.h; path = Providers/PFBasicProvider.h; sourceTree = "<group>"; };
-		3ACE78DC0B6293B800BC66F9 /* PFBasicProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFBasicProvider.m; path = Providers/PFBasicProvider.m; sourceTree = "<group>"; };
 		3AD264320B2334AB005CE2C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3AD383AC0B3B32B5009F8887 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
+		3AD907820B669E5E007E8710 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		3AFBD43B0AF2669C00B626A0 /* Flickr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Flickr.framework; path = Flickr/build/Release/Flickr.framework; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = Screensaver/Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* PhotoFeeder.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFeeder.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +319,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD907820B669E5E007E8710 /* Carbon.framework */,
 				3AD383AC0B3B32B5009F8887 /* Quartz.framework */,
 				3AFBD43B0AF2669C00B626A0 /* Flickr.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
@@ -466,8 +470,6 @@
 			children = (
 				3A2C3EF50AE4342700970E7C /* PFProvider.h */,
 				3ACC89D20B65AE4400BE2F7D /* PFProvider.m */,
-				3ACE78DB0B6293B800BC66F9 /* PFBasicProvider.h */,
-				3ACE78DC0B6293B800BC66F9 /* PFBasicProvider.m */,
 				3A6C6AD10B5D931A00BD74E1 /* Disk */,
 				3A6C6A1F0B5D8CE900BD74E1 /* Flickr */,
 			);
@@ -740,6 +742,10 @@
 				3AB8D2880B5EA78D00FC9D56 /* PFMain.m in Sources */,
 				3ACC86610B659F5900BE2F7D /* NSImagePFAdditions.m in Sources */,
 				3ACC89D40B65AE4400BE2F7D /* PFProvider.m in Sources */,
+				3AD907550B669D93007E8710 /* AIPlasticButton.m in Sources */,
+				3AD907560B669D93007E8710 /* AIPlasticButtonCell.m in Sources */,
+				3AD907570B669D93007E8710 /* AIPlasticMinusButton.m in Sources */,
+				3AD907580B669D93007E8710 /* AIPlasticPlusButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,12 +75,27 @@
 
 
 #pragma mark -
-#pragma mark "Add Provider" window delegate methods
+#pragma mark Window delegate methods
 
 - (void)windowWillClose:(NSNotification *)notification
 {
 	if([notification object] == addProviderWindow)
 		[NSApp stopModal];
+}
+
+
+#pragma mark -
+#pragma mark TableView delegate methods
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+	if([notification object] == activeProvidersTable)
+	{
+		if([activeProvidersTable selectedRow] == -1)
+			[activeProvidersRemoveButton setEnabled:NO];
+		else
+			[activeProvidersRemoveButton setEnabled:YES];
+	}
 }
 
 
@@ -167,8 +182,8 @@
 
 - (IBAction) done:(id)sender
 {
-	[[PFUtil defaults] synchronize];
 	[NSApp endSheet:[self window]];
+	[[PFMain instance] synchronizeProviderConfigurations];
 }
 
 

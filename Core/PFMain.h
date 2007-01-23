@@ -61,6 +61,9 @@
 																	 ofClass: (Class)providerClass
 													  usingConfiguration: (NSMutableDictionary*)configuration;
 
+// Configuration Synchronization
+- (void) synchronizeProviderConfigurations;
+
 // Notification Callbacks
 - (void) providerConfigurationDidChange:(NSNotification*)notification;
 

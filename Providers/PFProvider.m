@@ -79,8 +79,6 @@
 	
 	if(![configuration objectForKey:@"name"])
 		[configuration setObject:[[self class] pluginName] forKey:@"name"];
-	
-	[self notifyOnConfigurationUpdate];
 }
 
 
@@ -108,7 +106,6 @@
 -(void) setActive:(BOOL)b
 {
 	[configuration setObject:[NSNumber numberWithBool:b] forKey:@"active"];
-	[self notifyOnConfigurationUpdate];
 }
 
 
@@ -121,15 +118,6 @@
 -(void) setName:(NSString*)name
 {
 	[configuration setObject:name forKey:@"name"];
-	[self notifyOnConfigurationUpdate];
-}
-
-
-- (void) notifyOnConfigurationUpdate
-{
-	// Notify observers about the config update
-	[[NSNotificationCenter defaultCenter] postNotificationName: @"PFProviderConfigurationDidChangeNotification"
-																		 object: self];
 }
 
 

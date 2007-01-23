@@ -40,7 +40,7 @@ DLog(@"%@", [res URL]);
 	[super init];
 	
 	// Internal URL queue
-	urls = [[[PFQueue alloc] initWithCapacity:20] retain];
+	urls = [[[PFQueue alloc] initWithCapacity:10] retain];
 	
 	// Used to pause the addURLsThread when not active
 	activeCondLock = [[[NSConditionLock alloc] initWithCondition:YES] retain];

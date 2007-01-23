@@ -297,19 +297,10 @@ static PFMain* instance = nil;
 				{
 					if(providerClass = NSClassFromString(providerClassName))
 					{
-						providerConfiguration = [providersDefinitionDict objectForKey:@"configuration"];
-						// We need to create a new empty config here if not found, or else the call to 
-						// activateProviderWithIdentifier... will try to look it up again
-						if(providerConfiguration)
-						{
-							NSMutableDictionary* tmp = [providerConfiguration mutableCopy];
-							[providerConfiguration release];
-							providerConfiguration = tmp;
-						}
+						if(providerConfiguration = [providersDefinitionDict objectForKey:@"configuration"])
+							providerConfiguration = [providerConfiguration mutableCopy];
 						else
-						{
 							providerConfiguration = [[NSMutableDictionary alloc] init];
-						}
 						
 						[self instantiateProviderWithIdentifier: providerIdentifier
 																  ofClass: providerClass
@@ -358,6 +349,40 @@ static PFMain* instance = nil;
 
 
 
+#pragma mark -
+#pragma mark Configuration Synchronization
+
+
+- (void) synchronizeProviderConfigurations
+{
+	NSMutableDictionary* activeProvidersDict;
+	NSUserDefaults* defaults;
+	NSEnumerator *enumerator;
+	NSObject<PFProvider>* provider;
+	
+	defaults = [PFUtil defaults];
+	activeProvidersDict = [[NSMutableDictionary alloc] init];
+	enumerator = [providers objectEnumerator];
+	
+	while(provider = [enumerator nextObject])
+	{
+		[activeProvidersDict setObject: 
+			[NSMutableDictionary dictionaryWithObjectsAndKeys:
+				[provider className], @"class",
+				[provider configuration], @"configuration",
+				nil]
+			forKey: [provider identifier]];
+	}
+	
+	@synchronized(defaults) {
+		[defaults setObject: activeProvidersDict  forKey: @"activeProviders"];
+		//[defaults synchronize];
+	}
+	
+	[activeProvidersDict release];
+}
+
+
 
 #pragma mark -
 #pragma mark Notification Callbacks
@@ -365,12 +390,9 @@ static PFMain* instance = nil;
 
 - (void) providerConfigurationDidChange:(NSNotification*)notification
 {
-	NSObject<PFProvider>* provider;
-	
 	DLog(@"");
-	
-	if(provider = [notification object])
-		[PFUtil setConfiguration:[provider configuration] forProvider:provider];
+	[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
+	[self synchronizeProviderConfigurations];
 }
 
 
@@ -383,7 +405,7 @@ static PFMain* instance = nil;
 {
 	NSAutoreleasePool *pool;
 	NSObject<PFProvider>* provider;
-	unsigned providerIndex, providerCount;
+	unsigned providerIndex;
 	int altProviderIndexCountdown;
 	
 	pool = [[NSAutoreleasePool alloc] init];
@@ -408,7 +430,7 @@ static PFMain* instance = nil;
 			{
 				while(![provider active] || [busyProviders containsObject:provider])
 				{
-					if(++providerIndex == providerCount)
+					if(++providerIndex == [providers count])
 						providerIndex = 0;
 					
 					// Needed for avoiding deadlock
