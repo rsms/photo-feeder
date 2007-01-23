@@ -10,13 +10,13 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "NSArray_random.h"
+#import "NSArrayPFAdditions.h"
 
 #include <stdlib.h>
 #include <CoreServices/CoreServices.h>
 
 
-@implementation NSArray (NSArrayRandomAddition)
+@implementation NSArray (NSArrayPFAdditions)
 
 
 - (NSArray*) randomCopy
@@ -47,7 +47,7 @@
 	}
 	
 	//DLog(@"Time: %f seconds", [PFUtil microtime]-t);
-	return na;
+	return [na autorelease];
 }
 
 @end

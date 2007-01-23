@@ -20,12 +20,6 @@
 - (void)awakeFromNib
 {
 	DLog(@"");
-	
-	// PFMain -> self
-	[[NSNotificationCenter defaultCenter] addObserver: self
-														  selector: @selector(onActiveProvidersDidChange:)
-																name: PFActiveProvidersDidChangeNotification
-															 object: [PFMain instance]];
 }
 
 
@@ -64,11 +58,11 @@
 }
 
 
-- (void) onActiveProvidersDidChange:(NSNotification*)notification
+/*- (void) onActiveProvidersDidChange:(NSNotification*)notification
 {
 	DLog(@"");
 	[activeProvidersController rearrangeObjects];
-}
+}*/
 
 
 - (void) controlTextDidEndEditing:(NSNotification *)notification

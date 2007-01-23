@@ -48,7 +48,7 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 }
 
 
-+ (NSString*) providerIdFromProvider:(PFProviderClass*)provider
++ (NSString*) providerIdFromProvider:(NSObject<PFProvider>*)provider
 {
 	// TODO: Fix this -- class name is not unique per instance ;)
 	return NSStringFromClass([provider class]);
@@ -138,15 +138,23 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 	
 	@synchronized([PFUtil defaults])
 	{
+		
 		if(!(activeProvidersDict = [PFUtil defaultObjectForKey:@"activeProviders"]))
 			activeProvidersDict = [[NSMutableDictionary alloc] init];
-			
+		else
+			activeProvidersDict = [activeProvidersDict mutableCopy];
+		
+		
 		if(!(providerDefinitionDict = [activeProvidersDict objectForKey:providerId]))
 			providerDefinitionDict = [[NSMutableDictionary alloc] init];
-			
-		[providerDefinitionDict setObject:conf forKey:@"configuration"];
-		[activeProvidersDict setObject:providerDefinitionDict forKey:providerId];
-		[[PFUtil defaults] setObject:activeProvidersDict forKey:@"activeProviders"];
+		else
+			providerDefinitionDict = [providerDefinitionDict mutableCopy];
+		
+		
+		NSTrace(@"TODO: Fix problem with immutable vs mutable dicts which are to be saved. Config saving is disabled.");
+		//[providerDefinitionDict setObject:conf forKey:@"configuration"];
+		//[activeProvidersDict setObject:providerDefinitionDict forKey:providerId];
+		//[[PFUtil defaults] setObject:activeProvidersDict forKey:@"activeProviders"];
 	}
 }
 

@@ -13,7 +13,6 @@
 	#import <Foundation/Foundation.h>
 	#import <AppKit/AppKit.h>
 	#import <Cocoa/Cocoa.h>
-	#import "NSArray_random.h"
 #endif
 
 #define CL_RUN  1

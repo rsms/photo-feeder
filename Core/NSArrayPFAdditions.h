@@ -10,13 +10,15 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#ifndef	NSARRAY_RANDOM_H
-#define	NSARRAY_RANDOM_H
+#ifndef	NSARRAY_PFADDS_H
+#define	NSARRAY_PFADDS_H
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (NSArrayRandomAddition)
+@interface NSArray (NSArrayPFAdditions)
+
 - (NSArray*) randomCopy;
+
 @end
 
 #endif

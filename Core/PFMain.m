@@ -13,8 +13,6 @@
 #import "PFMain.h"
 #import "PFUtil.h"
 
-NSString* const PFActiveProvidersDidChangeNotification = @"PFActiveProvidersDidChangeNotification";
-
 @implementation PFMain
 
 
@@ -107,6 +105,12 @@ static PFMain* instance = nil;
 	[NSThread detachNewThreadSelector: @selector(queueFillerThread:)
 									 toTarget: self
 								  withObject: nil];
+	
+	// We want to know when provider configs has changed
+	[[NSNotificationCenter defaultCenter] addObserver: self
+														  selector: @selector(providerConfigurationDidChange:)
+																name: @"PFProviderConfigurationDidChangeNotification"
+															 object: nil];
 	
 	return self;
 }
@@ -354,6 +358,23 @@ static PFMain* instance = nil;
 
 
 
+
+#pragma mark -
+#pragma mark Notification Callbacks
+
+
+- (void) providerConfigurationDidChange:(NSNotification*)notification
+{
+	NSObject<PFProvider>* provider;
+	
+	DLog(@"");
+	
+	if(provider = [notification object])
+		[PFUtil setConfiguration:[provider configuration] forProvider:provider];
+}
+
+
+
 #pragma mark -
 #pragma mark Threads
 
@@ -361,7 +382,7 @@ static PFMain* instance = nil;
 - (void) queueFillerThread:(id)obj
 {
 	NSAutoreleasePool *pool;
-	PFProviderClass* provider;
+	NSObject<PFProvider>* provider;
 	unsigned providerIndex, providerCount;
 	int altProviderIndexCountdown;
 	
@@ -443,7 +464,7 @@ static PFMain* instance = nil;
 - (void) providerQueueFillerThread:(id)_providerAndProviderIndex
 {
 	NSAutoreleasePool *pool;
-	PFProviderClass* provider;
+	NSObject<PFProvider>* provider;
 	NSArray* providerAndProviderIndex;
 	NSImage* im;
 	unsigned providerIndex;
@@ -452,7 +473,7 @@ static PFMain* instance = nil;
 	pool = [[NSAutoreleasePool alloc] init];
 	timer = [PFUtil microtime];
 	providerAndProviderIndex = (NSArray*)_providerAndProviderIndex;
-	provider = (PFProviderClass*)[providerAndProviderIndex objectAtIndex:0];
+	provider = (NSObject<PFProvider>*)[providerAndProviderIndex objectAtIndex:0];
 	providerIndex = [(NSNumber*)[providerAndProviderIndex objectAtIndex:1] unsignedIntValue];
 			
 	@try

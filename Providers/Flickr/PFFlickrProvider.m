@@ -10,6 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
+#import "NSArrayPFAdditions.h"
 #import "PFFlickrProvider.h"
 
 @implementation PFFlickrProvider
@@ -100,6 +101,12 @@ DLog(@"%@", [res URL]);
 		return nil;
 	}
 	
+	if(!children)
+	{
+		NSTrace(@"Error: No child nodes (no photos?)");
+		return nil;
+	}
+	
 	// Find URL
 	NSEnumerator* it = [children objectEnumerator];
 	NSXMLElement* n;
@@ -179,6 +186,13 @@ DLog(@"%@", [res URL]);
 	NSArray* children = [root nodesForXPath:@"/rsp/photos/photo" error:&err];
 	if(err) // TODO: test and fix
 		NSLog(@"Error: %@", err);
+	
+	NSAssert(children != nil, @"children is nil");
+	
+	// Random, please
+	id oldChildren = children;
+	children = [[children randomCopy] retain];
+	[oldChildren release];
 	
 	// Add URLs
 	NSEnumerator* it = [children objectEnumerator];

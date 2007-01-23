@@ -16,10 +16,6 @@
 #import "PFProvider.h"
 
 
-// Notifications
-NSString* const PFActiveProvidersDidChangeNotification;
-
-
 @interface PFMain : NSObject
 {
 	NSBundle*        bundle;             // The PhotoFeeder.saver bundle
@@ -64,6 +60,9 @@ NSString* const PFActiveProvidersDidChangeNotification;
 - (NSObject<PFProvider>*) instantiateProviderWithIdentifier: (NSString*)identifier
 																	 ofClass: (Class)providerClass
 													  usingConfiguration: (NSMutableDictionary*)configuration;
+
+// Notification Callbacks
+- (void) providerConfigurationDidChange:(NSNotification*)notification;
 
 // Threads
 - (void) queueFillerThread:(id)obj;

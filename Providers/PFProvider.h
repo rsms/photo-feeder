@@ -58,7 +58,15 @@
 
 
 #pragma mark -
-#pragma mark Types
 
-/// Convenience type
-typedef NSObject<PFProvider> PFProviderClass;
+@interface PFProvider : NSObject<PFProvider>
+{
+	NSString*            identifier;
+	NSMutableDictionary* configuration;
+}
+
+
+/// Convenience method for dispatching a notification
+- (void) notifyOnConfigurationUpdate;
+
+@end

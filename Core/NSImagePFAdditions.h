@@ -1,4 +1,4 @@
-/**
+/*
  * PhotoFeeder is the legal property of its developers.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -10,16 +10,10 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
-#import "PFProvider.h"
+@interface NSImage (NSImagePFAdditions)
 
-@interface PFBasicProvider : NSObject<PFProvider>
-{
-	NSString*            identifier;
-	NSMutableDictionary* configuration;
-}
+/// Returns an image from the owners bundle with the specified name
++ (NSImage *)imageNamed:(NSString *)name forClass:(Class)inClass;
 
-
-/// Convenience method for dispatching a notification
-- (void) notifyOnConfigurationUpdate;
 
 @end

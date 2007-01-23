@@ -1,4 +1,4 @@
-/**
+/*
  * PhotoFeeder is the legal property of its developers.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -9,18 +9,27 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place, 
  * Suite 330, Boston, MA 02111-1307 USA
  */
-#import "PFProvider.h"
-#import "PFQueue.h"
 
-@interface PFFlickrProvider : PFProvider {
-	PFQueue*  urls;
-	NSConditionLock* activeCondLock;
+#import "NSImagePFAdditions.h"
+
+
+@implementation NSImage (NSImagePFAdditions)
+
+// Returns an image from the owners bundle with the specified name
++ (NSImage *)imageNamed:(NSString *)name forClass:(Class)inClass
+{
+	NSBundle	*ownerBundle;
+	NSString	*imagePath;
+	NSImage		*image;
+	
+	//Get the bundle
+	ownerBundle = [NSBundle bundleForClass:inClass];
+	
+	//Open the image
+	imagePath = [ownerBundle pathForImageResource:name];    
+	image = [[NSImage alloc] initWithContentsOfFile:imagePath];
+	
+	return [image autorelease];
 }
-
-- (NSString*)urlForSize:(NSString*)photoId size:(NSString*)size;
-- (NSXMLElement*)callMethod:(NSString*)method params:(NSString*)params;
-
-- (void)addURLsThread:(id)o;
-- (void)addURLs;
 
 @end

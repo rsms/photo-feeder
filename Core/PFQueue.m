@@ -46,10 +46,13 @@
 {
 	[_fullCL release];
 	[_emptyCL release];
+	
 	[_putLock release];
 	[_takeLock release];
 	[_modLock release];
+	
 	free(_buckets);
+	
 	[super dealloc];
 }
 

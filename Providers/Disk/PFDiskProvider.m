@@ -10,6 +10,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
+#import "NSArrayPFAdditions.h"
 #import "PFDiskProvider.h"
 
 @implementation PFDiskProvider

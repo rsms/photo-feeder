@@ -25,12 +25,6 @@
 
 
 #pragma mark -
-#pragma mark Notofication observer callbacks
-
-- (void) onActiveProvidersDidChange:(NSNotification*)notification;
-
-
-#pragma mark -
 #pragma mark Providers bindings
 
 /// Active providers
