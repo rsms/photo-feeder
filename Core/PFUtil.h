@@ -24,12 +24,11 @@
 /// Cause the current thread to sleep for random number of seconds
 + (void) randomSleep:(unsigned)min maxSeconds:(unsigned)max;
 
-/// Generates a per-process unique identifier based on class
-+ (NSString*) generateUniqueIdentifierForInstanceOfClass:(Class)cls;
+/// Generates a globally unique identifier, valid between processes
++ (NSString*) generateUID;
 
 + (NSMutableDictionary*) configurationForProvider:(NSObject<PFProvider>*)provider;
 + (NSMutableDictionary*) configurationForProviderWithIdentifier:(NSString*)providerId;
-+ (void) setConfiguration:(NSDictionary*)conf forProvider:(NSObject<PFProvider>*)provider;
 
 /// Screeen saver defaults for PhotoFeeder
 + (NSUserDefaults*) defaults;

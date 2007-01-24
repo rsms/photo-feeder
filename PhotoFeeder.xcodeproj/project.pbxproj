@@ -217,7 +217,7 @@
 		3A848C620B3B720B00B65C13 /* Viewer_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Viewer_main.m; sourceTree = "<group>"; };
 		3A848C630B3B720B00B65C13 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		3A848C640B3B720B00B65C13 /* ViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewerController.m; sourceTree = "<group>"; };
-		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A8F91600AE571820027DC3B /* Viewer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A94047D0B59A133001FBD1C /* NSArrayPFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayPFAdditions.h; path = Core/NSArrayPFAdditions.h; sourceTree = "<group>"; };
 		3A94047E0B59A133001FBD1C /* NSArrayPFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayPFAdditions.m; path = Core/NSArrayPFAdditions.m; sourceTree = "<group>"; };
 		3A9404C40B59A8D7001FBD1C /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Core/PFUtil.h; sourceTree = "<group>"; };

@@ -37,6 +37,7 @@ static NSString* srcImageId = @"sourceImage";
 		[qcView loadCompositionFromFile:[[[PFMain instance] bundle] pathForResource:@"standard" ofType:@"qtz"]];
 		[qcView setAutostartsRendering:NO];
 		[self addSubview: qcView];
+		[qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
     }
     return self;
 }
@@ -60,11 +61,7 @@ static NSString* srcImageId = @"sourceImage";
 	DLog(@"");
 	
 	[self renderingParametersDidChange];
-	
 	[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
-	
-	// Reset image ports
-	imagePortName = dstImageId;
 	
 	// Fork threads on first call to startAnimation (pungsvett från räkan)
 	if(!switchImageThreadsAreRunning)
@@ -75,9 +72,11 @@ static NSString* srcImageId = @"sourceImage";
 	}
 	
 	// Start animation timer and unlock "critical section"
+	hasResetTimer = NO;
+	isFirstTime = YES;
 	[super startAnimation];
 	[qcView startRendering];
-	[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"resetTime"];
+	[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"startTime"];
 	[[PFMain instance] animationStartedByView:self];
 }
 
@@ -99,6 +98,12 @@ static NSString* srcImageId = @"sourceImage";
 	[qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
 	[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
 	[qcView setMaxRenderingFrameRate: userFps];
+	
+	// Update factors needed for image port switch synchronization
+	imagePortMinSrc = (userFadeInterval*2)+userDisplayInterval;
+	imagePortMaxSrc = (userFadeInterval+userDisplayInterval)*2;
+	imagePortMinDst = userFadeInterval;
+	imagePortMaxDst = userFadeInterval+userDisplayInterval;
 }
 
 
@@ -126,7 +131,7 @@ static NSString* srcImageId = @"sourceImage";
 	switchImageThreadsAreRunning = YES;
 	@try
 	{
-		BOOL isFirstTime = YES;
+		isFirstTime = YES;
 		imagePortName = srcImageId;
 		double delay;
 		
@@ -140,9 +145,7 @@ static NSString* srcImageId = @"sourceImage";
 			
 			// If we don't have an image yet, wait a short while before trying again.
 			if (delay == -1.0)
-			{
 				delay = 1.0;
-			}
 			else
 				isFirstTime = NO;
 			
@@ -161,17 +164,47 @@ static NSString* srcImageId = @"sourceImage";
 #pragma mark Image switching
 
 
-- (double) switchImage:(BOOL)isFirstTime
+
+- (double) switchImage:(BOOL)isFirstTimee
 {
-	NSImage* image;
-	double delay;
+	NSImage* image = nil;
+	double time, delay;
+	float imagePortMod;
+	int imagePortState;
 	
-	// Take the next image from the image queue
-	image = (NSImage*)[[[PFMain instance] queue] poll];
+	image = [[[PFMain instance] queue] poll];
+	time = [[qcView valueForInputKey: @"time"] doubleValue];
+	imagePortMod = ceil(FMOD(time, (userDisplayInterval+userFadeInterval)*2));
+	
+	if(imagePortMod >= imagePortMinSrc && imagePortMod <= imagePortMaxSrc)
+	{
+		imagePortName = srcImageId;
+		imagePortState = 1;
+		//DLog(@"-------------------  SRC  time: %.4f  mod: %.4f  src: %.1f - %.1f  dst: %.1f - %.1f", time, imagePortMod, 
+		//	  imagePortMinSrc, imagePortMaxSrc, imagePortMinDst, imagePortMaxDst);
+	}
+	else if(imagePortMod >= imagePortMinDst && imagePortMod <= imagePortMaxDst)
+	{
+		imagePortName = dstImageId;
+		imagePortState = 2;
+		//DLog(@"-------------------  DST  time: %.4f  mod: %.4f  src: %.1f - %.1f  dst: %.1f - %.1f", time, imagePortMod, 
+		//	  imagePortMinSrc, imagePortMaxSrc, imagePortMinDst, imagePortMaxDst);
+	}
+	else
+	{
+		// Error correction - if call is out of sync, this block is executed.
+		if(!isFirstTime)
+			imagePortName = (imagePortName == srcImageId) ? dstImageId : srcImageId;
+		imagePortState = 0;
+		//DLog(@"-------------------   ?   time: %.4f  mod: %.4f  src: %.1f - %.1f  dst: %.1f - %.1f", time, imagePortMod, 
+		//	  imagePortMinSrc, imagePortMaxSrc, imagePortMinDst, imagePortMaxDst);
+	}
+	
 	
 	// Check if queue is empty
 	if(!image)
 	{
+		//DLog(@"image = nil");
 		if(isFirstTime)
 		{
 			return -1.0;
@@ -183,7 +216,7 @@ static NSString* srcImageId = @"sourceImage";
 			DLog(@"Image queue is depleted");
 		}
 	}
-	else
+	else if(imagePortState && !isFirstTime)
 	{
 		[qcView setValue: [NSNumber numberWithDouble:0.0]  forInputKey: @"statusMessageEnabled"];
 		
@@ -191,27 +224,21 @@ static NSString* srcImageId = @"sourceImage";
 		// texture. Takes some time...
 		[qcView setValue:image forInputKey:imagePortName];
 		[image release];
+		
+		// First time, we know the exact delay:
+		if(!hasResetTimer)
+		{
+			[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"resetTime"];
+			delay = userFadeInterval;
+			hasResetTimer = YES;
+		}
 	}
 	
-	// First time, we know the exact delay:
-	if(isFirstTime)
-	{
-		[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"startTime"];
-		delay = userFadeInterval;
-	}
-	// Following calls, we sync the delay with the rendering cycle, 
-	// getting "time" from the qc-composition:
-	else
-	{
-		double time = [[qcView valueForInputKey: @"time"] doubleValue];
-		double userDisplayAndFadeInterval = userDisplayInterval + userFadeInterval;
-		delay = (userDisplayAndFadeInterval - (time - (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval))) + userFadeInterval;
-	}
+	//time = [[qcView valueForInputKey: @"time"] doubleValue]; // we don't need the exakthet säger räkans med pungsvett
+	double userDisplayAndFadeInterval = userDisplayInterval + userFadeInterval;
+	delay = (userDisplayAndFadeInterval - (time - (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval))) + userFadeInterval;
 	
-	// Switch image ports. Needs to be done every time this method is run.
-	imagePortName = (imagePortName == srcImageId) ? dstImageId : srcImageId;
-	
-	DLog(@"Next switch will operate on '%@' in %f seconds", imagePortName, delay);
+	DLog(@"Next switch will operate in %f seconds", imagePortName, delay);
 	return delay;
 }
 

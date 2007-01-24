@@ -50,6 +50,10 @@
 -(NSString*) name;
 -(void) setName:(NSString*)name;
 
+/// Human-readable name, or type, of the plugin
+-(NSString*) pluginType;
+//-(void) setPluginType:(Class)cls;
+
 /// Return an Image
 -(NSImage*) nextImage;
 

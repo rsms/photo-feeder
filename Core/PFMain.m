@@ -325,7 +325,7 @@ static PFMain* instance = nil;
 	NSObject<PFProvider>* provider;
 	
 	if(!identifier)
-		identifier = [PFUtil generateUniqueIdentifierForInstanceOfClass:providerClass];
+		identifier = [PFUtil generateUID];
 	
 	if(!configuration)
 		configuration = [PFUtil configurationForProviderWithIdentifier:identifier];
@@ -451,6 +451,9 @@ static PFMain* instance = nil;
 			// If we have an available provider, let's use it
 			if(provider)
 			{
+				// TEST
+				//[PFUtil randomSleep:0 maxSeconds:5];
+				
 				// Put this procider in the "busy" stack
 				@synchronized(busyProviders)
 				{

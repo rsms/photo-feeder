@@ -16,6 +16,8 @@
 {
 	QCView*					qcView;  // The quartz composition
 	BOOL                 switchImageThreadsAreRunning;
+	BOOL                 hasResetTimer;
+	BOOL                 isFirstTime;
 	
 	NSImage*					sourceImage; // back
 	NSImage*					destinationImage; // front
@@ -25,6 +27,12 @@
 	double					userFadeInterval;            // User-defined transition interval
 	double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
 	double               userFps;
+	
+	// Update factors needed for image port switch synchronization
+	float imagePortMinSrc;
+	float imagePortMaxSrc;
+	float imagePortMinDst;
+	float imagePortMaxDst;
 }
 
 // Animation & Rendering

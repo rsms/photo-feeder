@@ -18,7 +18,7 @@
 
 + (NSString*) pluginName
 {
-	return @"Flickr: rsms favourites";
+	return @"Flickr";
 }
 
 
@@ -144,7 +144,7 @@ DLog(@"%@", [res URL]);
 {
 	// Would be nice to handle "to small images" right here
 	NSURL* url = (NSURL *)[urls take];
-	DLog(@"%@", url);
+	//DLog(@"%@", url);
 	return [[NSImage alloc] initWithContentsOfURL:url];
 }
 
@@ -210,10 +210,10 @@ DLog(@"%@", [res URL]);
 										size: @"Large"];
 		if(urlString) {
 			[urls put:[NSURL URLWithString:urlString]];
-			DLog(@"Queued %@", urlString);
+			//DLog(@"Queued %@", urlString);
 		}
-		else
-			DLog(@"Image was too small");
+		//else
+			//DLog(@"Image was too small");
 	}
 	
 	// Sure shots:

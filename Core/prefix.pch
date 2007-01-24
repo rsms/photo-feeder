@@ -24,6 +24,9 @@
 // S-formed curve from 0-1
 #define SMOOTHSTEP(x)  ((x)*(x)*(3-2*(x)))
 
+// Modulus float
+#define FMOD(x,y) ((x)-(floor((x)/(y))*(y)))
+
 // Exception throwing shorthand:
 //   void throw_ex(NSString* type, NSString* message)
 //

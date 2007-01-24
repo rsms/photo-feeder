@@ -12,11 +12,9 @@
 
 #import "PFUtil.h"
 #import <ScreenSaver/ScreenSaverDefaults.h>
+#import <ScreenSaver/ScreenSaverView.h>
 
 @implementation PFUtil
-
-
-static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 
 
 + (unsigned long) microseed
@@ -40,10 +38,10 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 + (void) randomSleep:(unsigned)min maxSeconds:(unsigned)max
 {
 	srandom([PFUtil microseed]);
-	unsigned long s = (random() % (max-min)) + min;
-	if(!s)
+	float s = SSRandomFloatBetween(min, max);
+	if(!s) // if 0, no need to sleep
 		return;
-	DLog(@"Sleeping for %lu seconds...", s);
+	//DLog(@"Sleeping for %f seconds...", s);
 	[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:s]];
 }
 
@@ -55,23 +53,18 @@ static NSMutableDictionary* uniqueIdentifiersDictKeyedByClass = nil;
 }
 
 
-+ (NSString*) generateUniqueIdentifierForInstanceOfClass:(Class)cls
++ (NSString*) generateUID
 {
-	if(!uniqueIdentifiersDictKeyedByClass)
-		uniqueIdentifiersDictKeyedByClass = [[NSMutableDictionary alloc] init];
+	struct timeval tp;
 	
-	NSString* className = NSStringFromClass(cls);
-	NSNumber* nextNumObj;
-	int nextNum = 0;
-	
-	@synchronized(uniqueIdentifiersDictKeyedByClass)
+	if(gettimeofday(&tp, NULL) == 0)
 	{
-		if(nextNumObj = [uniqueIdentifiersDictKeyedByClass objectForKey:className])
-			nextNum = [nextNumObj intValue];
-		[uniqueIdentifiersDictKeyedByClass setObject:[[NSNumber alloc] initWithInt:nextNum+1] forKey:className];
+		srandom(tp.tv_sec);
+		return [NSString stringWithFormat:@"%x-%x-%x",
+			tp.tv_usec, tp.tv_sec, SSRandomIntBetween(100, LONG_MAX)];
 	}
 	
-	return [NSString stringWithFormat:@"%@#%d", className, nextNum];
+	return nil;
 }
 
 
@@ -167,20 +160,20 @@ static NSDictionary* appDefaults = nil;
 				[NSDictionary dictionaryWithObjectsAndKeys:
 					@"PFDiskProvider", @"class",
 					[NSDictionary dictionaryWithObjectsAndKeys:
-						[NSNumber numberWithBool:YES], @"active",
-						@"Images in ~/Pictures/_temp", @"name",
-						@"~/Pictures/_temp",           @"path",
+						[NSNumber numberWithBool:YES],   @"active",
+						@"Images in my Pictures folder", @"name",
+						@"~/Pictures",                   @"path",
 					nil],
 					@"configuration",
 				nil],
-				@"PFDiskProvider#-1",
+				@"787f7-45b684e7-4e413064",
 			nil];
 		
 		// Application defaults
 		appDefaults = [[NSDictionary dictionaryWithObjectsAndKeys:
 			[NSNumber numberWithInt:60],     @"fps",
-			[NSNumber numberWithFloat:3.0],  @"displayInterval",
-			[NSNumber numberWithFloat:1.0],  @"fadeInterval",
+			[NSNumber numberWithFloat:5.0],  @"displayInterval",
+			[NSNumber numberWithFloat:3.0],  @"fadeInterval",
 			defaultActiveProviders,          @"activeProviders",
 			nil] retain];
 	}

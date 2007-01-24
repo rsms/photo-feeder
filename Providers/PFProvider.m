@@ -121,6 +121,12 @@
 }
 
 
+-(NSString*) pluginType
+{
+	return [[self class] pluginName];
+}
+
+
 -(NSImage*)nextImage
 {
 	return nil;
