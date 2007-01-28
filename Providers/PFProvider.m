@@ -41,12 +41,6 @@
 }
 
 
-+ (NSWindow*) configureSheet
-{
-	return nil;
-}
-
-
 #pragma mark -
 #pragma mark Instance methods
 
@@ -58,6 +52,18 @@
 	if(configuration)
 		[configuration release];
 	[super dealloc];
+}
+
+
+- (BOOL)hasConfigureSheet
+{
+	return NO;
+}
+
+
+- (NSWindow*) configureSheet
+{
+	return nil;
 }
 
 

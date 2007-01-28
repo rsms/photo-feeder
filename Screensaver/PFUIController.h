@@ -10,6 +10,8 @@
  * Suite 330, Boston, MA 02111-1307 USA
  */
 
+#import "../Providers/PFProvider.h"
+
 @interface PFUIController : NSWindowController
 {
 	IBOutlet NSWindow*          addProviderWindow;
@@ -23,6 +25,8 @@
 - (IBAction) about:(id)sender;
 - (IBAction) addProviderBegin:(id)sender;
 - (IBAction) addProviderCommit:(id)sender;
+
+- (void) displayConfigurationUIForProvider:(NSObject<PFProvider>*)provider;
 
 
 #pragma mark -

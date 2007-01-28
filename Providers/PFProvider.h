@@ -27,12 +27,13 @@
 /// Plugin description text, nil if none
 + (NSString*) pluginDescription;
 
-/// Configuration UI, nil if none
-+ (NSWindow*) configureSheet;
-
 
 #pragma mark -
 #pragma mark Instance methods
+
+/// Configuration UI
+- (BOOL) hasConfigureSheet;
+- (NSWindow*) configureSheet;
 
 /// Provider instance configuration
 -(NSDictionary*) configuration;

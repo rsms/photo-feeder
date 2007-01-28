@@ -238,7 +238,7 @@ static NSString* srcImageId = @"sourceImage";
 	double userDisplayAndFadeInterval = userDisplayInterval + userFadeInterval;
 	delay = (userDisplayAndFadeInterval - (time - (floor(time / userDisplayAndFadeInterval) * userDisplayAndFadeInterval))) + userFadeInterval;
 	
-	DLog(@"Next switch will operate in %f seconds", imagePortName, delay);
+	DLog(@"Next switch will operate in %.2f seconds", delay);
 	return delay;
 }
 

@@ -19,7 +19,7 @@
 @implementation NSArray (NSArrayPFAdditions)
 
 
-- (NSArray*) randomCopy
+- (NSMutableArray*) randomCopy
 {
 	//double t = [PFUtil microtime];
 	unsigned i, x, count;

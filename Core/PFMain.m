@@ -654,6 +654,8 @@ static PFMain* instance = nil;
 	else
 		outSize.height = outSize.width / inAs;
 	
+	DLog(@"Resizing to %.0f x %.0f", outSize.width, outSize.height);
+	
 	NSImage *resizedImage = [[NSImage alloc] initWithSize:outSize];
 	[resizedImage lockFocus];
 	[imr drawInRect:NSMakeRect(0, 0, outSize.width, outSize.height)];

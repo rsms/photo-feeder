@@ -34,12 +34,10 @@
 }
 
 
-// TODO
 - (IBAction) addProviderCommit:(id)sender
 {
 	Class providerClass;
 	NSObject<PFProvider>* provider;
-	NSWindow* pluginConfigureSheet;
 	
 	providerClass = [[availableProvidersController selectedObjects] lastObject];
 	[addProviderWindow performClose:sender];
@@ -49,11 +47,24 @@
 	if(provider)
 	{
 		[activeProvidersController rearrangeObjects];
-		if(pluginConfigureSheet = [providerClass configureSheet])
-		{
-			[NSApp runModalForWindow:pluginConfigureSheet];
-			//[pluginConfigureSheet makeKeyAndOrderFront:sender];
-		}
+		[self displayConfigurationUIForProvider:provider];
+	}
+}
+
+
+- (void) displayConfigurationUIForProvider:(NSObject<PFProvider>*)provider
+{
+	DLog(@"provider = %@", provider);
+	
+	//PFProvider* provider = [[self activeProviders] objectAtIndex:[selectionIndex intValue]];
+	
+	if(provider && [provider hasConfigureSheet])
+	{
+		NSWindow* win = [provider configureSheet];
+		[win center];
+		[win setLevel:NSModalPanelWindowLevel];
+		[win setTitle:[NSString stringWithFormat:@"%@: %@", [[provider class] pluginName], [provider name]]];
+		[win makeKeyAndOrderFront:self];
 	}
 }
 

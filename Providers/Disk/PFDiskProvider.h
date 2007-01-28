@@ -11,11 +11,20 @@
  */
 #import "PFProvider.h"
 
-@interface PFDiskProvider : PFProvider {
-	NSString*  dir;
-	NSArray*   files;
-	unsigned   filesIndex;
+@interface PFDiskProvider : PFProvider
+{
+	IBOutlet NSWindow* window;
+	NSMutableArray*    files;
+	unsigned           filesIndex;
 }
+
+- (void) setFiles:(NSMutableArray*)files;
+
+- (NSString*) directoryPath;
+- (void) setDirectoryPath:(NSString*)dir;
+
+- (NSNumber*) minimumImageSize;
+- (void) setMinimumImageSize:(NSNumber*)n;
 
 
 @end

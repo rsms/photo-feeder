@@ -17,7 +17,7 @@
 
 @interface NSArray (NSArrayPFAdditions)
 
-- (NSArray*) randomCopy;
+- (NSMutableArray*) randomCopy;
 
 @end
 

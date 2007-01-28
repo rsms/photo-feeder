@@ -24,6 +24,10 @@ static NSArray* acceptableFileExtensions = nil;
 }
 
 
+#pragma mark -
+#pragma mark Instance
+
+
 - (id) init
 {
 	[super init];
@@ -35,9 +39,7 @@ static NSArray* acceptableFileExtensions = nil;
 			@"jpeg", @"jpg", @"gif", @"png", @"tif", @"tiff", @"psd", @"pict", nil] retain];
 	}
 	
-	dir = [[@"~/Pictures/_temp" stringByExpandingTildeInPath] retain];
 	files = nil;
-	
 	return self;
 }
 
@@ -46,10 +48,92 @@ static NSArray* acceptableFileExtensions = nil;
 {
 	if(files)
 		[files release];
-	if(dir)
-		[dir release];
 	[super dealloc];
 }
+
+
+#pragma mark -
+#pragma mark Configure UI
+
+
+- (BOOL)hasConfigureSheet
+{
+	return YES;
+}
+
+
+- (NSWindow*) configureSheet
+{
+	//NSBundle* bundle = [NSBundle bundleForClass:[self class]];
+	if(![NSBundle loadNibNamed:NSStringFromClass([self class]) owner:self])
+	{
+		NSTrace(@"Failed to load NIB file");
+		return nil;
+	}
+	return window;
+}
+
+
+#pragma mark -
+#pragma mark Accessors
+
+
+-(void) setConfiguration:(NSMutableDictionary*)conf
+{
+	[super setConfiguration:conf];
+	
+	if(![configuration objectForKey:@"directoryPath"])
+		[configuration setObject:[@"~/Pictures" stringByExpandingTildeInPath] forKey:@"directoryPath"];
+	
+	//if(![configuration objectForKey:@"minimumImageSize"])
+	//	[configuration setObject:[NSNumber numberWithInt:400] forKey:@"minimumImageSize"];
+}
+
+
+- (NSString*) directoryPath
+{
+	return [configuration objectForKey:@"directoryPath"];
+}
+
+
+- (void) setDirectoryPath:(NSString*)path
+{
+	DLog(@"self = %@", self);
+	
+	NSString* oldPath = [self directoryPath];
+	if(oldPath && [oldPath isEqualToString:path])
+		return;
+	
+	[configuration setObject:path forKey:@"directoryPath"];
+	
+	// Force re-read of files
+	[self setFiles:nil];
+}
+
+
+- (NSNumber*) minimumImageSize
+{
+	return [configuration objectForKey:@"minimumImageSize"];
+}
+
+
+- (void) setMinimumImageSize:(NSNumber*)n
+{
+	[configuration setObject:n forKey:@"minimumImageSize"];
+}
+
+
+- (void) setFiles:(NSMutableArray*)a
+{
+	id old = files;
+	files = a ? [a retain] : nil;
+	if(old) [old release];
+}
+
+
+
+#pragma mark -
+#pragma mark Image polling
 
 
 - (void) scrambleFiles
@@ -57,25 +141,35 @@ static NSArray* acceptableFileExtensions = nil;
 	NSDirectoryEnumerator* dirEnum;
 	NSMutableArray* filesTemp;
 	NSString* file;
+	NSString* dir;
 	
-	filesTemp = [NSMutableArray array]; // autoreleased
+	dir = [self directoryPath];
 	dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:dir];
+	
+	if(!dirEnum)
+	{
+		DLog(@"Directory not found '%@'", dir);
+		[self setFiles:[NSMutableArray array]];
+		filesIndex = -1;
+		return;
+	}
+	
+	filesTemp = [NSMutableArray array];
 	
 	while( file = [dirEnum nextObject] )
 		if( [acceptableFileExtensions containsObject:[[file pathExtension] lowercaseString]] )
-			[filesTemp addObject:file];
+			[filesTemp addObject:[dir stringByAppendingPathComponent:file]];
 	
-	files = [[filesTemp randomCopy] retain];
+	[self setFiles:[filesTemp randomCopy]];
 	filesIndex = [files count]-1;
 }
 
 
 -(NSImage*)nextImage
 {
-	// TEST latency
-	//[PFUtil randomSleep:0 maxSeconds:7];
+	NSImage* im;
 	
-	// Dig dir on first call
+	// Dig dir if not done already
 	if(!files)
 		[self scrambleFiles];
 	
@@ -83,16 +177,28 @@ static NSArray* acceptableFileExtensions = nil;
 	if(filesIndex == -1)
 		return nil;
 	
-	NSString* file;
-	NSImage* im;
+	int minSize = [[self minimumImageSize] intValue];
 	
-	// Take last
-	file = [files objectAtIndex:filesIndex--];
-	im = [[NSImage alloc] initWithContentsOfFile:[dir stringByAppendingPathComponent:file]];
+	// Take image from array
+	while(filesIndex)
+	{
+		if(!(im = [[NSImage alloc] initWithContentsOfFile:[files objectAtIndex:filesIndex--]]))
+			break;
+		
+		// Check min size
+		NSSize size = [im size];
+		if(size.width >= minSize && size.height >= minSize)
+			break;
+		else
+		{
+			DLog(@"Removing too small image at index %d", filesIndex+1);
+			[files removeObjectAtIndex:filesIndex+1];
+		}
+	}
 	
 	// We have l00ked thru da directory, yo
 	if(filesIndex == -1)
-		[self scrambleFiles];
+		[self setFiles:nil]; // trigger re-read on next call
 	
 	return im;
 }
