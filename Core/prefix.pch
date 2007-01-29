@@ -29,7 +29,6 @@
 
 // Exception throwing shorthand:
 //   void throw_ex(NSString* type, NSString* message)
-//
 // http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/chapter_4_section_9.html
 #define throw_ex(type, msg) @throw [NSException exceptionWithName: type reason: msg userInfo:nil]
 
@@ -50,5 +49,3 @@ static void __NSTrace( const char *fnc, NSString *format, ... ) {
 	NSLogv( [[[NSString stringWithCString:fnc] stringByAppendingString:@" "] stringByAppendingString:format], args);
 	va_end(args);
 }
-
-#import "types.h"

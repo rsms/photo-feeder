@@ -37,21 +37,24 @@
 	FlickrResponse* rsp = [ctx callMethod: @"flickr.people.findByUsername"
 								arguments: [NSString stringWithFormat:@"username=%@", name]];
 	// Errors?
-	if([rsp errorCode]) {
+	if([rsp errorCode])
+	{
 		if([rsp errorCode] != 1) // 1 = user not found, which we don't need to log
-			NSLog(@"[FlickrUser userWithName] failed with response error %d: %@", [rsp errorCode], [rsp errorMessage]);
+			NSTrace(@"Failed with response error %d: %@", [rsp errorCode], [rsp errorMessage]);
 		return nil;
 	}
 	
 	NSXMLElement* u = (NSXMLElement*)[[rsp dom] childAtIndex:0];
 	NSString* nam = [(NSXMLElement*)[(NSXMLElement*)[u childAtIndex:0] childAtIndex:0] stringValue];
 	
-	return [[FlickrUser alloc] initWithContext: ctx
-										   uid: [[u attributeForName:@"id"] stringValue] 
-										  name: nam];
+	return [[[FlickrUser alloc] initWithContext: ctx
+														 uid: [[u attributeForName:@"id"] stringValue] 
+														name: nam] autorelease];
 }
 
-+ (FlickrUser*) userWithName:(NSString*)name {
+
++ (FlickrUser*) userWithName:(NSString*)name
+{
 	return [FlickrUser userWithName:name context:[FlickrContext defaultContext]];
 }
 
@@ -69,7 +72,9 @@
 	return self;
 }
 
-- (NSString*)uid {
+
+- (NSString*)uid
+{
 	return uid;
 }
 
@@ -90,7 +95,8 @@ FETCHINFO_PROP_GET(NSURL*, mobileURL);
 FETCHINFO_PROP_GET(NSDate*, firstDateUploaded);
 FETCHINFO_PROP_GET(NSDate*, firstDateTaken);
 
-- (int) numberOfPhotos {
+- (int) numberOfPhotos
+{
 	if(numberOfPhotos == -1) [self _fetchInfo];
 	return numberOfPhotos;
 }
@@ -130,7 +136,8 @@ FETCHINFO_PROP_GET(NSDate*, firstDateTaken);
 #define FETCHINFO_ELEMENTVAL(_n,name) \
 	[[[[_n elementsForName:name] objectAtIndex:0] childAtIndex:0] stringValue]
 	
-	@try {
+	@try
+	{
 		// Extract info
 		name = [FETCHINFO_ELEMENTVAL(u,@"username") retain];
 		realName = [FETCHINFO_ELEMENTVAL(u,@"realname") retain];
@@ -149,7 +156,8 @@ FETCHINFO_PROP_GET(NSDate*, firstDateTaken);
 		// Numbers
 		numberOfPhotos = [FETCHINFO_ELEMENTVAL(photos,@"count") intValue];
 	}
-	@catch(NSException* e) {
+	@catch(NSException* e)
+	{
 		NSLog(@"[FlickrUser _fetchInfo] failed from exception: %@", e);
 	}
 }

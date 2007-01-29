@@ -11,7 +11,8 @@
  */
 #import <Flickr/Flickr.h>
 
-static int test() {
+static int test()
+{
 	
 	FlickrUser* u;
 	FlickrContext* ctx;
@@ -40,16 +41,21 @@ static int test() {
 }
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	NSAutoreleasePool* ap = [NSAutoreleasePool new];
 	int status = 0;
-	@try {
+	
+	@try
+	{
 		status = test();
 	}
-	@catch(NSException* e) {
+	@catch(NSException* e)
+	{
 		NSLog(@"Failed with exception: %@", e);
 		status = 2;
 	}
+	
 	[ap release];
 	return status;
 }
