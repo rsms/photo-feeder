@@ -231,7 +231,7 @@
 		3A7D1BEE0B6D00A3006B877E /* FlickrContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrContext.m; path = Frameworks/Flickr/FlickrContext.m; sourceTree = "<group>"; };
 		3A7D1C0B0B6D0121006B877E /* Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7D1C0C0B6D0121006B877E /* Flickr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Flickr-Info.plist"; sourceTree = "<group>"; };
-		3A7D1C360B6D0259006B877E /* FlickrTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlickrTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7D1C360B6D0259006B877E /* FlickrTest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = FlickrTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7F797B0B6152E90006CEFA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = Core/version.h; sourceTree = "<group>"; };
 		3A848C600B3B720B00B65C13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A848C610B3B720B00B65C13 /* Viewer.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Viewer.nib; sourceTree = "<group>"; };
