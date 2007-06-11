@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {CLASS = AIPlasticButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {CLASS = AIPlasticButtonCell; LANGUAGE = ObjC; SUPERCLASS = NSButtonCell; }, 
+        {CLASS = AIPlasticMinusButton; LANGUAGE = ObjC; SUPERCLASS = AIPlasticButton; }, 
+        {CLASS = AIPlasticPlusButton; LANGUAGE = ObjC; SUPERCLASS = AIPlasticButton; }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {about = id; addProviderBegin = id; addProviderCommit = id; done = id; }; 
+            CLASS = PFConfigureSheetController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                activeProvidersController = NSArrayController; 
+                activeProvidersRemoveButton = NSButton; 
+                activeProvidersTable = NSTableView; 
+                addProviderWindow = NSWindow; 
+                availableProvidersController = NSArrayController; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}
