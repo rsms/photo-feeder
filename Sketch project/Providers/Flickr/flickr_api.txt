@@ -1,14 +1,0 @@
-http://api.flickr.com/services/rest/?method=flickr.people.findByUsername&api_key=9b4439ce94de7e2ec2c2e6ffadc22bcf&username=rsms
-
-<rsp stat="ok"><user id="12281432@N00" nsid="12281432@N00">	<username>Rsms</username></user></rsp>
-
--------
-
-http://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=9b4439ce94de7e2ec2c2e6ffadc22bcf&user_id=12281432@N00&per_page=20
-
-<rsp stat="ok"><photos page="1" pages="8" perpage="20" total="142">	<photo id="207296186" owner="63263107@N00" secret="07c83ed2fa" server="96" title="Bird giving me the evil eye" ispublic="1" isfriend="0" isfamily="0" />
-	<!-- http://static.flickr.com/{server-id}/{id}_{secret}_b.jpg -->
-	<!-- http://static.flickr.com/96/207296186_07c83ed2fa_b.jpg --></photos></rsp>
-
--------
-
