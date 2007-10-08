@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {closeConfigureSheet = id; showConfigureSheet = id; toggleAnimation = id; }; 
+            CLASS = PFViewerDoc; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {drawInView = NSView; }; 
+            SUPERCLASS = NSDocument; 
+        }
+    ); 
+    IBVersion = 1; 
+}

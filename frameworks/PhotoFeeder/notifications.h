@@ -1,0 +1,4 @@
+
+
+extern NSString *PFRenderingParametersDidChangeNotification;
+extern NSString *PFProviderConfigurationDidChangeNotification;

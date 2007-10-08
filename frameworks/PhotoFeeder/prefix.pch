@@ -1,0 +1,8 @@
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+  #import "notifications.h"
+  #import "macros.h"
+  #import "NSArrayPFAdditions.h"
+  #import "NSImagePFAdditions.h"
+#endif
