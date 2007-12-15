@@ -14,19 +14,19 @@
 
 @interface PFView : ScreenSaverView
 {
-	QCView*					qcView;  // The quartz composition
-	BOOL                 switchImageThreadsAreRunning;
-	BOOL                 hasResetTimer;
-	BOOL                 isFirstTime;
-	
-	NSImage*					sourceImage; // back
-	NSImage*					destinationImage; // front
-	
-	NSString*            imagePortName;
-	
-	double					userFadeInterval;            // User-defined transition interval
-	double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
-	double               userFps;
+  QCView*					qcView;  // The quartz composition
+  BOOL                 switchImageThreadsAreRunning;
+  BOOL                 hasResetTimer;
+  BOOL                 isFirstTime;
+
+  NSImage*					sourceImage; // back
+  NSImage*					destinationImage; // front
+
+  NSString*            imagePortName;
+
+  double					userFadeInterval;            // User-defined transition interval
+  double					userDisplayInterval;         // User-defined display interval -- how long the image is displayed, not counting transitions
+  double               userFps;
 }
 
 // Animation & Rendering

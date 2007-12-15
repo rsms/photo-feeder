@@ -18,9 +18,8 @@
 #pragma mark -
 #pragma mark Plugin methods
 
-+ (BOOL) initPluginWithBundle:(NSBundle*)theBundle
-{
-	return YES;
++ (BOOL) initPluginWithBundle:(NSBundle*)theBundle {
+  return YES;
 }
 
 
@@ -31,13 +30,13 @@
 
 + (NSString*) pluginName
 {
-	return NSStringFromClass(self);
+  return NSStringFromClass(self);
 }
 
 
 + (NSString*) pluginDescription
 {
-	return nil;
+  return nil;
 }
 
 
@@ -47,95 +46,95 @@
 
 - (void) dealloc
 {
-	if(identifier)
-		[identifier release];
-	if(configuration)
-		[configuration release];
-	[super dealloc];
+  if(identifier)
+    [identifier release];
+  if(configuration)
+    [configuration release];
+  [super dealloc];
 }
 
 
 - (BOOL)hasConfigureSheet
 {
-	return NO;
+  return NO;
 }
 
 
 - (NSWindow*) configureSheet
 {
-	return nil;
+  return nil;
 }
 
 
 -(NSDictionary*) configuration
 {
-	return configuration;
+  return configuration;
 }
 
 
 -(void) setConfiguration:(NSMutableDictionary*)conf
 {
-	NSMutableDictionary* old = configuration;
-	configuration = [conf retain];
-	if(old)
-		[old release];
-	
-	if(![configuration objectForKey:@"active"])
-		[configuration setObject:[NSNumber numberWithBool:YES] forKey:@"active"];
-	
-	if(![configuration objectForKey:@"name"])
-		[configuration setObject:[[self class] pluginName] forKey:@"name"];
+  NSMutableDictionary* old = configuration;
+  configuration = [conf retain];
+  if(old)
+    [old release];
+  
+  if(![configuration objectForKey:@"active"])
+    [configuration setObject:[NSNumber numberWithBool:YES] forKey:@"active"];
+  
+  if(![configuration objectForKey:@"name"])
+    [configuration setObject:[[self class] pluginName] forKey:@"name"];
 }
 
 
 - (NSString*) identifier
 {
-	return identifier;
+  return identifier;
 }
 
 
 - (void) setIdentifier:(NSString*)pid
 {
-	NSString* old = identifier;
-	identifier = [pid retain];
-	if(old)
-		[old release];
+  NSString* old = identifier;
+  identifier = [pid retain];
+  if(old)
+    [old release];
 }
 
 
 -(BOOL) active
 {
-	return [[configuration objectForKey:@"active"] boolValue];
+  return [[configuration objectForKey:@"active"] boolValue];
 }
 
 
 -(void) setActive:(BOOL)b
 {
-	[configuration setObject:[NSNumber numberWithBool:b] forKey:@"active"];
+  [configuration setObject:[NSNumber numberWithBool:b] forKey:@"active"];
 }
 
 
 -(NSString*) name
 {
-	return [configuration objectForKey:@"name"];
+  return [configuration objectForKey:@"name"];
 }
 
 
 -(void) setName:(NSString*)name
 {
-	[configuration setObject:name forKey:@"name"];
+  [configuration setObject:name forKey:@"name"];
 }
 
 
 -(NSString*) pluginType
 {
-	return [[self class] pluginName];
+  return [[self class] pluginName];
 }
 
 
 -(NSImage*)nextImage
 {
-	return nil;
+  return nil;
 }
 
 @end

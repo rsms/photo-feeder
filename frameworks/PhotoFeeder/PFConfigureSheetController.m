@@ -21,55 +21,55 @@
 
 
 - (IBAction) addProviderBegin:(id)sender {
-	DLog(@"");
-	[NSApp runModalForWindow:addProviderWindow];
+  DLog(@"");
+  [NSApp runModalForWindow:addProviderWindow];
 }
 
 
 - (IBAction) addProviderCommit:(id)sender {
-	Class providerClass;
-	PFProvider *provider;
-	
-	providerClass = [[availableProvidersController selectedObjects] lastObject];
-	[addProviderWindow performClose:sender];
-	provider = [[PFController instance] instantiateProviderWithIdentifier: nil
+  Class providerClass;
+  PFProvider *provider;
+  
+  providerClass = [[availableProvidersController selectedObjects] lastObject];
+  [addProviderWindow performClose:sender];
+  provider = [[PFController instance] instantiateProviderWithIdentifier: nil
                                                                 ofClass: providerClass
                                                      usingConfiguration: nil];
-	if(provider) {
-		[activeProvidersController rearrangeObjects];
-		[self displayConfigurationUIForProvider:provider];
-	}
+  if(provider) {
+    [activeProvidersController rearrangeObjects];
+    [self displayConfigurationUIForProvider:provider];
+  }
 }
 
 
 - (void) displayConfigurationUIForProvider:(PFProvider *)provider {
-	DLog(@"provider = %@", provider);
-	
-	//PFProvider* provider = [[self activeProviders] objectAtIndex:[selectionIndex intValue]];
-	
-	if(provider && [provider hasConfigureSheet]) {
-		NSWindow* win = [provider configureSheet];
-		//[win center];
-		//[win setLevel:NSModalPanelWindowLevel];
+  DLog(@"provider = %@", provider);
+  
+  //PFProvider* provider = [[self activeProviders] objectAtIndex:[selectionIndex intValue]];
+  
+  if(provider && [provider hasConfigureSheet]) {
+    NSWindow* win = [provider configureSheet];
+    //[win center];
+    //[win setLevel:NSModalPanelWindowLevel];
     //runModalForWindow
-		[win setTitle:[NSString stringWithFormat:@"%@: %@", [[provider class] pluginName], [provider name]]];
-		[win makeKeyAndOrderFront:self];
-	}
+    [win setTitle:[NSString stringWithFormat:@"%@: %@", [[provider class] pluginName], [provider name]]];
+    [win makeKeyAndOrderFront:self];
+  }
 }
 
 
 /*- (void) onActiveProvidersDidChange:(NSNotification*)notification
-{
-	DLog(@"");
-	[activeProvidersController rearrangeObjects];
-}*/
+ {
+ DLog(@"");
+ [activeProvidersController rearrangeObjects];
+ }*/
 
 
 - (void) controlTextDidEndEditing:(NSNotification *)notification
 {
-	// Refresh sorting (if used) if active providers table was edited
-	if([notification object] == activeProvidersTable)
-		[activeProvidersController rearrangeObjects];
+  // Refresh sorting (if used) if active providers table was edited
+  if([notification object] == activeProvidersTable)
+    [activeProvidersController rearrangeObjects];
 }
 
 
@@ -79,8 +79,8 @@
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-	if([notification object] == addProviderWindow)
-		[NSApp stopModal];
+  if([notification object] == addProviderWindow)
+    [NSApp stopModal];
 }
 
 
@@ -89,13 +89,13 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
-	if([notification object] == activeProvidersTable)
-	{
-		if([activeProvidersTable selectedRow] == -1)
-			[activeProvidersRemoveButton setEnabled:NO];
-		else
-			[activeProvidersRemoveButton setEnabled:YES];
-	}
+  if([notification object] == activeProvidersTable)
+  {
+    if([activeProvidersTable selectedRow] == -1)
+      [activeProvidersRemoveButton setEnabled:NO];
+    else
+      [activeProvidersRemoveButton setEnabled:YES];
+  }
 }
 
 
@@ -104,45 +104,45 @@
 
 
 -(int) fps {
-	return [PFUtil defaultIntForKey:@"fps"];
+  return [PFUtil defaultIntForKey:@"fps"];
 }
 -(void) setFps:(int)d {
-	[[PFUtil defaults] setInteger:d forKey:@"fps"];
+  [[PFUtil defaults] setInteger:d forKey:@"fps"];
   [[NSNotificationCenter defaultCenter] postNotificationName:PFRenderingParametersDidChangeNotification 
                                                       object:self];
 }
 
 -(float) displayInterval {
-	return [PFUtil defaultFloatForKey:@"displayInterval"];
+  return [PFUtil defaultFloatForKey:@"displayInterval"];
 }
 -(void) setDisplayInterval:(float)f {
-	[[PFUtil defaults] setFloat:f forKey:@"displayInterval"];
+  [[PFUtil defaults] setFloat:f forKey:@"displayInterval"];
   [[NSNotificationCenter defaultCenter] postNotificationName:PFRenderingParametersDidChangeNotification 
                                                       object:self];
 }
 
 -(float) fadeInterval {
-	return [PFUtil defaultFloatForKey:@"fadeInterval"];
+  return [PFUtil defaultFloatForKey:@"fadeInterval"];
 }
 -(void) setFadeInterval:(float)f {
-	[[PFUtil defaults] setFloat:f forKey:@"fadeInterval"];
+  [[PFUtil defaults] setFloat:f forKey:@"fadeInterval"];
   [[NSNotificationCenter defaultCenter] postNotificationName:PFRenderingParametersDidChangeNotification 
                                                       object:self];
 }
 
 - (NSArray*) availableProviders {
-	return [[PFController instance] availableProviders];
+  return [[PFController instance] availableProviders];
 }
 - (void) setAvailableProviders:(NSArray*)v {
-	// Can't alter available providers
+  // Can't alter available providers
 }
 
 
 - (NSMutableArray *) activeProviders {
-	return [[PFController instance] activeProviders];
+  return [[PFController instance] activeProviders];
 }
 - (void) setActiveProviders:(NSMutableArray *)v {
-	[[PFController instance] setActiveProviders:v];
+  [[PFController instance] setActiveProviders:v];
   [[NSNotificationCenter defaultCenter] postNotificationName:PFProviderConfigurationDidChangeNotification
                                                       object:self];
 }
@@ -153,7 +153,7 @@
 
 - (NSString*) buildDate {
   NSNumber* ts = [[[[PFController instance] bundle] infoDictionary] objectForKey:@"PFBuildDate"];
-	return [[NSDate dateWithTimeIntervalSince1970:[ts intValue]] description];
+  return [[NSDate dateWithTimeIntervalSince1970:[ts intValue]] description];
 }
 
 
@@ -164,12 +164,12 @@
 
 - (IBAction) done:(id)sender {
   DLog(@"[self window] = %@", [self window]);
-	[NSApp endSheet:[self window]];
-	[[PFController instance] synchronizeProviderConfigurations];
+  [NSApp endSheet:[self window]];
+  [[PFController instance] synchronizeProviderConfigurations];
 }
 
 
 - (IBAction)about:(id)sender {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/photo-feeder"]];
+  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://trac.hunch.se/photo-feeder"]];
 }
 @end
