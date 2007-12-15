@@ -38,7 +38,6 @@ static NSString* qcImagePortId = @"Patch.x.value";
     [qcView loadCompositionFromFile:[[[PFController instance] bundle] pathForResource:@"standard" ofType:@"qtz"]];
     [qcView setAutostartsRendering:NO];
     [self addSubview: qcView];
-    [qcView setValue: [NSNumber numberWithDouble:1.0]  forInputKey: @"statusMessageEnabled"];
   }
   return self;
 }
@@ -62,14 +61,14 @@ static NSString* qcImagePortId = @"Patch.x.value";
   // (Re)load rendering settings
   [self renderingParametersDidChange:nil];
   
-  [qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
+  //[qcView setValue: @"Loading images..." forInputKey: @"statusMessageText"];
   
   // Start animation timer and unlock "critical section"
   hasResetTimer = NO;
   isFirstTime = YES;
   [super startAnimation];
   [qcView startRendering];
-  [qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"startTime"];
+  //[qcView setValue:[NSNumber numberWithBool: TRUE] forInputKey:@"startTime"];
   [[PFController instance] animationStartedByView:self];
 }
 
@@ -87,8 +86,8 @@ static NSString* qcImagePortId = @"Patch.x.value";
   // 0 means fading down and keeping it at 0% alpha
   // 1 means fading up and keeping it at 100% alpha
   // 2 means not fading at all, keeping it at 0% alpha
-  [qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
-  [qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
+  //[qcView setValue: [NSNumber numberWithDouble:userDisplayInterval]  forInputKey: @"timeVisible"];
+  //[qcView setValue: [NSNumber numberWithDouble:userFadeInterval]     forInputKey: @"timeFading"];
   [qcView setMaxRenderingFrameRate: userFps];
 }
 
